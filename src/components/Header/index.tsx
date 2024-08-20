@@ -6,6 +6,7 @@ const Header = () => {
     <header className='flex px-20 justify-between py-7 bg-white'>
       <div className='flex'>
         <Image
+          priority={true}
           src='icons/logo.svg'
           width={143}
           height={18}
