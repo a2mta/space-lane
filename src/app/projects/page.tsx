@@ -20,7 +20,7 @@ const projects = [
 const ProjectsPage = () => {
   return (
     <PageWithTitleWrap title='Проекты'>
-      <div className='grid grid-cols-12 gap-x-10 mt-32'>
+      <div className='grid grid-cols-12 gap-x-10 mt-30'>
         {projects.map((item, index) => (
           <div key={index+item.title} className='col-span-4 relative '>
             <ProjectCard title={item.title} subTitle={item.subTitle} url='' />

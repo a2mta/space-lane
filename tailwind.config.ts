@@ -12,12 +12,20 @@ const config: Config = {
       'medium-grey': '#D1D1D1',
       grey: '#6D6D6D',
       orange: '#F05634',
+      red: '#D64445',
     },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontSize: {
+        h4: ['2.125rem', 'auto'],
+        xs: ['0.75rem', '1.125rem'],
+        h2: ['3.75rem', '4.375rem'],
+        h5: ['1.5rem', '2.25rem'],
+        'body-regular': ['1.125rem', '1.625rem'],
+      },
+      margin: {
+        30: '7.5rem',
+        70: '17.5rem',
+        50: '12.5rem',
       },
     },
   },
