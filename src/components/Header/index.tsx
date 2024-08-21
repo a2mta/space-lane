@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import HeaderLink from './HeaderLink';
 
 const Header = () => {
   return (
@@ -18,10 +19,10 @@ const Header = () => {
       </div>
       <div className='flex space-x-24'>
         <div className='flex space-x-8'>
-          <span className='cursor-pointer'><Link href="/about">О нас</Link></span>
-          <span className='cursor-pointer'>Проекты</span>
-          <span className='cursor-pointer'>Консалтинг</span>
-          <span className='cursor-pointer'>Медиа</span>
+          <HeaderLink url='/about' text='О нас' />
+          <HeaderLink url='/projects' text='Проекты' />
+          <HeaderLink url='/consulting' text='Консалтинг' />
+          <HeaderLink url='/media' text='Медиа' />
         </div>
         <span className='cursor-pointer'>Контакты</span>
       </div>
