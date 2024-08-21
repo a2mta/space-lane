@@ -16,6 +16,6 @@ main {
 }
 
 header, main, footer {
-    max-width: 1760px;
+    max-width: 1920px;
     width: 100%;
 }

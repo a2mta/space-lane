@@ -1,3 +1,4 @@
+import PageWithTitleWrap from '@/components/PAgeWithTitleWrap';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
@@ -7,7 +8,13 @@ const Avatar: FC<{ url: string; name: string; title: string }> = ({
   url,
 }) => (
   <div className='flex flex-col'>
-    <Image className='grayscale' src={url} width={200} height={260} alt={name + ' photo'} />
+    <Image
+      className='grayscale'
+      src={url}
+      width={200}
+      height={260}
+      alt={name + ' photo'}
+    />
     <span className='text-lg mt-4'>{name}</span>
     <span className='text-xs mt-2'>{title}</span>
   </div>
@@ -15,11 +22,8 @@ const Avatar: FC<{ url: string; name: string; title: string }> = ({
 
 const AboutPage = () => {
   return (
-    <div className='flex flex-col w-full px-20'>
-      <div className='w-full mt-52 border-b border-medium-grey'>
-        <h4 className='text-4xl mb-6 '>О нас</h4>
-      </div>
-      <div className='grid grid-cols-12 gap-10  mt-6'>
+    <PageWithTitleWrap title='О нас'>
+      <div className='grid grid-cols-12 gap-x-10  mt-6'>
         <h2 className='text-6xl col-span-12 mb-10'>
           Space Lane — современное архитектурное бюро, основанное Даниилом
           Хлебниковым в 2019 году.{' '}
@@ -81,20 +85,20 @@ const AboutPage = () => {
             знания, навыки и опыт для обеспечения разнообразных потребностей
             наших клиентов.
           </h5>
-          <div className="col-start-2 mt-20 col-span-11 flex text-2xl font-light">
-            <h5 >ПАО «Рублево-Архангельское»</h5>
+          <div className='col-start-2 mt-20 col-span-11 flex text-2xl font-light'>
+            <h5>ПАО «Рублево-Архангельское»</h5>
             <h5 className='text-orange mr-16 ml-11'>/</h5>
-            <h5 >ПАО Сбербанк</h5>
+            <h5>ПАО Сбербанк</h5>
             <h5 className='text-orange mx-10'>/</h5>
-            <h5 >Группа Мета</h5>
+            <h5>Группа Мета</h5>
             <h5 className='text-orange mx-10'>/</h5>
             <h5>Флакон Про</h5>
             <h5 className='text-orange mx-10'>/</h5>
             <h5>ТД Возрождение</h5>
-            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </PageWithTitleWrap>
   );
 };
 
