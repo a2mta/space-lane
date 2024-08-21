@@ -1,4 +1,4 @@
-import PageWithTitleWrap from '@/components/PAgeWithTitleWrap';
+import PageWithTitleWrap from '@/components/PageWithTitleWrap';
 import classNames from 'classnames';
 import React, { FC } from 'react';
 

@@ -1,4 +1,4 @@
-import PageWithTitleWrap from '@/components/PAgeWithTitleWrap';
+import PageWithTitleWrap from '@/components/PageWithTitleWrap';
 import ProjectCard from '@/components/ProjectCard';
 import React from 'react';
 

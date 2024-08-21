@@ -1,4 +1,4 @@
-import PageWithTitleWrap from '@/components/PAgeWithTitleWrap';
+import PageWithTitleWrap from '@/components/PageWithTitleWrap';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
