@@ -5,15 +5,11 @@ import React, { FC } from 'react';
 const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
   textForRows.map((item, index) => (
     <div
-      //   className={`col-span-${
-      //     index === textForRows.length - 1 ? '4' : '2'
-      //   } flex items-center`}
+      key={item + index}
       className={classNames('flex items-start', {
         'col-span-4': index === textForRows.length - 1,
         'mt-7': index !== 0,
         'col-span-2': index !== textForRows.length - 1,
-        // 'items-center': index !== textForRows.length - 1,
-        // 'items-start': index === textForRows.length - 1,
       })}
     >
       <div className={classNames({ 'pl-4 border-l': index === 0 })}>

@@ -24,11 +24,11 @@ const AboutPage = () => {
   return (
     <PageWithTitleWrap title='О нас'>
       <div className='grid grid-cols-12 gap-x-10  mt-6'>
-        <h2 className='text-6xl col-span-12 mb-10'>
+        <h2 className='text-h2 col-span-12 mb-10'>
           Space Lane — современное архитектурное бюро, основанное Даниилом
           Хлебниковым в 2019 году.{' '}
         </h2>
-        <h2 className='text-6xl col-start-2 col-end-12'>
+        <h2 className='text-h2 col-start-2 col-end-12'>
           Мы занимаемся архитектурным проектированием, стратегическим городским
           консалтингом и просветительской деятельностью.
         </h2>
