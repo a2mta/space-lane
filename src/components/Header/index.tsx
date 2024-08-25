@@ -17,7 +17,7 @@ const Header = () => {
           />
         </Link>
       </div>
-      <div className='flex space-x-24'>
+      <nav className='flex space-x-24'>
         <div className='flex space-x-8'>
           <HeaderLink url='/about' text='О нас' />
           <HeaderLink url='/projects' text='Проекты' />
@@ -25,7 +25,7 @@ const Header = () => {
           <HeaderLink url='/media' text='Медиа' />
         </div>
         <span className='cursor-pointer'>Контакты</span>
-      </div>
+      </nav>
     </header>
   );
 };

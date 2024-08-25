@@ -13,6 +13,9 @@ const config: Config = {
       grey: '#6D6D6D',
       orange: '#F05634',
       red: '#D64445',
+      white: '#FFFFFF',
+      'medium-red': '#F46263',
+      'light-red': '#F9A1A0',
     },
     extend: {
       fontSize: {

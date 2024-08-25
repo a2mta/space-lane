@@ -1,5 +1,8 @@
+import Grid from '@/components/Grid';
 import PageWithTitleWrap from '@/components/PageWithTitleWrap';
 import classNames from 'classnames';
+import Head from 'next/head';
+import Image from 'next/image';
 import React, { FC } from 'react';
 
 const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
@@ -25,177 +28,482 @@ const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
     </div>
   ));
 
+const GraphWithTitle: FC<{
+  className: string;
+  title: string;
+  graphTitle: string;
+}> = ({ graphTitle, className, title }) => (
+  <div className='flex flex-col'>
+    <span className='mb-4 text-body-regular text-grey'>{title}</span>
+    <div className='grid grid-cols-8'>
+      <HorizontalGraph text={graphTitle} className={className} />
+    </div>
+  </div>
+);
+
+const HorizontalGraph: FC<{ className: string; text: string }> = ({
+  text,
+  className,
+}) => (
+  <div className={`w-full text-white px-6 py-2 ${className}`}>
+    <span className='text-h4'>{text}</span>
+  </div>
+);
+
+const PriceGraphCol: FC<{
+  percent: number;
+  numberOfRooms: string;
+  textTop: string;
+  textMid: string;
+  textBot: string;
+}> = ({ numberOfRooms, percent, textBot, textMid, textTop }) => (
+  <div className='flex flex-col px-2 border-l border-l-grey'>
+    <span className='text-h4 mb-2'>{percent}%</span>
+    <span className='text-grey text-xs'>{numberOfRooms}</span>
+    <div className='flex flex-col mt-6 space-y-2 text-white mb-24'>
+      <div className='flex items-end h-[120px] bg-red p-2'>
+        <span className='text-h4'>{textTop}</span>
+      </div>
+      <div className='flex items-end h-[105px] bg-medium-red p-2'>
+        <span className='text-h4'>{textMid}</span>
+      </div>
+      <div className='flex items-end h-20 bg-medium-grey p-2'>
+        <span className='text-h4'>{textMid}</span>
+      </div>
+    </div>
+  </div>
+);
+
+const GraphCol: FC<{ title: string; percent: number; className: string }> = ({
+  className,
+  percent,
+  title,
+}) => (
+  <div
+    className={
+      'w-full px-4 pt-4 pb-7 text-white flex justify-between flex-col ' +
+      className
+    }
+  >
+    <span>{title}</span>
+    <span className='text-h2'>{percent}%</span>
+  </div>
+);
+
+const Graph = () => (
+  <div className='flex h-[588px] space-x-10 items-end'>
+    <GraphCol
+      title='Постоянное проживание'
+      percent={58}
+      className='h-full bg-red'
+    />
+    <GraphCol
+      title='Отдых в выходные и праздники'
+      percent={37}
+      className='h-[62%] bg-grey'
+    />
+    <GraphCol
+      title='Инвестиционные цели'
+      percent={5}
+      className='h-[36%] bg-medium-grey'
+    />
+  </div>
+);
+
 const ConsultingPage = () => {
   return (
-    <PageWithTitleWrap title='Консалтинг'>
-      <div className='grid grid-cols-12 gap-x-10 mt-30'>
-        <div className='col-span-4 flex flex-col'>
-          <h4 className='text-h4'>Анализ рынка</h4>
-          <p className='text-grey mt-4 text-xs'>
-            (Исследование сделано в IV квартале 2023 года на основании анализа
-            рынка ИЖС Московской области с использованием аналитических
-            материалов ДОМ.рф, ВЦИОМ, Домклик и др.)
-          </p>
-        </div>
-        <div className='col-span-4'>
-          <p className='text-body-regular'>
-            За последние годы большое количество льготных ипотечныхпрограмм
-            и постпандемийные последствия в виде ростачисленности сотрудников,
-            работающих удалённо, изменилицелевую аудиторию рынка ИЖС, снизив
-            средний возрастсреднестатистического покупателя, минимальный
-            требуемый доход и, как следствие, предпочтения покупателя
-            относительно желаемого объекта недвижимости.
-          </p>
-        </div>
-        <div className='col-span-4'>
-          <p className='text-body-regular'>
-            За 3 года доля ипотечных сделок на рынке ИЖС выросла в 2,5 раза,
-            при этом самую высокую динамику в 2023 году показало кредитование
-            строительства частных домов. Значительный рост выдачи ипотек
-            обоснован тем, что сегодня строительство частного дома
-            с привлечением профессиональных подрядчиков доступно в рамках всех
-            льготных ипотечных программ.
-          </p>
-        </div>
-      </div>
-      <div className='grid grid-cols-12 gap-x-10 mt-70'>
-        <div className='col-span-4'>
-          <p className='text-body-regular'>
-            Для целей дальнейшего анализа используются данные аналитических
-            исследований, как о покупателях ИЖС, так и пользователях ипотеки
-            на ИЖС, которая наиболее востребована именно в комфорт-классе.
-          </p>
-        </div>
-        <div className='col-span-8'>graph</div>
-      </div>
-      <div className='mt-70'>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12'>
-          <div className='col-span-2 grid gap-y-10'>
-            <div className='flex items-end pb-2 border-b border-medium-grey'>
-              <span className='text-red text-h5'>
-                Доля в общем
-                <br />
-                объёме спроса
-              </span>
+    <>
+      <Head>
+        <title>Консалтинг</title>
+      </Head>
+      <PageWithTitleWrap title='Консалтинг'>
+        <section>
+          <Grid className='mt-30'>
+            <div className='col-span-4 flex flex-col'>
+              <h4 className='text-h4'>Анализ рынка</h4>
+              <p className='text-grey mt-4 text-xs'>
+                (Исследование сделано в IV квартале 2023 года на основании
+                анализа рынка ИЖС Московской области с использованием
+                аналитических материалов ДОМ.рф, ВЦИОМ, Домклик и др.)
+              </p>
+            </div>
+            <div className='col-span-4'>
+              <p className='text-body-regular'>
+                За последние годы большое количество льготных ипотечныхпрограмм
+                и постпандемийные последствия в виде ростачисленности
+                сотрудников, работающих удалённо, изменилицелевую аудиторию
+                рынка ИЖС, снизив средний возрастсреднестатистического
+                покупателя, минимальный требуемый доход и, как следствие,
+                предпочтения покупателя относительно желаемого объекта
+                недвижимости.
+              </p>
+            </div>
+            <div className='col-span-4'>
+              <p className='text-body-regular'>
+                За 3 года доля ипотечных сделок на рынке ИЖС выросла в 2,5 раза,
+                при этом самую высокую динамику в 2023 году показало
+                кредитование строительства частных домов. Значительный рост
+                выдачи ипотек обоснован тем, что сегодня строительство частного
+                дома с привлечением профессиональных подрядчиков доступно в
+                рамках всех льготных ипотечных программ.
+              </p>
+            </div>
+          </Grid>
+        </section>
+        <section>
+          <div className='grid grid-cols-12 gap-x-10 mt-70'>
+            <div className='col-span-4'>
+              <p className='text-body-regular'>
+                Для целей дальнейшего анализа используются данные аналитических
+                исследований, как о покупателях ИЖС, так и пользователях ипотеки
+                на ИЖС, которая наиболее востребована именно в комфорт-классе.
+              </p>
+            </div>
+            <div className='col-span-8'>
+              <Graph />
             </div>
           </div>
-          <div className='col-span-2 grid gap-y-10'>
-            <div className='flex items-end pb-2 border-b border-medium-grey'>
-              <span className='text-red text-h5'>Группа</span>
+        </section>
+        <div className='mt-70'>
+          <section>
+            <div className='grid grid-cols-12 gap-x-10 col-span-12'>
+              <div className='col-span-2 grid gap-y-10'>
+                <div className='flex items-end pb-2 border-b border-medium-grey'>
+                  <span className='text-red text-h5'>
+                    Доля в общем
+                    <br />
+                    объёме спроса
+                  </span>
+                </div>
+              </div>
+              <div className='col-span-2 grid gap-y-10'>
+                <div className='flex items-end pb-2 border-b border-medium-grey'>
+                  <span className='text-red text-h5'>Группа</span>
+                </div>
+              </div>
+              <div className='col-span-2 grid gap-y-10'>
+                <div className='flex items-end pb-2 border-b border-medium-grey'>
+                  <span className='text-red text-h5'>Средний возраст</span>
+                </div>
+              </div>
+              <div className='col-span-2 grid gap-y-10'>
+                <div className='flex items-end pb-2 border-b border-medium-grey'>
+                  <span className='text-red text-h5'>Состав семьи</span>
+                </div>
+              </div>
+              <div className='col-span-4 grid gap-y-10'>
+                <div className='flex items-end pb-2 border-b border-medium-grey'>
+                  <span className='text-red text-h5'>
+                    Цель приобретения недвижимости
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className='col-span-2 grid gap-y-10'>
-            <div className='flex items-end pb-2 border-b border-medium-grey'>
-              <span className='text-red text-h5'>Средний возраст</span>
+            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+              <DemandTableRows
+                textForRows={[
+                  '50%',
+                  'Семьи с детьми',
+                  'от 35 до 45 лет',
+                  '1–2 ребёнка',
+                  `Часто уже имеют недвижимость в столице
+              и приобретают домдля расширения пространства. Хотят увезти
+              детей из «загазованного мегаполиса на природу».`,
+                ]}
+              />
             </div>
-          </div>
-          <div className='col-span-2 grid gap-y-10'>
-            <div className='flex items-end pb-2 border-b border-medium-grey'>
-              <span className='text-red text-h5'>Состав семьи</span>
-            </div>
-          </div>
-          <div className='col-span-4 grid gap-y-10'>
-            <div className='flex items-end pb-2 border-b border-medium-grey'>
-              <span className='text-red text-h5'>
-                Цель приобретения недвижимости
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
-          <DemandTableRows
-            textForRows={[
-              '50%',
-              'Семьи с детьми',
-              'от 35 до 45 лет',
-              '1–2 ребёнка',
-              `Часто уже имеют недвижимость в столице
-              и приобретают домдля расширения пространства. Хотят увезти
-              детей из «загазованного мегаполиса на природу».`,
-            ]}
-          />
-        </div>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
-          <DemandTableRows
-            textForRows={[
-              '25%',
-              'Молодые люди',
-              'до 35 лет',
-              'Пары без детей и одинокие',
-              `Состоявшиеся в карьерном плане люди со стабильным доходом. Часто
-              это первое жильё, которое планируют приобретать за счёт ипотечного
+            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+              <DemandTableRows
+                textForRows={[
+                  '25%',
+                  'Молодые люди',
+                  'до 35 лет',
+                  'Пары без детей и одинокие',
+                  `Состоявшиеся в карьерном плане люди со стабильным доходом. Часто
+              это первое жильё, которое планируют приобретать за счёт ипотечного
               займа.`,
-            ]}
-          />
+                ]}
+              />
+            </div>
+            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+              <DemandTableRows
+                textForRows={[
+                  '15%',
+                  'Люди старшего возраста',
+                  'Старше 50 лет',
+                  'Взрослые дети на перспективу для детей и внуков',
+                  `Приобретают дом для спокойной жизни на природе илина перспективу для детей и внуков. Чаще других приобретаютнедвижимость за счёт собственных средств.`,
+                ]}
+              />
+            </div>
+            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+              <DemandTableRows
+                textForRows={[
+                  '5%',
+                  'Приезжие из регионов',
+                  '-',
+                  '-',
+                  `Это могут быть как молодые люди, так и семьи и даже пенсионеры, переехавшие в Москву и подмосковье. Имеют стабильный доход и постоянную работу в Москве.`,
+                ]}
+              />
+            </div>
+            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+              <div className='col-span-4'>
+                <span className='text-xs text-grey'>
+                  01/ Льготной, семейной, дальневосточной, сельской ипотеки, а
+                  также ипотеки для IT — специалистов. Также обсуждается
+                  введение льготной ипотеки на ИЖС, которая объединит все
+                  форматы частного домостроения.
+                </span>
+              </div>
+              <div className='col-span-4'>
+                <span className='text-xs text-grey'>
+                  02/ Аналитика ГК «Самолёт», август 2022г.
+                </span>
+              </div>
+              <div className='col-span-4'>
+                <span className='text-xs text-grey'>
+                  03/ Составлено на основании ЦИАН Аналитики (2019), данных
+                  группы МЕТА (ноябрь 2022).аналитики ГК «Самолёт» (август
+                  2022).
+                </span>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-50'>
+              <div className='col-span-4 col-start-5'>
+                <h4 className='text-h4'>Стоимость и площадь</h4>
+                <span className='text-xs text-grey mt-2'>
+                  Средняя стоимость дома в мск
+                </span>
+              </div>
+            </div>
+            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-30'>
+              <div className='col-span-4 space-y-6'>
+                <h5 className='text-h5'>
+                  Предпочтительная площадь дома в зависимости от кол-ва комнат в
+                  РФ, м²
+                </h5>
+                <div>
+                  <span className='text-xs'>
+                    Для аудитории Москвы и московской области принимаются
+                    наиболее предпочтительной площадь 80-процентного квантиля
+                    из-за более высоких доходов населения.
+                  </span>
+                </div>
+              </div>
+              <div className='col-span-1'>
+                <PriceGraphCol
+                  percent={6}
+                  numberOfRooms='2 комнаты'
+                  textTop='70'
+                  textBot='20'
+                  textMid='50'
+                />
+              </div>
+              <div className='col-span-1'>
+                <PriceGraphCol
+                  percent={24}
+                  numberOfRooms='3 комнаты'
+                  textTop='100'
+                  textMid='80'
+                  textBot='60'
+                />
+              </div>
+              <div className='col-span-1'>
+                <PriceGraphCol
+                  percent={36}
+                  numberOfRooms='4 комнаты'
+                  textTop='130'
+                  textMid='100'
+                  textBot='75'
+                />
+              </div>
+              <div className='col-span-1'>
+                <PriceGraphCol
+                  percent={33}
+                  numberOfRooms='5 и более'
+                  textTop='130'
+                  textMid='100'
+                  textBot='75'
+                />
+              </div>
+              <div className='col-span-4 flex items-end'>
+                <div className='flex flex-col border-l border-l-orange pl-10'>
+                  <div className='flex mb-7'>
+                    <Image
+                      src='/icons/percent.svg'
+                      width={22}
+                      height={22}
+                      alt='percent icon'
+                    />
+                    <span className='ml-2 text-xs'>
+                      процент от тех, у кого есть потребность в индивидуальных
+                      домах
+                    </span>
+                  </div>
+                  <div className='flex space-x-10'>
+                    <div className='flex items-end'>
+                      <div className='h-10 w-10 bg-red mr-2' />
+                      <span className='text-xs'>80% квантиль</span>
+                    </div>
+                    <div className='flex items-end'>
+                      <div className='h-10 w-10 bg-medium-red mr-2' />
+                      <span className='text-xs'>Медиана</span>
+                    </div>
+                    <div className='flex items-end'>
+                      <div className='h-10 w-10 bg-medium-grey mr-2' />
+                      <span className='text-xs'>20% квантиль</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
-          <DemandTableRows
-            textForRows={[
-              '15%',
-              'Люди старшего возраста',
-              'Старше 50 лет',
-              'Взрослые дети на перспективу для детей и внуков',
-              `Приобретают дом для спокойной жизни на природе илина перспективу для детей и внуков. Чаще других приобретаютнедвижимость за счёт собственных средств.`,
-            ]}
-          />
-        </div>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
-          <DemandTableRows
-            textForRows={[
-              '5%',
-              'Приезжие из регионов',
-              '-',
-              '-',
-              `Это могут быть как молодые люди, так и семьи и даже пенсионеры, переехавшие в Москву и подмосковье. Имеют стабильный доход и постоянную работу в Москве.`,
-            ]}
-          />
-        </div>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
-          <div className='col-span-4'>
-            <span className='text-xs text-grey'>
-              01/ Льготной, семейной, дальневосточной, сельской ипотеки,
-              а также ипотеки для IT — специалистов. Также обсуждается введение
-              льготной ипотеки на ИЖС, которая объединит все форматы частного
-              домостроения.
-            </span>
+        <section className='mt-60'>
+          <div className='grid grid-cols-12 gap-x-10 mt-30'>
+            <div className='col-span-8 flex flex-col mb-10'>
+              <GraphWithTitle
+                className='bg-red col-span-8'
+                title='01 — Медианная стоимость строящегося жилого дома площадью 150 м²
+                (ИКС) в Московской области'
+                graphTitle='8,8 млн. руб'
+              />
+            </div>
+            <div className='col-span-4'>
+              <span>
+                Медианная стоимость строящегося жилого дома в Подмосковье
+                составляет около 60 тыс. ₽ за 1 м². Средняя стоимость объекта
+                недвижимости, приобретённого по программе ИЖС ипотеки на 16%
+                ниже медианной стоимости вне зависимости от типа сделки.
+                Незначительная разница подтверждает, что объекты, приобретённые
+                с использованием кредитных инструментов, соответствуют медианным
+                показателям рынка в целом.
+              </span>
+            </div>
+            <div className='col-span-8 flex flex-col mb-10'>
+              <GraphWithTitle
+                className='bg-light-red col-span-4'
+                title='02 — Медианная стоимость участка 8 сот. в Московской области'
+                graphTitle='2,2 млн. руб'
+              />
+            </div>
+            <div className='col-span-8 flex flex-col mb-10'>
+              <GraphWithTitle
+                className='bg-medium-red col-span-7'
+                title='03 — Средняя стоимость объекта недвижимости, приобретенного по программе ИЖС ипотеки в Московской области'
+                graphTitle='7,4 млн. руб'
+              />
+            </div>
           </div>
-          <div className='col-span-4'>
-            <span className='text-xs text-grey'>
-              02/ Аналитика ГК «Самолёт», август 2022г.
-            </span>
-          </div>
-          <div className='col-span-4'>
-            <span className='text-xs text-grey'>
-              03/ Составлено на основании ЦИАН Аналитики (2019), данных группы
-              МЕТА (ноябрь 2022).аналитики ГК «Самолёт» (август 2022).
-            </span>
-          </div>
-        </div>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-50'>
-          <div className='col-span-4 col-start-5'>
-            <h4 className='text-h4'>Стоимость и площадь</h4>
-            <span className='text-xs text-grey mt-2'>
-              Средняя стоимость дома в мск
-            </span>
-          </div>
-        </div>
-        <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-30'>
-          <div className='col-span-4 space-y-6'>
-            <h5 className='text-h5'>
-              Предпочтительная площадь дома в зависимости от кол-ва комнат в РФ,
-              м²
-            </h5>
-            <div>
-              <span className='text-xs'>
-                Для аудитории Москвы и московской области принимаются наиболее
-                предпочтительной площадь 80-процентного квантиля из-за более
-                высоких доходов населения.
+          <div className='grid grid-cols-12 gap-x-10 text-grey text-xs'>
+            <div className='col-span-4'>
+              <span>01/ По данным Домклик в мае — сентябре 2023 г.</span>
+            </div>
+            <div className='col-span-4'>
+              <span>
+                02/ Расчет на основании данных Сбербанка о количестве и объеме
+                выданных ипотек в Московской области в августе 2023г.
+              </span>
+            </div>
+            <div className='col-span-4'>
+              <span>
+                03/ Те к кого, есть потребность в индивидуальном доме в 5-летней
+                перспективе. ВЦИОМ 2021, расчеты ДОМ.РФ
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </PageWithTitleWrap>
+        </section>
+        <section className='mt-60'>
+          <div className='grid grid-cols-12 gap-x-10'>
+            <div className='col-start-5 col-span-4'>
+              <span className='text-h4'>Предпочтения аудитории</span>
+            </div>
+            <div className='col-start-9 col-span-3'>
+              <span>
+                Наполнение дома все чаще характеризуется более продуманной
+                планировкой, большим количеством спален, наличием домашних
+                офисов и дополнительными пространствами для проведения досуга.
+              </span>
+            </div>
+          </div>
+          <div className='grid grid-cols-12 gap-x-10 mt-40'>
+            <div className='col-span-4 flex flex-col'>
+              <span className='mb-10'>Желаемый материал дома</span>
+              <div className='flex flex-col space-y-10'>
+                <GraphWithTitle
+                  graphTitle='48%'
+                  title='Кирпич'
+                  className='bg-red col-span-8'
+                />
+                <GraphWithTitle
+                  graphTitle='39%'
+                  title='Пено — и газобетон'
+                  className='bg-medium-red col-span-7'
+                />
+                <GraphWithTitle
+                  graphTitle='24%'
+                  title='Дерево (брус)'
+                  className='bg-light-red col-span-6'
+                />
+                <GraphWithTitle
+                  graphTitle='7%'
+                  title='Каркас (дерево)'
+                  className='bg-grey col-span-3'
+                />
+                <GraphWithTitle
+                  graphTitle='5%'
+                  title='Не имеет значение'
+                  className='bg-grey col-span-2'
+                />
+              </div>
+            </div>
+            <div className='col-span-4 flex flex-col'>
+              <span className='mb-10'>Этажность</span>
+              <div className='flex flex-col space-y-10'>
+                <GraphWithTitle
+                  graphTitle='72%'
+                  title='Одноэтажные дома'
+                  className='bg-red col-span-8'
+                />
+                <GraphWithTitle
+                  graphTitle='21%'
+                  title='Двухэтажные дома'
+                  className='bg-medium-red col-span-6'
+                />
+                <GraphWithTitle
+                  graphTitle='5%'
+                  title='Одно — или двух этажные дома'
+                  className='bg-light-red col-span-3'
+                />
+                <GraphWithTitle
+                  graphTitle='2%'
+                  title='Двух — или трехэтажные дома'
+                  className='bg-grey col-span-2'
+                />
+              </div>
+            </div>
+            <div className='col-span-4 flex flex-col'>
+              <span className='mb-10'>Желаемый уровень отделки дома</span>
+              <div className='flex flex-col space-y-10'>
+                <GraphWithTitle
+                  graphTitle='75%'
+                  title='Под ключ'
+                  className='bg-red col-span-8'
+                />
+                <GraphWithTitle
+                  graphTitle='25%'
+                  title='Без отделки'
+                  className='bg-medium-red col-span-6'
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </PageWithTitleWrap>
+    </>
   );
 };
 
