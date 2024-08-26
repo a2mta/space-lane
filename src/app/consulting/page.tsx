@@ -151,7 +151,7 @@ const ConsultingPage = () => {
           </Grid>
         </section>
         <section>
-          <div className='grid grid-cols-12 gap-x-10 mt-70'>
+          <Grid className='mt-70'>
             <div className='col-span-4'>
               <p className='text-body-regular'>
                 Для целей дальнейшего анализа используются данные аналитических
@@ -162,11 +162,11 @@ const ConsultingPage = () => {
             <div className='col-span-8'>
               <Graph />
             </div>
-          </div>
+          </Grid>
         </section>
         <div className='mt-70'>
           <section>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12'>
+            <Grid className='col-span-12'>
               <div className='col-span-2 grid gap-y-10'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5'>
@@ -198,8 +198,8 @@ const ConsultingPage = () => {
                   </span>
                 </div>
               </div>
-            </div>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+            </Grid>
+            <Grid className='col-span-12 mt-10'>
               <DemandTableRows
                 textForRows={[
                   '50%',
@@ -207,12 +207,12 @@ const ConsultingPage = () => {
                   'от 35 до 45 лет',
                   '1–2 ребёнка',
                   `Часто уже имеют недвижимость в столице
-              и приобретают домдля расширения пространства. Хотят увезти
-              детей из «загазованного мегаполиса на природу».`,
+                    и приобретают домдля расширения пространства. Хотят увезти
+                    детей из «загазованного мегаполиса на природу».`,
                 ]}
               />
-            </div>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+            </Grid>
+            <Grid className='col-span-12 mt-10'>
               <DemandTableRows
                 textForRows={[
                   '25%',
@@ -220,12 +220,12 @@ const ConsultingPage = () => {
                   'до 35 лет',
                   'Пары без детей и одинокие',
                   `Состоявшиеся в карьерном плане люди со стабильным доходом. Часто
-              это первое жильё, которое планируют приобретать за счёт ипотечного
-              займа.`,
+                    это первое жильё, которое планируют приобретать за счёт ипотечного
+                    займа.`,
                 ]}
               />
-            </div>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+            </Grid>
+            <Grid className='col-span-12 mt-10'>
               <DemandTableRows
                 textForRows={[
                   '15%',
@@ -235,8 +235,8 @@ const ConsultingPage = () => {
                   `Приобретают дом для спокойной жизни на природе илина перспективу для детей и внуков. Чаще других приобретаютнедвижимость за счёт собственных средств.`,
                 ]}
               />
-            </div>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+            </Grid>
+            <Grid className='col-span-12 mt-10'>
               <DemandTableRows
                 textForRows={[
                   '5%',
@@ -246,8 +246,8 @@ const ConsultingPage = () => {
                   `Это могут быть как молодые люди, так и семьи и даже пенсионеры, переехавшие в Москву и подмосковье. Имеют стабильный доход и постоянную работу в Москве.`,
                 ]}
               />
-            </div>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-10'>
+            </Grid>
+            <Grid className='col-span-12 mt-10'>
               <div className='col-span-4'>
                 <span className='text-xs text-grey'>
                   01/ Льготной, семейной, дальневосточной, сельской ипотеки, а
@@ -268,18 +268,18 @@ const ConsultingPage = () => {
                   2022).
                 </span>
               </div>
-            </div>
+            </Grid>
           </section>
           <section>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-50'>
+            <Grid className='col-span-12 mt-50'>
               <div className='col-span-4 col-start-5'>
                 <h4 className='text-h4'>Стоимость и площадь</h4>
                 <span className='text-xs text-grey mt-2'>
                   Средняя стоимость дома в мск
                 </span>
               </div>
-            </div>
-            <div className='grid grid-cols-12 gap-x-10 col-span-12 mt-30'>
+            </Grid>
+            <Grid className='col-span-12 mt-30'>
               <div className='col-span-4 space-y-6'>
                 <h5 className='text-h5'>
                   Предпочтительная площадь дома в зависимости от кол-ва комнат в
@@ -359,11 +359,11 @@ const ConsultingPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Grid>
           </section>
         </div>
         <section className='mt-60'>
-          <div className='grid grid-cols-12 gap-x-10 mt-30'>
+          <Grid className='col-span-12 mt-30'>
             <div className='col-span-8 flex flex-col mb-10'>
               <GraphWithTitle
                 className='bg-red col-span-8'
@@ -397,8 +397,8 @@ const ConsultingPage = () => {
                 graphTitle='7,4 млн. руб'
               />
             </div>
-          </div>
-          <div className='grid grid-cols-12 gap-x-10 text-grey text-xs'>
+          </Grid>
+          <Grid className='text-grey text-xs'>
             <div className='col-span-4'>
               <span>01/ По данным Домклик в мае — сентябре 2023 г.</span>
             </div>
@@ -414,10 +414,10 @@ const ConsultingPage = () => {
                 перспективе. ВЦИОМ 2021, расчеты ДОМ.РФ
               </span>
             </div>
-          </div>
+          </Grid>
         </section>
         <section className='mt-60'>
-          <div className='grid grid-cols-12 gap-x-10'>
+          <Grid>
             <div className='col-start-5 col-span-4'>
               <span className='text-h4'>Предпочтения аудитории</span>
             </div>
@@ -428,8 +428,8 @@ const ConsultingPage = () => {
                 офисов и дополнительными пространствами для проведения досуга.
               </span>
             </div>
-          </div>
-          <div className='grid grid-cols-12 gap-x-10 mt-40'>
+          </Grid>
+          <Grid className='mt-40'>
             <div className='col-span-4 flex flex-col'>
               <span className='mb-10'>Желаемый материал дома</span>
               <div className='flex flex-col space-y-10'>
@@ -500,7 +500,7 @@ const ConsultingPage = () => {
                 />
               </div>
             </div>
-          </div>
+          </Grid>
         </section>
       </PageWithTitleWrap>
     </>

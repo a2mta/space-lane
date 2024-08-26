@@ -17,6 +17,12 @@ const config: Config = {
       'medium-red': '#F46263',
       'light-red': '#F9A1A0',
     },
+    screens: {
+      md: '480px',
+      lg: '1280px',
+      xl: '1440px',
+      '2xl': '1920px',
+    },
     extend: {
       fontSize: {
         xs: ['0.75rem', '1.125rem'],
