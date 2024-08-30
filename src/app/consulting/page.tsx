@@ -28,8 +28,22 @@ const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
     </div>
   ));
 
-const GraphWithTitle: FC<{
-  className: string;
+const ConclusionRow: FC<{ number: string; text: string }> = ({
+  number,
+  text,
+}) => (
+  <div className='grid grid-cols-10 gap-x-10 border-b border-grey pb-1'>
+    <div className='col-span-3'>
+      <span className='text-h4 text-medium-grey'>{number}</span>
+    </div>
+    <div className='col-span-7 flex items-center'>
+      <span className='text-body-regular'>{text}</span>
+    </div>
+  </div>
+);
+
+const HorizontalGraphWithTitle: FC<{
+  className?: string;
   title: string;
   graphTitle: string;
 }> = ({ graphTitle, className, title }) => (
@@ -41,11 +55,38 @@ const GraphWithTitle: FC<{
   </div>
 );
 
-const HorizontalGraph: FC<{ className: string; text: string }> = ({
+const VerticalGraphWithTitle: FC<{
+  className?: string;
+  title: string;
+  graphTitle: string;
+}> = ({ graphTitle, className, title }) => (
+  <div className='flex h-full flex-col'>
+    <div className='h-full flex items-end'>
+      <VerticalGraph text={graphTitle} className={className} />
+    </div>
+    <span className='mt-1 text-xs text-grey'>{title}</span>
+  </div>
+);
+
+const VerticalGraph: FC<{ className?: string; text: string }> = ({
+  className,
+  text,
+}) => (
+  <div
+    className={classNames(
+      'h-full w-full flex items-end text-white p-1',
+      className
+    )}
+  >
+    <span className='text-h4'>{text}</span>
+  </div>
+);
+
+const HorizontalGraph: FC<{ className?: string; text: string }> = ({
   text,
   className,
 }) => (
-  <div className={`w-full text-white px-6 py-2 ${className}`}>
+  <div className={classNames('w-full text-white px-6 py-2', className)}>
     <span className='text-h4'>{text}</span>
   </div>
 );
@@ -365,7 +406,7 @@ const ConsultingPage = () => {
         <section className='mt-60'>
           <Grid className='col-span-12 mt-30'>
             <div className='col-span-8 flex flex-col mb-10'>
-              <GraphWithTitle
+              <HorizontalGraphWithTitle
                 className='bg-red col-span-8'
                 title='01 — Медианная стоимость строящегося жилого дома площадью 150 м²
                 (ИКС) в Московской области'
@@ -384,14 +425,14 @@ const ConsultingPage = () => {
               </span>
             </div>
             <div className='col-span-8 flex flex-col mb-10'>
-              <GraphWithTitle
+              <HorizontalGraphWithTitle
                 className='bg-light-red col-span-4'
                 title='02 — Медианная стоимость участка 8 сот. в Московской области'
                 graphTitle='2,2 млн. руб'
               />
             </div>
             <div className='col-span-8 flex flex-col mb-10'>
-              <GraphWithTitle
+              <HorizontalGraphWithTitle
                 className='bg-medium-red col-span-7'
                 title='03 — Средняя стоимость объекта недвижимости, приобретенного по программе ИЖС ипотеки в Московской области'
                 graphTitle='7,4 млн. руб'
@@ -433,27 +474,27 @@ const ConsultingPage = () => {
             <div className='col-span-4 flex flex-col'>
               <span className='mb-10'>Желаемый материал дома</span>
               <div className='flex flex-col space-y-10'>
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='48%'
                   title='Кирпич'
                   className='bg-red col-span-8'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='39%'
                   title='Пено — и газобетон'
                   className='bg-medium-red col-span-7'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='24%'
                   title='Дерево (брус)'
                   className='bg-light-red col-span-6'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='7%'
                   title='Каркас (дерево)'
                   className='bg-grey col-span-3'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='5%'
                   title='Не имеет значение'
                   className='bg-grey col-span-2'
@@ -463,22 +504,22 @@ const ConsultingPage = () => {
             <div className='col-span-4 flex flex-col'>
               <span className='mb-10'>Этажность</span>
               <div className='flex flex-col space-y-10'>
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='72%'
                   title='Одноэтажные дома'
                   className='bg-red col-span-8'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='21%'
                   title='Двухэтажные дома'
                   className='bg-medium-red col-span-6'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='5%'
                   title='Одно — или двух этажные дома'
                   className='bg-light-red col-span-3'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='2%'
                   title='Двух — или трехэтажные дома'
                   className='bg-grey col-span-2'
@@ -488,17 +529,152 @@ const ConsultingPage = () => {
             <div className='col-span-4 flex flex-col'>
               <span className='mb-10'>Желаемый уровень отделки дома</span>
               <div className='flex flex-col space-y-10'>
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='75%'
                   title='Под ключ'
                   className='bg-red col-span-8'
                 />
-                <GraphWithTitle
+                <HorizontalGraphWithTitle
                   graphTitle='25%'
                   title='Без отделки'
                   className='bg-medium-red col-span-6'
                 />
               </div>
+            </div>
+          </Grid>
+          <Grid className='mt-20 text-xs text-grey'>
+            <div className='col-span-4'>
+              <span>
+                Согласно данным Дом.РФ на основании данных ВЦИОМ, 2023 г.
+              </span>
+            </div>
+            <div className='col-span-4'>
+              <span>Согласно данным по кредитам на ИЖС, Домклик, 2023 г.</span>
+            </div>
+            <div className='col-span-4'>
+              <span>Ведомости Недвижимость, апрель 2022 г.</span>
+            </div>
+          </Grid>
+        </section>
+        <section className='mt-50'>
+          <Grid className='pt-6 border-t border-grey'>
+            <div className='col-span-4 flex flex-col justify-between'>
+              <span className='text-h5'>
+                Предпочтительное наполнение дома и территории (% от аудитории)
+              </span>
+              <span className='text-xs text-grey'>
+                Аналитика ГК «Самолёт», август 2022 г.
+              </span>
+            </div>
+            <div className='col-span-8 h-[522px] grid grid-cols-8 gap-x-10'>
+              <div className='col-span-1 flex flex-col justify-between mb-5 border-l border-medium-grey pl-2'>
+                <span className='text-h4'>70%</span>
+                <span className='text-h4'>40%</span>
+                <span className='text-h4'>10%</span>
+              </div>
+              <VerticalGraphWithTitle
+                graphTitle='71%'
+                title='Столовая'
+                className='bg-medium-red'
+              />
+              <VerticalGraphWithTitle
+                graphTitle='51%'
+                title='Кладовая'
+                className='bg-medium-red h-[85%]'
+              />
+              <VerticalGraphWithTitle
+                graphTitle='47%'
+                title='Гардеробная'
+                className='bg-medium-red h-[80%]'
+              />
+              <VerticalGraphWithTitle
+                graphTitle='47%'
+                title='Гараж'
+                className='bg-medium-red h-[80%]'
+              />
+              <VerticalGraphWithTitle
+                graphTitle='70%'
+                title='Беседка'
+                className='bg-medium-red h-[95%]'
+              />
+              <VerticalGraphWithTitle
+                graphTitle='67%'
+                title='Зона для барбекю'
+                className='bg-medium-red h-[93%]'
+              />
+              <VerticalGraphWithTitle
+                graphTitle='66%'
+                title='Баня'
+                className='bg-medium-red h-[91%]'
+              />
+            </div>
+          </Grid>
+        </section>
+        <section className='mt-50'>
+          <Grid>
+            <div className='col-span-8 col-start-5'>
+              <span className='text-h4'>Сценарии жизни семьи</span>
+              <div className='text-body-regular mt-6'>
+                Исследование показывает что больше 40% нашего дома используется
+                намного реже, чем вся остальная его часть. Центром активностей
+                семейного взаимодействия является кухня и комната отдыха с
+                телевизором и компьютером.
+              </div>
+            </div>
+          </Grid>
+          <Grid className='mt-30'>
+            <div className='col-span-8'>
+              <Image
+                src='/pics/consultation/scenario-graph-1.png'
+                width={1160}
+                height={569}
+                alt=''
+              />
+            </div>
+            <div className='col-span-4'>
+              <Image
+                src='/pics/consultation/scenario-graph-2.png'
+                width={560}
+                height={643}
+                alt=''
+              />
+            </div>
+          </Grid>
+        </section>
+        <section className='mt-50'>
+          <Grid>
+            <div className='col-start-5 col-end-12'>
+              <span className='text-h4'>Ключевые выводы</span>
+            </div>
+            <div className='col-start-2 col-end-12 flex flex-col gap-y-10 mt-24'>
+              <ConclusionRow
+                number='01'
+                text='58% аудитории приобретают дома для постоянного проживания'
+              />
+              <ConclusionRow
+                number='02'
+                text='Снижение возраста среднестатистического покупателя'
+              />
+              <ConclusionRow
+                number='03'
+                text='75% аудитории — люди до 45 лет, в большинстве пары с детьми'
+              />
+              <ConclusionRow
+                number='04'
+                text='Льготные программы расширяют использование ипотеки ИЖС'
+              />
+              <ConclusionRow
+                number='05'
+                text='Сокращение площади жилых домов: 74% аудитории предпочитают дома от 80 до 180 м²'
+              />
+              <ConclusionRow
+                number='06'
+                text='Покупатели предпочитают каменные одноэтажные дома с отделкой «под ключ»'
+              />
+              <ConclusionRow
+                number='07'
+                text='Увеличение ключевой ставки приведёт к росту ипотечных ставок и отрицательно скажется на спросе'
+              />
             </div>
           </Grid>
         </section>
