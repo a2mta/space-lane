@@ -10,7 +10,7 @@ const ProjectCard: FC<{image:string, link: string; title: string; subTitle: stri
 }) => {
   return (
     <div className='group cursor-pointer'>
-      <Link href={`project/${link}`} style={{display: 'flex', flexDirection: 'column'}}>
+      <Link href={`/projects/${link}`} style={{display: 'flex', flexDirection: 'column'}}>
         <div className='overflow-hidden'>
           <Image
             className='group-hover:scale-110 transition-transform duration-700 ease-out aspect-w-10 aspect-h-9'

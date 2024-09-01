@@ -1,4 +1,4 @@
-import PageWithTitleWrap from '@/components/PageWithTitleWrap';
+import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import Image from 'next/image';
 import React, { FC } from 'react';
 
@@ -16,39 +16,39 @@ const Avatar: FC<{ url: string; name: string; title: string }> = ({
       alt={name + ' photo'}
     />
     <span className='text-lg mt-4'>{name}</span>
-    <span className='text-xs mt-2'>{title}</span>
+    <span className='text-body-caption mt-2'>{title}</span>
   </div>
 );
 
 const AboutPage = () => {
   return (
-    <PageWithTitleWrap title='О нас'>
+    <PageMarginWithTitle title='О нас'>
       <div className='grid grid-cols-12 gap-x-10  mt-6'>
         <h2 className='text-h2 col-span-12 mb-10'>
-          Space Lane — современное архитектурное бюро, основанное Даниилом
-          Хлебниковым в 2019 году.{' '}
+          Space Lane — современное архитектурное бюро, основанное Даниилом
+          Хлебниковым в 2019 году.{' '}
         </h2>
         <h2 className='text-h2 col-start-2 col-end-12'>
           Мы занимаемся архитектурным проектированием, стратегическим городским
-          консалтингом и просветительской деятельностью.
+          консалтингом и просветительской деятельностью.
         </h2>
         <div className='col-start-5 col-end-12 mb-52'>
           <h5>
-            В 2023 году мы расширили нашу деятельность, добавив новое
-            направление — разработку метавселенных и интерактивных пространств.
+            В 2023 году мы расширили нашу деятельность, добавив новое
+            направление — разработку метавселенных и интерактивных пространств.
           </h5>
           <h5 className='mt-4'>
-            Метавселенная представлена в виде виртуального сада, наполненного
-            символами и артефактами. Здесь можно пройти тропами воспоминаний,
-            пережить моментыиз жизни и почувствовать связь с прошлым.
+            Метавселенная представлена в виде виртуального сада, наполненного
+            символами и артефактами. Здесь можно пройти тропами воспоминаний,
+            пережить моментыиз жизни и почувствовать связь с прошлым.
           </h5>
         </div>
         <div className='grid col-span-12 grid-cols-12 border-t border-medium-grey pt-4'>
           <h5 className='text-2xl col-span-1 text-grey'>Команда</h5>
           <h5 className='text-2xl col-span-11'>
-            Наша команда состоит из талантливых и опытных архитекторов,
-            предлагая решения от разработки видения развития территории
-            и мастер-плана до проектирования объекта любой сложности.
+            Наша команда состоит из талантливых и опытных архитекторов,
+            предлагая решения от разработки видения развития территории
+            и мастер-плана до проектирования объекта любой сложности.
           </h5>
           <div className='col-start-5 col-span-8 mt-16 gap-x-10 flex mb-56'>
             <Avatar
@@ -98,7 +98,7 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-    </PageWithTitleWrap>
+    </PageMarginWithTitle>
   );
 };
 

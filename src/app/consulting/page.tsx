@@ -1,5 +1,5 @@
 import Grid from '@/components/Grid';
-import PageWithTitleWrap from '@/components/PageWithTitleWrap';
+import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import classNames from 'classnames';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -64,7 +64,7 @@ const VerticalGraphWithTitle: FC<{
     <div className='h-full flex items-end'>
       <VerticalGraph text={graphTitle} className={className} />
     </div>
-    <span className='mt-1 text-xs text-grey'>{title}</span>
+    <span className='mt-1 text-body-caption text-grey'>{title}</span>
   </div>
 );
 
@@ -100,7 +100,7 @@ const PriceGraphCol: FC<{
 }> = ({ numberOfRooms, percent, textBot, textMid, textTop }) => (
   <div className='flex flex-col px-2 border-l border-l-grey'>
     <span className='text-h4 mb-2'>{percent}%</span>
-    <span className='text-grey text-xs'>{numberOfRooms}</span>
+    <span className='text-grey text-body-caption'>{numberOfRooms}</span>
     <div className='flex flex-col mt-6 space-y-2 text-white mb-24'>
       <div className='flex items-end h-[120px] bg-red p-2'>
         <span className='text-h4'>{textTop}</span>
@@ -157,12 +157,12 @@ const ConsultingPage = () => {
       <Head>
         <title>Консалтинг</title>
       </Head>
-      <PageWithTitleWrap title='Консалтинг'>
+      <PageMarginWithTitle title='Консалтинг'>
         <section>
           <Grid className='mt-30'>
             <div className='col-span-4 flex flex-col'>
               <h4 className='text-h4'>Анализ рынка</h4>
-              <p className='text-grey mt-4 text-xs'>
+              <p className='text-grey mt-4 text-body-caption'>
                 (Исследование сделано в IV квартале 2023 года на основании
                 анализа рынка ИЖС Московской области с использованием
                 аналитических материалов ДОМ.рф, ВЦИОМ, Домклик и др.)
@@ -290,7 +290,7 @@ const ConsultingPage = () => {
             </Grid>
             <Grid className='col-span-12 mt-10'>
               <div className='col-span-4'>
-                <span className='text-xs text-grey'>
+                <span className='text-body-caption text-grey'>
                   01/ Льготной, семейной, дальневосточной, сельской ипотеки, а
                   также ипотеки для IT — специалистов. Также обсуждается
                   введение льготной ипотеки на ИЖС, которая объединит все
@@ -298,12 +298,12 @@ const ConsultingPage = () => {
                 </span>
               </div>
               <div className='col-span-4'>
-                <span className='text-xs text-grey'>
+                <span className='text-body-caption text-grey'>
                   02/ Аналитика ГК «Самолёт», август 2022г.
                 </span>
               </div>
               <div className='col-span-4'>
-                <span className='text-xs text-grey'>
+                <span className='text-body-caption text-grey'>
                   03/ Составлено на основании ЦИАН Аналитики (2019), данных
                   группы МЕТА (ноябрь 2022).аналитики ГК «Самолёт» (август
                   2022).
@@ -315,7 +315,7 @@ const ConsultingPage = () => {
             <Grid className='col-span-12 mt-50'>
               <div className='col-span-4 col-start-5'>
                 <h4 className='text-h4'>Стоимость и площадь</h4>
-                <span className='text-xs text-grey mt-2'>
+                <span className='text-body-caption text-grey mt-2'>
                   Средняя стоимость дома в мск
                 </span>
               </div>
@@ -327,7 +327,7 @@ const ConsultingPage = () => {
                   РФ, м²
                 </h5>
                 <div>
-                  <span className='text-xs'>
+                  <span className='text-body-caption'>
                     Для аудитории Москвы и московской области принимаются
                     наиболее предпочтительной площадь 80-процентного квантиля
                     из-за более высоких доходов населения.
@@ -379,7 +379,7 @@ const ConsultingPage = () => {
                       height={22}
                       alt='percent icon'
                     />
-                    <span className='ml-2 text-xs'>
+                    <span className='ml-2 text-body-caption'>
                       процент от тех, у кого есть потребность в индивидуальных
                       домах
                     </span>
@@ -387,15 +387,15 @@ const ConsultingPage = () => {
                   <div className='flex space-x-10'>
                     <div className='flex items-end'>
                       <div className='h-10 w-10 bg-red mr-2' />
-                      <span className='text-xs'>80% квантиль</span>
+                      <span className='text-body-caption'>80% квантиль</span>
                     </div>
                     <div className='flex items-end'>
                       <div className='h-10 w-10 bg-medium-red mr-2' />
-                      <span className='text-xs'>Медиана</span>
+                      <span className='text-body-caption'>Медиана</span>
                     </div>
                     <div className='flex items-end'>
                       <div className='h-10 w-10 bg-medium-grey mr-2' />
-                      <span className='text-xs'>20% квантиль</span>
+                      <span className='text-body-caption'>20% квантиль</span>
                     </div>
                   </div>
                 </div>
@@ -439,7 +439,7 @@ const ConsultingPage = () => {
               />
             </div>
           </Grid>
-          <Grid className='text-grey text-xs'>
+          <Grid className='text-grey text-body-caption'>
             <div className='col-span-4'>
               <span>01/ По данным Домклик в мае — сентябре 2023 г.</span>
             </div>
@@ -542,7 +542,7 @@ const ConsultingPage = () => {
               </div>
             </div>
           </Grid>
-          <Grid className='mt-20 text-xs text-grey'>
+          <Grid className='mt-20 text-body-caption text-grey'>
             <div className='col-span-4'>
               <span>
                 Согласно данным Дом.РФ на основании данных ВЦИОМ, 2023 г.
@@ -562,7 +562,7 @@ const ConsultingPage = () => {
               <span className='text-h5'>
                 Предпочтительное наполнение дома и территории (% от аудитории)
               </span>
-              <span className='text-xs text-grey'>
+              <span className='text-body-caption text-grey'>
                 Аналитика ГК «Самолёт», август 2022 г.
               </span>
             </div>
@@ -678,7 +678,7 @@ const ConsultingPage = () => {
             </div>
           </Grid>
         </section>
-      </PageWithTitleWrap>
+      </PageMarginWithTitle>
     </>
   );
 };

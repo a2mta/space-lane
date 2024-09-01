@@ -10,7 +10,7 @@ const Header = () => {
         <Link href='/'>
           <Image
             priority={true}
-            src='icons/logo.svg'
+            src='/icons/logo.svg'
             width={143}
             height={18}
             alt='space lane logo'
