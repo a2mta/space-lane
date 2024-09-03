@@ -74,7 +74,7 @@ const VerticalGraph: FC<{ className?: string; text: string }> = ({
 }) => (
   <div
     className={classNames(
-      'h-full w-full flex items-end text-white p-1',
+      'w-full flex items-end text-white p-1',
       className
     )}
   >
@@ -575,7 +575,7 @@ const ConsultingPage = () => {
               <VerticalGraphWithTitle
                 graphTitle='71%'
                 title='Столовая'
-                className='bg-medium-red'
+                className='bg-medium-red h-full'
               />
               <VerticalGraphWithTitle
                 graphTitle='51%'

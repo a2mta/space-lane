@@ -16,6 +16,7 @@ const config: Config = {
       white: '#FFFFFF',
       'medium-red': '#F46263',
       'light-red': '#F9A1A0',
+      'dark-blue': '#001769',
     },
     screens: {
       md: '480px',

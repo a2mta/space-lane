@@ -54,10 +54,14 @@ const SavelovskiyPage = () => {
               height={640}
             />
           </div>
-          <div className='col-span-6'>
+          <div className='col-span-6 space-y-10'>
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/hlebzavod.png'
               title='Хлебзавод'
+            />
+            <ProjectPicWithTitle
+              coverLink='/pics/projects/savelovskiy/flakon.png'
+              title='Флакон'
             />
           </div>
           <div className='col-span-3 space-y-10'>
@@ -98,9 +102,74 @@ const SavelovskiyPage = () => {
           </div>
           <div className='col-span-6'>
             <ProjectPicWithTitle
-              coverLink='/pics/projects/savelovskiy/flakon.png'
-              title='Флакон'
+              coverLink='/pics/projects/savelovskiy/vokzal.png'
+              title='Савёловский вокзал'
             />
+          </div>
+          <div className='col-span-6'>
+            <ProjectPicWithTitle
+              coverLink='/pics/projects/savelovskiy/novodmitrovskiy.png'
+              title='Офисный центр «Новодмитровский»'
+            />
+          </div>
+        </Grid>
+        <Grid className='mt-50'>
+          <div className='col-start-1 col-end-4'>
+            <span className='text-h4'>
+              Цифровая антропология и ГИС-аналитика
+            </span>
+          </div>
+          <div className='col-start-5 space-y-4 col-end-9 grid-cols-subgrid'>
+            <span className='text-h5'>Объекты стрит-ритейла</span>
+            <div className='col-span-4'>
+              <span>
+                Рассматриваемая территория — активный городской участок со
+                множеством точек притяжения. Схема показывает функциональную
+                насыщенность территории, разделенной ж/д путями, что говорит о
+                необходимости комфортной связи между активно посещаемыми
+                пространствами
+              </span>
+            </div>
+          </div>
+          <div className='col-start-5 col-end-13 mt-10'>
+            <Image
+              width={1160}
+              height={508}
+              src='/pics/projects/savelovskiy/riteil-map.png'
+              alt=''
+            />
+          </div>
+        </Grid>
+        <Grid className='mt-20'>
+          <div className='col-span-8'>
+            <Image
+              width={1160}
+              height={508}
+              src='/pics/projects/savelovskiy/heat-map.png'
+              alt=''
+            />
+          </div>
+          <div className='col-span-4 flex flex-col justify-between'>
+            <div className='flex flex-col space-y-4'>
+              <span className='text-h5'>
+                Интенсивность фотофиксации по данным социальных сетей
+              </span>
+              <span className='text-body-regular'>
+                Схема тепловой активности демонстрирует концентрацию
+                пользователей в функционально насыщенных точках. Это говорит о
+                востребованности разнообразных видов досуга на территории
+              </span>
+            </div>
+            <div className='grid grid-cols-4 gap-x-10'>
+              <div className='col-span-2 flex items-end justify-start'>
+                <div className='w-[50px] h-[50px] bg-dark-blue'></div>
+                <span className='ml-2 text-body-caption'>Наименьшая активность</span>
+              </div>
+              <div className='col-span-2 flex items-end justify-start'>
+                <div className='w-[50px] h-[50px] bg-medium-red'></div>
+                <span className='ml-2 text-body-caption'>Наибольшая активность</span>
+              </div>
+            </div>
           </div>
         </Grid>
       </PageMarginWithTitle>
