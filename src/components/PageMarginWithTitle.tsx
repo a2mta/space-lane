@@ -1,11 +1,13 @@
+import classNames from 'classnames';
 import React, { FC, PropsWithChildren } from 'react';
 
-const PageMarginWithTitle: FC<PropsWithChildren & { title?: string }> = ({
-  children,
-  title,
-}) => {
+const PageMarginWithTitle: FC<
+  PropsWithChildren & { className?: string; title?: string }
+> = ({ children, title, className }) => {
   return (
-    <div className='flex flex-col w-full lg:px-20 px-5'>
+    <div
+      className={classNames('flex flex-col w-full lg:px-20 px-5', className)}
+    >
       {title && (
         <div className='w-full mt-50 border-b border-medium-grey'>
           <h4 className='text-h4 mb-6'>{title}</h4>

@@ -216,7 +216,10 @@ const SavelovskiyPage = () => {
           </div>
           <section className='col-span-12 mt-14 mb-50'>
             <Collapse title='01 Переход через ж/д пути по Новодмитровской улице' />
-            <Collapse title='01 Переход через ж/д пути по Новодмитровской улице' />
+            <Collapse title='02 Новодмитровская ул. между Хлебзаводом и Флаконом' />
+            <Collapse title='03 Входная группа Флакона на Большой Новодмитровской' />
+            <Collapse title='04 ул. Новодмитровская у храма Рождества Пресвятой Богородицы в Бутырской Слободе' />
+            <Collapse title='05 ул. Бутырская у Савёловского вокзала' />
           </section>
           <div className='col-span-4'>
             <span className='text-h4'>Ядро Савёловского кластера</span>
