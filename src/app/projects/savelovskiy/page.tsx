@@ -10,7 +10,7 @@ const DescriptionRow: FC<{ title: string; subTitle: string }> = ({
   subTitle,
   title,
 }) => (
-  <div className='flex flex-col pb-4 border-b border-b-grey'>
+  <div className='flex flex-col pb-4 border-b border-b-grey tracking-normal'>
     <span className='text-h4 mb-2'>{title}</span>
     <span className='text-body-regular'>{subTitle}</span>
   </div>
@@ -49,10 +49,10 @@ const SavelovskiyPage = () => {
       <PageMarginWithTitle>
         <Grid className='mt-50'>
           <div className='col-span-6'>
-            <span className='text-h4'>Большая Новодмитровская улица</span>
+            <span className='text-h4 tracking-normal'>Большая Новодмитровская улица</span>
           </div>
           <div className='col-span-6'>
-            <span className='text-h5'>
+            <span className='text-h5 tracking-normal'>
               Большая Новодмитровская улица находится в Бутырском районе на
               севере Москвы. К ней примыкают такие знаковые городские
               пространства как арт-квартал «Хлебозавод», дизайн-завод «Флакон»,
@@ -114,13 +114,13 @@ const SavelovskiyPage = () => {
               </span>
             </div>
           </div>
-          <div className='col-span-6'>
+          <div className='col-span-6 mt-10'>
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/05.png'
               title='Савёловский вокзал'
             />
           </div>
-          <div className='col-span-6'>
+          <div className='col-span-6 mt-10'>
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/06.png'
               title='Офисный центр «Новодмитровский»'
@@ -129,7 +129,7 @@ const SavelovskiyPage = () => {
         </Grid>
         <Grid className='mt-50'>
           <div className='col-start-1 col-end-4'>
-            <span className='text-h4'>
+            <span className='text-h4 tracking-normal'>
               Цифровая антропология и ГИС-аналитика
             </span>
           </div>
@@ -221,7 +221,7 @@ const SavelovskiyPage = () => {
           <div className='col-span-4'>
             <span className='text-h4'>Ядро Савёловского кластера</span>
           </div>
-          <div className='col-span-6'>
+          <div className='col-span-7'>
             <span className='text-h5'>
               На территории Дизайн-завода «Флакон» будут расположены
               практическивсе креативно-технологические мастерские, которые
@@ -277,7 +277,7 @@ const SavelovskiyPage = () => {
             </span>
           </div>
         </Grid>
-        <Grid className='mt-40 border-t border-medium-grey pt-6'>
+        <Grid className='mt-30 border-t border-medium-grey pt-6'>
           <div className='col-span-4'>
             <span className='text-body-regular'>
               Проект предлагает обустройство кафе и магазинов в первых этажах

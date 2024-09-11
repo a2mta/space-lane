@@ -25,12 +25,20 @@ const config: Config = {
       '2xl': '1920px',
     },
     extend: {
+      fontFamily: {
+        manrope: ['var(--font-manrope)'],
+        mono: ['var(--font-roboto-mono)'],
+      },
       fontSize: {
         'body-caption': ['0.75rem', '1.125rem'],
-        h4: ['2.125rem', 'auto'],
+        h4: ['2.125rem', 'normal'],
         h2: ['3.75rem', '4.375rem'],
-        h5: ['1.5rem', '2.125rem'],
+        h5: ['1.5rem', '2.25rem'],
         'body-regular': ['1.125rem', '1.625rem'],
+      },
+      letterSpacing: {
+        normal: '0.019rem',
+        wider: '0.044rem',
       },
       margin: {
         30: '7.5rem',

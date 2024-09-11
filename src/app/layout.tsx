@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
+const myFont = localFont({ src: '../../public/fonts/Manrope-VariableFont_wght.ttf', variable: '--font-manrope'})
 
 export const metadata: Metadata = {
   title: 'Space Lane',
@@ -18,10 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={myFont.variable + ' font-manrope'}>
         <Header />
         <main>{children}</main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
