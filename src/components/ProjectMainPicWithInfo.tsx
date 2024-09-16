@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import PageMarginWithTitle from './PageMarginWithTitle';
 import Grid from './Grid';
 import Image from 'next/image';
@@ -7,7 +7,7 @@ const ProjectMainPicWithInfo: FC<{
   title: string;
   coverLink: string;
   coverLink2: string;
-  subTitle: string;
+  subTitle: string | ReactNode;
   location: string;
   area: string;
   year: string;
@@ -39,7 +39,11 @@ const ProjectMainPicWithInfo: FC<{
       <PageMarginWithTitle>
         <Grid className='pt-10'>
           <div className='col-span-7'>
-            <span className='text-h4 tracking-normal'>{subTitle}</span>
+            {typeof subTitle === 'string' ? (
+              <span className='text-h4 tracking-normal'>{subTitle}</span>
+            ) : (
+              subTitle
+            )}
           </div>
           <div className='col-start-9 col-span-4 text-body-regular'>
             <Grid>

@@ -18,6 +18,7 @@ const config: Config = {
       'light-red': '#F9A1A0',
       'dark-blue': '#001769',
       beige: '#F0EDE8',
+      'light-grey': '#EFEFEF',
     },
     screens: {
       md: '480px',
@@ -35,7 +36,11 @@ const config: Config = {
         h4: ['2.125rem', 'normal'],
         h2: ['3.75rem', '4.375rem'],
         h5: ['1.5rem', '2.125rem'],
+        body: ['1.125rem', '1.625rem'],
         'body-regular': ['1.125rem', '1.625rem'],
+      },
+      fontWeight: {
+        body: '500',
       },
       letterSpacing: {
         normal: '0.019rem',
