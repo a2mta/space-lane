@@ -42,7 +42,7 @@ const SavelovskiyPage = () => {
           area='5,2 га'
           location='Москва'
           subTitle='Дизайн-проект благоустройства ул. Большая Новодмитровская и территории Дизайн-завода «Флакон»'
-          type='Исследование, мастер-план, дизайн-код, благоустройство'
+          type='Исследование, благоустройство'
           year='2019'
         />
       </section>
@@ -71,7 +71,7 @@ const SavelovskiyPage = () => {
           <div className='col-span-6 space-y-10'>
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/04.png'
-              title='Хлебзавод'
+              title='Хлебозавод'
             />
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/flakon.png'
@@ -229,8 +229,7 @@ const SavelovskiyPage = () => {
               На территории Дизайн-завода «Флакон» будут расположены
               практическивсе креативно-технологические мастерские, которые
               позволят и дальшеразвиваться кварталу. Сейчас ведутся работы по
-              изменению структурызавода. Общий объём инвестиций на первом этапе
-              равен 1 млн долларов
+              изменению структурызавода.
             </span>
           </div>
         </Grid>

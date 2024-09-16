@@ -29,7 +29,7 @@ const projects = [
   },
   {
     title: 'Коттеджный поселок «Максимово парк»',
-    subTitle: 'Исследование, мастер-план, дизайн-код, благоустройство',
+    subTitle: 'Исследование, благоустройство',
     link: 'maksimovo',
     image: '/pics/projects/maksimovo.png',
   },
