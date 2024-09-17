@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { FC, ReactElement } from 'react';
+import { createTranslation } from '../../../i18n/server';
+import LangSwitcher from '@/components/LangSwitcher';
 
 const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
   textForRows.map((item, index) => (
@@ -155,13 +157,15 @@ const Graph = () => (
   </div>
 );
 
-const ConsultingPage = () => {
+const ConsultingPage = async () => {
+  const { t } = await createTranslation('common');
+  
   return (
     <>
       <Head>
         <title>Консалтинг</title>
       </Head>
-      <PageMarginWithTitle title='Консалтинг'>
+      <PageMarginWithTitle withBorder title={t('page_titles.consulting')}>
         <section>
           <Grid>
             <div className='col-span-12 mb-50 pt-16'>

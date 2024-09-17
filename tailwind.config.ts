@@ -8,6 +8,9 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    animation: {
+        
+    },
     colors: {
       'medium-grey': '#D1D1D1',
       grey: '#6D6D6D',

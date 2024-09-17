@@ -22,7 +22,7 @@ const Avatar: FC<{ url: string; name: string; title: string }> = ({
 
 const AboutPage = () => {
   return (
-    <PageMarginWithTitle title='О нас'>
+    <PageMarginWithTitle withBorder title='О нас'>
       <div className='grid grid-cols-12 gap-x-10  mt-6'>
         <h2 className='text-h2 col-span-12 mb-10'>
           Space Lane — современное архитектурное бюро, основанное Даниилом

@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const ProjectMainPicWithInfo: FC<{
   title: string;
-  coverLink: string;
-  coverLink2: string;
+  coverLink?: string;
+  coverLink2?: string;
   subTitle: string | ReactNode;
   location: string;
   area: string;
@@ -33,9 +33,11 @@ const ProjectMainPicWithInfo: FC<{
           </div>
         </Grid>
       </PageMarginWithTitle>
-      <div className='aspect-video w-full relative'>
-        <Image objectFit='cover' src={coverLink} fill alt='' />
-      </div>
+      {coverLink && (
+        <div className='aspect-video w-full relative'>
+          <Image objectFit='cover' src={coverLink} fill alt='' />
+        </div>
+      )}
       <PageMarginWithTitle>
         <Grid className='pt-10'>
           <div className='col-span-7'>
@@ -65,9 +67,11 @@ const ProjectMainPicWithInfo: FC<{
           </div>
         </Grid>
       </PageMarginWithTitle>
-      <div className='aspect-video w-full relative mt-20'>
-        <Image objectFit='cover' src={coverLink2} fill alt='' />
-      </div>
+      {coverLink2 && (
+        <div className='aspect-video w-full relative mt-20'>
+          <Image objectFit='cover' src={coverLink2} fill alt='' />
+        </div>
+      )}
     </>
   );
 };

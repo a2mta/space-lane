@@ -4,9 +4,14 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import localFont from 'next/font/local';
+import { getLocale } from '../../i18n/server';
+import { LocaleProvider } from '@/hooks/locale-provider';
 
 // const inter = Inter({ subsets: ['latin'] });
-const myFont = localFont({ src: '../../public/fonts/Manrope-VariableFont_wght.ttf', variable: '--font-manrope'})
+const myFont = localFont({
+  src: '../../public/fonts/Manrope-VariableFont_wght.ttf',
+  variable: '--font-manrope',
+});
 
 export const metadata: Metadata = {
   title: 'Space Lane',
@@ -15,15 +20,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const locale = getLocale();
+
   return (
-    <html lang='en'>
+    <html lang={locale}>
       <body className={myFont.variable + ' font-manrope'}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <LocaleProvider value={locale}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );

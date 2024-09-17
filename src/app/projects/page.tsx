@@ -61,7 +61,7 @@ const projects = [
 
 const ProjectsPage = () => {
   return (
-    <PageMarginWithTitle title='Проекты'>
+    <PageMarginWithTitle withBorder title='Проекты'>
       <div className='grid grid-cols-12 gap-x-10 mt-30 gap-y-10'>
         {projects.map((item, index) => (
           <div key={index + item.title} className='col-span-4 relative '>
