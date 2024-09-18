@@ -165,7 +165,24 @@ const ConsultingPage = async () => {
       <Head>
         <title>Консалтинг</title>
       </Head>
-      <PageMarginWithTitle withBorder title={t('page_titles.consulting')}>
+      <PageMarginWithTitle withBorder title={t('page_titles.consulting')} >
+      <Grid className='fixed top-0 left-0 w-full h-full px-20'>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
+        
+
+            </Grid>
+        
         <section>
           <Grid>
             <div className='col-span-12 mb-50 pt-16'>
@@ -199,6 +216,7 @@ const ConsultingPage = async () => {
       <span className='w-full h-[1px] mb-6 bg-medium-grey'></span>
       <PageMarginWithTitle>
         <section>
+           
           <Grid>
             <div className='col-span-4 flex flex-col'>
               <h4 className='text-h4'>Анализ рынка</h4>
@@ -210,7 +228,7 @@ const ConsultingPage = async () => {
             </div>
             <div className='col-span-4'>
               <p className='text-body-regular'>
-                За последние годы большое количество льготных ипотечныхпрограмм
+                За последние годы большое количество льготных ипотечных программ
                 и постпандемийные последствия в виде ростачисленности
                 сотрудников, работающих удалённо, изменилицелевую аудиторию
                 рынка ИЖС, снизив средний возрастсреднестатистического

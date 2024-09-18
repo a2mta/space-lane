@@ -8,9 +8,7 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    animation: {
-        
-    },
+    animation: {},
     colors: {
       'medium-grey': '#D1D1D1',
       grey: '#6D6D6D',
@@ -36,7 +34,7 @@ const config: Config = {
       },
       fontSize: {
         'body-caption': ['0.75rem', '1.125rem'],
-        h4: ['2.125rem', 'normal'],
+        h4: ['2.125rem', 'initial'],
         h2: ['3.75rem', '4.375rem'],
         h5: ['1.5rem', '2.125rem'],
         body: ['1.125rem', '1.625rem'],
