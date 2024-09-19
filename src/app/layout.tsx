@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={myFont.variable + ' font-manrope'}>
         <LocaleProvider value={locale}>
           <Header />
-          <main>{children}</main>
+          <main className='tracking-h5'>{children}</main>
           <Footer />
         </LocaleProvider>
       </body>

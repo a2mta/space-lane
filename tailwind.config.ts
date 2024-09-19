@@ -8,7 +8,6 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    animation: {},
     colors: {
       'medium-grey': '#D1D1D1',
       grey: '#6D6D6D',
@@ -18,6 +17,7 @@ const config: Config = {
       'medium-red': '#F46263',
       'light-red': '#F9A1A0',
       'dark-blue': '#001769',
+      black: '#2A2827',
       beige: '#F0EDE8',
       'light-grey': '#EFEFEF',
     },
@@ -34,7 +34,7 @@ const config: Config = {
       },
       fontSize: {
         'body-caption': ['0.75rem', '1.125rem'],
-        h4: ['2.125rem', 'initial'],
+        h4: ['2.125rem', '134%'],
         h2: ['3.75rem', '4.375rem'],
         h5: ['1.5rem', '2.125rem'],
         body: ['1.125rem', '1.625rem'],
@@ -45,6 +45,7 @@ const config: Config = {
       },
       letterSpacing: {
         normal: '0.019rem',
+        h5: '0.031rem',
         wider: '0.044rem',
       },
       margin: {

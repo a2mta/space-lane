@@ -159,34 +159,32 @@ const Graph = () => (
 
 const ConsultingPage = async () => {
   const { t } = await createTranslation('common');
-  
+
   return (
     <>
       <Head>
         <title>Консалтинг</title>
       </Head>
-      <PageMarginWithTitle withBorder title={t('page_titles.consulting')} >
-      <Grid className='fixed top-0 left-0 w-full h-full px-20'>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-                <div className="bg-orange bg-opacity-50 col-span-1">COL</div>
-        
+      <PageMarginWithTitle withBorder title={t('page_titles.consulting')}>
+        {/* <Grid className='fixed top-0 left-0 w-full h-full px-20'>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
+        </Grid> */}
 
-            </Grid>
-        
         <section>
           <Grid>
-            <div className='col-span-12 mb-50 pt-16'>
-              <span className='text-h5'>
+            <div className='col-span-12 mb-50 pt-16 space-y-[30px]'>
+              <span className='text-h5 block'>
                 Space Lane на этапе предпроектных исследований использует
                 различные аналитические методики, помогающие собрать необходимые
                 данные и погрузиться в контекст. В частности мы выполняем оценку
@@ -194,18 +192,15 @@ const ConsultingPage = async () => {
                 территории, проводим исследования для выявления сообществ и их
                 запросов, осуществляем аудит и анализ данных.
               </span>
-              <br />
-              <br />
-              <span className='text-h5'>
+
+              <span className='text-h5 block'>
                 Работая с общественными пространствами, мы разрабатываем метрики
                 оценки качества развития городских пространств и методологии
                 оценки эффектов развития территорий. Ещё одно важное направление
                 деятельности бюро — разработка программ профессиональных
                 мероприятий: от семинаров до конференций.
               </span>
-              <br />
-              <br />
-              <span className='text-h5'>
+              <span className='text-h5 block'>
                 В качестве примера аналитического исследования предлагаем
                 ознакомиться с анализом рынка ИЖС
               </span>
@@ -216,7 +211,6 @@ const ConsultingPage = async () => {
       <span className='w-full h-[1px] mb-6 bg-medium-grey'></span>
       <PageMarginWithTitle>
         <section>
-           
           <Grid>
             <div className='col-span-4 flex flex-col'>
               <h4 className='text-h4'>Анализ рынка</h4>
@@ -494,7 +488,7 @@ const ConsultingPage = async () => {
               />
             </div>
             <div className='col-span-4'>
-              <span className='block mt-10'>
+              <span className='block mt-10 text-body-regular'>
                 Медианная стоимость строящегося жилого дома в Подмосковье
                 составляет около 60 тыс. ₽ за 1 м². Средняя стоимость объекта
                 недвижимости, приобретённого по программе ИЖС ипотеки на 16%
@@ -531,7 +525,7 @@ const ConsultingPage = async () => {
               <span className='text-h4'>Предпочтения аудитории</span>
             </div>
             <div className='col-start-9 col-span-3'>
-              <span>
+              <span className='text-body-regular'>
                 Наполнение дома все чаще характеризуется более продуманной
                 планировкой, большим количеством спален, наличием домашних
                 офисов и дополнительными пространствами для проведения досуга.
