@@ -20,8 +20,8 @@ const ProjectCard: FC<{image:string, link: string; title: string; subTitle: stri
             alt='project'
           />
         </div>
-        <span className='mt-4 mb-2'>{title}</span>
-        <span>{subTitle}</span>
+        <span className='mt-4 mb-2 text-h5'>{title}</span>
+        <span className='text-body'>{subTitle}</span>
       </Link>
     </div>
   );

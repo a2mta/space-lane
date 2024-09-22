@@ -47,20 +47,44 @@ const ProjectMainPicWithInfo: FC<{
               subTitle
             )}
           </div>
-          <div className='col-start-9 col-span-4 text-body-regular'>
+          <div className='col-start-9 col-span-4 text-body-regular space-y-4'>
             <Grid>
-              <div className='col-span-6 flex flex-col space-y-4  text-grey'>
+              <div className='col-span-6'>
                 <span>Местоположение</span>
+              </div>
+              <div className='col-span-6'>
+                <span>{location}</span>
+              </div>
+            </Grid>
+            <Grid>
+              <div className='col-span-6'>
                 <span>Площадь</span>
+              </div>
+              <div className='col-span-6'>
+                <span>{area}</span>
+              </div>
+            </Grid>
+            <Grid>
+              <div className='col-span-6'>
                 <span>Год</span>
+              </div>
+              <div className='col-span-6'>
+                <span>{year}</span>
+              </div>
+            </Grid>
+            <Grid>
+              <div className='col-span-6'>
                 <span>Статус проекта</span>
+              </div>
+              <div className='col-span-6'>
+                <span>{status}</span>
+              </div>
+            </Grid>
+            <Grid>
+              <div className='col-span-6'>
                 <span>Тип</span>
               </div>
-              <div className='col-span-6 flex flex-col space-y-4'>
-                <span>{location}</span>
-                <span>{area}</span>
-                <span>{year}</span>
-                <span>{status}</span>
+              <div className='col-span-6'>
                 <span>{type}</span>
               </div>
             </Grid>

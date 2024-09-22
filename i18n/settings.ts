@@ -1,6 +1,6 @@
 import type { InitOptions } from 'i18next';
 
-export const FALLBACK_LOCALE = 'en';
+export const FALLBACK_LOCALE = 'ru';
 export const supportedLocales = ['en', 'ru'] as const;
 export type Locales = (typeof supportedLocales)[number];
 

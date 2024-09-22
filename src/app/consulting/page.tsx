@@ -5,7 +5,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React, { FC, ReactElement } from 'react';
 import { createTranslation } from '../../../i18n/server';
-import LangSwitcher from '@/components/LangSwitcher';
 
 const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
   textForRows.map((item, index) => (
@@ -166,21 +165,6 @@ const ConsultingPage = async () => {
         <title>Консалтинг</title>
       </Head>
       <PageMarginWithTitle withBorder title={t('page_titles.consulting')}>
-        {/* <Grid className='fixed top-0 left-0 w-full h-full px-20'>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-          <div className='bg-orange bg-opacity-50 col-span-1'>COL</div>
-        </Grid> */}
-
         <section>
           <Grid>
             <div className='col-span-12 mb-50 pt-16 space-y-[30px]'>

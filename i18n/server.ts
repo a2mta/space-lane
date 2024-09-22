@@ -30,10 +30,6 @@ async function initI18next(lang: Locales, namespace: string) {
 export async function createTranslation(ns: string) {
   const lang = getLocale();
   const i18nextInstance = await initI18next(lang, ns);
-  console.log(
-    'WWWW',
-    i18nextInstance.getFixedT(lang, Array.isArray(ns) ? ns[0] : ns)
-  );
   return {
     t: i18nextInstance.getFixedT(lang, Array.isArray(ns) ? ns[0] : ns),
   };
