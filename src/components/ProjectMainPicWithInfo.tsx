@@ -7,6 +7,7 @@ const ProjectMainPicWithInfo: FC<{
   title: string;
   coverLink?: string;
   coverLink2?: string;
+  coverLink2Title?: string;
   subTitle: string | ReactNode;
   location: string;
   area: string;
@@ -17,6 +18,7 @@ const ProjectMainPicWithInfo: FC<{
   area,
   coverLink,
   coverLink2,
+  coverLink2Title,
   location,
   status,
   subTitle,
@@ -28,7 +30,7 @@ const ProjectMainPicWithInfo: FC<{
     <>
       <PageMarginWithTitle>
         <Grid>
-          <div className='col-span-12 mb-10'>
+          <div className='col-span-7 mb-10'>
             <div className='text-h2'>{title}</div>
           </div>
         </Grid>
@@ -92,9 +94,20 @@ const ProjectMainPicWithInfo: FC<{
         </Grid>
       </PageMarginWithTitle>
       {coverLink2 && (
-        <div className='aspect-video w-full relative mt-20'>
-          <Image objectFit='cover' src={coverLink2} fill alt='' />
-        </div>
+        <>
+          <div className='aspect-video w-full relative mt-20'>
+            <Image objectFit='cover' src={coverLink2} fill alt='' />
+          </div>
+          {coverLink2Title && (
+            <PageMarginWithTitle>
+              <Grid>
+                <span className='text-body-caption mt-2 col-span-12'>
+                  {coverLink2Title}
+                </span>
+              </Grid>
+            </PageMarginWithTitle>
+          )}
+        </>
       )}
     </>
   );

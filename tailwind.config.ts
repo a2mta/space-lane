@@ -37,9 +37,11 @@ const config: Config = {
         h4: ['2.125rem', '134%'],
         h3: ['3rem', 'initial'],
         h2: ['3.75rem', '4.375rem'],
-        h5: ['1.5rem', '2.125rem'],
+        h5: ['1.5rem', '2.25rem'],
+        'h5-regular': ['1.5rem', '2.125rem'],
         body: ['1.125rem', '1.625rem'],
         'body-regular': ['1.125rem', '1.625rem'],
+        untitled: ['1.25rem', 'initial'],
       },
       fontWeight: {
         body: '500',
