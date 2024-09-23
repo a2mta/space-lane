@@ -1,5 +1,76 @@
 {
-    "page_titles": {
-        "consulting": "Consulting"
+  "page_titles": {
+    "novoseltsevo": "Cottage Settlement 'Novoseltsevo'",
+    "consulting": "Consulting"
+  },
+  "status": {
+    "concept": "Concept"
+  },
+  "area": {
+    "5_4_ha": "5.4 ha"
+  },
+  "location": {
+    "novoseltsevo": "Novoseltsevo, Moscow Region"
+  },
+  "view": {
+    "private_zone": "View of the private zone",
+    "sports_zone": "View of the sports zone",
+    "street_private_zone": "View of the street and private zone near the large children's playground"
+  },
+  "concept": {
+    "greenery": "Greenery Concept",
+    "islands_contemplation": {
+      "title": "Islands — Contemplation",
+      "subtitle1": "Low and decorative tree planting",
+      "subtitle2": "Grasses in the lower tier with delicate flower accents",
+      "subtitle3": "Creating a highly effective and visually memorable environment"
+    },
+    "islands_action": {
+      "title": "Islands — Action",
+      "subtitle1": "Functional greenery providing ecosystem services",
+      "subtitle2": "Supporting local biodiversity and forming new ecosystems"
+    },
+    "islands_touch": {
+      "title": "Islands — Touch",
+      "subtitle1": "Tactile and aromatic grasses for exploration and interaction",
+      "subtitle2": "Solitary tree plantings and shrub clusters continuing the pattern of perennials"
     }
+  },
+  "general_plan": {
+    "title": "General Plan and Fragments of the General Plan",
+    "description": "Novoseltsevo Beach is the perfect place for relaxation and active recreation on the shore of the Klyazma Reservoir. Clean fresh air, green shores, and picturesque landscapes. In summer, the water temperature reaches +19°C, and on hot days it can rise to +23°C. Thanks to the landscaping, the shore will have various usage scenarios, including in winter."
+  },
+  "fragment": {
+    "01": {
+      "title": "Fragment 01",
+      "description": "The wellness trail starts from the workout area and crosses the entire embankment. It bypasses the beach volleyball court and the equipped beach. In addition to the trail, you can move along the embankment on paths covered with wooden decking, which helps preserve the vegetation cover."
+    },
+    "02": {
+      "title": "Fragment 02",
+      "description": "In the central part of the embankment, there is a large children's playground divided into several zones. From it, wooden walkways lead to the table tennis area and the beach. The wellness trail route crosses another workout zone and bypasses the event area with a stage. A parking pocket is organized on the section of the central street adjacent to this fragment of the embankment for convenient passenger pick-up/drop-off."
+    },
+    "03": {
+      "title": "Fragment 03",
+      "description": "The wellness route ends with a streetball court and a skate park, which are separated by a wall — a kind of art object. There is also a pier here, where you can approach the water, a quiet rest area, and a water garden with plants that purify the water."
+    }
+  },
+  "subTitle": {
+    "novoseltsevo": "Design Project for the Improvement of the Shoreline of the Cottage Settlement 'Novoseltsevo'"
+  },
+  "type": {
+    "research_landscaping": "Research, Landscaping"
+  },
+  "distance": {
+    "to_kremlin": "To the Kremlin",
+    "to_altufyevo_metro": "To Altufyevo Metro Station (Serpukhovsko-Timiryazevskaya Line)",
+    "to_sheremetyevo_airport": "To Sheremetyevo Airport",
+    "to_khlebnikovo_station": "To Khlebnikovo MCD Station"
+  },
+  "project_ideas": {
+    "title": "Project Ideas",
+    "description": "The shoreline adjacent to the settlement will remain a space accessible for use by local residents who can walk here from neighboring settlements. Therefore, the landscaping concept involves the functional division of the embankment into two main zones: (1) a conditionally private zone, primarily oriented towards the residents of the settlement and separated by elevated greenery, and (2) an open public zone designed for an external audience. The private zone will have intimate, quiet recreational spaces, while the open zone will feature areas and facilities for active recreation and family leisure."
+  },
+  "zoning_scheme": {
+    "caption": "Functional Zoning Scheme of the Embankment"
   }
+}

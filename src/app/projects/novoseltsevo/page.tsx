@@ -57,13 +57,11 @@ const NovoseltsevoPage = async () => {
           title={t('page_titles.novoseltsevo')}
           coverLink='/pics/projects/novoseltsevo/01.png'
           coverLink2='/pics/projects/novoseltsevo/02.png'
-          status='Концепция'
-          area='5,4 га'
-          location='п. Новосельцево, Московская область'
-          subTitle={
-            'Дизайн-проект благоустройства береговой линии коттеджного посёлка «Новосельцево»'
-          }
-          type='Исследование, благоустройство'
+          status={t('status.concept')}
+          area={t('area.5_4_ha')}
+          location={t('location.novoseltsevo')}
+          subTitle={t('subTitle.novoseltsevo')}
+          type={t('type.research_landscaping')}
           year='2022'
         />
       </section>
@@ -71,13 +69,19 @@ const NovoseltsevoPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-4 space-y-6'>
-              <MapDescRow title='45 км' subTitle='До Кремля' />
+              <MapDescRow title='45 км' subTitle={t('distance.to_kremlin')} />
               <MapDescRow
                 title='28 км'
-                subTitle='До станции метро Альтуфьево (Серпуховско-Тимирязевкая линия)'
+                subTitle={t('distance.to_altufyevo_metro')}
               />
-              <MapDescRow title='32 км' subTitle='До аэропорта Шереметьево' />
-              <MapDescRow title='17 км' subTitle='До станции МЦД Хлебниково' />
+              <MapDescRow
+                title='32 км'
+                subTitle={t('distance.to_sheremetyevo_airport')}
+              />
+              <MapDescRow
+                title='17 км'
+                subTitle={t('distance.to_khlebnikovo_station')}
+              />
             </div>
             <div className='col-span-8'>
               <Image
@@ -90,21 +94,11 @@ const NovoseltsevoPage = async () => {
           </Grid>
           <Grid className='mt-50'>
             <div className='col-span-4'>
-              <span className='text-h4'>Идеи проекта</span>
+              <span className='text-h4'>{t('project_ideas.title')}</span>
             </div>
             <div className='col-span-8'>
               <span className='text-body-regular'>
-                Береговая линия, к которой примыкает посёлок, останется
-                пространством, доступным для использования местными жителями
-                которые могут прийти сюда пешком с соседних населённых пунктов.
-                Поэтому концепция благоустройства предполагает функциональное
-                разделение набережной на две основные зоны: (1) условно
-                приватную, которая ориентирована прежде всего на жителей посёлка
-                и отделяется приподнятым озеленением, и (2) открытую
-                общественную, рассчитанную внешнюю аудиторию. В приватной зоне
-                организуются камерные, спокойные рекреационные пространства, в
-                то время как в открытой зоне располагаются площадки и объекты
-                для активного отдыха и семейного досуга.
+                {t('project_ideas.description')}
               </span>
             </div>
           </Grid>
@@ -125,7 +119,7 @@ const NovoseltsevoPage = async () => {
                 src='/pics/projects/novoseltsevo/04.png'
               />
               <span className='text-body-caption mt-2'>
-                Схема функционального зонирования набережной
+                {t('zoning_scheme.caption')}
               </span>
             </div>
           </Grid>
@@ -138,7 +132,7 @@ const NovoseltsevoPage = async () => {
                 src='/pics/projects/novoseltsevo/06.png'
               />
               <span className='text-body-caption mt-2'>
-                Вид на частную зону
+                {t('view.private_zone')}
               </span>
             </div>
             <div className='col-span-4'>
@@ -149,7 +143,7 @@ const NovoseltsevoPage = async () => {
                 src='/pics/projects/novoseltsevo/07.png'
               />
               <span className='text-body-caption mt-2'>
-                Вид на спортивную зону
+                {t('view.sports_zone')}
               </span>
             </div>
             <div className='col-span-8 mt-10'>
@@ -160,7 +154,7 @@ const NovoseltsevoPage = async () => {
                 src='/pics/projects/novoseltsevo/08.png'
               />
               <span className='text-body-caption mt-2'>
-                Вид на улицу и частную зону в районе большой детской площадки
+                {t('view.street_private_zone')}
               </span>
             </div>
           </Grid>
@@ -168,31 +162,31 @@ const NovoseltsevoPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-12'>
-              <span className='text-h4'>Концепция озеленения</span>
+              <span className='text-h4'>{t('concept.greenery')}</span>
             </div>
             <ConceptionCard
               image='/pics/projects/novoseltsevo/09.png'
-              title='Острова — созерцание'
+              title={t('concept.islands_contemplation.title')}
               subTitles={[
-                'Невысокое и декоративное озеленение деревьями',
-                'Травы в нижнем ярусе с деликатными акцентами из цветов',
-                'Создание максимально эффектной и визуально запоминающейся среды',
+                t('concept.islands_contemplation.subtitle1'),
+                t('concept.islands_contemplation.subtitle2'),
+                t('concept.islands_contemplation.subtitle3'),
               ]}
             />
             <ConceptionCard
               image='/pics/projects/novoseltsevo/10.png'
-              title='Острова — действие'
+              title={t('concept.islands_action.title')}
               subTitles={[
-                'Функциональное озеленение, оказывающее экосистемные услуги',
-                'Поддержка локального биоразнообразия и формирования новых экосистем',
+                t('concept.islands_action.subtitle1'),
+                t('concept.islands_action.subtitle2'),
               ]}
             />
             <ConceptionCard
               image='/pics/projects/novoseltsevo/11.png'
-              title='Острова — осязание'
+              title={t('concept.islands_touch.title')}
               subTitles={[
-                'Тактильные и ароматные травы для исследования и взаимодействия',
-                'Солитерные посадки деревьев и куртины из кустарников, продолжающие рисунок из многолетников',
+                t('concept.islands_touch.subtitle1'),
+                t('concept.islands_touch.subtitle2'),
               ]}
             />
           </Grid>
@@ -200,9 +194,7 @@ const NovoseltsevoPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-12'>
-              <span className='text-h4'>
-                Генеральный план и фрагменты генерального плана
-              </span>
+              <span className='text-h4'>{t('general_plan.title')}</span>
             </div>
             <div className='col-span-12 mt-12'>
               <Image
@@ -212,13 +204,7 @@ const NovoseltsevoPage = async () => {
                 height={940}
               />
               <span className='text-h5 mt-10 block'>
-                Пляж Новосельцево — идеальное место для отдыха и активного
-                времяпрепровождения на берегу Клязьминского водохранилища.
-                Чистый свежий воздух, зеленые берега и живописные пейзажи. Летом
-                температура воды достигает +19 ̊ С, а в жаркие дни может
-                подниматься до + 23 ̊ С. Благодаря благоустройству берег получит
-                разнообразные сценарии использования, в том числе в зимнее
-                время.
+                {t('general_plan.description')}
               </span>
             </div>
           </Grid>
@@ -226,18 +212,18 @@ const NovoseltsevoPage = async () => {
         <section className='mt-20 space-y-10'>
           <FragmentCard
             image='/pics/projects/novoseltsevo/13.png'
-            title='Фрагмент 01'
-            description='От воркаут-площадки начинается оздоровительная тропа, пересекающая всю набережную. Она огибает площадку для пляжного волейбола и оборудованный пляж. Помимо тропы, перемещаться по набережной можно по тропинкам, накрытым дощатым ностилом, который помогает сберечь растительный покров.'
+            title={t('fragment.01.title')}
+            description={t('fragment.01.description')}
           />
           <FragmentCard
             image='/pics/projects/novoseltsevo/14.png'
-            title='Фрагмент 02'
-            description='В центральной части набережной находится большая детская игровая площадка, разбитая на несколько зон. От неё к площадке для настольного тенниса и пляжу ведут дощатые мостки. Маршрут оздоровительной тропы пересекает ещё одну воркаут-зону и огибает площадку для мероприятий со сценой. На участке центральной улицы, примыкающему к этому фрагменту набережной, организован парковочный карман для удобной посадки/высадки пассажиров.'
+            title={t('fragment.02.title')}
+            description={t('fragment.02.description')}
           />
           <FragmentCard
             image='/pics/projects/novoseltsevo/15.png'
-            title='Фрагмент 03'
-            description='Оздоровительный маршрут завершается площадкой для стритбола и скейт-парком, которые отделены друг от друга стенкой — своеобразным арт-объектом. Здесь же оборудован пирс, по которому можно подойти к воде, площадка для тихого отдыха, а также водный сад, где высажены растения, очищающие воду.'
+            title={t('fragment.03.title')}
+            description={t('fragment.03.description')}
           />
         </section>
       </PageMarginWithTitle>
