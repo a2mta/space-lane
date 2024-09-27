@@ -4,7 +4,8 @@
     "consulting": "Консалтинг"
   },
   "status": {
-    "concept": "Концепция"
+    "concept": "Концепция",
+    "in_progress": "В реализации"
   },
   "area": {
     "5_4_ha": "5,4 га"

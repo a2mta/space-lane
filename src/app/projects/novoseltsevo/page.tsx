@@ -4,14 +4,26 @@ import { createTranslation } from '../../../../i18n/server';
 import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import Image from 'next/image';
+import classNames from 'classnames';
 
-const MapDescRow: FC<{ title: string; subTitle: string }> = ({
-  subTitle,
-  title,
-}) => (
-  <div className='flex pb-4 border-b border-grey flex-col'>
+export const MapDescRow: FC<{
+  horizontal?: boolean;
+  title: string;
+  subTitle: string;
+}> = ({ subTitle, horizontal, title }) => (
+  <div className={classNames('flex pb-4 border-b border-grey', {'flex-col': !horizontal})}>
     <span className='text-h3'>{title}</span>
-    <span className='text-body-regular mt-2 w-[60%]'>{subTitle}</span>
+    <div className='flex items-end flex-1'>
+    <span
+      className={classNames('text-body-regular', {
+        'mt-2': !horizontal,
+        'mb-2 ml-6': horizontal
+
+      })}
+    >
+      {subTitle}
+    </span>
+    </div>
   </div>
 );
 

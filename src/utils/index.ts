@@ -7,3 +7,9 @@ export const setLocale = (locale: string) => {
   });
 };
 
+export const makePicLink = (pageName: string) => (picNumber: string) =>
+  `/pics/projects/${pageName}/${picNumber}.png`;
+
+export function addLeadingZero(num: number) {
+  return num.toString().padStart(2, '0');
+}

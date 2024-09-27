@@ -7,7 +7,7 @@ const Grid: FC<PropsWithChildren & { className?: string }> = ({
 }) => {
   return (
     <div
-      className={classNames('grid lg:grid-cols-12 gap-x-10 grid-cols-2', className)}
+      className={classNames('grid gap-x-10 grid-cols-2 lg:grid-cols-12', className)}
     >
       {children}
     </div>
