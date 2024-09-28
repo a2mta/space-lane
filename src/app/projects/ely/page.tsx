@@ -10,6 +10,195 @@ import classNames from 'classnames';
 import ImageWithCaption from '@/components/ImageWithCaption';
 const picLink = makePicLink('ely');
 
+const zonePlanData = [
+  {
+    title: 'Зона посетителей',
+    items: [
+      {
+        n: '1.1',
+        title: 'Морозильная камера',
+        area: '304.8',
+      },
+      {
+        n: '1.2',
+        title: 'Холл',
+        area: '32.4',
+      },
+      {
+        n: '1.3',
+        title: 'Санузел',
+        area: '11.3',
+      },
+      {
+        n: '1.4',
+        title: 'Санузел',
+        area: '11.7',
+      },
+      {
+        n: '1.5',
+        title: 'Гардероб',
+        area: '7.0',
+      },
+      {
+        n: '1.6',
+        title: 'Обеденный зал',
+        area: '128.3',
+      },
+      {
+        n: '1.7',
+        title: 'Обеденный зал',
+        area: '128.3',
+      },
+    ],
+  },
+  {
+    title: 'Зона персонала',
+    items: [
+      {
+        n: '1.11',
+        title: 'Тамбур',
+        area: '3.2',
+      },
+      {
+        n: '1.12',
+        title: 'Раздевалка',
+        area: '8.4',
+      },
+      {
+        n: '1.13',
+        title: 'Санузел',
+        area: '2.0',
+      },
+      {
+        n: '1.14',
+        title: 'Комната персонала',
+        area: '9.6',
+      },
+    ],
+  },
+  {
+    title: 'Зона технологии',
+    items: [
+      {
+        n: '1.15',
+        title: 'Коридор',
+        area: '25.2',
+      },
+      {
+        n: '1.16',
+        title: 'Загрузочная',
+        area: '7.3',
+      },
+      {
+        n: '1.17',
+        title: 'Кладовая',
+        area: '10.7',
+      },
+      {
+        n: '1.18',
+        title: 'Овощехранилище',
+        area: '14.1',
+      },
+      {
+        n: '1.19',
+        title: 'ПУИ',
+        area: '4.5',
+      },
+      {
+        n: '1.20',
+        title: 'Морозильная камера',
+        area: '8.9',
+      },
+      {
+        n: '1.21',
+        title: 'Овощной цех',
+        area: '9.1',
+      },
+      {
+        n: '1.22',
+        title: 'Холодный цех',
+        area: '15.4',
+      },
+      {
+        n: '1.23',
+        title: 'Мясно-рыбный цех',
+        area: '14.5',
+      },
+      {
+        n: '1.24',
+        title: 'Горячий цех',
+        area: '31.5',
+      },
+      {
+        n: '1.25',
+        title: 'Раздаточная',
+        area: '7.5',
+      },
+      {
+        n: '1.26',
+        title: 'Моечная',
+        area: '6.6',
+      },
+    ],
+  },
+];
+
+const decorationData = [
+  {
+    title: 'Декоративная въездная группа',
+    description: [
+      'Высадка хвойных и лиственных деревьев и кустарников',
+      'Декоративные пейзажные группы из сортовых растений',
+      'Всесезонная декоративность',
+      'Декоративные элементы — камни, отсыпка',
+    ],
+    image: '24',
+  },
+  {
+    title: 'Сенсорный сад на территориидетского сада',
+    description: [
+      'Смешение декоративных сортовых растений с местными',
+      'Работа с текстурой, запахами, цветом растений для создания среды изучения природы',
+      'Дополнительные акценты — камни, бревна, отсыпка',
+      'Декоративные элементы — камни, отсыпка',
+    ],
+    image: '25',
+  },
+  {
+    title: 'Зелёный бульвар',
+    description: [
+      'Характерные местные виды растений',
+      'Природоподобные посадки групп растений',
+      'Одна нейтральная цветовая гамма',
+      'Дополнительные акценты — камни, бревна,отсыпка',
+    ],
+    image: '26',
+  },
+];
+
+const DecorationRow: FC<{
+  title: string;
+  description: string[];
+  image: string;
+}> = ({ description, image, title }) => (
+  <Grid className='border-t border-medium-grey pt-6'>
+    <div className='col-span-4'>
+      <span className='text-h5'>{title}</span>
+    </div>
+    <div className='col-span-4'>
+      {description.map((item, index) => (
+        <span
+          className='text-body-regular'
+          key={index + item}
+        >{`— ${item}`}</span>
+      ))}
+    </div>
+    <div className='col-span-4'>
+      <Image alt='' width={560} height={360} src={picLink(image)} />
+    </div>
+  </Grid>
+);
+
 const ExplicationRow: FC<{
   text: string;
   icon?: string;
@@ -29,6 +218,22 @@ const ZoneDataRow: FC<{ text: string; icon?: string }> = ({ text, icon }) => (
   </Grid>
 );
 
+const MaterialRow: FC<{ text: string; icon?: string | ReactElement }> = ({
+  text,
+  icon,
+}) => (
+  <Grid className='lg:grid-cols-4 mt-6'>
+    <div className='col-span-1'>
+      {typeof icon === 'string' ? (
+        <span className={classNames('w-full block h-[26px] mr-4', icon)} />
+      ) : (
+        icon
+      )}
+    </div>
+    <div className='col-span-3'>{text}</div>
+  </Grid>
+);
+
 const TrendRow: FC<{
   title: string;
   description: string;
@@ -42,6 +247,25 @@ const TrendRow: FC<{
     <div className='col-span-4'>{icon}</div>
   </Grid>
 );
+
+const materialData = [
+  {
+    text: 'Стены, кровли — Фальцованный окрашенныйметалл. Ламели. RAL7013',
+    icon: 'bg-[#62615F]',
+  },
+  {
+    text: 'Стены, кровли, ламели — Рейка светлых тонов под светлый дуб. RAL7044',
+    icon: <Image alt='' width={110} height={26} src={picLink('34')} />,
+  },
+  {
+    text: 'Стены цокольная часть — Светлый бетон/штукатурка RAL7047',
+    icon: 'bg-[#CCCCCD]',
+  },
+  {
+    text: 'Профили окон, дверей. RAL7010',
+    icon: 'bg-[#888888]',
+  },
+];
 
 const trendData = [
   {
@@ -505,14 +729,158 @@ const ElyPage = async () => {
               </span>
             </div>
             <div className='col-span-8 space-y-32'>
-                {trendData.map((trend)=> <TrendRow {...trend} key={trend.title} />)}
+              {trendData.map((trend) => (
+                <TrendRow {...trend} key={trend.title} />
+              ))}
+            </div>
+          </Grid>
+        </section>
+        <section className='mt-50 space-y-10'>
+          {decorationData.map((item) => (
+            <DecorationRow {...item} key={item.title} />
+          ))}
+        </section>
+        <section>
+          <Grid className='mt-50'>
+            <div className='col-span-4'>
+              <span className='text-h4'>Архитектурная концепция</span>
+              <span className='text-body-regular block mt-6'>
+                Архитектурная концепция приближена к «Новому русскому стилю» с
+                его гипертрофированными традиционными элементами (скатная крыша,
+                арки) и лаконичным формообразованием, выраженной декоративностью
+                текстур, смелым использованием цвета в отделке фасадов.
+              </span>
+              <span className='text-body-regular block mt-4'>
+                Для общественного центра разработана линейка объектов — ресторан
+                на 100 мест, павильон-бар, супермаркет и многофункциональное
+                здание.
+              </span>
+            </div>
+            <div className='col-span-8'>
+              <Image alt='' width={1169} height={820} src={picLink('27')} />
             </div>
           </Grid>
         </section>
         <section>
-            <Grid className='mt-50'>
-                
-            </Grid>
+          <Grid className='mt-30'>
+            <div className='col-span-6'>
+              <Image alt='' width={860} height={768} src={picLink('28')} />
+            </div>
+            <div className='col-span-6'>
+              <Image alt='' width={860} height={768} src={picLink('29')} />
+            </div>
+          </Grid>
+        </section>
+        <section>
+          <Grid className='mt-50'>
+            <div className='col-span-4'>
+              <Image alt='' width={560} height={386} src={picLink('30')} />
+            </div>
+            <div className='col-span-4'>
+              <Image alt='' width={560} height={386} src={picLink('31')} />
+            </div>
+            <div className='col-start-1 col-span-4 mt-32'>
+              <Image alt='' width={560} height={386} src={picLink('32')} />
+            </div>
+            <div className='col-span-4 mt-32'>
+              <Image alt='' width={560} height={386} src={picLink('33')} />
+            </div>
+            <div className='col-span-4 mt-32 flex justify-end flex-col'>
+              <span className='text-body-medium mb-8'>
+                Материалы отделки фасадов
+              </span>
+              {materialData.map(({ icon, text }, index) => (
+                <MaterialRow key={index + text} text={text} icon={icon} />
+              ))}
+            </div>
+          </Grid>
+        </section>
+        <section>
+          <Grid className='mt-50'>
+            <div className='col-span-12'>
+              <ImageWithCaption
+                width={1760}
+                height={1244}
+                src={picLink('35')}
+                title='Вечерний вид ресторана'
+              />
+            </div>
+          </Grid>
+        </section>
+        <section>
+          <Grid className='mt-50'>
+            <div className='col-span-6'>
+              <Image width={860} height={616} alt='' src={picLink('36')} />
+              <Image
+                className='mt-50'
+                width={860}
+                height={616}
+                alt=''
+                src={picLink('37')}
+              />
+            </div>
+            <div className='col-span-6'>
+              <Grid className='lg:grid-cols-6 pb-2 text-body-regular font-medium text-grey'>
+                <div className='col-span-1 col-start-3'>№</div>
+                <div className='col-span-2'>Наименование</div>
+                <div className='col-span-1'>Площадь, м²</div>
+              </Grid>
+              <div className='flex flex-col space-y-4'>
+                {zonePlanData.map(({ title, items }, index) => (
+                  <Grid
+                    key={title + index}
+                    className='lg:grid-cols-6 border-t border-black pt-4'
+                  >
+                    <div className='col-span-2'>
+                      <span className='text-h5'>{title}</span>
+                    </div>
+                    <div className='col-span-4 space-y-4'>
+                      {items.map(({ area, n, title }) => (
+                        <Grid
+                          key={n}
+                          className='lg:grid-cols-4 text-black text-body-regular border-b border-medium-grey pb-2'
+                        >
+                          <div className='col-span-1'>
+                            <span>{n}</span>
+                          </div>
+                          <div className='col-span-2'>
+                            <span>{title}</span>
+                          </div>
+                          <div className='col-span-1'>
+                            <span>{area}</span>
+                          </div>
+                        </Grid>
+                      ))}
+                      <Grid className='lg:grid-cols-4 text-black text-body-regular font-medium pb-2'>
+                        <div className='col-span-1'>
+                          <span>Итого</span>
+                        </div>
+                        <div className='col-span-1 col-start-4'>
+                          {items
+                            .reduce((prev, cur) => prev + Number(cur.area), 0)
+                            .toFixed(1)}
+                        </div>
+                      </Grid>
+                    </div>
+                  </Grid>
+                ))}
+                <Grid className='lg:grid-cols-6 border-t border-black pt-4 text-h5 font-medium'>
+                  <div className='col-span-2'>
+                    <span>Общий итог</span>
+                  </div>
+                  <div className='col-span-1 col-start-6'>
+                    {zonePlanData.reduce(
+                      (prev, cur) =>
+                        prev +
+                        cur.items
+                          .reduce((prev, cur) => prev + Number(cur.area), 0),
+                      0
+                    ).toFixed(1)}
+                  </div>
+                </Grid>
+              </div>
+            </div>
+          </Grid>
         </section>
       </PageMarginWithTitle>
     </div>
