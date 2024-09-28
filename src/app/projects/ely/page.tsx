@@ -5,9 +5,9 @@ import { createTranslation } from '../../../../i18n/server';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import Grid from '@/components/Grid';
 import Image from 'next/image';
-import { MapDescRow } from '../novoseltsevo/page';
 import classNames from 'classnames';
 import ImageWithCaption from '@/components/ImageWithCaption';
+import { MapDescRow } from '@/components/MapDescRow';
 const picLink = makePicLink('ely');
 
 const zonePlanData = [
