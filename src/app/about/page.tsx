@@ -61,7 +61,7 @@ const AboutPage = () => {
         </Grid>
       </section>
       <section>
-        <Grid className='border-t border-medium-grey pt-4 mt-50'>
+        <Grid >
           <h5 className='text-h5-regular col-span-1 text-grey'>Команда</h5>
           <h5 className='text-h5-regular col-span-11'>
             Наша команда состоит из талантливых и опытных архитекторов,
@@ -69,6 +69,7 @@ const AboutPage = () => {
             мастер-плана до проектирования объекта любой сложности.
           </h5>
           <div className='col-start-5 col-span-8 mt-16 mb-56'>
+          
             <Grid cols={10}>
               <Avatar
                 name='Даниил Хлебников'
@@ -98,6 +99,7 @@ const AboutPage = () => {
             </Grid>
           </div>
 
+        </Grid>
           <div className='grid col-span-12 grid-cols-12 border-t border-medium-grey pt-4'>
             <h5 className='text-2xl col-span-1 text-grey'>Клиенты</h5>
             <h5 className='text-2xl col-span-11'>
@@ -117,7 +119,6 @@ const AboutPage = () => {
               <h5>ТД Возрождение</h5>
             </div>
           </div>
-        </Grid>
       </section>
     </PageMarginWithTitle>
   );
