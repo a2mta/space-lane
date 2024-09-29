@@ -24,7 +24,7 @@ const Header = () => {
           <HeaderLink url='/consulting' text='Консалтинг' />
           <HeaderLink url='/media' text='Медиа' />
         </div>
-        <span className='cursor-pointer'>Контакты</span>
+        <HeaderLink url='/contacts' text='Контакты' />
       </nav>
     </header>
   );
