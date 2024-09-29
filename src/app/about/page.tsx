@@ -8,7 +8,7 @@ const Avatar: FC<{ url: string; name: string; title: string }> = ({
   title,
   url,
 }) => (
-  <div className='col-span-2 flex flex-col max-w-64'>
+  <div className='col-span-2 flex flex-col'>
     <Image
       className='grayscale'
       src={url}
@@ -69,7 +69,7 @@ const AboutPage = () => {
             мастер-плана до проектирования объекта любой сложности.
           </h5>
           <div className='col-start-5 col-span-8 mt-16 mb-56'>
-            <Grid className='lg:grid-cols-10 gap-x-10'>
+            <Grid cols={10} className='gap-x-10'>
               <Avatar
                 name='Даниил Хлебников'
                 title='Архитектор, основатель компании'

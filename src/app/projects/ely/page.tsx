@@ -210,7 +210,7 @@ const ExplicationRow: FC<{
 );
 
 const ZoneDataRow: FC<{ text: string; icon?: string }> = ({ text, icon }) => (
-  <Grid className='lg:grid-cols-4'>
+  <Grid cols={4}>
     <div className='col-span-2'>{text}</div>
     <div className='col-span-2'>
       <span className={classNames('w-28 block h-6 mr-4', icon)} />
@@ -222,7 +222,7 @@ const MaterialRow: FC<{ text: string; icon?: string | ReactElement }> = ({
   text,
   icon,
 }) => (
-  <Grid className='lg:grid-cols-4 mt-6'>
+  <Grid cols={4} className='mt-6'>
     <div className='col-span-1'>
       {typeof icon === 'string' ? (
         <span className={classNames('w-full block h-[26px] mr-4', icon)} />
@@ -239,7 +239,7 @@ const TrendRow: FC<{
   description: string;
   icon: ReactElement;
 }> = ({ description, icon, title }) => (
-  <Grid className='lg:grid-cols-8'>
+  <Grid cols={8}>
     <div className='col-span-4'>
       <span className='text-h5'>{title}</span>
       <span className='text-body-regular block mt-4'>{description}</span>
@@ -450,7 +450,7 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-8 mt-13 border border-medium-grey py-14 px-10'>
-              <Grid className='lg:grid-cols-8 grid-cols-2'>
+              <Grid cols={8}>
                 <div className='col-span-3 space-y-4'>
                   <span className='block text-body-regular text-grey'>
                     <span className='font-semibold text-black'>58 минут</span>{' '}
@@ -539,7 +539,7 @@ const ElyPage = async () => {
                   Фото реализации 1-го этапа (в процессе)
                 </span>
               </div>
-              <Grid className='lg:grid-cols-8 mt-3'>
+              <Grid cols={8} className='mt-3'>
                 <div className='col-start-5 col-span-4'>
                   <span className='text-body-regular'>
                     Объёмно-пространственная структура въездной зоны формируется
@@ -566,7 +566,7 @@ const ElyPage = async () => {
               <span className='text-h4'>
                 Схема функционального зонирования общественного ядра посёлка
               </span>
-              <Grid className='lg:grid-cols-4 mt-10'>
+              <Grid cols={4} className='mt-10'>
                 <div className='col-span-2'>
                   <span className='text-h4'>3,65 га</span>
                   <span className='text-body-regular block mt-4'>
@@ -601,7 +601,7 @@ const ElyPage = async () => {
               <Image alt='' width={860} height={725} src={picLink('10')} />
             </div>
             <div className='col-span-6'>
-              <Grid className='lg:grid-cols-6'>
+              <Grid cols={6}>
                 <div className='col-span-3 flex flex-col space-y-4'>
                   {landScaping.slice(0, 10).map((item, index) => (
                     <span key={item + index}>{`${addLeadingZero(
@@ -617,7 +617,7 @@ const ElyPage = async () => {
                   ))}
                 </div>
                 <div className='col-span-6 mt-16 p-6 border border-medium-grey'>
-                  <Grid className='lg:grid-cols-6'>
+                  <Grid cols={6}>
                     <div className='col-span-6 flex space-x-4 mb-4'>
                       <span className='text-body'>Экспликация зданий</span>
                       <span className='w-[100px] h-[26px] bg-[#DE6141] block'></span>
@@ -820,7 +820,7 @@ const ElyPage = async () => {
               />
             </div>
             <div className='col-span-6'>
-              <Grid className='lg:grid-cols-6 pb-2 text-body-regular font-medium text-grey'>
+              <Grid cols={6} className='pb-2 text-body-regular font-medium text-grey'>
                 <div className='col-span-1 col-start-3'>№</div>
                 <div className='col-span-2'>Наименование</div>
                 <div className='col-span-1'>Площадь, м²</div>
@@ -829,7 +829,8 @@ const ElyPage = async () => {
                 {zonePlanData.map(({ title, items }, index) => (
                   <Grid
                     key={title + index}
-                    className='lg:grid-cols-6 border-t border-black pt-4'
+                    cols={6}
+                    className='border-t border-black pt-4'
                   >
                     <div className='col-span-2'>
                       <span className='text-h5'>{title}</span>
@@ -838,7 +839,8 @@ const ElyPage = async () => {
                       {items.map(({ area, n, title }) => (
                         <Grid
                           key={n}
-                          className='lg:grid-cols-4 text-black text-body-regular border-b border-medium-grey pb-2'
+                          cols={4}
+                          className=' text-black text-body-regular border-b border-medium-grey pb-2'
                         >
                           <div className='col-span-1'>
                             <span>{n}</span>
@@ -851,7 +853,7 @@ const ElyPage = async () => {
                           </div>
                         </Grid>
                       ))}
-                      <Grid className='lg:grid-cols-4 text-black text-body-regular font-medium pb-2'>
+                      <Grid cols={4} className='text-black text-body-regular font-medium pb-2'>
                         <div className='col-span-1'>
                           <span>Итого</span>
                         </div>
@@ -864,18 +866,22 @@ const ElyPage = async () => {
                     </div>
                   </Grid>
                 ))}
-                <Grid className='lg:grid-cols-6 border-t border-black pt-4 text-h5 font-medium'>
+                <Grid cols={6} className='border-t border-black pt-4 text-h5 font-medium'>
                   <div className='col-span-2'>
                     <span>Общий итог</span>
                   </div>
                   <div className='col-span-1 col-start-6'>
-                    {zonePlanData.reduce(
-                      (prev, cur) =>
-                        prev +
-                        cur.items
-                          .reduce((prev, cur) => prev + Number(cur.area), 0),
-                      0
-                    ).toFixed(1)}
+                    {zonePlanData
+                      .reduce(
+                        (prev, cur) =>
+                          prev +
+                          cur.items.reduce(
+                            (prev, cur) => prev + Number(cur.area),
+                            0
+                          ),
+                        0
+                      )
+                      .toFixed(1)}
                   </div>
                 </Grid>
               </div>
