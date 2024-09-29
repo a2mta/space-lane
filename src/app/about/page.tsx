@@ -69,7 +69,7 @@ const AboutPage = () => {
             мастер-плана до проектирования объекта любой сложности.
           </h5>
           <div className='col-start-5 col-span-8 mt-16 mb-56'>
-            <Grid cols={10} className='gap-x-10'>
+            <Grid cols={10}>
               <Avatar
                 name='Даниил Хлебников'
                 title='Архитектор, основатель компании'

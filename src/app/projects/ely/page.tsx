@@ -772,7 +772,7 @@ const ElyPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
+          <Grid cols={12} className='mt-50'>
             <div className='col-span-4'>
               <Image alt='' width={560} height={386} src={picLink('30')} />
             </div>
@@ -789,9 +789,11 @@ const ElyPage = async () => {
               <span className='text-body-medium mb-8'>
                 Материалы отделки фасадов
               </span>
-              {materialData.map(({ icon, text }, index) => (
-                <MaterialRow key={index + text} text={text} icon={icon} />
-              ))}
+              <div className='flex flex-col'>
+                {materialData.map(({ icon, text }, index) => (
+                  <MaterialRow key={index + text} text={text} icon={icon} />
+                ))}
+              </div>
             </div>
           </Grid>
         </section>
@@ -820,7 +822,10 @@ const ElyPage = async () => {
               />
             </div>
             <div className='col-span-6'>
-              <Grid cols={6} className='pb-2 text-body-regular font-medium text-grey'>
+              <Grid
+                cols={6}
+                className='pb-2 text-body-regular font-medium text-grey'
+              >
                 <div className='col-span-1 col-start-3'>№</div>
                 <div className='col-span-2'>Наименование</div>
                 <div className='col-span-1'>Площадь, м²</div>
@@ -835,7 +840,7 @@ const ElyPage = async () => {
                     <div className='col-span-2'>
                       <span className='text-h5'>{title}</span>
                     </div>
-                    <div className='col-span-4 space-y-4'>
+                    <div className='col-span-4'>
                       {items.map(({ area, n, title }) => (
                         <Grid
                           key={n}
@@ -853,7 +858,10 @@ const ElyPage = async () => {
                           </div>
                         </Grid>
                       ))}
-                      <Grid cols={4} className='text-black text-body-regular font-medium pb-2'>
+                      <Grid
+                        cols={4}
+                        className='text-black text-body-regular font-medium pb-2'
+                      >
                         <div className='col-span-1'>
                           <span>Итого</span>
                         </div>
@@ -866,7 +874,10 @@ const ElyPage = async () => {
                     </div>
                   </Grid>
                 ))}
-                <Grid cols={6} className='border-t border-black pt-4 text-h5 font-medium'>
+                <Grid
+                  cols={6}
+                  className='border-t border-black pt-4 text-h5 font-medium'
+                >
                   <div className='col-span-2'>
                     <span>Общий итог</span>
                   </div>
