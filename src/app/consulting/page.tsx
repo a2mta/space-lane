@@ -248,7 +248,7 @@ const ConsultingPage = async () => {
         <div className='mt-50'>
           <section>
             <Grid className='col-span-12'>
-              <div className='col-span-2 grid gap-y-10'>
+              <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5'>
                     Доля в общем
@@ -257,22 +257,22 @@ const ConsultingPage = async () => {
                   </span>
                 </div>
               </div>
-              <div className='col-span-2 grid gap-y-10'>
+              <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5'>Группа</span>
                 </div>
               </div>
-              <div className='col-span-2 grid gap-y-10'>
+              <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5'>Средний возраст</span>
                 </div>
               </div>
-              <div className='col-span-2 grid gap-y-10'>
+              <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5'>Состав семьи</span>
                 </div>
               </div>
-              <div className='col-span-4 grid gap-y-10'>
+              <div className='col-span-4 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5'>
                     Цель приобретения недвижимости

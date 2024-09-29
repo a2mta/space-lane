@@ -19,3 +19,4 @@ const Grid: FC<
 };
 
 export default Grid;
+// grid gap-x-10 lg:grid-cols-12 grid-cols-2 col-span-12 mt-10
