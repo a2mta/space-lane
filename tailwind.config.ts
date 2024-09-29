@@ -7,6 +7,20 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'lg:grid-cols-1',
+    'lg:grid-cols-2',
+    'lg:grid-cols-3',
+    'lg:grid-cols-4',
+    'lg:grid-cols-5',
+    'lg:grid-cols-6',
+    'lg:grid-cols-7',
+    'lg:grid-cols-8',
+    'lg:grid-cols-9',
+    'lg:grid-cols-10',
+    'lg:grid-cols-11',
+    'lg:grid-cols-12',
+  ],
   theme: {
     colors: {
       'medium-grey': '#D1D1D1',
@@ -24,8 +38,8 @@ const config: Config = {
     screens: {
       md: '480px',
       lg: '1280px',
-      xl: '1440px',
-      '2xl': '1920px',
+      //   xl: '1440px',
+      //   '2xl': '1920px',
     },
     extend: {
       fontFamily: {

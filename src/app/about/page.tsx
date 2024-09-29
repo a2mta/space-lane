@@ -62,7 +62,7 @@ const AboutPage = () => {
       </section>
       <section>
         <Grid >
-          {/* <h5 className='text-h5-regular col-span-1 text-grey'>Команда</h5> */}
+          <h5 className='text-h5-regular col-span-1 text-grey'>Команда</h5>
           <h5 className='text-h5-regular col-span-11'>
             Наша команда состоит из талантливых и опытных архитекторов,
             предлагая решения от разработки видения развития территории и
