@@ -30,7 +30,7 @@ const ProjectMainPicWithInfo: FC<{
     <>
       <PageMarginWithTitle>
         <Grid>
-          <div className='col-span-7 mb-10'>
+          <div className='col-span-12 mb-10'>
             <div className='text-h2'>{title}</div>
           </div>
         </Grid>

@@ -22,6 +22,10 @@ const config: Config = {
     'lg:grid-cols-12',
   ],
   theme: {
+    aspectRatio: {
+      '7/4': '7 / 4',
+      video: '16 / 9',
+    },
     colors: {
       'medium-grey': '#D1D1D1',
       grey: '#6D6D6D',
