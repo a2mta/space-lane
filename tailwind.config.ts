@@ -20,10 +20,23 @@ const config: Config = {
     'lg:grid-cols-10',
     'lg:grid-cols-11',
     'lg:grid-cols-12',
+    'grid-cols-12',
+    'grid-cols-11',
+    'grid-cols-10',
+    'grid-cols-9',
+    'grid-cols-8',
+    'grid-cols-7',
+    'grid-cols-6',
+    'grid-cols-5',
+    'grid-cols-4',
+    'grid-cols-3',
+    'grid-cols-2',
+    'grid-cols-1',
   ],
   theme: {
     aspectRatio: {
       '7/4': '7 / 4',
+      '5/4': '5 / 4',
       video: '16 / 9',
     },
     backgroundImage: {
@@ -45,9 +58,8 @@ const config: Config = {
     },
     screens: {
       md: '480px',
-      lg: '1280px',
-      //   xl: '1440px',
-      //   '2xl': '1920px',
+      lg: '1440px',
+      xl: '1920px',
     },
     extend: {
       fontFamily: {
@@ -58,12 +70,15 @@ const config: Config = {
         'body-caption': ['0.75rem', '1.125rem'],
         'body-medium': ['0.75rem', '1.125rem'],
         h4: ['2.125rem', '134%'],
+        'h4-mob': ['1.25rem', '1.875rem'],
         h3: ['3rem', 'initial'],
+        'h3-mob': ['1.5rem', '2.125rem'],
         h2: ['3.75rem', '4.375rem'],
         h5: ['1.5rem', '2.25rem'],
         'h5-regular': ['1.5rem', '2.125rem'],
         body: ['1.125rem', '1.625rem'],
         'body-regular': ['1.125rem', '1.625rem'],
+        'body-regular-mob': ['1rem', '1.5rem'],
         untitled: ['1.25rem', 'initial'],
       },
       fontWeight: {

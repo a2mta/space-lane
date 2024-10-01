@@ -101,13 +101,13 @@ const AboutPage = () => {
 
         </Grid>
           <div className='grid col-span-12 grid-cols-12 border-t border-medium-grey pt-4'>
-            <h5 className='text-2xl col-span-1 text-grey'>Клиенты</h5>
-            <h5 className='text-2xl col-span-11'>
+            <h5 className='text-xl col-span-1 text-grey'>Клиенты</h5>
+            <h5 className='text-xl col-span-11'>
               Мы активно взаимодействуем с различными партнерами, используя наши
               знания, навыки и опыт для обеспечения разнообразных потребностей
               наших клиентов.
             </h5>
-            <div className='col-start-2 mt-20 col-span-11 flex text-2xl font-light'>
+            <div className='col-start-2 mt-20 col-span-11 flex text-xl font-light'>
               <h5>ПАО «Рублево-Архангельское»</h5>
               <h5 className='text-orange mr-16 ml-11'>/</h5>
               <h5>ПАО Сбербанк</h5>

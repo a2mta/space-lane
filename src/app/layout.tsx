@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import localFont from 'next/font/local';
 import { getLocale } from '../../i18n/server';
 import { LocaleProvider } from '@/hooks/locale-provider';
+import HeaderMobile from '@/components/Header/HeaderMobile';
 
 // const inter = Inter({ subsets: ['latin'] });
 const myFont = localFont({
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={myFont.variable + ' font-manrope'}>
         <LocaleProvider value={locale}>
           <Header />
+          <HeaderMobile />
           <main className='tracking-h5'>{children}</main>
           <Footer />
         </LocaleProvider>

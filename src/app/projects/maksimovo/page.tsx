@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { MapDescRow } from '@/components/MapDescRow';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import classNames from 'classnames';
+import { GreyCard } from '@/components/GreyCard';
 
 const picLink = makePicLink('maksimovo');
 
@@ -148,20 +149,6 @@ const houseData = [
   },
 ];
 
-const GreyCard: FC<{ index: string; title: string; desc: string }> = ({
-  desc,
-  index,
-  title,
-}) => (
-  <div className='col-span-4 p-6 flex justify-between flex-col bg-light-grey aspect-[7/4]'>
-    <div className='flex flex-col'>
-      <span className='text-h5'>{index}</span>
-      <span className='text-h5 font-medium'>{title}</span>
-    </div>
-    <span className='text-body-regular'>{desc}</span>
-  </div>
-);
-
 const HouseCard: FC<{
   index: string;
   title: string;
@@ -187,7 +174,7 @@ const HouseCard: FC<{
         <Grid
           cols={7}
           key={item.color + index}
-          className='py-4 border-b border-medium-grey text-body'
+          className='py-4 border-b border-medium-grey text-body-regular font-light'
         >
           <div className='ml-4 col-span-3'>
             <span>{item.element}</span>
@@ -225,7 +212,7 @@ const PointDataRow: FC<{
   <Grid className='mt-40'>
     <div className='col-span-4'>
       <span className='block mb-6 text-h5 font-medium'>{title}</span>
-      <span className='text-body'>{subTitle}</span>
+      <span className='text-body-regular font-light'>{subTitle}</span>
     </div>
     <div className='col-span-4'>{image}</div>
     <div className='col-span-4 space-y-6'>
@@ -234,7 +221,7 @@ const PointDataRow: FC<{
           <span className='text-body font-medium'>
             {addLeadingZero(index + 1)}
           </span>
-          <span className='ml-4 text-body-regular'>{item}</span>
+          <span className='ml-4 text-body-regular font-light'>{item}</span>
         </span>
       ))}
     </div>
@@ -262,7 +249,7 @@ const TypologyCard: FC<{
       <span className='text-body font-medium pb-6 border-b border-medium-grey block'>
         Тип дома — {type}
       </span>
-      <span className='text-body mt-6 block'>{desc}</span>
+      <span className='text-body-regular font-light mt-6 block'>{desc}</span>
     </div>
     <div className={classNames('col-span-6', { 'col-start-3': reverse })}>
       {image}
@@ -321,7 +308,7 @@ const MaksimovoPage = async () => {
               <span className='text-h4 font-medium'>Видение</span>
             </div>
             <div className='col-span-8'>
-              <span className='text-h5'>
+              <span className='text-h5 font-light'>
                 В основе проекта — идея создания единого зелёного пешеходного
                 маршрута, который проходит через зелёные общественные
                 пространства посёлка. Использование цветущих плодовых растений
@@ -337,7 +324,7 @@ const MaksimovoPage = async () => {
               <span className='text-h4 mt-[60px] font-medium block'>
                 Генеральный план и фрагменты благоустройства
               </span>
-              <span className='text-body mt-6 block'>
+              <span className='text-body-regular font-light mt-6 block'>
                 Под общественные пространства отведено 7 участков общей площадью
                 0,9 га (не включая территорию детского сада).
               </span>
@@ -356,7 +343,7 @@ const MaksimovoPage = async () => {
               <span className='text-h5 font-medium'>
                 Идентичность территории
               </span>
-              <span className='text-body mt-4 block'>
+              <span className='text-body-regular font-light mt-4 block'>
                 Плодовые культуры, такие как яблоня, вишня, груша, хорошо себя
                 чувствуют в Московском регионе. Они могут стать визитной
                 карточкой посёлка. Также растительные мотивы могут быть
@@ -369,7 +356,7 @@ const MaksimovoPage = async () => {
                 src={picLink('05')}
                 className='my-6'
               />
-              <span className='text-body mt-4 block'>
+              <span className='text-body-regular font-light mt-4 block'>
                 Экономические примечания к Павловскому межеванию (около 1800
                 года) описываютМаксимовку в следующих выражениях: «Сельцо на
                 суходоле при пруде, в нем саженая рыба — караси. Дачею на правом
@@ -416,7 +403,7 @@ const MaksimovoPage = async () => {
               </span>
             </div>
             <div className='col-span-4'>
-              <span className='text-body-regular'>
+              <span className='text-body-regular font-light'>
                 Дизайн-код выделяет два типа улиц (главные и второстепенные),
                 содержит типологию участков по площади (S, M, L), а также
                 типологию жилых домов, отличающихся по площади и планировочным
@@ -426,7 +413,7 @@ const MaksimovoPage = async () => {
               </span>
             </div>
             <div className='col-span-4'>
-              <span className='text-body-regular'>
+              <span className='text-body-regular font-light'>
                 Для создания целостного образа посёлка и формирования
                 идентичности улиц проект регулирует отдельные параметры
                 застройки участков, в частности, максимальный процент
@@ -479,7 +466,7 @@ const MaksimovoPage = async () => {
               </span>
             </div>
             <div className='col-span-8'>
-              <span className='text-body'>
+              <span className='text-body-regular font-light'>
                 Дизайн-код закладывает варианты цветов и материалов отделки
                 практически всех элементов экстерьера дома-от цоколя до подшива
                 свеса кровли. Наложение трёх цветовых схем отделки (светлой,
