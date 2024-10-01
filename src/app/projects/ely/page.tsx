@@ -185,10 +185,10 @@ const DecorationRow: FC<{
     <div className='col-span-4'>
       <span className='text-h5'>{title}</span>
     </div>
-    <div className='col-span-4'>
+    <div className='col-span-4 space-y-6'>
       {description.map((item, index) => (
         <span
-          className='text-body-regular'
+          className='text-body-regular block'
           key={index + item}
         >{`— ${item}`}</span>
       ))}
@@ -409,7 +409,7 @@ const explicationData = [
   },
   {
     text: 'Территория ООПТ',
-    icon: 'bg-[repeating-linear-gradient(-45deg,#fff 20px 36px,#f4f4f4 0px 40px)]',
+    icon: 'bg-lineGradient',
   },
   {
     text: 'Существующие здания и сооружения',

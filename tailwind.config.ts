@@ -26,6 +26,10 @@ const config: Config = {
       '7/4': '7 / 4',
       video: '16 / 9',
     },
+    backgroundImage: {
+      lineGradient:
+        'repeating-linear-gradient(-45deg,#fff 20px 36px,#f4f4f4 0px 40px)',
+    },
     colors: {
       'medium-grey': '#D1D1D1',
       grey: '#6D6D6D',

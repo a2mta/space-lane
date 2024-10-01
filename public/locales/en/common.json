@@ -5,7 +5,8 @@
   },
   "status": {
     "concept": "Concept",
-    "in_progress": "В реализации"
+    "in_progress": "В реализации",
+    "in_release_process": "В процессе реализации"
   },
   "area": {
     "5_4_ha": "5.4 ha"

@@ -335,7 +335,7 @@ const MaksimovoPage = async () => {
           <Grid className='mt-50'>
             <div className='col-span-4'>
               <span className='text-h4 mt-[60px] font-medium block'>
-                Генеральный план и фрагментыблагоустройства
+                Генеральный план и фрагменты благоустройства
               </span>
               <span className='text-body mt-6 block'>
                 Под общественные пространства отведено 7 участков общей площадью
