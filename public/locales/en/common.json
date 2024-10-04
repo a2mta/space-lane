@@ -1,7 +1,8 @@
 {
   "page_titles": {
     "novoseltsevo": "Cottage Settlement 'Novoseltsevo'",
-    "consulting": "Consulting"
+    "consulting": "Consulting",
+    "darino": "Darino"
   },
   "status": {
     "concept": "Concept",
@@ -9,7 +10,14 @@
     "in_release_process": "В процессе реализации"
   },
   "area": {
-    "5_4_ha": "5.4 ha"
+    "5_4_ha": "5.4 ha",
+    "roadway_surface_area": "Roadway Surface Area",
+    "pedestrian_surface_area": "Pedestrian Surface Area",
+    "recreational_zones_loose_surfaces_area": "Recreational Zones Loose Surfaces Area"
+  },
+  "count": {
+    "projected_trees": "Projected Trees",
+    "lighting_elements": "Lighting Elements"
   },
   "location": {
     "novoseltsevo": "Novoseltsevo, Moscow Region"
@@ -63,6 +71,10 @@
     "research_landscaping": "Research, Landscaping"
   },
   "distance": {
+    "to_mkad": "to MKAD",
+    "to_istra": "to Istra",
+    "to_railway_station_istra": "to Istra Railway Station",
+    "to_pyatnitskoye_shosse_metro_station": "to Pyatnitskoye Shosse Metro Station",
     "to_kremlin": "To the Kremlin",
     "to_altufyevo_metro": "To Altufyevo Metro Station (Serpukhovsko-Timiryazevskaya Line)",
     "to_sheremetyevo_airport": "To Sheremetyevo Airport",

@@ -12,20 +12,20 @@ import ImageWithCaption from '@/components/ImageWithCaption';
 const picLink = makePicLink('darino');
 
 const mapDescData = [
-  { title: '40 км', subTitle: 'до МКАД' },
-  { title: '12 км', subTitle: 'до Истры' },
-  { title: '14 км', subTitle: 'до железнодорожной станции Истра' },
-  { title: '50 км', subTitle: 'до аэропорта Шереметьево' },
-  { title: '58 км', subTitle: 'до станции метро Пятницкое шоссе' },
+  { title: '40 км', subTitle: 'distance.to_mkad' },
+  { title: '12 км', subTitle: 'distance.to_istra' },
+  { title: '14 км', subTitle: 'distance.to_railway_station_istra' },
+  { title: '50 км', subTitle: 'distance.to_sheremetyevo_airport' },
+  { title: '58 км', subTitle: 'distance.to_pyatnitskoye_shosse_metro_station' },
 ];
 
 const mapSpaceDescData = [
-  { title: '7610 м²', desc: 'Площадь покрытия проезжей части' },
-  { title: '5554 м²', desc: 'Площадь твёрдого покрытия пешеходной части' },
-  { title: '1520 м²', desc: 'Площадь сыпучих покрытий рекреационных зон' },
-  { title: '714 м²', desc: 'Площадь сыпучих покрытий рекреационных зон' },
-  { title: '327 шт', desc: 'Проектируемых деревьев' },
-  { title: '73 шт', desc: 'Элемента освещения' },
+  { title: '7610 м²', desc: 'area.roadway_surface_area' },
+  { title: '5554 м²', desc: 'area.pedestrian_surface_area' },
+  { title: '1520 м²', desc: 'area.recreational_zones_loose_surfaces_area' },
+  { title: '714 м²', desc: 'area.recreational_zones_loose_surfaces_area' },
+  { title: '327 шт', desc: 'count.projected_trees' },
+  { title: '73 шт', desc: 'count.lighting_elements' },
 ];
 
 const surfaces = [
@@ -163,8 +163,13 @@ const DarinoPage = async () => {
               <Image src={picLink('03')} width={1160} height={771} alt='' />
             </div>
             <div className='col-span-4'>
-              {mapDescData.map((item, index) => (
-                <MapDescRow {...item} horizontal key={item.title + index} />
+              {mapDescData.map(({ subTitle, title }, index) => (
+                <MapDescRow
+                  title={title}
+                  subTitle={t(subTitle)}
+                  horizontal
+                  key={title + index}
+                />
               ))}
             </div>
           </Grid>
@@ -205,8 +210,12 @@ const DarinoPage = async () => {
             </div>
             <div className='col-span-4 border-l border-grey pl-10'>
               <div className='flex flex-col space-y-10'>
-                {mapSpaceDescData.map((item, index) => (
-                  <DarinoMapDescRow {...item} key={index + item.title} />
+                {mapSpaceDescData.map(({ desc, title }, index) => (
+                  <DarinoMapDescRow
+                    desc={t(desc)}
+                    title={title}
+                    key={index + title}
+                  />
                 ))}
               </div>
             </div>

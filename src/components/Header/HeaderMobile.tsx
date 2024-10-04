@@ -4,7 +4,7 @@ import React from 'react';
 
 const HeaderMobile = () => {
   return (
-    <header className='flex lg:hidden h-14 font-manrope px-5 justify-between py-5 bg-white border-b border-medium-grey'>
+    <header className='flex md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white border-b border-medium-grey'>
       <Link href='/'>
         <Image
           priority={true}

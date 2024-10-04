@@ -8,7 +8,7 @@ const Grid: FC<
     <div
       className={classNames(
         'grid',
-        `lg:grid-cols-${cols || 12}`,
+        `md:grid-cols-${cols || 12}`,
         `grid-cols-${colsM || 2}`,
         `gap-x-${gapX || 10}`,
         className

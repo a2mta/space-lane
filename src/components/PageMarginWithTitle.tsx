@@ -13,7 +13,7 @@ const PageMarginWithTitle: FC<
       {title && (
         <div
           className={classNames(
-            'flex flex-col w-full lg:px-20 px-5',
+            'flex flex-col w-full md:px-20 px-5',
             className
           )}
         >
@@ -30,7 +30,7 @@ const PageMarginWithTitle: FC<
       {children && (
         <div
           className={classNames(
-            'flex flex-col w-full lg:px-20 px-5',
+            'flex flex-col w-full md:px-20 px-5',
             className
           )}
         >
