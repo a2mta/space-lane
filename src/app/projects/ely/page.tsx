@@ -8,6 +8,7 @@ import Image from 'next/image';
 import classNames from 'classnames';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import { MapDescRow } from '@/components/MapDescRow';
+import { ExplicationRow } from '@/components/ExplicationRow';
 const picLink = makePicLink('ely');
 
 const zonePlanData = [
@@ -197,16 +198,6 @@ const DecorationRow: FC<{
       <Image alt='' width={560} height={360} src={picLink(image)} />
     </div>
   </Grid>
-);
-
-const ExplicationRow: FC<{
-  text: string;
-  icon?: string;
-}> = ({ text, icon }) => (
-  <div className='flex'>
-    <span className={classNames('w-28 h-6 mr-4', icon)} />
-    <span>{text}</span>
-  </div>
 );
 
 const ZoneDataRow: FC<{ text: string; icon?: string }> = ({ text, icon }) => (

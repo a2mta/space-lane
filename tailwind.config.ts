@@ -42,6 +42,8 @@ const config: Config = {
     backgroundImage: {
       lineGradient:
         'repeating-linear-gradient(-45deg,#fff 20px 36px,#f4f4f4 0px 40px)',
+      twoColorGradient:
+        'linear-gradient(90deg, rgba(176,214,227,1) 0%, rgba(176,214,227,1) 50%, rgba(201,193,147,1) 50%, rgba(201,193,147,1) 100%)',
     },
     colors: {
       'medium-grey': '#D1D1D1',
