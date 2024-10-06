@@ -1,12 +1,16 @@
 import classNames from 'classnames';
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 
 export const ExplicationRow: FC<{
   text: string;
-  icon?: string;
+  icon?: string | ReactElement;
 }> = ({ text, icon }) => (
   <div className='flex'>
-    <span className={classNames('min-w-28 h-6 mr-4', icon)} />
-    <span>{text}</span>
+    {typeof icon === 'string' ? (
+      <span className={classNames('min-w-28 h-6', icon)} />
+    ) : (
+      icon
+    )}
+    <span className='ml-4 flex items-center'>{text}</span>
   </div>
 );

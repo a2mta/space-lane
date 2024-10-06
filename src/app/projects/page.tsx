@@ -1,3 +1,4 @@
+import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectCard from '@/components/ProjectCard';
 import React from 'react';
@@ -62,7 +63,7 @@ const projects = [
 const ProjectsPage = () => {
   return (
     <PageMarginWithTitle withBorder title='Проекты'>
-      <div className='grid grid-cols-12 gap-x-10 mt-30 gap-y-10'>
+      <Grid className='mt-30 gap-y-10'>
         {projects.map((item, index) => (
           <div key={index + item.title} className='col-span-4 relative '>
             <ProjectCard
@@ -73,7 +74,7 @@ const ProjectsPage = () => {
             />
           </div>
         ))}
-      </div>
+      </Grid>
     </PageMarginWithTitle>
   );
 };

@@ -5,8 +5,9 @@ import Grid from '@/components/Grid';
 import Image from 'next/image';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import classNames from 'classnames';
+import { makePicLink } from '@/utils';
 
-const picLink = (picNumber: string) => `/pics/projects/fragi/${picNumber}.png`;
+const picLink = makePicLink('fragi');
 
 const descData = [
   {
