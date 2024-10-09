@@ -10,8 +10,12 @@ const MediaPage = () => {
         title='01'
         subTitle='Sber Design Conf'
         shortDesc='Организация и проведение архитектурной части конференции'
-      />
-      <Collapse title='03 Входная группа Флакона на Большой Новодмитровской' />
+      >
+        ss
+        </CollapseWide>
+      <Collapse title='03 Входная группа Флакона на Большой Новодмитровской'>
+        wwwwqqqq
+      </Collapse>
     </PageMarginWithTitle>
   );
 };

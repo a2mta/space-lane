@@ -82,6 +82,7 @@ const config: Config = {
       },
       fontSize: {
         'body-caption': ['0.75rem', '1.125rem'],
+        'body-caption-mob': ['0.625rem', '1rem'],
         'body-medium': ['0.75rem', '1.125rem'],
         h4: ['2.125rem', '134%'],
         'h4-mob': ['1.25rem', '1.875rem'],
@@ -89,6 +90,7 @@ const config: Config = {
         'h3-mob': ['1.5rem', '2.125rem'],
         h2: ['3.75rem', '4.375rem'],
         h5: ['1.5rem', '2.25rem'],
+        h6: ['1.25rem', 'initial'],
         'h5-regular': ['1.5rem', '2.125rem'],
         body: ['1.125rem', '1.625rem'],
         'body-regular': ['1.125rem', '1.625rem'],

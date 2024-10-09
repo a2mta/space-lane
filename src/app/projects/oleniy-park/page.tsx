@@ -574,7 +574,92 @@ const OleniyParkPage = async () => {
         <section>
           <Grid className='mt-36'>
             <div className='col-span-12'>
-              <Collapse title='01 Пешеходные маршруты' />
+              <Collapse title='01 Пешеходные маршруты'>
+                <Grid>
+                  <div className='col-start-5 col-span-8 mb-10'>
+                    <H5Medium>
+                      Пешие маршруты проложены в границах парка с учётом
+                      раскрытия пейзажных видов и возможности наблюдения за
+                      флорой и фауной
+                    </H5Medium>
+                  </div>
+                  <div className='col-span-4'>
+                    <div className='flex flex-col'>
+                      <H5Medium>Короткие маршруты</H5Medium>
+                      <Grid cols={4} className='mt-6'>
+                        <div className='flex flex-col space-y-4 col-span-3'>
+                          <div className='flex  justify-between items-center'>
+                            <BodyMedium>Маршрут ПМ1, ПМ2</BodyMedium>
+                          </div>
+                          <BodyRegular>
+                            4,0 км — 2 часа + 20 мин, отдых
+                          </BodyRegular>
+                          <BodyRegular>
+                            4,2 км — 2 часа 10 мин + 20 мин, отдых
+                          </BodyRegular>
+                        </div>
+                        <div className='col-span-1'>
+                          <div className='w-full mt-1 h-4 bg-[#B2D235]' />
+                        </div>
+                      </Grid>
+                    </div>
+                    <div className='flex flex-col mt-10'>
+                      <H5Medium>Длинные маршруты</H5Medium>
+                      <div className='flex flex-col space-y-6'>
+                        <Grid cols={4} className='mt-6'>
+                          <div className='flex flex-col space-y-4 col-span-3'>
+                            <div className='flex justify-between items-center'>
+                              <BodyMedium>Обзорный маршрут ПО1</BodyMedium>
+                            </div>
+                            <BodyRegular>
+                              9,5 км — 4 часа 45 мин + 1 час остановки и отдых
+                            </BodyRegular>
+                          </div>
+                          <div className='col-span-1'>
+                            <div className='w-full mt-1 h-4 bg-[#E1E887]' />
+                          </div>
+                        </Grid>
+                        <Grid cols={4} className='mt-6'>
+                          <div className='flex flex-col space-y-4 col-span-3'>
+                            <div className='flex justify-between items-center'>
+                              <BodyMedium>Обзорный маршрут ПО2</BodyMedium>
+                            </div>
+                            <BodyRegular>
+                              14,8 км и 4,3 км возврат всего 9 часов 33 мин. + 1
+                              час остановки
+                            </BodyRegular>
+                          </div>
+                          <div className='col-span-1'>
+                            <div className='w-full mt-1 h-4 bg-[#94B479]' />
+                          </div>
+                        </Grid>
+                        <Grid cols={4} className='mt-6'>
+                          <div className='flex flex-col space-y-4 col-span-3'>
+                            <div className='flex justify-between items-center'>
+                              <BodyMedium>Обзорный маршрут ПО3</BodyMedium>
+                            </div>
+                            <BodyRegular>
+                              12,9 км и 4,3 км возврат всего 17,2–8 часов 35
+                              мин, + 1 час остановки
+                            </BodyRegular>
+                          </div>
+                          <div className='col-span-1'>
+                            <div className='w-full mt-1 h-4 bg-[#244132]' />
+                          </div>
+                        </Grid>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-span-8'>
+                    <Image
+                      alt=''
+                      width={860}
+                      height={692}
+                      src={picLink('34')}
+                    />
+                  </div>
+                </Grid>
+              </Collapse>
               <Collapse title='02 Велосипедные маршруты' />
               <Collapse title='03 Конные маршруты' />
               <Collapse title='04 Автомобильные маршруты (дополнительная инфраструктура)' />
