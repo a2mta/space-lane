@@ -52,53 +52,53 @@ const ProjectMainPicWithInfo: FC<{
             )}
           </div>
           <div className='md:col-start-9 md:col-span-4 col-span-2 text-body-regular space-y-4 md:mt-0 mt-4'>
-            <Grid>
-              <div className='md:col-span-6 col-span-1'>
+            <Grid cols={10}>
+              <div className='md:col-span-5 col-span-1'>
                 <span className='text-body-regular font-light text-grey'>
                   Местоположение
                 </span>
               </div>
-              <div className='md:col-span-6 col-span-1'>
+              <div className='md:col-span-5 col-span-1'>
                 <span>{location}</span>
               </div>
             </Grid>
-            <Grid>
-              <div className='md:col-span-6 col-span-1'>
+            <Grid cols={10}>
+              <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular font-light text-grey'>
                   Площадь
                 </span>
               </div>
-              <div className='md:col-span-6 col-span-1'>
+              <div className=' md:col-span-5 col-span-1'>
                 <span>{area}</span>
               </div>
             </Grid>
-            <Grid>
-              <div className='md:col-span-6 col-span-1'>
+            <Grid cols={10}>
+              <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular font-light text-grey'>
                   Год
                 </span>
               </div>
-              <div className='md:col-span-6 col-span-1'>
+              <div className=' md:col-span-5 col-span-1'>
                 <span>{year}</span>
               </div>
             </Grid>
-            <Grid>
-              <div className='md:col-span-6 col-span-1'>
+            <Grid cols={10}>
+              <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular font-light text-grey'>
                   Статус проекта
                 </span>
               </div>
-              <div className='md:col-span-6 col-span-1'>
+              <div className=' md:col-span-5 col-span-1'>
                 <span>{status}</span>
               </div>
             </Grid>
-            <Grid>
-              <div className='md:col-span-6 col-span-1'>
+            <Grid cols={10}>
+              <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular font-light text-grey'>
                   Тип
                 </span>
               </div>
-              <div className='md:col-span-6 col-span-1'>
+              <div className=' md:col-span-5 col-span-1'>
                 <span>{type}</span>
               </div>
             </Grid>

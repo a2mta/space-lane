@@ -12,7 +12,6 @@ import { ExplicationRow } from '@/components/ExplicationRow';
 import H5Regular from '@/components/typography/H5Regular';
 import BodyMedium from '@/components/typography/BodyMedium';
 import Collapse from '@/components/Collapse';
-import CollapseWide from '@/components/CollapseWide';
 const picLink = makePicLink('oleniy-park');
 
 type RouteRowType = {

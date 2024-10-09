@@ -45,7 +45,7 @@ const Collapse: FC<{ title: string } & PropsWithChildren> = ({
               height={32}
               alt='collapse'
               src='/icons/cross.svg'
-              className={`hidden md:visible cursor-pointer transition-transform duration-200 ${
+              className={`hidden md:block cursor-pointer transition-transform duration-200 ${
                 isCollapsed ? '' : 'rotate-45'
               }`}
               onClick={toggleCollapse}

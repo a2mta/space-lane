@@ -6,7 +6,7 @@ import Grid from '@/components/Grid';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import Image from 'next/image';
-import { GreyCard } from '@/components/GreyCard';
+import { IconCard } from '@/components/IconCard';
 
 const picLink = makePicLink('corso');
 
@@ -38,26 +38,32 @@ const greyCardsData = [
   {
     title: 'Зонирование при помощи типов мощения',
     desc: 'Цвета мощения подобраны в тон материалам фасада, чтобы поддержать целостность архитектурного образа',
+    icon: <Image src={picLink('14', 'svg')} width={56} height={56} alt='' />,
   },
   {
     title: 'Эксплуатируемая кровля подземной парковки',
     desc: 'В проекте уклон ж/б основания используется для устройства амфитеатра и зелёных террас',
+    icon: <Image src={picLink('15', 'svg')} width={74} height={69} alt='' />,
   },
   {
     title: 'Контраст благоустройства и архитектуры',
     desc: 'Решения подчёркивают разность масштабов компактной плазы и большого объёма жилого комплекса',
+    icon: <Image src={picLink('16', 'svg')} width={69} height={63} alt='' />,
   },
   {
     title: 'Создание зелёных палисадников',
     desc: 'Палисадники вдоль фасадов разделяют потоки и создают гуманную среду у выходов из мест общего пользования',
-  },
-  {
-    title: 'Геопластика для живого ландшафта',
-    desc: 'Геопластика позволяет высаживать на кровле парковки деревья-крупномеры и кустарники, создавая многоплановые композиции территории',
+    icon: <Image src={picLink('17', 'svg')} width={85} height={41} alt='' />,
   },
   {
     title: 'Готовые мафы для ускорения процесса реализации',
     desc: 'Использование минимального количества индивидуальных малых архитектурных форм при сохранении уникальных решений ускоряет процесс согласований и строительно-монтажные работы',
+    icon: <Image src={picLink('18', 'svg')} width={85} height={49} alt='' />,
+  },
+  {
+    title: 'Геопластика для живого ландшафта',
+    desc: 'Геопластика позволяет высаживать на кровле парковки деревья-крупномеры и кустарники, создавая многоплановые композиции территории',
+    icon: <Image src={picLink('19', 'svg')} width={85} height={63} alt='' />,
   },
 ];
 
@@ -185,7 +191,7 @@ const SurfaceRow: FC<{ title: string; subTitle: string }> = ({
 );
 
 const DescRow: FC<{ item: string; index: number }> = ({ index, item }) => (
-  <span className='text-body-regular font-light block'>
+  <span className='text-body-caption-mob md:text-body-regular font-light block'>
     {`${addLeadingZero(index + 1)} — ${item}`}
   </span>
 );
@@ -213,8 +219,8 @@ const CorsoPage = async () => {
       </section>
       <PageMarginWithTitle>
         <section>
-          <Grid className='lg:mt-50 mt-6'>
-            <div className='lg:col-span-4 col-span-2 mb-9 lg:mb-0'>
+          <Grid className='mt-30'>
+            <div className='md:col-span-4 col-span-2 mb-9 lg:mb-0'>
               <span className='text-body-regular-mob lg:text-body-regular font-light'>
                 Разрабатывая концептуальные решения приватного дворового
                 пространства, мы хотели поддержать мотивы классической
@@ -223,7 +229,7 @@ const CorsoPage = async () => {
                 небольшая плаза, лёгкая пергола и многуровневый амфитеатр
               </span>
             </div>
-            <div className='col-span-2 lg:col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <ImageWithCaption
                 src={picLink('03')}
                 width={1160}
@@ -234,55 +240,14 @@ const CorsoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-12'>
-              <span className='text-h4 font-medium block mb-16'>
-                Генеральный план
-              </span>
-              <span className='text-body-caption font-medium block mb-2'>
-                Схема планировочной организации территории
-              </span>
-            </div>
-            <div className='col-span-8'>
-              <Image src={picLink('04')} width={1160} height={1000} alt='' />
-            </div>
-            <div className='col-span-2 space-y-6'>
-              {planData[0].map((item, index) => (
-                <DescRow index={index} item={item} key={item + index} />
-              ))}
-            </div>
-            <div className='col-span-2 space-y-6'>
-              {planData[1].map((item, index) => (
-                <DescRow
-                  index={index + planData[0].length}
-                  item={item}
-                  key={item + index}
-                />
-              ))}
-            </div>
-          </Grid>
-        </section>
-        <section>
-          <Grid className='mt-30'>
-            <div className='col-span-12'>
-              <span className='text-body font-medium'>
-                Принципиальный разрез по автостоянке
-              </span>
-            </div>
-            <div className='col-span-12 mt-16'>
-              <Image src={picLink('05')} width={1760} height={625} alt='' />
-            </div>
-          </Grid>
-        </section>
-        <section>
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
-            <div className='col-span-12 mb-6'>
+            <div className='col-span-2 md:col-span-12 mb-6'>
               <span className='text-h4 font-medium'>
                 Планировочные принципы
               </span>
             </div>
             {greyCardsData.map((item, index) => (
-              <GreyCard
+              <IconCard
                 className='mt-10'
                 {...item}
                 index={addLeadingZero(index + 1)}
@@ -312,6 +277,52 @@ const CorsoPage = async () => {
                   key={item.title + index}
                 />
               ))}
+            </div>
+          </Grid>
+        </section>
+        <section>
+          <Grid className='mt-50'>
+            <div className='col-span-2 md:col-span-12'>
+              <span className='text-h4 font-medium block mb-16'>
+                Генеральный план
+              </span>
+              <span className='hidden md:block text-body-caption font-medium mb-2'>
+                Схема планировочной организации территории
+              </span>
+            </div>
+            <div className='col-span-2 md:col-span-8 md:mb-0 mb-6'>
+              <Image src={picLink('04')} width={1160} height={1000} alt='' />
+            </div>
+            <div className='block md:hidden col-span-2'>
+              <span className='text-body-caption font-medium mb-4'>
+                Схема планировочной организации территории
+              </span>
+            </div>
+            <div className='col-span-1 md:col-span-2 space-y-2 md:space-y-6'>
+              {planData[0].map((item, index) => (
+                <DescRow index={index} item={item} key={item + index} />
+              ))}
+            </div>
+            <div className='col-span-1 md:col-span-2 space-y-2 md:space-y-6'>
+              {planData[1].map((item, index) => (
+                <DescRow
+                  index={index + planData[0].length}
+                  item={item}
+                  key={item + index}
+                />
+              ))}
+            </div>
+          </Grid>
+        </section>
+        <section className='md:block hidden'>
+          <Grid className='mt-30'>
+            <div className='col-span-12'>
+              <span className='text-body font-medium'>
+                Принципиальный разрез по автостоянке
+              </span>
+            </div>
+            <div className='col-span-12 mt-16'>
+              <Image src={picLink('05')} width={1760} height={625} alt='' />
             </div>
           </Grid>
         </section>
