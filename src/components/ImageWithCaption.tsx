@@ -11,15 +11,15 @@ const ImageWithCaption: FC<{
   title: string;
 }> = ({ height, src, title, width, fullWidth }) => {
   const titleBlock = (
-    <span className='text-body-caption mt-2 block'>{title}</span>
+    <span className='text-body-caption-mob md:text-body-caption font-light mt-2 block'>{title}</span>
   );
   return (
-    <div className='flex flex-col space-y-2'>
+    <div className='flex flex-col'>
       <Image alt='' width={width} height={height} src={src} />
       {fullWidth ? (
         <PageMarginWithTitle>
           <Grid>
-            <div className='col-span-12'>{titleBlock}</div>
+            <div className='col-span-2 md:col-span-12'>{titleBlock}</div>
           </Grid>
         </PageMarginWithTitle>
       ) : (

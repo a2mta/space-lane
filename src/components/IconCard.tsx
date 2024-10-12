@@ -11,7 +11,7 @@ export const IconCard: FC<{
 }> = ({ desc, className, index, title, icon }) => (
   <div
     className={classNames(
-      'col-span-1 md:col-span-4 p-6 flex flex-col aspect-[5/4] xl:min-h-max xl:aspect-[7/4] ',
+      'col-span-1 md:col-span-4 p-6 flex flex-col aspect-[5/4] xl:min-h-max xl:aspect-[7/4]',
       className
     )}
   >

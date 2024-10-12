@@ -30,7 +30,7 @@ const ProjectMainPicWithInfo: FC<{
     <>
       <PageMarginWithTitle>
         <Grid>
-          <div className='col-span-12 md:mb-10 mb-5'>
+          <div className='col-span-2 md:col-span-12 md:mb-10 mb-5'>
             <div className='text-h3-mob md:text-h2 font-medium'>{title}</div>
           </div>
         </Grid>
@@ -113,7 +113,7 @@ const ProjectMainPicWithInfo: FC<{
           {coverLink2Title && (
             <PageMarginWithTitle>
               <Grid>
-                <span className='text-body-caption mt-2 col-span-12'>
+                <span className='text-body-caption mt-2 col-span-2 md:col-span-12'>
                   {coverLink2Title}
                 </span>
               </Grid>

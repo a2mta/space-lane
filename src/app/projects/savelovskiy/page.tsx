@@ -53,13 +53,13 @@ const SavelovskiyPage = () => {
       </section>
       <PageMarginWithTitle>
         <Grid className='mt-30 md:mt-50'>
-          <div className='col-span-2 md:col-span-6 mb-10'>
+          <div className='col-span-2 md:col-span-6 mb-10 font-medium'>
             <span className='text-h3-mob md:text-h4 tracking-normal'>
               Большая Новодмитровская улица
             </span>
           </div>
           <div className='col-span-2 md:col-span-6'>
-            <span className='text-body-regular font-light md:font-normal md:text-h5 tracking-normal'>
+            <span className='text-body-regular font-light md:font-light md:text-h5 tracking-normal'>
               Большая Новодмитровская улица находится в Бутырском районе на
               севере Москвы. К ней примыкают такие знаковые городские
               пространства как арт-квартал «Хлебозавод», дизайн-завод «Флакон»,

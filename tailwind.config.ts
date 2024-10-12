@@ -82,6 +82,7 @@ const config: Config = {
       },
       fontSize: {
         'body-caption': ['0.75rem', '1.125rem'],
+        'body-caption-10': ['0.625rem', '1rem'],
         'body-caption-mob': ['0.625rem', '1rem'],
         'body-medium': ['0.75rem', '1.125rem'],
         h4: ['2.125rem', '134%'],

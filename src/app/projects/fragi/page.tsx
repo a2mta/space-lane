@@ -5,7 +5,8 @@ import Grid from '@/components/Grid';
 import Image from 'next/image';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import classNames from 'classnames';
-import { makePicLink } from '@/utils';
+import { addLeadingZero, makePicLink } from '@/utils';
+import ImageWithCaption from '@/components/ImageWithCaption';
 
 const picLink = makePicLink('fragi');
 
@@ -43,18 +44,61 @@ const descData = [
       'Озеленение состоит из многоярусных композиций, которые включают в себя лиственные, вечнозелёные и хвойные деревья и кустарники. Таким образом, в парке возникают растительные оазисы, привлекающие птиц и насекомых. Для создания дополнительного декоративного эффекта используется злаки и цветы.',
     images: [
       <Image key='33' alt='' src={picLink('33')} width={260} height={189} />,
-      <Image key='34' className='mt-4' alt='' src={picLink('34')} width={260} height={143} />,
+      <Image
+        key='34'
+        className='mt-4'
+        alt=''
+        src={picLink('34')}
+        width={260}
+        height={143}
+      />,
     ],
   },
 ];
+
+const generalPlanMob = [
+  'Монумент Махтумкули Фраги',
+  'Фонтан-водопад',
+  'Место для возложения цветов',
+  'Место одыха',
+  'Дополнительное озеленение в зонах отдыха',
+  'Смотровая площадка',
+  'Цветники',
+  'Фонтан-водопад',
+  'Навесы с системой охлаждения туманом',
+  'Сигнация в мощении',
+];
+
+const axonometryMob = [
+  'Сигнация в мощении',
+  'Навесы с системой охлаждения туманом',
+  'Оазисы биоразнообразия',
+  'Переходы через водопад',
+  'Сохранение существующей структуры',
+  'Место для возложения цветов',
+  'Использование орнаментов',
+];
+
+const LegendSpanMob: FC<{ item: string; index: number }> = ({
+  index,
+  item,
+}) => (
+  <span className='text-body-caption-mob font-light' key={item}>
+    {addLeadingZero(index + 1)} — {item}
+  </span>
+);
 
 const PersonDescRow: FC<{ title: string; subTitle: string }> = ({
   subTitle,
   title,
 }) => (
-  <div className='flex flex-col space-y-4'>
-    <span className='text-untitled'>{title}</span>
-    <span className='text-body-regular'>{subTitle}</span>
+  <div className='flex flex-col space-y-2 lg:space-y-4 border-t border-medium-grey md:border-none'>
+    <span className='text-body-medium md:text-body lg:text-h6 font-medium md:mt-0 mt-2'>
+      {title}
+    </span>
+    <span className='text-body-regular-mob md:text-body-caption lg:text-body-regular font-light'>
+      {subTitle}
+    </span>
   </div>
 );
 
@@ -62,7 +106,9 @@ const MosaiqPic: FC<{ src: string; className?: string }> = ({
   src,
   className,
 }) => (
-  <div className={classNames('col-span-3', className)}>
+  <div
+    className={classNames('min-w-[80%] md:min-w-fit md:col-span-3', className)}
+  >
     <Image alt='' src={src} width={410} height={518} />
   </div>
 );
@@ -74,17 +120,25 @@ const DescRow: FC<{
   images: React.JSX.Element[];
 }> = ({ description, index, images, title }) => (
   <Grid className='border-t border-medium-grey pt-6'>
-    <div className='col-span-1'>
-      <span className='text-h4'>{index}</span>
+    <div className='col-span-2 md:col-span-1'>
+      <span className='text-body-medium-mob md:text-h5 lg:text-h4 font-medium'>
+        {index}
+        <span className='text-body-medium-mob font-medium md:hidden'>
+          {' '}
+          {title}
+        </span>
+      </span>
     </div>
-    <div className='col-span-3'>
+    <div className='hidden md:grid col-span-2 md:col-span-3'>
       <span className='text-h5'>{title}</span>
     </div>
-    <div className='col-span-4'>
-      <span className='text-body-regular'>{description}</span>
+    <div className='md:mt-0 mt-6 mb-4 md:mb-0 col-span-2 md:col-span-4'>
+      <span className='text-body-regular-mob md:text-body-regular font-light'>
+        {description}
+      </span>
     </div>
     {images.map((image, index) => (
-      <div key={image.key || 0 + index} className='col-span-2'>
+      <div key={image.key || 0 + index} className='col-span-1 md:col-span-2'>
         {image}
       </div>
     ))}
@@ -105,7 +159,7 @@ const FragiPage = async () => {
   const { t } = await createTranslation('common');
 
   return (
-    <div className='mt-50 w-full'>
+    <div className='mt-30 md:mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
           title={'Культурно-парковый комплекс Махтумкули Фраги'}
@@ -124,12 +178,14 @@ const FragiPage = async () => {
       </section>
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4'>
-              <span className='text-h4'>Видение</span>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-4 md:mb-0 mb-10'>
+              <span className='text-h3-mob md:text-h4 font-medium'>
+                Видение
+              </span>
             </div>
-            <div className='col-span-8 mb-10'>
-              <span className='text-h5'>
+            <div className='col-span-2 md:col-span-8 mb-10'>
+              <span className='md:text-h6 lg:text-h5-regular text-body-regular-mob font-medium md:font-light'>
                 Главная идея концепции благоустройства вдохновлена жизнью и
                 поэзией философа, классика туркменской поэзии Махтумкули Фраги.
                 Это парк, воспевающий природу Туркмении и творческую личность,
@@ -138,17 +194,17 @@ const FragiPage = async () => {
                 Махтумкули Фраги и отдать дань памяти великому поэту.
               </span>
             </div>
-            <div className='col-span-4 col-start-5'>
+            <div className='col-span-2 md:col-span-4 md:col-start-5'>
               <Image
                 width={560}
                 height={541}
                 alt='Махумкули Фраги'
                 src={picLink('03')}
               />
-              <span className='text-body mt-4 block'>
+              <span className='text-body-caption-10 md:text-body font-medium mt-2 md:mt-4 block'>
                 Махумкули Фраги (1724—1807)
               </span>
-              <span className='text-body-caption mt-2'>
+              <span className='pb-10 mb:pb-0 text-body-caption-mob font-light md:font-medium md:text-body-caption block mt-2'>
                 Великий поэт, мыслитель и просветитель Махтумкули много
                 путешествовал по Ирану, Афганистану и другим странам Востока.
                 Его творчество включает песни в народной форме, отражающие
@@ -158,7 +214,7 @@ const FragiPage = async () => {
                 народной речью.
               </span>
             </div>
-            <div className='col-span-4 space-y-6'>
+            <div className='col-span-2 md:col-span-4 space-y-6'>
               <PersonDescRow
                 title='Поэзия'
                 subTitle='Поэтико-философское наследие Махтумкули навеки вошлов культуру туркменского народа как песнь о любви к Богу, Родине, человеку, природе и самой жизни.'
@@ -175,11 +231,11 @@ const FragiPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4 text-h4'>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='mb-4 md:mb-0 block col-span-2 md:col-span-4 text-h3-mob font-medium md:text-h4'>
               Исследование локального контекста
             </div>
-            <div className='col-span-8 text-h5-regular'>
+            <div className='col-span-2 md:col-span-8 text-body-regular-mob font-light md:text-h6-regular lg:text-h5-regular'>
               В ходе филд-трипа мы побывали в мастерской скульптора Сарагта
               Бабаева, автора памятника поэту, познакомились со знаковыми
               архитектурными объектами старых городов, расположенных на Шёлковом
@@ -188,31 +244,57 @@ const FragiPage = async () => {
               Фраги.
             </div>
           </Grid>
-          <Grid className='mt-30'>
+          <div className='flex'>
+            <div className='mt-10 md:hidden flex overflow-x-scroll space-x-4'>
+              <MosaiqPic src={picLink('04')} />
+              <MosaiqPic src={picLink('05')} />
+              <MosaiqPic src={picLink('06')} />
+              <MosaiqPic
+                className='md:mt-10 md:col-start-4'
+                src={picLink('07')}
+              />
+              <MosaiqPic className='md:mt-10' src={picLink('08')} />
+              <MosaiqPic className='md:mt-10' src={picLink('09')} />
+              <MosaiqPic className='md:mt-10' src={picLink('10')} />
+              <MosaiqPic className='md:mt-10' src={picLink('11')} />
+              <MosaiqPic className='md:mt-10' src={picLink('12')} />
+            </div>
+          </div>
+          <Grid className='mt-30 hidden md:grid'>
             <MosaiqPic src={picLink('04')} />
             <MosaiqPic src={picLink('05')} />
             <MosaiqPic src={picLink('06')} />
-            <MosaiqPic className='mt-10 col-start-4' src={picLink('07')} />
-            <MosaiqPic className='mt-10' src={picLink('08')} />
-            <MosaiqPic className='mt-10' src={picLink('09')} />
-            <MosaiqPic className='mt-10' src={picLink('10')} />
-            <MosaiqPic className='mt-10' src={picLink('11')} />
-            <MosaiqPic className='mt-10' src={picLink('12')} />
+            <MosaiqPic
+              className='md:mt-10 md:col-start-4'
+              src={picLink('07')}
+            />
+            <MosaiqPic className='md:mt-10' src={picLink('08')} />
+            <MosaiqPic className='md:mt-10' src={picLink('09')} />
+            <MosaiqPic className='md:mt-10' src={picLink('10')} />
+            <MosaiqPic className='md:mt-10' src={picLink('11')} />
+            <MosaiqPic className='md:mt-10' src={picLink('12')} />
           </Grid>
         </section>
         <section>
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4 order-1 md:order-2'>
               <Image src={picLink('13')} alt='' width={560} height={442} />
+              <Image
+                className='md:hidden block mt-10'
+                src={picLink('35')}
+                alt=''
+                width={440}
+                height={270}
+              />
             </div>
-            <div className='col-span-8'>
-              <span className='text-h5-regular'>
+            <div className='col-span-2 md:col-span-8'>
+              <span className='md:mb-0 mb-10 text-body-medium md:text-h6 lg:text-h5-regular md:font-light font-medium block'>
                 За основу в дизайне благоустройства были взяты местные мотивы
                 орнаментов. Каждый орнамент соответствует историческим
                 орнаментам, характерным для пяти велаятов Туркменистана.
               </span>
               <Image
-                className='mt-10'
+                className='mt-10 md:block hidden'
                 src={picLink('14')}
                 alt=''
                 width={1160}
@@ -222,10 +304,12 @@ const FragiPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4 pt-14'>
-              <span className='text-h4'>Генеральный план благоустройства</span>
-              <span className='text-body-regular mt-6 block'>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-4 pt-14'>
+              <span className='text-h3-mob md:text-h4 font-medium'>
+                Генеральный план благоустройства
+              </span>
+              <span className='text-body-regular-mob md:text-body-regular font-light mt-4 md:mt-6 block'>
                 Проект предлагает оживить территорию комплекса за счёт
                 озеленения декоративными растениями гранитного пьедестала и
                 организациии фонтана-водопада, воды которого будут стекать к
@@ -235,20 +319,82 @@ const FragiPage = async () => {
                 туманом и организацией мест отдыха на склоне холма.
               </span>
             </div>
-            <div className='col-span-8'>
-              <Image src={picLink('15')} alt='' width={1160} height={816} />
+            <div className='mt-10 md:mt-0 col-span-2 md:col-span-8 md:mb-0 mb-4'>
+              <Image
+                className='md:block hidden'
+                src={picLink('15')}
+                alt=''
+                width={1160}
+                height={816}
+              />
+              <Image
+                className='md:hidden block'
+                src={picLink('36')}
+                alt=''
+                width={480}
+                height={290}
+              />
             </div>
+            <div className='md:hidden col-span-1 flex flex-col space-y-2'>
+              {generalPlanMob.slice(0, 5).map((item, index) => (
+                <LegendSpanMob item={item} index={index} key={item} />
+              ))}
+            </div>
+            <div className='md:hidden col-span-1 flex flex-col space-y-2'>
+              {generalPlanMob.slice(5).map((item, index) => (
+                <LegendSpanMob item={item} index={index + 5} key={item} />
+              ))}
+            </div>
+            {/* MOBILE */}
+            <span className='col-span-2 md:hidden text-h3-mob font-medium mt-30 mb-10 block'>
+              Аксонометрия территории
+            </span>
+            {/* // */}
           </Grid>
         </section>
-        <section>
-          <Grid className='mt-50'>
-            <div className='col-span-12 mb-16'>
-              <span className='text-h4'>Аксонометрия территории</span>
+      </PageMarginWithTitle>
+      <section className='md:hidden'>
+        <Image
+          className=''
+          src={picLink('37')}
+          alt=''
+          width={480}
+          height={426}
+        />
+        <PageMarginWithTitle>
+          <Grid className='mt-4 mb-10'>
+            <div className='md:hidden col-span-1 flex flex-col space-y-2'>
+              {axonometryMob.slice(0, 4).map((item, index) => (
+                <LegendSpanMob item={item} index={index} key={item} />
+              ))}
             </div>
-            <div className='col-span-8'>
+            <div className='md:hidden col-span-1 flex flex-col space-y-2'>
+              {axonometryMob.slice(4).map((item, index) => (
+                <LegendSpanMob item={item} index={index + 4} key={item} />
+              ))}
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <ImageWithCaption
+          fullWidth
+          src={picLink('24')}
+          width={1760}
+          height={926}
+          title='Вид на центральную зону с водопадом'
+        />
+      </section>
+      <PageMarginWithTitle>
+        <section className='md:grid hidden'>
+          <Grid className='mt-50'>
+            <div className='col-span-2 md:col-span-12 mb-16'>
+              <span className='text-h3-mob font-medium md:text-h4'>
+                Аксонометрия территории
+              </span>
+            </div>
+            <div className='col-span-2 md:col-span-8'>
               <Image src={picLink('16')} alt='' width={1160} height={1029} />
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <AcsonoRow
                 title='01 Сигнация в мощении'
                 image={
@@ -295,7 +441,7 @@ const FragiPage = async () => {
                 }
               />
             </div>
-            <div className='col-span-12 mt-10'>
+            <div className='col-span-2 md:col-span-12 mt-10'>
               <Image alt='' src={picLink('24')} width={1760} height={926} />
               <span className='text-body-caption mt-2 block'>
                 Вид на центральную зону с водопадом
@@ -304,9 +450,9 @@ const FragiPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-20'>
-            <div className='col-span-4 col-start-5'>
-              <span className='text-body-regular'>
+          <Grid className='mt-10 md:mt-20'>
+            <div className='col-span-2 md:col-span-4 md:col-start-5'>
+              <span className='text-body-regular-mob md:text-body-regular font-light'>
                 У подножия монумента находится место для возложения цветов.
                 Постамент разделён на 5 ярусов (по числу вилоятов), уступы
                 которых украшены местными орнаментами. В уступ нижнего яруса
@@ -315,35 +461,57 @@ const FragiPage = async () => {
                 резервуар.
               </span>
             </div>
-            <div className='col-span-4'>
-              <span className='text-body-regular'>
+            <div className='col-span-2 md:col-span-4'>
+              <span className='block mt-4 md:mt-0 text-body-regular-mob md:text-body-regular font-light'>
                 Над водной гладью резервуара возвышается камень-монумент, в
                 котором высечены предметы-символы Мухтумкули Фраги — книга,
                 ювелирный инструмент и др. К камню можно подойти по каменным
                 плитам.
               </span>
             </div>
-            <div className='col-span-8 col-start-5 mt-10'>
-              <Image alt='' src={picLink('25')} width={1160} height={684} />
-              <span className='text-body-caption block mt-2'>
-                Вид на комплекс со стороны входной группы
-              </span>
+            <div className='md:block hidden col-span-2 md:col-span-8 md:col-start-5 mt-10'>
+              <ImageWithCaption
+                title='Вид на комплекс со стороны входной группы'
+                src={picLink('25')}
+                width={1160}
+                height={684}
+              />
             </div>
-            <div className='col-span-8 col-start-5 mt-10'>
-              <Image alt='' src={picLink('26')} width={1160} height={684} />
-              <span className='text-body-caption block mt-2'>
-                Вид на пьедестал монумента и место для возложения цветов
-              </span>
+            <div className='md:block hidden col-span-2 md:col-span-8 md:col-start-5 mt-10'>
+              <ImageWithCaption
+                title='Вид на пьедестал монумента и место для возложения цветов'
+                src={picLink('26')}
+                width={1160}
+                height={684}
+              />
             </div>
           </Grid>
         </section>
+      </PageMarginWithTitle>
+      <section className='md:hidden space-y-6 mt-6'>
+        <ImageWithCaption
+          fullWidth
+          title='Вид на комплекс со стороны входной группы'
+          src={picLink('25')}
+          width={1160}
+          height={684}
+        />
+        <ImageWithCaption
+          fullWidth
+          title='Вид на пьедестал монумента и место для возложения цветов'
+          src={picLink('26')}
+          width={1160}
+          height={684}
+        />
+      </section>
+      <PageMarginWithTitle>
         <section className='mt-50 space-y-10'>
           {descData.map(({ description, images, title }, index) => (
             <DescRow
               description={description}
               images={images}
               title={title}
-              index={index+1}
+              index={index + 1}
               key={index + title}
             />
           ))}
