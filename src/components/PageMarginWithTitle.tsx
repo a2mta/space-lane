@@ -6,8 +6,9 @@ const PageMarginWithTitle: FC<
     className?: string;
     title?: string;
     withBorder?: boolean;
+    collapseMob?: boolean;
   }
-> = ({ children, title, className, withBorder }) => {
+> = ({ children, title, className, withBorder, collapseMob }) => {
   return (
     <>
       {title && (
@@ -30,7 +31,8 @@ const PageMarginWithTitle: FC<
       {children && (
         <div
           className={classNames(
-            'flex flex-col w-full md:px-20 px-5',
+            'flex flex-col w-full md:px-20',
+            !collapseMob && 'px-5',
             className
           )}
         >

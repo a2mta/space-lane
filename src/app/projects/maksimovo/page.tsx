@@ -9,8 +9,35 @@ import { MapDescRow } from '@/components/MapDescRow';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import classNames from 'classnames';
 import { GreyCard } from '@/components/GreyCard';
+import Collapse from '@/components/Collapse';
 
 const picLink = makePicLink('maksimovo');
+
+type HouseCardInfo = {
+  index?: string;
+  title: string;
+  image: ReactElement;
+  desc: { element: string; color: string }[];
+};
+
+const generalPlanMob = [
+  'Детские площадки',
+  'Зона Кпп с магазином, спортивной площадкой, зоной отдыха',
+  'Озелененный прогулочный бульвар',
+  'Сквер с зонами отдыха, детской игровой площадкой и площадками для занятий спортом',
+  'Разработан архитектурный дизайн-код для улиц посёлка',
+];
+
+const kppMob = [
+  'Спортивная площадка',
+  'Здание свободного назначения',
+  'Зона погрузки-выгрузки товара',
+  'Озеленение',
+  'Магазин с кафе 340 м²',
+  'Зона отдыха',
+  'Парковка',
+  'Контрольно-пропускной пункт',
+];
 
 const typologyData = [
   {
@@ -89,7 +116,7 @@ const pointsData = [
   },
 ];
 
-const houseData = [
+const houseData: HouseCardInfo[] = [
   {
     title: 'Светлый вариант',
     image: <Image alt='' width={520} height={337} src={picLink('15')} />,
@@ -149,12 +176,7 @@ const houseData = [
   },
 ];
 
-const HouseCard: FC<{
-  index: string;
-  title: string;
-  image: ReactElement;
-  desc: { element: string; color: string }[];
-}> = ({ desc, image, index, title }) => (
+const HouseCard: FC<HouseCardInfo> = ({ desc, image, index, title }) => (
   <Grid className='bg-beige p-10'>
     <div className='col-span-4'>
       <span className='text-h5 font-medium text-grey'>{index}</span>
@@ -186,6 +208,13 @@ const HouseCard: FC<{
       ))}
     </div>
   </Grid>
+);
+
+const HouseCardMobile: FC<HouseCardInfo> = ({ desc, image, title, index }) => (
+  <div className='col-span-2 space-y-14'>
+    <Image alt='' width={440} height={256} src={picLink('15')} />
+    <Collapse title='Элемент здания (цвет, материал)'></Collapse>
+  </div>
 );
 
 const paramData = [
@@ -260,7 +289,7 @@ const TypologyCard: FC<{
 const MaksimovoPage = async () => {
   const { t } = await createTranslation('common');
   return (
-    <div className='mt-50 w-full'>
+    <div className='mt-30 md:mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
           title={'Коттеджный посёлок «Максимово парк»'}
@@ -275,13 +304,26 @@ const MaksimovoPage = async () => {
           year='2023–2024'
         />
       </section>
+      <Image
+        className='mt-10 md:hidden block'
+        alt=''
+        width={480}
+        height={340}
+        src={picLink('18')}
+      />
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-8'>
-              <Image alt='' width={1160} height={923} src={picLink('03')} />
+          <Grid className='md:mt-50'>
+            <div className='col-span-2 md:col-span-8'>
+              <Image
+                className='md:block hidden'
+                alt=''
+                width={1160}
+                height={923}
+                src={picLink('03')}
+              />
             </div>
-            <div className='col-span-4 space-y-6'>
+            <div className='md:mt-0 mt-6 col-span-2 md:col-span-4 space-y-6'>
               <MapDescRow subTitle='До Кремля' title='79 км' horizontal />
               <MapDescRow subTitle='До Истры' title='6 км' horizontal />
               <MapDescRow
@@ -295,7 +337,7 @@ const MaksimovoPage = async () => {
                 horizontal
               />
               <MapDescRow
-                subTitle='До станции метро Пятницкое шоссе'
+                subTitle='До станции Пятницкое шоссе'
                 title='45 км'
                 horizontal
               />
@@ -303,12 +345,14 @@ const MaksimovoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4'>
-              <span className='text-h4 font-medium'>Видение</span>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-4'>
+              <span className='text-h3-mob md:text-h4 font-medium'>
+                Видение
+              </span>
             </div>
-            <div className='col-span-8'>
-              <span className='text-h5 font-light'>
+            <div className='col-span-2 md:col-span-8 mt-4 md:mt-0'>
+              <span className='text-body-regular-mob md:text-h5 font-light'>
                 В основе проекта — идея создания единого зелёного пешеходного
                 маршрута, который проходит через зелёные общественные
                 пространства посёлка. Использование цветущих плодовых растений
@@ -319,31 +363,58 @@ const MaksimovoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4'>
-              <span className='text-h4 mt-[60px] font-medium block'>
+          <Grid className='mt-16 md:mt-50'>
+            <div className='col-span-2 md:col-span-4'>
+              <span className='text-h3-mob md:text-h4 md:mt-16 font-medium block'>
                 Генеральный план и фрагменты благоустройства
               </span>
-              <span className='text-body-regular font-light mt-6 block'>
+              <span className='text-body-regular font-light mt-4 md:mt-6 block'>
                 Под общественные пространства отведено 7 участков общей площадью
                 0,9 га (не включая территорию детского сада).
               </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8 md:grid hidden'>
               <Image alt='' width={1160} height={774} src={picLink('04')} />
             </div>
           </Grid>
         </section>
-        <section>
-          <Grid className='mt-50 border-y border-medium-grey py-6'>
-            <div className='col-span-4'>
-              <span className='text-h4 font-medium'>Поселок-сад</span>
+      </PageMarginWithTitle>
+      <Image
+        className='block md:hidden mt-10 mb-4'
+        alt=''
+        width={480}
+        height={296}
+        src={picLink('19')}
+      />
+      <PageMarginWithTitle>
+        <section className='block md:hidden'>
+          <Grid>
+            <div className='col-span-2 flex flex-col space-y-2 mb-30'>
+              {generalPlanMob.map((item, index) => (
+                <span
+                  className='text-body-caption-mob font-light'
+                  key={item + index}
+                >
+                  {addLeadingZero(index + 1)} — {item}
+                </span>
+              ))}
             </div>
-            <div className='col-span-6'>
-              <span className='text-h5 font-medium'>
+          </Grid>
+        </section>
+      </PageMarginWithTitle>
+      <PageMarginWithTitle>
+        <section>
+          <Grid className='md:mt-50 border-t md:border-y border-medium-grey py-6'>
+            <div className='col-span-2 md:col-span-4'>
+              <span className='text-h3-mob mb-10 md:mb-0 block md:text-h4 font-medium'>
+                Поселок-сад
+              </span>
+            </div>
+            <div className='col-span-2 md:col-span-6'>
+              <span className='text-h4-mob md:text-h5 font-medium'>
                 Идентичность территории
               </span>
-              <span className='text-body-regular font-light mt-4 block'>
+              <span className='text-body-regular-mob md:text-body-regular font-light mt-4 block'>
                 Плодовые культуры, такие как яблоня, вишня, груша, хорошо себя
                 чувствуют в Московском регионе. Они могут стать визитной
                 карточкой посёлка. Также растительные мотивы могут быть
@@ -354,9 +425,9 @@ const MaksimovoPage = async () => {
                 width={860}
                 height={531}
                 src={picLink('05')}
-                className='my-6'
+                className='hidden md:block my-6'
               />
-              <span className='text-body-regular font-light mt-4 block'>
+              <span className='hidden md:block text-body-regular font-light mt-4'>
                 Экономические примечания к Павловскому межеванию (около 1800
                 года) описываютМаксимовку в следующих выражениях: «Сельцо на
                 суходоле при пруде, в нем саженая рыба — караси. Дачею на правом
@@ -369,22 +440,105 @@ const MaksimovoPage = async () => {
             </div>
           </Grid>
         </section>
-        <section className='mt-20'>
+      </PageMarginWithTitle>
+      <Image
+        alt=''
+        width={480}
+        height={296}
+        src={picLink('05')}
+        className='block md:hidden'
+      />
+      <PageMarginWithTitle>
+        <Grid className='grid md:hidden'>
+          <div className='col-span-2'>
+            <span className='block text-body-regular-mob font-light mt-4 pb-4 border-b border-medium-grey'>
+              Экономические примечания к Павловскому межеванию (около 1800 года)
+              описываютМаксимовку в следующих выражениях: «Сельцо на суходоле
+              при пруде, в нем саженая рыба — караси. Дачею на правом берегу
+              Грецкой, Грязновка тож. Дом господский деревянный, а при нем сад с
+              плодовитыми деревьями. Земля сероглинистая и ко урожаю хлеба: ржи,
+              овса и гречи довольно способна; покосы средственны (то есть
+              среднего качества). Лес дровяной: берёзовый и осиновый, в нем
+              бывают звери: зайцы, птицы: тетерева, дрозды и соловьи…»
+            </span>
+          </div>
+        </Grid>
+        <section className='mt-20 hidden md:block'>
           {pointsData.map((item) => (
             <PointDataRow {...item} key={item.title} />
           ))}
         </section>
+        <section className='md:hidden'>
+          <Grid>
+            <div className='col-span-2'>
+              <Collapse
+                borderColor='border-medium-grey'
+                title='Контрольно-пропускной пункт'
+              >
+                <Grid>
+                  <div className='col-span-2'>
+                    <span className='text-body-regular-mob font-light'>
+                      Зона КПП спроектирована как общественное пространство, в
+                      центре которого — амфитеатр с фонтаном. В дизайне малых
+                      архитектурных форм используются простые формы, что не
+                      визуально не нагружает окружение и создаёт современный
+                      характер среды
+                    </span>
+                    <Image
+                      className='mb-4 mt-10'
+                      alt=''
+                      width={480}
+                      height={537}
+                      src={picLink('20')}
+                    />
+                  </div>
+                  <div className='col-span-1 flex flex-col space-y-2'>
+                    {kppMob.slice(0, 4).map((item, index) => (
+                      <span
+                        className='text-body-caption-mob font-light'
+                        key={item}
+                      >
+                        {addLeadingZero(index + 1)} {item}
+                      </span>
+                    ))}
+                  </div>
+                  <div className='col-span-1 flex flex-col space-y-2'>
+                    {kppMob.slice(5).map((item, index) => (
+                      <span
+                        className='text-body-caption-mob font-light'
+                        key={item}
+                      >
+                        {addLeadingZero(index + 6)} {item}
+                      </span>
+                    ))}
+                  </div>
+                </Grid>
+              </Collapse>
+            </div>
+          </Grid>
+        </section>
+      </PageMarginWithTitle>
+      <PageMarginWithTitle collapseMob>
         <section>
           <Grid className='mt-50'>
-            <div className='col-span-12'>
+            <div className='col-span-2 md:col-span-12'>
               <ImageWithCaption
+                width={1760}
+                className='block md:hidden'
+                height={1100}
+                fullWidth
+                src={picLink('09')}
+                title='Визуализация второстепенной улицы (2-я и 3-я линии)'
+              />
+              <ImageWithCaption
+                className='hidden md:block'
                 width={1760}
                 height={1100}
                 src={picLink('09')}
                 title='Визуализация второстепенной улицы (2-я и 3-я линии)'
               />
             </div>
-            <div className='col-span-8 col-start-5 mt-12'>
+            <div className='hidden md:grid col-span-2 md:col-span-8 md:col-start-5 mt-12'>
               <ImageWithCaption
                 width={1160}
                 height={698}
@@ -394,16 +548,20 @@ const MaksimovoPage = async () => {
             </div>
           </Grid>
         </section>
+      </PageMarginWithTitle>
+      <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4'>
-              <span className='text-h4 font-medium'>Дизайн-код</span>
-              <span className='text-h5 text-grey mt-1 block font-medium'>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-4'>
+              <span className='text-h3-mob md:text-h4 font-medium'>
+                Дизайн-код
+              </span>
+              <span className='text-h4-mob md:text-h5 mt-10 md:mt-1 text-grey block font-medium'>
                 Идентичность улиц
               </span>
             </div>
-            <div className='col-span-4'>
-              <span className='text-body-regular font-light'>
+            <div className='col-span-2 md:col-span-4 md:mt-0 mt-4'>
+              <span className='text-body-regular-mob md:text-body-regular font-light'>
                 Дизайн-код выделяет два типа улиц (главные и второстепенные),
                 содержит типологию участков по площади (S, M, L), а также
                 типологию жилых домов, отличающихся по площади и планировочным
@@ -412,8 +570,8 @@ const MaksimovoPage = async () => {
                 образом, появляется своё узнаваемое лицо.
               </span>
             </div>
-            <div className='col-span-4'>
-              <span className='text-body-regular font-light'>
+            <div className='col-span-2 md:col-span-4 md:mt-0 mt-4'>
+              <span className='text-body-regular-mob md:text-body-regular font-light'>
                 Для создания целостного образа посёлка и формирования
                 идентичности улиц проект регулирует отдельные параметры
                 застройки участков, в частности, максимальный процент
@@ -425,10 +583,22 @@ const MaksimovoPage = async () => {
             </div>
           </Grid>
         </section>
+      </PageMarginWithTitle>
+      <ImageWithCaption
+        className='mt-20 md:hidden'
+        width={1160}
+        fullWidth
+        height={698}
+        src={picLink('10')}
+        title='Вид на улицу возле центрального сквера'
+      />
+      <PageMarginWithTitle>
         <section>
           <Grid className='mt-30'>
-            <div className='col-span-12 mb-10'>
-              <span className='text-h5 font-medium'>Основные параметры</span>
+            <div className='col-span-2 md:col-span-12 mb-10'>
+              <span className='text-h3-mob md:text-h5 font-medium'>
+                Основные параметры
+              </span>
             </div>
             {paramData.map((item, index) => (
               <GreyCard
@@ -440,14 +610,34 @@ const MaksimovoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50 mb-20'>
-            <div className='col-span-12'>
-              <span className='text-h4 font-medium'>
+          <Grid className='mt-20 md:mt-50 mb-20'>
+            <div className='col-span-2 md:col-span-12'>
+              <span className='text-h3-mob md:text-h4 font-medium'>
                 Типология застройки участков
               </span>
             </div>
           </Grid>
-          <div className='flex flex-col space-y-32'>
+          <div className='flex flex-col md:hidden'>
+            <Collapse
+              title='01 Участок типа S'
+              borderColor='border-medium-grey'
+            >
+              01 Участок типа S
+            </Collapse>
+            <Collapse
+              title='02 Участок типа M'
+              borderColor='border-medium-grey'
+            >
+              01 Участок типа M
+            </Collapse>
+            <Collapse
+              title='03 Участок типа L'
+              borderColor='border-medium-grey'
+            >
+              01 Участок типа L
+            </Collapse>
+          </div>
+          <div className='hidden md:flex flex-col space-y-32'>
             {typologyData.map((item, index) => (
               <TypologyCard
                 reverse={index % 2 !== 0}
@@ -458,14 +648,14 @@ const MaksimovoPage = async () => {
             ))}
           </div>
         </section>
-        <section>
+        <section className='hidden md:block'>
           <Grid className='mt-50'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium'>
                 Вариативность в едином стиле
               </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <span className='text-body-regular font-light'>
                 Дизайн-код закладывает варианты цветов и материалов отделки
                 практически всех элементов экстерьера дома-от цоколя до подшива
@@ -475,14 +665,14 @@ const MaksimovoPage = async () => {
                 посёлка в целом.
               </span>
             </div>
-            <div className='col-span-8 col-start-5 mt-30'>
+            <div className='col-span-2 md:col-span-8 md:col-start-5 mt-30'>
               <Image alt='' width={1010} height={603} src={picLink('14')} />
             </div>
           </Grid>
         </section>
-        <section>
+        <section className='hidden md:block'>
           <Grid className='mt-40'>
-            <span className='col-span-12 block mb-10 text-h5 font-medium'>
+            <span className='col-span-2 md:col-span-12 block mb-10 text-h5 font-medium'>
               Варианты отделки
             </span>
           </Grid>
@@ -495,6 +685,17 @@ const MaksimovoPage = async () => {
               />
             ))}
           </div>
+        </section>
+        <section className='block md:hidden'>
+          <Grid className='mt-30'>
+            <span className='col-span-2 text-h3-mob font-medium'>
+              Варианты отделки
+            </span>
+            <div className='col-span-2 mt-14'>
+              <Image alt='' width={440} height={256} src={picLink('15')} />
+              <Collapse title='Элемент здания (цвет, материал)'>test</Collapse>
+            </div>
+          </Grid>
         </section>
       </PageMarginWithTitle>
     </div>

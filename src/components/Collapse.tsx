@@ -9,10 +9,9 @@ import React, {
 } from 'react';
 import Grid from './Grid';
 
-const Collapse: FC<{ title: string } & PropsWithChildren> = ({
-  title,
-  children,
-}) => {
+const Collapse: FC<
+  { title: string; borderColor?: string } & PropsWithChildren
+> = ({ title, children, borderColor }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
   const [maxHeight, setMaxHeight] = useState('0px');
@@ -28,6 +27,7 @@ const Collapse: FC<{ title: string } & PropsWithChildren> = ({
       );
     }
   }, [isCollapsed]);
+
   return (
     <div className='pt-6 md:py-6 tracking-wider'>
       <div className='pb-4 lg:pb-6 flex justify-between'>
@@ -50,7 +50,7 @@ const Collapse: FC<{ title: string } & PropsWithChildren> = ({
               }`}
               onClick={toggleCollapse}
             />
-              <Image
+            <Image
               width={16}
               height={16}
               alt='collapse'
@@ -65,8 +65,8 @@ const Collapse: FC<{ title: string } & PropsWithChildren> = ({
       </div>
       <div
         className={`border-t overflow-hidden transition-all duration-200 ease-linear ${
-            !isCollapsed ? 'border-t-[transparent]' : 'border-grey'
-          }`}
+          !isCollapsed ? 'border-t-[transparent]' : borderColor || 'border-grey'
+        }`}
         style={{ maxHeight }}
         ref={contentRef}
       >
