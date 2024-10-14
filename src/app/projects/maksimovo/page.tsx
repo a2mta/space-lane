@@ -16,6 +16,7 @@ const picLink = makePicLink('maksimovo');
 type HouseCardInfo = {
   index?: string;
   title: string;
+  imageMob: ReactElement;
   image: ReactElement;
   desc: { element: string; color: string }[];
 };
@@ -120,6 +121,7 @@ const houseData: HouseCardInfo[] = [
   {
     title: 'Светлый вариант',
     image: <Image alt='' width={520} height={337} src={picLink('15')} />,
+    imageMob: <Image alt='' width={440} height={256} src={picLink('15')} />,
     desc: [
       { element: 'Кровля', color: 'Мягкая кровля, RAL 7024 мокрый асфальт' },
       { element: 'Подшив свеса кровли', color: 'Планкен, светлое дерево' },
@@ -138,6 +140,7 @@ const houseData: HouseCardInfo[] = [
   {
     title: 'Тёмный вариант',
     image: <Image alt='' width={520} height={303} src={picLink('16')} />,
+    imageMob: <Image alt='' width={440} height={256} src={picLink('16')} />,
     desc: [
       { element: 'Кровля', color: 'Мягкая кровля, RAL 7024 мокрый асфальт' },
       { element: 'Подшив свеса кровли', color: 'Планкен, тёмное дерево' },
@@ -156,6 +159,7 @@ const houseData: HouseCardInfo[] = [
   {
     title: 'Контрастный вариант',
     image: <Image alt='' width={520} height={304} src={picLink('17')} />,
+    imageMob: <Image alt='' width={440} height={256} src={picLink('17')} />,
     desc: [
       { element: 'Кровля', color: 'Мягкая кровля, RAL 7024 мокрый асфальт' },
       { element: 'Подшив свеса кровли', color: 'Планкен, коричневое дерево' },
@@ -212,8 +216,20 @@ const HouseCard: FC<HouseCardInfo> = ({ desc, image, index, title }) => (
 
 const HouseCardMobile: FC<HouseCardInfo> = ({ desc, image, title, index }) => (
   <div className='col-span-2 space-y-14'>
-    <Image alt='' width={440} height={256} src={picLink('15')} />
-    <Collapse title='Элемент здания (цвет, материал)'></Collapse>
+    {image}
+    <Collapse borderColor='border-medium-grey' title={title}>
+      {desc.map((item, index) => (
+        <Grid
+          key={item.color + index}
+          className={classNames('text-body-regular-mob font-light py-4 border-medium-grey', {
+            'border-t': index > 0,
+          })}
+        >
+          <div className='col-span-1'>{item.element}</div>
+          <div className='col-span-1'>{item.color}</div>
+        </Grid>
+      ))}
+    </Collapse>
   </div>
 );
 
@@ -610,7 +626,7 @@ const MaksimovoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-20 md:mt-50 mb-20'>
+          <Grid className='mt-20 md:mt-50 md:mb-20 mb-10'>
             <div className='col-span-2 md:col-span-12'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 Типология застройки участков
@@ -687,15 +703,16 @@ const MaksimovoPage = async () => {
           </div>
         </section>
         <section className='block md:hidden'>
-          <Grid className='mt-30'>
-            <span className='col-span-2 text-h3-mob font-medium'>
+        <Grid className='mt-30 mb-14'>
+            <span className='col-span-2 block text-h3-mob font-medium'>
               Варианты отделки
             </span>
-            <div className='col-span-2 mt-14'>
-              <Image alt='' width={440} height={256} src={picLink('15')} />
-              <Collapse title='Элемент здания (цвет, материал)'>test</Collapse>
-            </div>
           </Grid>
+          <div className='flex flex-col space-y-14'>
+            {houseData.map((item, index) => (
+              <HouseCardMobile {...item} key={item.title + index} />
+            ))}
+          </div>
         </section>
       </PageMarginWithTitle>
     </div>
