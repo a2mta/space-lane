@@ -10,6 +10,7 @@ import ImageWithCaption from '@/components/ImageWithCaption';
 import classNames from 'classnames';
 import { GreyCard } from '@/components/GreyCard';
 import Collapse from '@/components/Collapse';
+import { it } from 'node:test';
 
 const picLink = makePicLink('maksimovo');
 
@@ -70,6 +71,7 @@ const pointsData = [
     subTitle:
       'Зона КПП спроектирована как общественное пространство, в центре которого — амфитеатр с фонтаном. В дизайне малых архитектурных форм используются простые формы, что не визуально не нагружает окружение и создаёт современный характер среды',
     image: <Image alt='' width={560} height={626} src={picLink('06')} />,
+    imageMob: <Image alt='' width={480} height={537} src={picLink('06')} />,
     points: [
       'Спортивная площадка',
       'Здание свободного назначения',
@@ -86,6 +88,7 @@ const pointsData = [
     subTitle:
       'Ключевые решения включают в себя геопластику, с помощью которой создаются островки-холмы в зоне отдыха, а также использование мягких покрытий на игровых пространствах, обеспечивающих нужный уровень безопасности, а кроме того уменьшающих нагрузку на ливневую канализацию благодаря водопроницаемости.',
     image: <Image alt='' width={560} height={354} src={picLink('07')} />,
+    imageMob: <Image alt='' width={480} height={303} src={picLink('07')} />,
     points: [
       'Дорожка для бега/ходьбы',
       'Зона совместного использования  (shared space)',
@@ -100,6 +103,7 @@ const pointsData = [
     subTitle:
       'Детский центр, рассчитанный на детей нескольких возрастных групп, проектируется в качестве объекта социальной инфраструктуры для жителей посёлка и прилегающих территорий',
     image: <Image alt='' width={560} height={430} src={picLink('08')} />,
+    imageMob: <Image alt='' width={480} height={336} src={picLink('08')} />,
     points: [
       'Игровая площадка',
       'Площадка для сбора',
@@ -221,9 +225,12 @@ const HouseCardMobile: FC<HouseCardInfo> = ({ desc, image, title, index }) => (
       {desc.map((item, index) => (
         <Grid
           key={item.color + index}
-          className={classNames('text-body-regular-mob font-light py-4 border-medium-grey', {
-            'border-t': index > 0,
-          })}
+          className={classNames(
+            'text-body-regular-mob font-light py-4 border-medium-grey',
+            {
+              'border-t': index > 0,
+            }
+          )}
         >
           <div className='col-span-1'>{item.element}</div>
           <div className='col-span-1'>{item.color}</div>
@@ -486,51 +493,47 @@ const MaksimovoPage = async () => {
         </section>
         <section className='md:hidden'>
           <Grid>
-            <div className='col-span-2'>
-              <Collapse
-                borderColor='border-medium-grey'
-                title='Контрольно-пропускной пункт'
-              >
-                <Grid>
-                  <div className='col-span-2'>
-                    <span className='text-body-regular-mob font-light'>
-                      Зона КПП спроектирована как общественное пространство, в
-                      центре которого — амфитеатр с фонтаном. В дизайне малых
-                      архитектурных форм используются простые формы, что не
-                      визуально не нагружает окружение и создаёт современный
-                      характер среды
-                    </span>
-                    <Image
-                      className='mb-4 mt-10'
-                      alt=''
-                      width={480}
-                      height={537}
-                      src={picLink('20')}
-                    />
-                  </div>
-                  <div className='col-span-1 flex flex-col space-y-2'>
-                    {kppMob.slice(0, 4).map((item, index) => (
-                      <span
-                        className='text-body-caption-mob font-light'
-                        key={item}
-                      >
-                        {addLeadingZero(index + 1)} {item}
+            {pointsData.map((item, index) => (
+              <div key={item.title + index} className='col-span-2'>
+                <Collapse borderColor='border-medium-grey' title={item.title}>
+                  <Grid>
+                    <div className='col-span-2'>
+                      <span className='text-body-regular-mob font-light'>
+                        {item.subTitle}
                       </span>
-                    ))}
-                  </div>
-                  <div className='col-span-1 flex flex-col space-y-2'>
-                    {kppMob.slice(5).map((item, index) => (
-                      <span
-                        className='text-body-caption-mob font-light'
-                        key={item}
-                      >
-                        {addLeadingZero(index + 6)} {item}
-                      </span>
-                    ))}
-                  </div>
-                </Grid>
-              </Collapse>
-            </div>
+                      <div className='mb-4 mt-10'>{item.imageMob}</div>
+                    </div>
+                    <div className='col-span-1 flex flex-col space-y-2'>
+                      {item.points
+                        .slice(0, Math.round(item.points.length / 2))
+                        .map((subItem, index) => (
+                          <span
+                            className='text-body-caption-mob font-light'
+                            key={subItem + index}
+                          >
+                            {addLeadingZero(index + 1)} {subItem}
+                          </span>
+                        ))}
+                    </div>
+                    <div className='col-span-1 flex flex-col space-y-2'>
+                      {item.points
+                        .slice(Math.round(item.points.length / 2))
+                        .map((subItem, index) => (
+                          <span
+                            className='text-body-caption-mob font-light'
+                            key={subItem + index}
+                          >
+                            {addLeadingZero(
+                              index + Math.round(item.points.length / 2) + 1
+                            )}{' '}
+                            {subItem}
+                          </span>
+                        ))}
+                    </div>
+                  </Grid>
+                </Collapse>
+              </div>
+            ))}
           </Grid>
         </section>
       </PageMarginWithTitle>
@@ -703,7 +706,7 @@ const MaksimovoPage = async () => {
           </div>
         </section>
         <section className='block md:hidden'>
-        <Grid className='mt-30 mb-14'>
+          <Grid className='mt-30 mb-14'>
             <span className='col-span-2 block text-h3-mob font-medium'>
               Варианты отделки
             </span>
