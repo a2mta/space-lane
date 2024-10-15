@@ -8,6 +8,7 @@ import { MapDescRow } from '@/components/MapDescRow';
 import { makePicLink } from '@/utils';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import classNames from 'classnames';
+import ImageSlider from '@/components/Slider';
 
 const picLink = makePicLink('novoseltsevo');
 
@@ -357,7 +358,7 @@ const NovoseltsevoPage = async () => {
                 {t('concept.greenery')}
               </span>
             </div>
-            
+
             {conceptionCardsData.map((cardData, index) => (
               <ConceptionCard
                 key={index}
@@ -389,12 +390,7 @@ const NovoseltsevoPage = async () => {
               <span className='text-h4'>{t('general_plan.title')}</span>
             </div>
             <div className='col-span-2 md:col-span-12 mt-12'>
-              <Image
-                alt=''
-                src='/pics/projects/novoseltsevo/12.png'
-                width={1760}
-                height={940}
-              />
+              <ImageSlider image1={picLink('20')} image2={picLink('19')} />
               <span className='text-h5 mt-10 block'>
                 {t('general_plan.description')}
               </span>
