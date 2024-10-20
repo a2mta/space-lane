@@ -8,7 +8,6 @@ import React, {
   useState,
 } from 'react';
 import Grid from './Grid';
-import classNames from 'classnames';
 
 const CollapseWide: FC<
   {
@@ -36,8 +35,8 @@ const CollapseWide: FC<
   return (
     <div className='py-6 tracking-wider'>
       <Grid className='pb-4 transition-max-height duration-500'>
-        <div className='col-span-4'>
-          <span className='text-body'>{title}</span>
+        <div className='col-span-4 row-span-2'>
+          <span className='text-body inline-block overflow-hidden whitespace-nowrap text-ellipsis max-w-full align-bottom'>{title}</span>
         </div>
         <div className='col-span-4'>
           <span className='text-body'>{subTitle}</span>
@@ -57,18 +56,18 @@ const CollapseWide: FC<
             onClick={toggleCollapse}
           />
         </div>
-      </Grid>
       <div
-        className={`border-t w-full overflow-hidden transition-all duration-200 ease-linear ${
-          !isCollapsed ? 'border-t-[transparent]' : 'border-grey'
+        className={`col-span-2 md:col-span-8 md:col-start-5 border-t w-full overflow-hidden transition-all duration-200 ease-linear ${
+            !isCollapsed ? 'border-t-[transparent]' : 'border-grey'
         }`}
         style={{ maxHeight }}
         ref={contentRef}
-      >
+        >
         <div>
           <div className='mt-4 w-full'>{children}</div>
         </div>
       </div>
+          </Grid>
     </div>
   );
 };

@@ -32,7 +32,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ image1, image2 }) => {
   };
 
   return (
-    <div className='relative w-full aspect-video overflow-hidden'>
+    <div className='hidden md:block relative w-full aspect-video overflow-hidden'>
       <Image
         fill
         src={image1}

@@ -39,7 +39,7 @@ const Collapse: FC<
           >
             {title}
           </span>
-          <div className='col-span-1 md:col-span-5 flex justify-end'>
+          <div className='col-span-1 md:col-start-12 flex justify-end'>
             <Image
               width={32}
               height={32}
