@@ -450,7 +450,7 @@ const CorsoPage = async () => {
                 {[
                   <Grid key={1} cols={8}>
                     <div className='xl:col-span-4 col-span-8'>
-                      <span className='text-body-regular font-light'>
+                      <span className='text-body-regular-mob md:text-body-regular font-light'>
                         Итальянские мотивы чувствуются не только в планировочных
                         решениях, но и в озеленении. Мы постарались найти общее
                         у альпийской флоры умеренной Италии и растительности
@@ -461,7 +461,7 @@ const CorsoPage = async () => {
                         можжевельников с рододендронами и голубиками, а также
                         луга и осоковоники.
                       </span>
-                      <span className='text-body-regular font-light hidden md:block mt-4'>
+                      <span className='text-body-regular-mob md:text-body-regular font-light hidden md:block mt-4'>
                         Как и в итальянских Альпах, в Прибайкальском регионе
                         большую часть территории занимают хвойные лесные массивы
                         с явно преобладающими разновозрастными сосняками. Чистых
@@ -473,7 +473,7 @@ const CorsoPage = async () => {
                   </Grid>,
                   <Grid key={2} cols={8}>
                     <div className='xl:col-span-4 mt-4 xl:mt-0 block col-span-8'>
-                      <span className='text-body-regular font-light'>
+                      <span className='text-body-regular-mob md:text-body-regular font-light'>
                         Как и в итальянских Альпах, в Прибайкальском регионе
                         большую часть территории занимают хвойные лесные массивы
                         с явно преобладающими разновозрастными сосняками. Чистых

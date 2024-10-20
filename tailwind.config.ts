@@ -71,6 +71,7 @@ const config: Config = {
       'light-grey': '#EFEFEF',
     },
     screens: {
+      sm: '360px',
       md: '480px',
       lg: '1440px',
       xl: '1920px',
