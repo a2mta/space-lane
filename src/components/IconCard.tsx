@@ -8,6 +8,7 @@ type IconCardProps = {
   icon: ReactElement;
   title: string;
   desc: string;
+  noP?: boolean;
 };
 
 export const IconCard: FC<IconCardProps> = ({
@@ -16,25 +17,33 @@ export const IconCard: FC<IconCardProps> = ({
   index,
   title,
   icon,
+  noP,
 }) => (
   <div
     className={classNames(
-      'col-span-1 md:col-span-4 p-6 flex flex-col aspect-[5/4] xl:min-h-max xl:aspect-[7/4]',
+      'col-span-1 md:col-span-4 flex flex-col aspect-[5/4] xl:min-h-max xl:aspect-[7/4]',
+      { 'p-6': !noP },
       className
     )}
   >
     <div className='flex flex-col mb-6'>
-      <span className='text-body-caption-mob md:text-h6 lg:text-h5 font-light mb-2 block'>
-        {index}
-      </span>
       <div className='flex justify-between'>
         <Grid cols={4} colsM={4} className='w-full'>
           <div className='col-span-4'>
-            <div className='flex aspect-128/25 justify-between w-full'>
-              <span className='mr-2 text-body-caption-mob lg:text-h5 font-medium'>
-                {title}
-              </span>
+            <div className='flex justify-between'>
+              <div className='flex flex-col'>
+                <span className='text-body-caption-mob md:text-h6 lg:text-h5 font-light mb-2 block'>
+                  {index}
+                </span>
+                <div className='flex aspect-128/25 justify-between w-full'>
+                  <span className='mr-2 text-body-caption-mob lg:text-h5 font-medium'>
+                    {title}
+                  </span>
+                </div>
+              </div>
+              <div className='xl:mt-12'>
               {icon}
+              </div>
             </div>
           </div>
         </Grid>
