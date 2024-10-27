@@ -474,12 +474,12 @@ const RublevoPage = () => {
         <Grid className='md:hidden text-body-caption-mob font-medium mt-6'>
           <div className='col-span-1 space-y-2'>
             {data[0].map((item) => (
-              <span className='block'>{item}</span>
+              <span key={item} className='block'>{item}</span>
             ))}
           </div>
           <div className='col-span-1 space-y-2'>
             {data[1].map((item) => (
-              <span className='block'>{item}</span>
+              <span key={item} className='block'>{item}</span>
             ))}
           </div>
           <div className='col-start-2 col-span-1 mt-10'>
