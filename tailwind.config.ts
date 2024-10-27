@@ -49,6 +49,7 @@ const config: Config = {
     aspectRatio: {
       '7/4': '7 / 4',
       '5/4': '5 / 4',
+      '128/25': '128 / 25',
       video: '16 / 9',
     },
     backgroundImage: {

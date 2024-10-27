@@ -23,11 +23,13 @@ const ImageWithCaption: FC<{
       {fullWidth ? (
         <PageMarginWithTitle>
           <Grid>
-            <div className='col-span-2 md:col-span-12'>{titleBlock}</div>
+            <div className='col-span-2 md:col-span-8'>{titleBlock}</div>
           </Grid>
         </PageMarginWithTitle>
       ) : (
-        titleBlock
+        <Grid>
+          <div className='col-span-8'>{titleBlock}</div>
+        </Grid>
       )}
     </div>
   );

@@ -6,7 +6,6 @@ type IconCardProps = {
   className?: string;
   index: string;
   icon: ReactElement;
-  iconMob: ReactElement;
   title: string;
   desc: string;
 };
@@ -24,16 +23,20 @@ export const IconCard: FC<IconCardProps> = ({
       className
     )}
   >
-    <div className='flex flex-col mb-14 xl:mb-0'>
+    <div className='flex flex-col mb-6'>
       <span className='text-body-caption-mob md:text-h6 lg:text-h5 font-light mb-2 block'>
         {index}
       </span>
       <div className='flex justify-between'>
-        <Grid cols={4} colsM={4}>
-          <span className='text-body-caption-mob col-span-3 lg:text-h5 font-medium'>
-            {title}
-          </span>
-          <div className='col-span-1'>{icon}</div>
+        <Grid cols={4} colsM={4} className='w-full'>
+          <div className='col-span-4'>
+            <div className='flex aspect-128/25 justify-between w-full'>
+              <span className='mr-2 text-body-caption-mob lg:text-h5 font-medium'>
+                {title}
+              </span>
+              {icon}
+            </div>
+          </div>
         </Grid>
       </div>
     </div>
@@ -43,12 +46,11 @@ export const IconCard: FC<IconCardProps> = ({
   </div>
 );
 
-export const IconCardMobile: FC<IconCardProps> = ({
-  desc,
-  iconMob,
-  index,
-  title,
-}) => {
+export const IconCardMobile: FC<
+  IconCardProps & {
+    iconMob: ReactElement;
+  }
+> = ({ desc, iconMob, index, title }) => {
   return (
     <div className='mb-10 flex flex-col pt-2 border-t border-medium-grey  justify-between'>
       <div className='flex flex-col'>
