@@ -5,7 +5,7 @@ import React from 'react';
 
 const projects = [
   {
-    title: 'Рублево — Архангельское',
+    title: 'СберСити в Рублево-Архангельском',
     subTitle: 'Благоустройство, авторский надзор',
     link: 'rublevo',
     image: '/pics/projects/rublevo.png',

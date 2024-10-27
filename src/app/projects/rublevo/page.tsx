@@ -1,9 +1,11 @@
 import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectMainPicWithInfo from '@/components/ProjectMainPicWithInfo';
-import classNames from 'classnames';
+import { makePicLink } from '@/utils';
 import Image from 'next/image';
 import React, { FC } from 'react';
+
+const picLink = makePicLink('rublevo');
 
 const cardsData = [
   {
@@ -49,6 +51,8 @@ const flowerBeeds2 = [
   { title: 'Канава с клёном', url: '23.png' },
   { title: 'Канава с тополем', url: '24.png' },
 ];
+
+
 
 const FlowerBeedCard: FC<{
   title: string;
@@ -126,9 +130,9 @@ const RublevoPage = () => {
     <div className='mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
-          title='Рублево — Архангельское'
-          coverLink='/pics/projects/rublevo/01.png'
-          coverLink2='/pics/projects/rublevo/02.png'
+          title='СберСити в Рублево-Архангельском'
+          coverLink={picLink('01')}
+          coverLink2={picLink('02')}
           status='В процессе реализации'
           area='461 га'
           location='Москва'
@@ -150,42 +154,32 @@ const RublevoPage = () => {
       <PageMarginWithTitle>
         <Grid className='mt-10'>
           <div className='col-span-4 flex items-end'>
-            <Image
-              src='/pics/projects/rublevo/13.png'
-              width={560}
-              height={554}
-              alt=''
-            />
+            <Image src={picLink('05')} width={561} height={560} alt='' />
           </div>
           <div className='col-span-8 space-y-10'>
             <Image
-              src='/pics/projects/rublevo/02.png'
-              width={1159}
-              height={705}
+              src={picLink('03')}
+              width={1169}
+              height={709}
               objectFit='cover'
               alt=''
             />
-            <Image
-              src='/pics/projects/rublevo/14.png'
-              width={1160}
-              height={705}
-              alt=''
-            />
+            <Image src={picLink('04')} width={1160} height={851} alt='' />
           </div>
         </Grid>
         <Grid className='mt-50'>
-          <div className='col-span-4 flex justify-between flex-col'>
-            <span className='text-h4'>Общая схема улиц</span>
-            <span className='text-body-regular'>
-              Для целей планирования, подготовки и проектированиямероприятий в
-              составе улиц, расположенных в границахрассмотрения, было выделено
-              4 типа улиц. Выделениетипов улиц осуществляется по ряду
-              параметров: пешеходнаяи транспортная активность, функции
-              окружающий зданий. В своей совокупности они позволили обозначить
-              спецификуфункционирования каждый улицы.
+          <div className='col-span-4 flex flex-col'>
+            <span className='text-h4 font-medium'>Общая схема улиц</span>
+            <span className='text-body-regular font-light block mt-7'>
+              Для планирования, подготовки и проектированияблагоустройства
+              уличных общественных пространств было выделено 4 типа улиц. В
+              основе типологизации лежат такие параметры, как пешеходная и
+              транспортная активность, функции окружающий зданий. Это позволило
+              сформулировать специфику функционирования каждый улицы, которая
+              нашла отражение в решениях, примененных для каждого типа.
             </span>
           </div>
-          <div className='col-span-8'>
+          <div className='col-span-5'>
             <Image
               src='/pics/projects/rublevo/15.png'
               width={710}
@@ -263,20 +257,12 @@ const RublevoPage = () => {
         </Grid>
         <Grid className='pt-6 border-t border-medium-grey'>
           {flowerBeeds.map(({ title, url }, index) => (
-            <FlowerBeedCard
-              key={index + url}
-              title={title}
-              url={url}
-            />
+            <FlowerBeedCard key={index + url} title={title} url={url} />
           ))}
         </Grid>
         <Grid className='mt-30 pt-6 border-t border-medium-grey'>
           {flowerBeeds2.map(({ title, url }, index) => (
-            <FlowerBeedCard
-              key={index + url}
-              title={title}
-              url={url}
-            />
+            <FlowerBeedCard key={index + url} title={title} url={url} />
           ))}
         </Grid>
         <Grid className='mt-50'>
