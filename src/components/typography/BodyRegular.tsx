@@ -7,7 +7,7 @@ interface BodyRegularProps {
 }
 
 const BodyRegular: React.FC<BodyRegularProps> = ({ children, className }) => {
-  return <span className={classNames('text-body-regular block font-light', className)}>{children}</span>;
+  return <span className={classNames('text-body-regular-mob md:text-body-regular block font-light', className)}>{children}</span>;
 };
 
 export default BodyRegular;

@@ -28,7 +28,7 @@ const ImageWithCaption: FC<{
         </PageMarginWithTitle>
       ) : (
         <Grid>
-          <div className='col-span-8'>{titleBlock}</div>
+          <div className='col-span-2 md:col-span-8'>{titleBlock}</div>
         </Grid>
       )}
     </div>

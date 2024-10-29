@@ -95,6 +95,7 @@ const config: Config = {
         h5: ['1.5rem', '2.25rem'],
         h6: ['1.25rem', 'initial'],
         'h5-regular': ['1.5rem', '2.125rem'],
+        'h5-mob': ['1.125rem', '1.625rem'],
         body: ['1.125rem', '1.625rem'],
         'body-regular': ['1.125rem', '1.625rem'],
         'body-regular-mob': ['1rem', '1.5rem'],

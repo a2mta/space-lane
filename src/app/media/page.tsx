@@ -19,7 +19,7 @@ const MediaPage = () => {
       >
         <Grid>
           <div className='aspect-video w-full relative h-full'>
-            <Image objectFit='cover' src={picLink('01')} fill alt='' />
+            <Image style={{objectFit: 'cover'}} src={picLink('01')} fill alt='' />
           </div>
         </Grid>
       </CollapseWide>

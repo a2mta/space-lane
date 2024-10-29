@@ -37,7 +37,7 @@ const ProjectMainPicWithInfo: FC<{
       </PageMarginWithTitle>
       {coverLink && (
         <div className='aspect-video w-full relative'>
-          <Image objectFit='cover' src={coverLink} fill alt='' />
+          <Image style={{objectFit: 'cover'}} src={coverLink} fill alt='' />
         </div>
       )}
       <PageMarginWithTitle>
@@ -108,7 +108,7 @@ const ProjectMainPicWithInfo: FC<{
       {coverLink2 && (
         <>
           <div className='aspect-video w-full relative md:mt-20 mt-10'>
-            <Image objectFit='cover' src={coverLink2} fill alt='' />
+            <Image style={{objectFit: 'cover'}} src={coverLink2} fill alt='' />
           </div>
           {coverLink2Title && (
             <PageMarginWithTitle>

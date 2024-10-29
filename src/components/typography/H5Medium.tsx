@@ -10,7 +10,7 @@ interface H5MediumProps {
 const H5Medium: React.FC<H5MediumProps> = ({ inline, children, className }) => {
   return (
     <span
-      className={classNames('text-h5 font-medium', className, {
+      className={classNames('text-h5-mob md:text-h5 font-medium', className, {
         'block': !inline,
       })}
     >

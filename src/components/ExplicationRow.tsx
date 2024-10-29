@@ -7,10 +7,12 @@ export const ExplicationRow: FC<{
 }> = ({ text, icon }) => (
   <div className='flex'>
     {typeof icon === 'string' ? (
-      <span className={classNames('min-w-28 h-6', icon)} />
+      <span className={classNames('mt-1 md:mt-0 min-w-14 md:min-w-28 h-[10px] md:h-6', icon)} />
     ) : (
       icon
     )}
-    <span className='ml-4 flex items-center'>{text}</span>
+    <span className='ml-2 md:ml-4 flex items-center text-body-caption-mob font-light md:text-body-regular'>
+      {text}
+    </span>
   </div>
 );

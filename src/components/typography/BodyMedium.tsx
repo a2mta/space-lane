@@ -7,7 +7,16 @@ interface BodyMediumProps {
 }
 
 const BodyMedium: React.FC<BodyMediumProps> = ({ children, className }) => {
-  return <span className={classNames('text-body-regular block font-medium', className)}>{children}</span>;
+  return (
+    <span
+      className={classNames(
+        'text-body-regular-mob md:text-body-regular block font-medium',
+        className
+      )}
+    >
+      {children}
+    </span>
+  );
 };
 
 export default BodyMedium;

@@ -21,6 +21,129 @@ type RouteRowType = {
   description: string;
 };
 
+const collapseData = [
+  {
+    title: 'Прокат',
+    image: <Image alt='' width={440} height={518} src={picLink('40')} />,
+    image2: <Image alt='' width={210} height={318} src={picLink('41')} />,
+    desc: 'Здание проката оборудования и инвентаря для разного рода прогулок в парке: велоснаряжение, палки для скандинавской ходьбы, палатки и оборудование для кэмпинга, фонарки и пр.',
+    exp: ['1 — Стойка ресепшн', '2 — Экспозиционный зал и зона хранения'],
+  },
+  {
+    title: 'Визит-центр',
+    image: <Image alt='' width={440} height={518} src={picLink('42')} />,
+    image2: <Image alt='' width={210} height={318} src={picLink('43')} />,
+    desc: 'Визитная карточка парка. Место прибытия и регистрация посетителей. Ознакомление с правилами пользования и кодексом парка. Выбор дальнейшего маршрута и пути размещения.',
+    exp: [
+      '1 — Санузлы и ПУИ',
+      '2 — Зона отдыха/ожидания',
+      '3 — Стойка ресепшн',
+      '4 — Зона встречи и регистрация гостей',
+      '5 — Зона эксопозиции',
+    ],
+  },
+  {
+    title: 'Кафе',
+    image: <Image alt='' width={440} height={518} src={picLink('44')} />,
+    image2: <Image alt='' width={210} height={318} src={picLink('45')} />,
+    desc: 'Небольшое кафе с открытой террасой и видом на парк. Без полноценной готовочной.',
+    exp: [
+      '1 — Санузлы и ПУИ',
+      '2 — Витрины и кассы',
+      '3 — Зона посадки внутри',
+      '4 — Зона посадки снаружи',
+    ],
+  },
+];
+
+const rentDataMob = [
+  ['01 — Баня', '02 — Кирпичный дом', '03 — Игровая зона', '04 — Переправа'],
+  ['05 — Костровище', '06 — Игровая зона', '07 — Мост переход'],
+];
+
+const glampingDataMob = [
+  [
+    '01 — Палатки на подиуме',
+    '02 — Столовая',
+    '03 — Общественная зона',
+    '04 — Гостиная',
+    '05 — Санитарный блок',
+  ],
+  [
+    '06 — Палатки на подиуме',
+    '07 — Зеленый буфер',
+    '08 — К парковке',
+    '09 — Банный комплекс',
+  ],
+];
+
+const borderDataMob = [
+  {
+    text: 'Зона произрастания краснокнижных растений',
+    icon: <Image src={picLink('07', 'svg')} width={30} height={30} alt='' />,
+  },
+  {
+    text: 'Зона проживания ценных и краснокнижных птиц',
+    icon: <Image src={picLink('08', 'svg')} width={30} height={30} alt='' />,
+  },
+  {
+    text: 'Самые красивые и ландшафтно интересные точки',
+    icon: <Image src={picLink('11', 'svg')} width={30} height={30} alt='' />,
+  },
+  { text: 'Зона прибрежных лугов', icon: 'bg-[#9BA79A]' },
+  { text: 'Лесистая часть, зона проживания животных', icon: 'bg-[#9DA87E]' },
+];
+
+const borderDataMob2 = [
+  {
+    text: 'Зона проживания ценных и краснокнижных животных',
+    icon: <Image src={picLink('09', 'svg')} width={30} height={30} alt='' />,
+  },
+  {
+    text: 'Зона проживания краснокнижных бабочек',
+    icon: <Image src={picLink('10', 'svg')} width={30} height={30} alt='' />,
+  },
+  {
+    text: 'Источник',
+    icon: <Image src={picLink('13', 'svg')} width={30} height={30} alt='' />,
+  },
+  {
+    text: 'Территория под возможности расширениязелёных коридоров',
+    icon: 'bg-[#BDD2A7]',
+  },
+];
+
+const masterPlanDataMob = [
+  ['01 — Место под кемпинг', '02 — Дома под аренду', '03 — Глэмпинг'],
+  [
+    '04 — Гостевая парковка',
+    '05 — Входная зона КПП / смотровая площадка',
+    '06 — Входная зона Визит-центр / парковка',
+  ],
+];
+
+const entryZoneDataMob = [
+  ['01 — Никольская церковь', '02 — Дорога к церкви', '03 — Входная зона'],
+  ['04 — Посадка павлония', '05 — Объездная дорога'],
+];
+
+const entryZoneDataMob2 = [
+  [
+    '01 — Посадка павлонии',
+    '02 — Визит-центр',
+    '03 — Кафе',
+    '04 — Композиции из камня',
+    '05 — Ценные растения',
+  ],
+  [
+    '06 — Прокат оборудования',
+    '07 — Главный въезд в парк',
+    '08 — Остановка автобусов',
+    '09 — Стоянка автомобилей',
+    '10 — Объездная дорога',
+  ],
+];
+
 const borderData = [
   { text: 'Граница парка', icon: 'border border-[#C16116]' },
   { text: 'Граница поселений', icon: 'border border-[#8C3912]' },
@@ -70,6 +193,7 @@ const homesData = [
   {
     title: 'Санитарный блок',
     image: '28',
+    imageMob: '48',
     items: [
       'Подъезд для обслуживания',
       'Открытая терраса под навесом с умывальниками',
@@ -79,6 +203,7 @@ const homesData = [
   {
     title: 'Банный комплекс',
     image: '29',
+    imageMob: '49',
     items: [
       'Баня с зоной отдыха',
       'Терраса под навесом',
@@ -91,6 +216,7 @@ const homesData = [
   {
     title: 'Общественная зона со столовой',
     image: '30',
+    imageMob: '50',
     items: [
       'Многофункциональная палатка',
       'Зона хранения',
@@ -105,6 +231,7 @@ const homesData = [
   {
     title: 'Палатка',
     image: '31',
+    imageMob: '51',
     items: [
       'Приподнятый деревянный подимум',
       'Терраса с креслами/гамаками',
@@ -136,6 +263,20 @@ const RouteCard: FC<{ title: string; subTitle: string }> = ({
   </Grid>
 );
 
+const ServicesDesc = () => (
+  <>
+    <BodyRegular className='mt-4'>
+      Посетители могут прогуляться пешком, наслаждаясь красотой окружающей
+      природы, или прокатиться верхом на лошади, чтобы лучше рассмотреть оленей
+      вблизи
+    </BodyRegular>
+    <BodyRegular className='mt-4'>
+      Для любителей активного отдыха предусмотрены велосипедные и автомобильные
+      маршруты, которые позволяют исследовать парк на колёсах
+    </BodyRegular>
+  </>
+);
+
 const routesRowData: RouteRowType[] = [
   {
     index: '01',
@@ -150,7 +291,7 @@ const routesRowData: RouteRowType[] = [
     },
   },
   {
-    index: '01',
+    index: '02',
     description: 'Предусмотрены парковки и пункты обслуживания для велосипедов',
     title: 'Велосипедные маршруты',
     route: {
@@ -174,32 +315,50 @@ const routesRowData: RouteRowType[] = [
 ];
 
 const RoutesRow: FC<RouteRowType> = ({ description, index, route, title }) => (
-  <Grid className='pt-6 border-t border-medium-grey'>
-    <div className='col-span-4'>
+  <Grid className='pt-2 md:pt-6 border-t border-medium-grey'>
+    <div className='col-span-4 md:order-1'>
       <H5Medium inline className=' text-grey mr-4'>
         {index}
       </H5Medium>
-      <H5Medium inline>{description}</H5Medium>
+      <H5Medium inline>{title}</H5Medium>
     </div>
-    <div className='col-span-4 space-y-4'>
+    <div className='col-span-4 space-y-2 md:space-y-4 order-2'>
       <div className='flex'>
-        <H5Medium className='mr-2 text-grey'>Начало/окончание:</H5Medium>
-        <H5Medium>{route.start}</H5Medium>
+        <span className='text-body-regular-mob md:text-h5 font-medium mr-2 text-grey'>
+          Начало/окончание:
+        </span>
+        <span className='text-body-regular-mob md:text-h5 font-medium'>
+          {route.start}
+        </span>
       </div>
       <div className='flex'>
-        <H5Medium className='mr-2 text-grey'>Количество:</H5Medium>
-        <H5Medium>{route.amount}</H5Medium>
+        <span className='text-body-regular-mob md:text-h5 font-medium mr-2 text-grey'>
+          Количество:
+        </span>
+        <span className='text-body-regular-mob md:text-h5 font-medium'>
+          {route.amount}
+        </span>
       </div>
       <div className='flex'>
-        <H5Medium className='mr-2 text-grey'>Длина:</H5Medium>
-        <H5Medium> {route.length}</H5Medium>
+        <span className='text-body-regular-mob md:text-h5 font-medium mr-2 text-grey'>
+          Длина:
+        </span>
+        <span className='text-body-regular-mob md:text-h5 font-medium'>
+          {' '}
+          {route.length}
+        </span>
       </div>
       <div className='flex'>
-        <H5Medium className='mr-2 text-grey'>Продолжительность:</H5Medium>
-        <H5Medium> {route.duration}</H5Medium>
+        <span className='text-body-regular-mob md:text-h5 font-medium mr-2 text-grey'>
+          Продолжительность:
+        </span>
+        <span className='text-body-regular-mob md:text-h5 font-medium'>
+          {' '}
+          {route.duration}
+        </span>
       </div>
     </div>
-    <div className='col-span-4'>
+    <div className='col-span-4 order-1 md:order-3 mt-6 md:mt-0 mb-4 md:mb-0'>
       <H5Medium>{description}</H5Medium>
     </div>
   </Grid>
@@ -209,23 +368,40 @@ const HomeCard: FC<{
   index: string;
   title: string;
   image: string;
+  imageMob: string;
   items: string[];
-}> = ({ image, index, items, title }) => (
-  <div className='col-span-6 pt-6 mb-24 border-t border-grey'>
+}> = ({ image, imageMob, index, items, title }) => (
+  <div className='col-span-2 md:col-span-6 pt-6 mb-24 border-t border-grey'>
     <Grid cols={6}>
-      <div className='col-span-6 mb-6'>
+      <div className='col-span-2 md:col-span-6 mb-6'>
         <H5Medium>
           {index} — {title}
         </H5Medium>
       </div>
-      <div className='col-span-4'>
-        <Image alt='' width={560} height={424} src={picLink(image)} />
+      <div className='col-span-1 md:col-span-4'>
+        <Image
+          className='hidden md:block'
+          alt=''
+          width={560}
+          height={424}
+          src={picLink(image)}
+        />
+        <Image
+          className='md:hidden'
+          alt=''
+          width={210}
+          height={182}
+          src={picLink(imageMob)}
+        />
       </div>
-      <div className='col-span-2 space-y-4'>
+      <div className='col-span-1 md:col-span-2 space-y-2 md:space-y-4'>
         {items.map((item, index) => (
-          <BodyRegular key={item + index}>
+          <span
+            className='text-body-caption-10 md:text-body-regular block font-medium md:font-light'
+            key={item + index}
+          >
             {addLeadingZero(index + 1)} — {item}
-          </BodyRegular>
+          </span>
         ))}
       </div>
     </Grid>
@@ -236,7 +412,7 @@ const OleniyParkPage = async () => {
   const { t } = await createTranslation('common');
 
   return (
-    <div className='mt-50 w-full'>
+    <div className='mt-30 md:mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
           title={'Олений парк'}
@@ -254,9 +430,9 @@ const OleniyParkPage = async () => {
       </section>
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4'>
-              <TextH4 className='mb-12'>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-4'>
+              <TextH4 className='mb-10 md:mb-12'>
                 Анализ территории и создание бренда через архитектуру
               </TextH4>
               <H5Medium>Аудитория</H5Medium>
@@ -264,30 +440,56 @@ const OleniyParkPage = async () => {
                 Мы провели исследование того, как используется территории парка.
                 Ключевая проблема кроется в недостаточном разнообразии сценариев
                 для посещения парка и ориентации только на одну категорию
-                посетителей — приезжающих на экскурсию. Несмотря на то, что
-                животные и природа — основное событие парка, необходимо
-                сосредоточиться на высоком разнообразии и качестве
+                посетителей — приезжающих на экскурсию.
+              </BodyRegular>
+              <BodyRegular className='mt-4'>
+                Несмотря на то, что животные и природа — основное событие парка,
+                необходимо сосредоточиться на высоком разнообразии и качестве
                 инфраструктуры и программы отдыха для туристов. Мастер-планом
                 предлагается организовать входную зону, проложить новые маршруты
                 и поработать с ландшафтом.
               </BodyRegular>
             </div>
-            <div className='col-span-8'>
+            <div className='hidden md:block col-span-8'>
               <Image alt='' width={1160} height={724} src={picLink('03')} />
             </div>
           </Grid>
-          <Grid className='mt-6'>
-            <div className='col-span-4 space-y-6'>
+        </section>
+      </PageMarginWithTitle>
+      <Image
+        className='md:hidden mt-10'
+        alt=''
+        width={480}
+        height={338}
+        src={picLink('35')}
+      />
+
+      <PageMarginWithTitle>
+        <Grid className='md:hidden mt-6'>
+          <div className='space-y-4 col-span-1'>
+            {borderDataMob.map((item, index) => (
+              <ExplicationRow key={index} text={item.text} icon={item.icon} />
+            ))}
+          </div>
+          <div className='space-y-4 col-span-1'>
+            {borderDataMob2.map((item, index) => (
+              <ExplicationRow key={index} text={item.text} icon={item.icon} />
+            ))}
+          </div>
+        </Grid>
+        <section>
+          <Grid className='hidden md:grid mt-6'>
+            <div className='col-span-2 md:col-span-4 space-y-6'>
               {borderData.map((item, index) => (
                 <ExplicationRow key={index} text={item.text} icon={item.icon} />
               ))}
             </div>
-            <div className='col-span-4 space-y-6'>
+            <div className='col-span-2 md:col-span-4 space-y-6'>
               {borderData2.map((item, index) => (
                 <ExplicationRow key={index} text={item.text} icon={item.icon} />
               ))}
             </div>
-            <div className='col-span-4 space-y-6'>
+            <div className='col-span-2 md:col-span-4 space-y-6'>
               {borderData3.map((item, index) => (
                 <ExplicationRow key={index} text={item.text} icon={item.icon} />
               ))}
@@ -295,18 +497,36 @@ const OleniyParkPage = async () => {
           </Grid>
         </section>
       </PageMarginWithTitle>
-      <Grid className='my-50'>
-        <div className='col-span-12'>
-          <Image alt='' width={1920} height={1030} src={picLink('14')} />
+      <Grid className='my-30 md:my-50'>
+        <div className='col-span-2 md:col-span-12'>
+          <Image
+            alt=''
+            width={480}
+            height={344}
+            src={picLink('36')}
+            className='md:hidden'
+          />
+          <Image
+            alt=''
+            width={1920}
+            height={1030}
+            src={picLink('14')}
+            className='hidden md:block'
+          />
         </div>
       </Grid>
       <PageMarginWithTitle>
         <Grid>
-          <div className='col-span-4'>
+          <div className='col-span-2 md:col-span-4'>
             <TextH4>Мастер-план территории</TextH4>
-            <H5Regular className='text-grey mt-4'>Схема генплана</H5Regular>
+            <H5Regular className='md:text-grey mt-4 hidden md:block'>
+              Схема генплана
+            </H5Regular>
+            <span className='mt-10 text-h5-mob font-medium md:hidden block mb-4'>
+              Схема генплана
+            </span>
           </div>
-          <div className='col-span-8'>
+          <div className='col-span-2 md:col-span-8'>
             <BodyRegular>
               Чтобы расширить аудиторию посетителей парка, предлагается
               модернизировать существующий гостиничный фонд парка и заложить
@@ -314,7 +534,7 @@ const OleniyParkPage = async () => {
               территории для различных категорий пользователей
             </BodyRegular>
             <Image
-              className='mt-16'
+              className='hidden md:block mt-16'
               alt=''
               width={860}
               height={846}
@@ -322,11 +542,37 @@ const OleniyParkPage = async () => {
             />
           </div>
         </Grid>
-        <Grid className='mt-40'>
-          <div className='col-span-4'>
-            <TextH4>Входная зона</TextH4>
+      </PageMarginWithTitle>
+      <Image
+        className='md:hidden mt-10'
+        alt=''
+        width={480}
+        height={414}
+        src={picLink('37')}
+      />
+
+      <PageMarginWithTitle>
+        <Grid className='text-body-caption-10 font-medium mt-6 md:hidden'>
+          <div className='col-span-1 space-y-2'>
+            {masterPlanDataMob[0].map((item, index) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
           </div>
-          <div className='col-span-8'>
+          <div className='col-span-1 space-y-2'>
+            {masterPlanDataMob[1].map((item, index) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </Grid>
+        <Grid className='mt-30 md:mt-40'>
+          <div className='col-span-2 md:col-span-4'>
+            <TextH4 className='mb-4 md:mb-0'>Входная зона</TextH4>
+          </div>
+          <div className='col-span-2 md:col-span-8'>
             <BodyRegular>
               Входная зона парка распологается в самом начале пути, недалеко от
               статуи оленя, рядом с будущими посадками павлонии и с видом на
@@ -335,7 +581,7 @@ const OleniyParkPage = async () => {
               дороги.
             </BodyRegular>
             <Image
-              className='mt-16'
+              className='hidden md:block mt-16'
               alt=''
               width={1160}
               height={694}
@@ -343,11 +589,36 @@ const OleniyParkPage = async () => {
             />
           </div>
         </Grid>
-        <Grid className='mt-30'>
-          <div className='col-span-7'>
+      </PageMarginWithTitle>
+      <Image
+        className='md:hidden mt-10'
+        alt=''
+        width={480}
+        height={268}
+        src={picLink('38')}
+      />
+      <PageMarginWithTitle>
+        <Grid className='text-body-caption-10 font-medium mt-6 md:hidden'>
+          <div className='col-span-1 space-y-2'>
+            {entryZoneDataMob[0].map((item, index) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+          <div className='col-span-1 space-y-2'>
+            {entryZoneDataMob[1].map((item, index) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </Grid>
+        <Grid className='mt-20 md:mt-30'>
+          <div className='hidden md:block col-span-7'>
             <Image alt='' width={1010} height={634} src={picLink('17')} />
           </div>
-          <div className='col-span-5'>
+          <div className='col-span-2 md:col-span-5'>
             <BodyRegular className='mt-8'>
               Входная зона также включает в себя три здания: визит-центр, кафе с
               открытой террасой и прокат. При благоустройстве территории
@@ -356,31 +627,97 @@ const OleniyParkPage = async () => {
             </BodyRegular>
           </div>
         </Grid>
+      </PageMarginWithTitle>
+      <Image
+        className='mt-10 md:hidden'
+        alt=''
+        width={480}
+        height={268}
+        src={picLink('39')}
+      />
+      <PageMarginWithTitle>
+        <Grid className='text-body-caption-10 font-medium mt-6 md:hidden'>
+          <div className='col-span-1 space-y-2'>
+            {entryZoneDataMob2[0].map((item, index) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+          <div className='col-span-1 space-y-2'>
+            {entryZoneDataMob2[1].map((item, index) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </Grid>
+      </PageMarginWithTitle>
+      <Image
+        className='md:hidden mt-30'
+        alt=''
+        width={480}
+        height={470}
+        src={picLink('18')}
+      />
+      <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-50 hidden md:grid'>
             <div className='col-span-7'>
               <Image alt='' width={1010} height={990} src={picLink('18')} />
             </div>
-            <div className='col-span-5'>
+            <div className='col-span-2 md:col-span-5'>
               <Image alt='' width={710} height={990} src={picLink('19')} />
             </div>
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-12 mb-16'>
+          <Grid className='mt-30 md:hidden'>
+            <div className='col-span-2 md:col-span-12 mb-20'>
               <TextH4>Архитектурные решения</TextH4>
             </div>
-            <div className='col-span-12 mb-4'>
+            <div className='col-span-2'>
+              {collapseData.map((item, index) => (
+                <Collapse
+                  key={item.title + index}
+                  title={item.title}
+                  borderColor='border-medium-grey'
+                >
+                  <Grid>
+                    <div className='col-span-2 mb-6'>
+                      {item.image}
+                      <span className='block mt-6 text-body-regular-mob font-light'>
+                        {item.desc}
+                      </span>
+                    </div>
+                    <div className='col-span-1'>{item.image2}</div>
+                    <div className='col-span-1 text-body-regular-mob font-light mt-4'>
+                      <span className='block mb-4'>Экспликация</span>
+                      <div className='flex space-y-2 flex-col'>
+                        {item.exp.map((item) => (
+                          <span key={item}>{item}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </Grid>
+                </Collapse>
+              ))}
+            </div>
+          </Grid>
+          <Grid className='mt-50 hidden md:grid'>
+            <div className='col-span-2 md:col-span-12 mb-16'>
+              <TextH4>Архитектурные решения</TextH4>
+            </div>
+            <div className='col-span-2 md:col-span-12 mb-4'>
               <BodyRegular className='mb-4'>Прокат</BodyRegular>
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <Image alt='' width={560} height={658} src={picLink('20')} />
             </div>
-            <div className='col-span-3'>
+            <div className='col-span-2 md:col-span-3'>
               <Image alt='' width={410} height={629} src={picLink('21')} />
             </div>
-            <div className='col-span-5'>
+            <div className='col-span-2 md:col-span-5'>
               <BodyRegular className='mt-14'>
                 Здание проката оборудования и инвентаря для разного рода
                 прогулок в парке: велоснаряжение, палки для скандинавской
@@ -395,17 +732,17 @@ const OleniyParkPage = async () => {
               </div>
             </div>
           </Grid>
-          <Grid className='mt-30'>
-            <div className='col-span-12 mb-4'>
+          <Grid className='mt-30 hidden md:grid'>
+            <div className='col-span-2 md:col-span-12 mb-4'>
               <BodyRegular>Визит-центр</BodyRegular>
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <Image alt='' width={560} height={658} src={picLink('22')} />
             </div>
-            <div className='col-span-3'>
+            <div className='col-span-2 md:col-span-3'>
               <Image alt='' width={410} height={629} src={picLink('23')} />
             </div>
-            <div className='col-span-5'>
+            <div className='col-span-2 md:col-span-5'>
               <BodyRegular className='mt-14'>
                 Визитная карточка парка. Место прибытия и регистрация
                 посетителей. Ознакомление с правилами пользования и кодексом
@@ -425,17 +762,17 @@ const OleniyParkPage = async () => {
               </div>
             </div>
           </Grid>
-          <Grid className='mt-30'>
-            <div className='col-span-12 mb-4'>
+          <Grid className='mt-30 hidden md:grid'>
+            <div className='col-span-2 md:col-span-12 mb-4'>
               <BodyRegular>Визит-центр</BodyRegular>
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <Image alt='' width={560} height={658} src={picLink('24')} />
             </div>
-            <div className='col-span-3'>
+            <div className='col-span-2 md:col-span-3'>
               <Image alt='' width={410} height={629} src={picLink('25')} />
             </div>
-            <div className='col-span-5'>
+            <div className='col-span-2 md:col-span-5'>
               <BodyRegular className='mt-14'>
                 Небольшое кафе с открытой террасой и видом на парк.Без
                 полноценной готовочной.
@@ -455,13 +792,18 @@ const OleniyParkPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4'>
-              <TextH4 className='mb-4'>Дома под аренду</TextH4>
-              <BodyRegular className='text-grey'>Схема генплана</BodyRegular>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-4'>
+              <TextH4 className='mb-10 md:mb-4'>Дома под аренду</TextH4>
+              <BodyRegular className='hidden md:block text-grey'>
+                Схема генплана
+              </BodyRegular>
+              <span className='text-h5-mob font-medium block mb-6'>
+                Схема генплана
+              </span>
             </div>
-            <div className='col-span-8'>
-              <BodyRegular className='mb-16'>
+            <div className='col-span-2 md:col-span-8'>
+              <BodyRegular className='mb-10 md:mb-16'>
                 Устройство домов под аренду на месте заброшенной деревни
                 Яблоново станет символом возвращения жизни в эти места.Мы
                 предлагаем сохранить естественно сложившуюся планировку, что
@@ -471,15 +813,53 @@ const OleniyParkPage = async () => {
                 и индивидуальные патио. И, что не менее важно — в парке появится
                 ещё один живописный уголок.
               </BodyRegular>
-              <Image alt='' width={860} height={715} src={picLink('26')} />
+              <Image
+                alt=''
+                className='hidden md:block'
+                width={860}
+                height={715}
+                src={picLink('26')}
+              />
             </div>
           </Grid>
-          <Grid className='mt-40'>
-            <div className='col-span-4'>
-              <TextH4 className='mb-4'>Глэмпинг</TextH4>
-              <BodyRegular className='text-grey'>Схема генплана</BodyRegular>
+        </section>
+      </PageMarginWithTitle>
+      <Image
+        className='md:hidden'
+        alt=''
+        width={480}
+        height={362}
+        src={picLink('46')}
+      />
+      <PageMarginWithTitle>
+        <Grid className='text-body-caption-10 font-medium mt-6 md:hidden'>
+          <div className='col-span-1 space-y-2'>
+            {rentDataMob[0].map((item) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+          <div className='col-span-1 space-y-2'>
+            {rentDataMob[1].map((item) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </Grid>
+        <section>
+          <Grid className='mt-30 md:mt-40'>
+            <div className='col-span-2 md:col-span-4'>
+              <TextH4 className='mb-10  md:mb-4'>Глэмпинг</TextH4>
+              <BodyRegular className='hidden md:block text-grey'>
+                Схема генплана
+              </BodyRegular>
+              <span className='text-h5-mob font-medium block mb-6'>
+                Схема генплана
+              </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <BodyRegular className='mb-16'>
                 На холме вдоль кромки существующих насаждений предлагается
                 расположить глэмпинг. Отсюда открываются прекрасные виды, защиту
@@ -490,10 +870,41 @@ const OleniyParkPage = async () => {
                 более медленно растущие деревья. Через пять лет павлонию можно
                 будет заменить на долговечную породу.
               </BodyRegular>
-              <Image alt='' width={860} height={825} src={picLink('27')} />
+              <Image
+                className='hidden md:block'
+                alt=''
+                width={860}
+                height={825}
+                src={picLink('27')}
+              />
             </div>
           </Grid>
         </section>
+      </PageMarginWithTitle>
+      <Image
+        className='md:hidden'
+        alt=''
+        width={480}
+        height={418}
+        src={picLink('47')}
+      />
+      <PageMarginWithTitle>
+        <Grid className='text-body-caption-10 font-medium mt-6 md:hidden'>
+          <div className='col-span-1 space-y-2'>
+            {glampingDataMob[0].map((item) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+          <div className='col-span-1 space-y-2'>
+            {glampingDataMob[1].map((item) => (
+              <span className='block' key={item}>
+                {item}
+              </span>
+            ))}
+          </div>
+        </Grid>
         <section>
           <Grid className='mt-50'>
             {homesData.map((item, index) => (
@@ -506,11 +917,11 @@ const OleniyParkPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-16'>
-            <div className='col-span-4'>
+          <Grid className='mt-30 md:mt-16'>
+            <div className='col-span-2 md:col-span-4 md:mb-0 mb-4'>
               <TextH4>Туристические маршруты</TextH4>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <BodyRegular>
                 Мы предложили несколько типов маршрутов разной протяжённости для
                 различных категорий пользователей и способов передвижения —
@@ -518,11 +929,11 @@ const OleniyParkPage = async () => {
               </BodyRegular>
             </div>
           </Grid>
-          <Grid className='mt-30'>
-            <div className='col-span-4'>
+          <Grid className='mt-30 hidden md:grid'>
+            <div className='col-span-2 md:col-span-4'>
               <H5Medium>Идеология</H5Medium>
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <H5Medium className='mb-12'>
                 Разнообразие маршрутов и уникальный пользовательский опыт
               </H5Medium>
@@ -532,72 +943,102 @@ const OleniyParkPage = async () => {
                 ))}
               </div>
             </div>
-            <div className='col-span-4 border-l border-black pl-10 space-y-6'>
+            <div className='col-span-2 md:col-span-4 border-l border-black pl-10 space-y-6'>
               <H5Medium>Экскурсионные маршруты</H5Medium>
               <H5Medium>Аудио маршруты</H5Medium>
               <H5Medium>Схемы/тексты</H5Medium>
               <H5Medium>Квесты</H5Medium>
             </div>
           </Grid>
-          <Grid className='my-30'>
-            <div className='col-start-5 col-span-8'>
+        </section>
+      </PageMarginWithTitle>
+      <Image
+        alt=''
+        width={1160}
+        height={773}
+        src={picLink('32')}
+        className='my-10 md:hidden'
+      />
+      <PageMarginWithTitle>
+        <section>
+          <Grid className='my-30 hidden md:grid'>
+            <div className='md:col-start-5 col-span-2 md:col-span-8'>
               <Image alt='' width={1160} height={773} src={picLink('32')} />
             </div>
           </Grid>
         </section>
-        <section className='space-y-20'>
+        <section className='space-y-10 md:space-y-20'>
           {routesRowData.map((item, index) => (
             <RoutesRow key={index} {...item} />
           ))}
         </section>
         <section>
           <Grid className='mt-50'>
-            <div className='col-span-4'>
+            <div className='col-span-2 xl:col-span-4 md:col-span-4'>
               <TextH4>Сервисы</TextH4>
-              <BodyRegular className='mt-4'>
-                Посетители могут прогуляться пешком, наслаждаясь красотой
-                окружающей природы, или прокатиться верхом на лошади, чтобы
-                лучше рассмотреть оленей вблизи
-              </BodyRegular>
-              <BodyRegular className='mt-4'>
-                Для любителей активного отдыха предусмотрены велосипедные и
-                автомобильные маршруты, которые позволяют исследовать парк на
-                колёсах
-              </BodyRegular>
+              <div className='block xl:block md:hidden'>
+                <ServicesDesc />
+              </div>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-8 hidden md:grid xl:hidden'>
+              <ServicesDesc />
+            </div>
+            <div className='col-span-2 xl:col-span-8 md:col-span-12 hidden xl:grid'>
               <Image alt='' width={1160} height={773} src={picLink('33')} />
+            </div>
+            <div className='mt-16 md:grid xl:hidden hidden col-span-12 relative aspect-video'>
+              <Image
+                alt=''
+                fill
+                src={picLink('33')}
+                style={{ objectFit: 'cover' }}
+              />
             </div>
           </Grid>
         </section>
+      </PageMarginWithTitle>
+      <Image
+        alt=''
+        width={480}
+        height={320}
+        src={picLink('33')}
+        className='md:hidden my-10'
+      />
+
+      <PageMarginWithTitle>
         <section>
-          <Grid className='mt-36'>
-            <div className='col-span-12'>
+          <Grid className='md:mt-36'>
+            <div className='col-span-2 md:col-span-12'>
               <Collapse title='01 Пешеходные маршруты'>
                 <Grid>
-                  <div className='col-start-5 col-span-8 mb-10'>
-                    <H5Medium>
+                  <div className='col-span-2 md:col-start-5 md:col-span-8 mb-10 order-1'>
+                    <span className='text-body-regular-mob md:text-h5 font-medium'>
                       Пешие маршруты проложены в границах парка с учётом
                       раскрытия пейзажных видов и возможности наблюдения за
                       флорой и фауной
-                    </H5Medium>
+                    </span>
                   </div>
-                  <div className='col-span-4'>
+                  <div className='col-span-2 md:col-span-4 order-3 md:order-2'>
                     <div className='flex flex-col'>
                       <H5Medium>Короткие маршруты</H5Medium>
                       <Grid cols={4} className='mt-6'>
                         <div className='flex flex-col space-y-4 col-span-3'>
-                          <div className='flex  justify-between items-center'>
-                            <BodyMedium>Маршрут ПМ1, ПМ2</BodyMedium>
+                          <div className='flex justify-between items-center'>
+                            <BodyMedium className='text-grey md:text-black'>
+                              Маршрут ПМ1, ПМ2
+                            </BodyMedium>
+                            <div className='md:hidden w-[110px] mt-1 h-4 bg-[#B2D235]' />
                           </div>
-                          <BodyRegular>
-                            4,0 км — 2 часа + 20 мин, отдых
-                          </BodyRegular>
-                          <BodyRegular>
-                            4,2 км — 2 часа 10 мин + 20 мин, отдых
-                          </BodyRegular>
+                          <div className='space-y-2 md:space-y-4'>
+                            <BodyRegular>
+                              4,0 км — 2 часа + 20 мин, отдых
+                            </BodyRegular>
+                            <BodyRegular>
+                              4,2 км — 2 часа 10 мин + 20 мин, отдых
+                            </BodyRegular>
+                          </div>
                         </div>
-                        <div className='col-span-1'>
+                        <div className='col-span-1 hidden md:block'>
                           <div className='w-full mt-1 h-4 bg-[#B2D235]' />
                         </div>
                       </Grid>
@@ -606,55 +1047,66 @@ const OleniyParkPage = async () => {
                       <H5Medium>Длинные маршруты</H5Medium>
                       <div className='flex flex-col space-y-6'>
                         <Grid cols={4} className='mt-6'>
-                          <div className='flex flex-col space-y-4 col-span-3'>
+                          <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                             <div className='flex justify-between items-center'>
                               <BodyMedium>Обзорный маршрут ПО1</BodyMedium>
+                              <div className='md:hidden w-[110px] mt-1 h-4 bg-[#E1E887]' />
                             </div>
                             <BodyRegular>
                               9,5 км — 4 часа 45 мин + 1 час остановки и отдых
                             </BodyRegular>
                           </div>
-                          <div className='col-span-1'>
+                          <div className='col-span-1 hidden md:block'>
                             <div className='w-full mt-1 h-4 bg-[#E1E887]' />
                           </div>
                         </Grid>
                         <Grid cols={4} className='mt-6'>
-                          <div className='flex flex-col space-y-4 col-span-3'>
+                          <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                             <div className='flex justify-between items-center'>
                               <BodyMedium>Обзорный маршрут ПО2</BodyMedium>
-                            </div>
+                              <div className='md:hidden w-[110px] mt-1 h-4 bg-[#94B479]' />
+                              </div>
                             <BodyRegular>
                               14,8 км и 4,3 км возврат всего 9 часов 33 мин. + 1
                               час остановки
                             </BodyRegular>
                           </div>
-                          <div className='col-span-1'>
+                          <div className='col-span-1 hidden md:block'>
                             <div className='w-full mt-1 h-4 bg-[#94B479]' />
                           </div>
                         </Grid>
                         <Grid cols={4} className='mt-6'>
-                          <div className='flex flex-col space-y-4 col-span-3'>
+                          <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                             <div className='flex justify-between items-center'>
                               <BodyMedium>Обзорный маршрут ПО3</BodyMedium>
-                            </div>
+                              <div className='md:hidden w-[110px] mt-1 h-4 bg-[#244132]' />
+                              </div>
                             <BodyRegular>
                               12,9 км и 4,3 км возврат всего 17,2–8 часов 35
                               мин, + 1 час остановки
                             </BodyRegular>
                           </div>
-                          <div className='col-span-1'>
+                          <div className='col-span-1 hidden md:block'>
                             <div className='w-full mt-1 h-4 bg-[#244132]' />
                           </div>
                         </Grid>
                       </div>
                     </div>
                   </div>
-                  <div className='col-span-8'>
+                  <div className='col-span-2 md:col-span-8 order-2 md:order-3'>
                     <Image
+                      className='hidden md:block'
                       alt=''
                       width={860}
                       height={692}
                       src={picLink('34')}
+                    />
+                    <Image
+                      className='block md:hidden mb-10'
+                      alt=''
+                      width={480}
+                      height={374}
+                      src={picLink('52')}
                     />
                   </div>
                 </Grid>
