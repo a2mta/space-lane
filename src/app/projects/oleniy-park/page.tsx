@@ -12,6 +12,11 @@ import { ExplicationRow } from '@/components/ExplicationRow';
 import H5Regular from '@/components/typography/H5Regular';
 import BodyMedium from '@/components/typography/BodyMedium';
 import Collapse from '@/components/Collapse';
+import WalkCollapse from './WalkCollapse';
+import CycleCollapse from './CycleCollapse';
+import HorseCollapse from './HorseCollapse';
+import AutomobileCollapse from './AutomobileCollapse';
+import AdditionalWalksCollapse from './AdditionalWalksCollapse';
 const picLink = makePicLink('oleniy-park');
 
 type RouteRowType = {
@@ -1009,112 +1014,11 @@ const OleniyParkPage = async () => {
         <section>
           <Grid className='md:mt-36'>
             <div className='col-span-2 md:col-span-12'>
-              <Collapse title='01 Пешеходные маршруты'>
-                <Grid>
-                  <div className='col-span-2 md:col-start-5 md:col-span-8 mb-10 order-1'>
-                    <span className='text-body-regular-mob md:text-h5 font-medium'>
-                      Пешие маршруты проложены в границах парка с учётом
-                      раскрытия пейзажных видов и возможности наблюдения за
-                      флорой и фауной
-                    </span>
-                  </div>
-                  <div className='col-span-2 md:col-span-4 order-3 md:order-2'>
-                    <div className='flex flex-col'>
-                      <H5Medium>Короткие маршруты</H5Medium>
-                      <Grid cols={4} className='mt-6'>
-                        <div className='flex flex-col space-y-4 col-span-3'>
-                          <div className='flex justify-between items-center'>
-                            <BodyMedium className='text-grey md:text-black'>
-                              Маршрут ПМ1, ПМ2
-                            </BodyMedium>
-                            <div className='md:hidden w-[110px] mt-1 h-4 bg-[#B2D235]' />
-                          </div>
-                          <div className='space-y-2 md:space-y-4'>
-                            <BodyRegular>
-                              4,0 км — 2 часа + 20 мин, отдых
-                            </BodyRegular>
-                            <BodyRegular>
-                              4,2 км — 2 часа 10 мин + 20 мин, отдых
-                            </BodyRegular>
-                          </div>
-                        </div>
-                        <div className='col-span-1 hidden md:block'>
-                          <div className='w-full mt-1 h-4 bg-[#B2D235]' />
-                        </div>
-                      </Grid>
-                    </div>
-                    <div className='flex flex-col mt-10'>
-                      <H5Medium>Длинные маршруты</H5Medium>
-                      <div className='flex flex-col space-y-6'>
-                        <Grid cols={4} className='mt-6'>
-                          <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
-                            <div className='flex justify-between items-center'>
-                              <BodyMedium>Обзорный маршрут ПО1</BodyMedium>
-                              <div className='md:hidden w-[110px] mt-1 h-4 bg-[#E1E887]' />
-                            </div>
-                            <BodyRegular>
-                              9,5 км — 4 часа 45 мин + 1 час остановки и отдых
-                            </BodyRegular>
-                          </div>
-                          <div className='col-span-1 hidden md:block'>
-                            <div className='w-full mt-1 h-4 bg-[#E1E887]' />
-                          </div>
-                        </Grid>
-                        <Grid cols={4} className='mt-6'>
-                          <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
-                            <div className='flex justify-between items-center'>
-                              <BodyMedium>Обзорный маршрут ПО2</BodyMedium>
-                              <div className='md:hidden w-[110px] mt-1 h-4 bg-[#94B479]' />
-                              </div>
-                            <BodyRegular>
-                              14,8 км и 4,3 км возврат всего 9 часов 33 мин. + 1
-                              час остановки
-                            </BodyRegular>
-                          </div>
-                          <div className='col-span-1 hidden md:block'>
-                            <div className='w-full mt-1 h-4 bg-[#94B479]' />
-                          </div>
-                        </Grid>
-                        <Grid cols={4} className='mt-6'>
-                          <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
-                            <div className='flex justify-between items-center'>
-                              <BodyMedium>Обзорный маршрут ПО3</BodyMedium>
-                              <div className='md:hidden w-[110px] mt-1 h-4 bg-[#244132]' />
-                              </div>
-                            <BodyRegular>
-                              12,9 км и 4,3 км возврат всего 17,2–8 часов 35
-                              мин, + 1 час остановки
-                            </BodyRegular>
-                          </div>
-                          <div className='col-span-1 hidden md:block'>
-                            <div className='w-full mt-1 h-4 bg-[#244132]' />
-                          </div>
-                        </Grid>
-                      </div>
-                    </div>
-                  </div>
-                  <div className='col-span-2 md:col-span-8 order-2 md:order-3'>
-                    <Image
-                      className='hidden md:block'
-                      alt=''
-                      width={860}
-                      height={692}
-                      src={picLink('34')}
-                    />
-                    <Image
-                      className='block md:hidden mb-10'
-                      alt=''
-                      width={480}
-                      height={374}
-                      src={picLink('52')}
-                    />
-                  </div>
-                </Grid>
-              </Collapse>
-              <Collapse title='02 Велосипедные маршруты' />
-              <Collapse title='03 Конные маршруты' />
-              <Collapse title='04 Автомобильные маршруты (дополнительная инфраструктура)' />
-              <Collapse title='05 Пешие (дополнительная инфраструктура)' />
+              <WalkCollapse />
+              <CycleCollapse />
+              <HorseCollapse />
+              <AutomobileCollapse />
+              <AdditionalWalksCollapse />
             </div>
           </Grid>
         </section>
