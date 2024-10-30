@@ -978,7 +978,7 @@ const OleniyParkPage = async () => {
           ))}
         </section>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 xl:col-span-4 md:col-span-4'>
               <TextH4>Сервисы</TextH4>
               <div className='block xl:block md:hidden'>

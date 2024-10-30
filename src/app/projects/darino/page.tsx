@@ -156,13 +156,15 @@ const DarinoPage = async () => {
           year='2023'
         />
       </section>
+      <Image src={picLink('03')} width={1160} height={771} alt='' />
+
       <PageMarginWithTitle>
         <section>
           <Grid className='mt-50'>
-            <div className='col-span-8'>
+            <div className='hidden md:blockmd:col-span-8'>
               <Image src={picLink('03')} width={1160} height={771} alt='' />
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               {mapDescData.map(({ subTitle, title }, index) => (
                 <MapDescRow
                   title={title}
@@ -176,10 +178,10 @@ const DarinoPage = async () => {
         </section>
         <section>
           <Grid className='mt-50'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium'>Линейный парк</span>
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-body-regular font-light'>
                 Центральная ось коттеджного посёлка, прорезающая концентрические
                 круги улочек, становится линейным парком с плодовыми деревьями и
@@ -190,25 +192,25 @@ const DarinoPage = async () => {
                 посёлка
               </span>
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <Image src={picLink('04')} width={560} height={327} alt='' />
             </div>
-            <div className='col-span-12 mt-30'>
+            <div className='col-span-2 md:col-span-12 mt-30'>
               <Image src={picLink('05')} width={1760} height={210} alt='' />
             </div>
           </Grid>
         </section>
         <section>
           <Grid className='mt-50'>
-            <div className='col-span-12 mb-40'>
+            <div className='col-span-2 md:col-span-12 mb-40'>
               <span className='text-h4 font-medium'>
                 Размещение общественных пространств
               </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('06')} width={1123} height={943} />
             </div>
-            <div className='col-span-4 border-l border-grey pl-10'>
+            <div className='col-span-2 md:col-span-4 border-l border-grey pl-10'>
               <div className='flex flex-col space-y-10'>
                 {mapSpaceDescData.map(({ desc, title }, index) => (
                   <DarinoMapDescRow
@@ -223,10 +225,10 @@ const DarinoPage = async () => {
         </section>
         <section>
           <Grid className='mt-50'>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('07')} width={1160} height={725} />
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium block mb-4'>
                 Въездная зона
               </span>
@@ -242,19 +244,19 @@ const DarinoPage = async () => {
         </section>
         <section>
           <Grid className='mt-30'>
-            <div className='col-span-4 flex flex-end flex-col justify-end space-y-10'>
+            <div className='col-span-2 md:col-span-4 flex flex-end flex-col justify-end space-y-10'>
               {explicationData.map((item, index) => (
                 <ExplicationRow {...item} key={item.icon + index} />
               ))}
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('08')} width={1160} height={820} />
             </div>
           </Grid>
         </section>
         <section>
           <Grid className='mt-50 pt-6 border-t border-medium-grey'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium block mb-4'>
                 Событийная площадь
               </span>
@@ -264,15 +266,15 @@ const DarinoPage = async () => {
                 сидения и навес, в тени которого можно укрыться от солнца.
               </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('10')} width={1160} height={725} />
             </div>
           </Grid>
           <Grid className='mt-10'>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('11')} width={1160} height={690} />
             </div>
-            <div className='col-span-4 bg-beige p-10'>
+            <div className='col-span-2 md:col-span-4 bg-beige p-10'>
               <span className='text-h4'>Аксонометрия</span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry.map((item, index) => (
@@ -284,7 +286,7 @@ const DarinoPage = async () => {
             </div>
           </Grid>
           <Grid className='mt-10'>
-            <div className='col-span-4 flex justify-end flex-col'>
+            <div className='col-span-2 md:col-span-4 flex justify-end flex-col'>
               <span className='text-h5-regular font-light'>Покрытия</span>
               <div className='flex flex-col space-y-6 mt-8'>
                 {surfaces.map((item, index) => (
@@ -292,17 +294,17 @@ const DarinoPage = async () => {
                 ))}
               </div>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('12')} width={1160} height={678} />
             </div>
           </Grid>
         </section>
         <section>
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('13')} width={1160} height={724} />
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium block mb-4'>
                 Игровая зона
               </span>
@@ -316,7 +318,7 @@ const DarinoPage = async () => {
             </div>
           </Grid>
           <Grid className='mt-10'>
-            <div className='col-span-4 p-10 bg-beige'>
+            <div className='col-span-2 md:col-span-4 p-10 bg-beige'>
               <span className='text-h4 font-medium'>Аксонометрия</span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry2.map((item, index) => (
@@ -326,12 +328,12 @@ const DarinoPage = async () => {
                 ))}
               </div>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('14')} width={1160} height={698} />
             </div>
           </Grid>
           <Grid className='mt-10'>
-            <div className='col-span-4 flex justify-end flex-col'>
+            <div className='col-span-2 md:col-span-4 flex justify-end flex-col'>
               <span className='text-h5-regular font-light'>Покрытия</span>
               <div className='flex flex-col space-y-6 mt-8'>
                 {surfaces2.map((item, index) => (
@@ -339,14 +341,14 @@ const DarinoPage = async () => {
                 ))}
               </div>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('15')} width={1160} height={612} />
             </div>
           </Grid>
         </section>
         <section>
           <Grid className='mt-50 pt-6 border-t border-medium-grey'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium'>Зона барбекю</span>
               <span className='text-body-regular font-light block mt-4'>
                 На специально оборудованной площадке для барбекю жители могут
@@ -355,15 +357,15 @@ const DarinoPage = async () => {
                 солнечных ванн.
               </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('16')} width={1160} height={725} />
             </div>
           </Grid>
           <Grid className='mt-10'>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('17')} width={1160} height={698} />
             </div>
-            <div className='col-span-4 p-10 bg-beige'>
+            <div className='col-span-2 md:col-span-4 p-10 bg-beige'>
               <span className='text-h4 font-medium'>Аксонометрия</span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry3.map((item, index) => (
@@ -375,7 +377,7 @@ const DarinoPage = async () => {
             </div>
           </Grid>
           <Grid className='mt-10'>
-            <div className='col-span-4 flex justify-end flex-col'>
+            <div className='col-span-2 md:col-span-4 flex justify-end flex-col'>
               <span className='text-h5-regular font-light'>Покрытия</span>
               <div className='flex flex-col space-y-6 mt-8'>
                 {surfaces3.map((item, index) => (
@@ -383,14 +385,14 @@ const DarinoPage = async () => {
                 ))}
               </div>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('18')} width={1160} height={648} />
             </div>
           </Grid>
         </section>
         <section>
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium'>Линейный участок</span>
               <span className='text-body-medium block mt-4'>
                 Центральная улица посёлка поделена на три линейных участка. Они
@@ -398,7 +400,7 @@ const DarinoPage = async () => {
                 по мере продвижения от КПП до дальних участков.
               </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <ImageWithCaption
                 src={picLink('19')}
                 title='Вид на променад'
@@ -406,19 +408,19 @@ const DarinoPage = async () => {
                 height={726}
               />
             </div>
-            <div className='col-span-12 my-20'>
+            <div className='col-span-2 md:col-span-12 my-20'>
               <span className='text-h5 font-medium'>
                 Решения по линейной части
               </span>
             </div>
-            <div className='col-span-12'>
+            <div className='col-span-2 md:col-span-12'>
               <Image alt='' src={picLink('20')} width={1760} height={209} />
             </div>
           </Grid>
         </section>
         <section>
           <Grid className='mt-60'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium'>Аллея</span>
               <span className='block text-body-regular font-light mt-6'>
                 Участок от КПП до кольцевой разворотной площадки является
@@ -427,15 +429,28 @@ const DarinoPage = async () => {
                 скамьи и стулья
               </span>
             </div>
-            <div className='col-span-8'>
-              <Image alt='' src={picLink('21')} width={1160} height={957} />
+            <div className='col-span-2 md:col-span-8'>
+              <Image
+                alt=''
+                className='hidden md:block xl:hidden'
+                src={picLink('21')}
+                width={840}
+                height={848}
+              />
+              <Image
+                className='hidden xl:block'
+                alt=''
+                src={picLink('24')}
+                width={1160}
+                height={957}
+              />
             </div>
           </Grid>
           <Grid className='mt-60'>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('22')} width={1160} height={828} />
             </div>
-            <div className='col-span-4 flex flex-col justify-between'>
+            <div className='col-span-2 md:col-span-4 flex flex-col justify-between'>
               <div className='flex flex-col'>
                 <span className='text-h4 font-medium'>Променад</span>
                 <span className='block text-body-regular font-light mt-6'>
@@ -460,7 +475,7 @@ const DarinoPage = async () => {
             </div>
           </Grid>
           <Grid className='mt-60'>
-            <div className='col-span-4 flex flex-col justify-between'>
+            <div className='col-span-2 md:col-span-4 flex flex-col justify-between'>
               <div className='flex flex-col'>
                 <span className='text-h4 font-medium'>Сады парка</span>
                 <span className='block text-body-regular font-light mt-6'>
@@ -479,7 +494,7 @@ const DarinoPage = async () => {
                 жителей.
               </span>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('22')} width={1160} height={850} />
             </div>
           </Grid>
