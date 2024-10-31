@@ -4,8 +4,11 @@ import ImageWithCaption from '@/components/ImageWithCaption';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectMainPicWithInfo from '@/components/ProjectMainPicWithInfo';
 import ProjectPicWithTitle from '@/components/ProjectPicWithTitle';
+import { makePicLink } from '@/utils';
 import Image from 'next/image';
 import React, { FC } from 'react';
+
+const picLink = makePicLink('savelovskiy');
 
 const DescriptionRow: FC<{ title: string; subTitle: string }> = ({
   subTitle,
@@ -135,18 +138,18 @@ const SavelovskiyPage = () => {
           </div>
         </Grid>
         <Grid className='mt-50'>
-          <div className='col-span-2 md:col-span-4'>
+          <div className='col-span-2 md:col-span-4 mb-10 md:mb-0'>
             <span className='text-h5 font-medium lg:text-h4 tracking-normal'>
               Цифровая антропология и ГИС-аналитика
             </span>
           </div>
-          <div className='space-y-4 col-span-2 md:col-span-8 grid-cols-subgrid'>
-            <span className='text-h6 lg:text-h5 font-medium'>
+          <div className='col-span-2 md:col-span-8'>
+            <span className='text-h6 lg:text-h5 font-medium mb-4 block'>
               Объекты стрит-ритейла
             </span>
-            <Grid cols={8}>
-              <div className='col-span-2 md:col-span-6'>
-                <span>
+            <Grid cols={8} colsXL={8}>
+              <div className='col-span-2 md:col-span-6 xl:col-span-4'>
+                <span className='text-body-regular-mob md:text-body-regular font-light'>
                   Рассматриваемая территория — активный городской участок со
                   множеством точек притяжения. Схема показывает функциональную
                   насыщенность территории, разделенной ж/д путями, что говорит о
@@ -165,30 +168,39 @@ const SavelovskiyPage = () => {
             />
           </div>
         </Grid>
-        <Grid className='mt-20'>
+        <Grid className='mt-10 md:mt-20'>
           <div className='col-span-2 md:col-span-8 md:order-1 order-2 md:mt-0 mt-6'>
+            <Image
+              className='hidden md:block'
+              width={1160}
+              height={508}
+              src={picLink('08')}
+              alt=''
+            />
             <Image
               width={1160}
               height={508}
-              src='/pics/projects/savelovskiy/08.png'
+              src={picLink('14')}
               alt=''
+              className='md:hidden'
             />
+
             <div className='grid grid-cols-4 gap-x-10 lg:hidden mt-6'>
               <div className='col-span-2 flex items-end justify-start'>
-                <div className='size-10 lg:size-12 bg-dark-blue'></div>
+                <div className='size-10 lg:size-12 bg-dark-blue aspect-square'></div>
                 <span className='ml-2 text-body-caption-mob lg:text-body-caption'>
                   Наименьшая активность
                 </span>
               </div>
               <div className='col-span-2 flex items-end justify-start'>
-                <div className='size-10 lg:size-12 bg-medium-red'></div>
+                <div className='size-10 lg:size-12 bg-medium-red aspect-square'></div>
                 <span className='ml-2 text-body-caption-mob lg:text-body-caption'>
                   Наибольшая активность
                 </span>
               </div>
             </div>
           </div>
-          <div className='col-span-2 md:col-span-4 flex flex-col justify-between'>
+          <div className='col-span-2 md:col-span-4 flex flex-col justify-between md:order-2'>
             <div className='flex flex-col space-y-4'>
               <span className='text-h4-mob lg:text-h5 font-medium'>
                 Интенсивность фотофиксации по данным социальных сетей

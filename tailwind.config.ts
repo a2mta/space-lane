@@ -50,6 +50,7 @@ const config: Config = {
       '7/4': '7 / 4',
       '5/4': '5 / 4',
       '128/25': '128 / 25',
+      square: '1 / 1',
       video: '16 / 9',
     },
     backgroundImage: {

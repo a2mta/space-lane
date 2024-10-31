@@ -51,37 +51,85 @@ const greyCardsData = [
   {
     title: 'Зонирование при помощи типов мощения',
     desc: 'Цвета мощения подобраны в тон материалам фасада, чтобы поддержать целостность архитектурного образа',
-    icon: <Image src={picLink('14', 'svg')} width={56} height={56} alt='' />,
+    icon: (
+      <Image
+        src={picLink('14', 'svg')}
+        className='xl:w-full xl:h-full'
+        width={56}
+        height={56}
+        alt=''
+      />
+    ),
     iconMob: <Image src={picLink('14', 'svg')} width={40} height={40} alt='' />,
   },
   {
     title: 'Эксплуатируемая кровля подземной парковки',
     desc: 'В проекте уклон ж/б основания используется для устройства амфитеатра и зелёных террас',
-    icon: <Image src={picLink('15', 'svg')} width={74} height={69} alt='' />,
+    icon: (
+      <Image
+        src={picLink('15', 'svg')}
+        className='xl:w-full xl:h-full'
+        width={74}
+        height={69}
+        alt=''
+      />
+    ),
     iconMob: <Image src={picLink('15', 'svg')} width={50} height={47} alt='' />,
   },
   {
     title: 'Контраст благоустройства и архитектуры',
     desc: 'Решения подчёркивают разность масштабов компактной плазы и большого объёма жилого комплекса',
-    icon: <Image src={picLink('16', 'svg')} width={69} height={63} alt='' />,
+    icon: (
+      <Image
+        src={picLink('16', 'svg')}
+        className='xl:w-full xl:h-full'
+        width={69}
+        height={63}
+        alt=''
+      />
+    ),
     iconMob: <Image src={picLink('16', 'svg')} width={45} height={41} alt='' />,
   },
   {
     title: 'Создание зелёных палисадников',
     desc: 'Палисадники вдоль фасадов разделяют потоки и создают гуманную среду у выходов из мест общего пользования',
-    icon: <Image src={picLink('17', 'svg')} width={85} height={41} alt='' />,
+    icon: (
+      <Image
+        src={picLink('17', 'svg')}
+        className='xl:w-full xl:h-full'
+        width={85}
+        height={41}
+        alt=''
+      />
+    ),
     iconMob: <Image src={picLink('17', 'svg')} width={60} height={29} alt='' />,
   },
   {
     title: 'Готовые мафы для ускорения процесса реализации',
     desc: 'Использование минимального количества индивидуальных малых архитектурных форм при сохранении уникальных решений ускоряет процесс согласований и строительно-монтажные работы',
-    icon: <Image src={picLink('18', 'svg')} width={85} height={49} alt='' />,
+    icon: (
+      <Image
+        src={picLink('18', 'svg')}
+        className='xl:w-full xl:h-full'
+        width={85}
+        height={49}
+        alt=''
+      />
+    ),
     iconMob: <Image src={picLink('18', 'svg')} width={56} height={32} alt='' />,
   },
   {
     title: 'Геопластика для живого ландшафта',
     desc: 'Геопластика позволяет высаживать на кровле парковки деревья-крупномеры и кустарники, создавая многоплановые композиции территории',
-    icon: <Image src={picLink('19', 'svg')} width={85} height={63} alt='' />,
+    icon: (
+      <Image
+        src={picLink('19', 'svg')}
+        className='xl:w-full xl:h-full'
+        width={85}
+        height={63}
+        alt=''
+      />
+    ),
     iconMob: <Image src={picLink('19', 'svg')} width={53} height={39} alt='' />,
   },
 ];
@@ -135,15 +183,15 @@ const surfaceData = [
 
 const greenRowData = [
   {
-    title: 'Лиственные породы (сезонное настроение)',
+    title: 'Лиственные породы \u00A0 (сезонное настроение)',
     desc: 'Лиственные растения в течение сезона меняют окраску листвы, что внесёт яркие акценты',
   },
   {
-    title: 'Хвойные породы (основной каркас)',
+    title: 'Хвойные породы \u00A0 (основной каркас)',
     desc: 'Хвойные растения составляют каркас местных лесов, поэтому для создания во дворе среды, максимально близкой к природной, мы предлагаем использовать хвойные породы как основу круглогодичного зеленого каркаса',
   },
   {
-    title: 'Многолетники (динамичные акценты)',
+    title: 'Многолетники \u00A0 (динамичные акценты)',
     desc: 'Многолетние травы подбираются с учётом смены периода цветения, визуального разнообразия по высоте, цвету, структуре. Это позволит избежать однообразия и статичности пространства',
   },
 ];
@@ -244,7 +292,7 @@ const ZoneRow: FC<{ title: string; desc?: string; index: string }> = ({
   title,
 }) => (
   <div className='flex flex-col'>
-    <span className='text-h5 font-medium'>
+    <span className='md:text-body-regular block xl:mb-2 xl:text-h5 font-medium'>
       {index} {title}
     </span>
     {desc && <span className='block mt-2 text-body font-light'>{desc}</span>}
@@ -275,10 +323,10 @@ const SurfaceRow: FC<{ title: string; subTitle: string }> = ({
 }) => (
   <Grid className='border-t border-medium-grey pt-4'>
     <div className='col-span-4'>
-      <span className='text-h5 font-medium'>{title}</span>
+      <span className='text-h5 block font-medium'>{title}</span>
     </div>
     <div className='col-span-8'>
-      <span className='text-body-regular font-light'>{subTitle}</span>
+      <span className='text-body-regular block font-light'>{subTitle}</span>
     </div>
   </Grid>
 );
@@ -305,9 +353,7 @@ const CorsoPage = async () => {
           status={t('status.in_release_process')}
           area={'0,87 га'}
           location={'Иркутск'}
-          subTitle={
-            'Дизайн-проект благоустройства в Правобережном округе г. Иркустка'
-          }
+          subTitle={'Дизайн-проект благоустройства в Правобережном г. Иркустка'}
           type={'Благоустройство'}
           year='2022'
         />
@@ -347,7 +393,7 @@ const CorsoPage = async () => {
       </section>
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-30 md:mt-50 md:border-t border-medium-grey pt-6'>
+          <Grid className='mt-30 md:mt-50 pt-6'>
             <div className='col-span-2 md:col-span-12 mb-6'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 Планировочные принципы
@@ -385,14 +431,16 @@ const CorsoPage = async () => {
                 title='Для наглядности, масштаба и понимания объёмно-планировочной структуры двора растения не показаны'
               />
             </div>
-            <div className='hidden md:grid col-span-4 space-y-6'>
-              {zoneData.map((item, index) => (
-                <ZoneRow
-                  {...item}
-                  index={addLeadingZero(index + 1)}
-                  key={item.title + index}
-                />
-              ))}
+            <div className='hidden md:grid col-span-4'>
+              <div className='flex flex-col space-y-6'>
+                {zoneData.map((item, index) => (
+                  <ZoneRow
+                    {...item}
+                    index={addLeadingZero(index + 1)}
+                    key={item.title + index}
+                  />
+                ))}
+              </div>
             </div>
           </Grid>
         </section>
@@ -461,7 +509,9 @@ const CorsoPage = async () => {
                         можжевельников с рододендронами и голубиками, а также
                         луга и осоковоники.
                       </span>
-                      <span className='text-body-regular-mob md:text-body-regular font-light hidden md:block mt-4'>
+                    </div>
+                    <div className='xl:col-span-4 col-span-8'>
+                      <span className='text-body-regular-mob md:text-body-regular font-light hidden md:block mt-4 xl:mt-0'>
                         Как и в итальянских Альпах, в Прибайкальском регионе
                         большую часть территории занимают хвойные лесные массивы
                         с явно преобладающими разновозрастными сосняками. Чистых
@@ -597,7 +647,7 @@ const CorsoPage = async () => {
             </div>
             <div className='col-span-2 md:col-span-8 mt-6 md:mt-0 mb-10 md:mb-0'>
               <span className='text-body-regular-mob md:text-h5-regular font-light'>
-                Покрытия поддерживают по тонам и материалы фасадов зданий. Вдоль
+                Покрытия поддерживают по тонам и материалы фасадов зданий. &nbsp; Вдоль
                 фасадов выложен тёмный гранит габбро, на основной пешеходной
                 части используется светлая бетонная тротуарная плитка «Оригами»
               </span>

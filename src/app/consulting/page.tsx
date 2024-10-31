@@ -72,7 +72,7 @@ const VerticalGraphWithTitle: FC<{
     <div className='h-full flex items-end'>
       <VerticalGraph text={graphTitle} className={className} />
     </div>
-    <span className='mt-1 text-body-caption text-grey'>{title}</span>
+    <span className='mt-1 text-body-caption text-grey min-h-10'>{title}</span>
   </div>
 );
 

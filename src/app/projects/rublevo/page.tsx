@@ -561,7 +561,7 @@ const RublevoPage = () => {
         </Grid>
         <Grid className='mt-20 md:mt-40'>
           <div className='mb-10 md:mb-0 col-span-2 md:col-span-4'>
-            <span className='text-h4-mob md:text-h4 font-medium'>
+            <span className='text-h4-mob md:text-h5 font-medium'>
               Палитра элементов
             </span>
           </div>
@@ -594,7 +594,7 @@ const RublevoPage = () => {
         <section>
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4 mb-4 md:mb-0'>
-              <span className='text-h3-mob md:text-h4 font-medium'>
+              <span className='text-h3-mob md:text-h5 font-medium'>
                 Выбор деревьев
               </span>
             </div>

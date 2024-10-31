@@ -800,10 +800,10 @@ const OleniyParkPage = async () => {
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4'>
               <TextH4 className='mb-10 md:mb-4'>Дома под аренду</TextH4>
-              <BodyRegular className='hidden md:block text-grey'>
+              <H5Regular className='md:text-grey mt-4 hidden md:block'>
                 Схема генплана
-              </BodyRegular>
-              <span className='text-h5-mob font-medium block mb-6'>
+              </H5Regular>
+              <span className='mt-10 text-h5-mob font-medium md:hidden block mb-4'>
                 Схема генплана
               </span>
             </div>
@@ -857,10 +857,10 @@ const OleniyParkPage = async () => {
           <Grid className='mt-30 md:mt-40'>
             <div className='col-span-2 md:col-span-4'>
               <TextH4 className='mb-10  md:mb-4'>Глэмпинг</TextH4>
-              <BodyRegular className='hidden md:block text-grey'>
+              <H5Regular className='md:text-grey mt-4 hidden md:block'>
                 Схема генплана
-              </BodyRegular>
-              <span className='text-h5-mob font-medium block mb-6'>
+              </H5Regular>
+              <span className='mt-10 text-h5-mob font-medium md:hidden block mb-4'>
                 Схема генплана
               </span>
             </div>

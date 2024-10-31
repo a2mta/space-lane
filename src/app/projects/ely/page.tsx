@@ -213,7 +213,7 @@ const MaterialRow: FC<{ text: string; icon?: string | ReactElement }> = ({
   text,
   icon,
 }) => (
-  <Grid cols={4} className='mt-6'>
+  <Grid cols={4}>
     <div className='col-span-1'>
       {typeof icon === 'string' ? (
         <span className={classNames('w-full block h-[26px] mr-4', icon)} />
@@ -777,10 +777,10 @@ const ElyPage = async () => {
               <Image alt='' width={560} height={386} src={picLink('33')} />
             </div>
             <div className='col-span-4 mt-32 flex justify-end flex-col'>
-              <span className='text-body-medium mb-8'>
+              <span className='text-body-regular font-medium mb-8'>
                 Материалы отделки фасадов
               </span>
-              <div className='flex flex-col'>
+              <div className='flex flex-col space-y-6'>
                 {materialData.map(({ icon, text }, index) => (
                   <MaterialRow key={index + text} text={text} icon={icon} />
                 ))}

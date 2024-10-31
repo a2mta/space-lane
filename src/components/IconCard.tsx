@@ -21,8 +21,8 @@ export const IconCard: FC<IconCardProps> = ({
 }) => (
   <div
     className={classNames(
-      'col-span-1 md:col-span-4 flex flex-col aspect-[5/4] xl:min-h-max xl:aspect-[7/4]',
-      { 'p-6': !noP },
+      'col-span-1 border-t border-medium-grey md:col-span-4 flex flex-col aspect-[5/4] xl:min-h-max xl:aspect-[7/4]',
+      { 'xl:px-0 xl:py-5 md:p-6': !noP },
       className
     )}
   >
@@ -30,21 +30,20 @@ export const IconCard: FC<IconCardProps> = ({
       <div className='flex justify-between'>
         <Grid cols={4} colsM={4} className='w-full'>
           <div className='col-span-4'>
-            <div className='flex justify-between'>
-              <div className='flex flex-col'>
-                <span className='text-body-caption-mob md:text-h6 lg:text-h5 font-light mb-2 block'>
-                  {index}
-                </span>
-                <div className='flex aspect-128/25 justify-between w-full'>
-                  <span className='mr-2 text-body-caption-mob lg:text-h5 font-medium'>
-                    {title}
-                  </span>
-                </div>
-              </div>
-              <div className='xl:mt-12'>
-              {icon}
-              </div>
+            <span className='text-body-caption-mob md:text-h6 lg:text-h5 font-light mb-2 block'>
+              {index}
+            </span>
+          </div>
+          <div className='col-span-3'>
+            <div className='flex xl:min-h-[100px] justify-between w-full'>
+              <span className='text-body-caption-mob md:text-h6 xl:text-h5 font-medium'>
+                {title}
+              </span>
             </div>
+          </div>
+
+          <div className='col-span-1'>
+            <div className=''>{icon}</div>
           </div>
         </Grid>
       </div>
