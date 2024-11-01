@@ -37,12 +37,12 @@ const ProjectMainPicWithInfo: FC<{
       </PageMarginWithTitle>
       {coverLink && (
         <div className='aspect-video w-full relative'>
-          <Image style={{objectFit: 'cover'}} src={coverLink} fill alt='' />
+          <Image style={{ objectFit: 'cover' }} src={coverLink} fill alt='' />
         </div>
       )}
       <PageMarginWithTitle>
         <Grid className='md:pt-10 pt-4'>
-          <div className='md:col-span-7 col-span-2'>
+          <div className='md:col-span-8 col-span-2'>
             {typeof subTitle === 'string' ? (
               <span className='md:text-h4 text-h4-mob font-medium  tracking-normal'>
                 {subTitle}
@@ -54,7 +54,7 @@ const ProjectMainPicWithInfo: FC<{
           <div className='md:col-start-9 md:col-span-4 col-span-2 text-body-regular space-y-4 md:mt-0 mt-4'>
             <Grid cols={10}>
               <div className='md:col-span-5 col-span-1'>
-                <span className='text-body-regular font-light text-grey'>
+                <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Местоположение
                 </span>
               </div>
@@ -64,7 +64,7 @@ const ProjectMainPicWithInfo: FC<{
             </Grid>
             <Grid cols={10}>
               <div className=' md:col-span-5 col-span-1'>
-                <span className='text-body-regular font-light text-grey'>
+                <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Площадь
                 </span>
               </div>
@@ -74,7 +74,7 @@ const ProjectMainPicWithInfo: FC<{
             </Grid>
             <Grid cols={10}>
               <div className=' md:col-span-5 col-span-1'>
-                <span className='text-body-regular font-light text-grey'>
+                <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Год
                 </span>
               </div>
@@ -84,7 +84,7 @@ const ProjectMainPicWithInfo: FC<{
             </Grid>
             <Grid cols={10}>
               <div className=' md:col-span-5 col-span-1'>
-                <span className='text-body-regular font-light text-grey'>
+                <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Статус проекта
                 </span>
               </div>
@@ -94,7 +94,7 @@ const ProjectMainPicWithInfo: FC<{
             </Grid>
             <Grid cols={10}>
               <div className=' md:col-span-5 col-span-1'>
-                <span className='text-body-regular font-light text-grey'>
+                <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Тип
                 </span>
               </div>
@@ -108,7 +108,12 @@ const ProjectMainPicWithInfo: FC<{
       {coverLink2 && (
         <>
           <div className='aspect-video w-full relative md:mt-20 mt-10'>
-            <Image style={{objectFit: 'cover'}} src={coverLink2} fill alt='' />
+            <Image
+              style={{ objectFit: 'cover' }}
+              src={coverLink2}
+              fill
+              alt=''
+            />
           </div>
           {coverLink2Title && (
             <PageMarginWithTitle>

@@ -9,8 +9,80 @@ import { makePicLink } from '@/utils';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import classNames from 'classnames';
 import ImageSlider from '@/components/Slider';
+import Collapse from '@/components/Collapse';
+import TwoColumnLegendMob from '@/components/TwoColumnLegendMob';
 
 const picLink = makePicLink('novoseltsevo');
+
+const formatOneMob = [
+  [
+    '01 — Площадка воркаут',
+    '02 — Оздоровительная тропа',
+    '03 — Приподнятое озеленение',
+    '04 — Площадка для пляжного волейбола',
+    '05 — Трибуны',
+  ],
+  [
+    '06 — Площадка для созерцания природы',
+    '07 — Прокат сапов',
+    '08 — Павильон кафе',
+    '09 — Раздевалка',
+    '10 — Пляжный душ',
+  ],
+];
+
+const formatThreeMob = [
+  [
+    '01 — Зона отдыха с качелями и местами для сидения',
+    '02 — Стритбол и теннис',
+    '03 — Скейт-парк',
+    '04 — Прогулочные мостки',
+    '05 — Площадка для созерцания природы с мини амфитеатром',
+  ],
+  [
+    '06 — Прогулочные мостки в зоне водного сада',
+    '07 — Место для рыбалки',
+    '08 — Площадка для созерцания природы',
+  ],
+];
+
+const formatTwoMob = [
+  [
+    '01 — Детская игровая площадка',
+    '02 — Площадка посадки/высадки',
+    '03 — Приподнятое озеленение',
+    '04 — Оздоровительная тропа',
+    '05 — Площадка для настольного тенниса',
+  ],
+  ['06 — Прогулочные мостки', '07 — Пляж', '08 — Качели'],
+];
+
+const generalPlanData = [
+  [
+    '01 — Зона отдыха с шахматами и амфитетром',
+    '02 — Детская игровая зона',
+    '03 — Площадка воркаут',
+    '04 — Площадка для мероприятий со сценой',
+    '05 — Главный пешеходный прогулочный путь',
+    '06 — Качели и места для сидения',
+    '07 — Стритбол и теннис',
+    '08 — Скейт-парк',
+    '09 — Площадка воркаут',
+    '10 — Прокат сапов',
+  ],
+  [
+    '11 — Пляж',
+    '12 — Площадка для пляжного волейбола',
+    '13 — Оздоровительная тропа',
+    '14 — Настольный теннис',
+    '15 — Прогулочные мостки',
+    '16 — Качели',
+    '17 — Зона отдыха с лежаками',
+    '18 — Площадка для барбекю',
+    '19 — Смотровая площадка',
+    '20 — Место для рыбалки',
+  ],
+];
 
 const zoneData = [
   {
@@ -150,10 +222,12 @@ const FragmentCard: FC<{
 }> = ({ description, image, title }) => (
   <Grid>
     <div className='col-span-2 md:col-span-4 border-t border-medium-grey'>
-      <span className='text-h4 mt-6 block'>{title}</span>
-      <span className='mt-4 text-body-regular block'>{description}</span>
+      <span className='md:text-h5 text-h4 mt-6 block font-medium'>{title}</span>
+      <span className='mt-4 text-body-regular block whitespace-pre-wrap'>
+        {description}
+      </span>
     </div>
-    <div className='col-span-2 md:col-span-8'>
+    <div className='col-span-2 md:col-span-8 '>
       <Image alt='' width={1160} height={820} src={image} />
     </div>
   </Grid>
@@ -238,7 +312,7 @@ const NovoseltsevoPage = async () => {
             </div>
           </Grid>
           <Grid className='mt-30 md:mt-50'>
-            <div className='col-span-2 md:col-span-4'>
+            <div className='col-span-2 md:col-span-4 mb-10 md:mb-0'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 {t('project_ideas.title')}
               </span>
@@ -387,17 +461,92 @@ const NovoseltsevoPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-2 md:col-span-12'>
-              <span className='text-h4'>{t('general_plan.title')}</span>
+              <span className='text-h3-mob md:text-h4 whitespace-pre-wrap font-medium'>
+                {t('general_plan.title')}
+              </span>
             </div>
-            <div className='col-span-2 md:col-span-12 mt-12'>
+            <div className='col-span-2 md:col-span-12 md:mt-12'>
               <ImageSlider image1={picLink('20')} image2={picLink('19')} />
-              <span className='text-h5 mt-10 block'>
+              <span className='text-body-regular-mob md:text-h5 font-light mt-4 md:mt-10 block whitespace-pre-wrap'>
                 {t('general_plan.description')}
               </span>
             </div>
           </Grid>
         </section>
-        <section className='mt-20 space-y-10'>
+      </PageMarginWithTitle>
+      <Image
+        className='mt-10 md:hidden mb-6'
+        width={480}
+        height={300}
+        alt=''
+        src={picLink('21')}
+      />
+      <PageMarginWithTitle>
+        <section className='md:hidden'>
+          <Grid>
+            <TwoColumnLegendMob items={generalPlanData} />
+          </Grid>
+          <Grid>
+            <div className='col-span-2'>
+              <Collapse
+                borderColor='border-medium-grey'
+                title={t('fragment.01.title')}
+              >
+                <span className='text-body-regular-mob font-light'>
+                  {t('fragment.01.description')}
+                </span>
+                <Image
+                  className='mt-10 mb-6'
+                  alt=''
+                  width={480}
+                  height={340}
+                  src={picLink('22')}
+                />
+                <Grid>
+                  <TwoColumnLegendMob items={formatOneMob} />
+                </Grid>
+              </Collapse>
+
+              <Collapse
+                borderColor='border-medium-grey'
+                title={t('fragment.02.title')}
+              >
+                <span className='text-body-regular-mob font-light'>
+                  {t('fragment.02.description')}
+                </span>
+                <Image
+                  className='mt-10 mb-6'
+                  alt=''
+                  width={480}
+                  height={340}
+                  src={picLink('23')}
+                />
+                <Grid>
+                  <TwoColumnLegendMob items={formatTwoMob} />
+                </Grid>
+              </Collapse>
+              <Collapse
+                borderColor='border-medium-grey'
+                title={t('fragment.03.title')}
+              >
+                <span className='text-body-regular-mob font-light'>
+                  {t('fragment.03.description')}
+                </span>
+                <Image
+                  className='mt-10 mb-6'
+                  alt=''
+                  width={480}
+                  height={340}
+                  src={picLink('24')}
+                />
+                <Grid>
+                  <TwoColumnLegendMob items={formatTwoMob} />
+                </Grid>
+              </Collapse>
+            </div>
+          </Grid>
+        </section>
+        <section className='mt-20 space-y-10 hidden md:block'>
           <FragmentCard
             image='/pics/projects/novoseltsevo/13.png'
             title={t('fragment.01.title')}
