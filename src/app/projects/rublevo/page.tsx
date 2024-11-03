@@ -4,6 +4,7 @@ import ImageWithCaption from '@/components/ImageWithCaption';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectMainPicWithInfo from '@/components/ProjectMainPicWithInfo';
 import { addLeadingZero, makePicLink } from '@/utils';
+import classNames from 'classnames';
 import Image from 'next/image';
 import React, { FC, ReactElement } from 'react';
 
@@ -111,7 +112,7 @@ const cardsData = [
     title: 'Безопасность',
     image: (
       <Image
-        className='max-w-[60px] md:max-w-full'
+        className='max-w-[60px] md:max-w-24 xl:max-w-32'
         src={picLink('12', 'svg')}
         alt=''
         width={131}
@@ -125,7 +126,7 @@ const cardsData = [
     title: 'Улицы для каждого',
     image: (
       <Image
-        className='max-w-[49px] md:max-w-full'
+        className='max-w-[49px] md:max-w-20 xl:max-w-27'
         src={picLink('13', 'svg')}
         alt=''
         width={113}
@@ -136,10 +137,10 @@ const cardsData = [
       'В решениях — внимание к интересам различных категорий пользователей, особенно к маломобильным группам, детям и пожилым людям.',
   },
   {
-    title: 'Сомасштабность человеку',
+    title: <span className='whitespace-pre-wrap md:whitespace-normal'>{'Сомасштабность \nчеловеку'}</span>,
     image: (
       <Image
-        className='max-w-[60px] md:max-w-full'
+        className='max-w-[60px] md:max-w-32 xl:max-w-40'
         src={picLink('14', 'svg')}
         alt=''
         width={167}
@@ -153,7 +154,7 @@ const cardsData = [
     title: 'Улица как экосистема',
     image: (
       <Image
-        className='max-w-[65px] md:max-w-full'
+        className='max-w-[65px] md:max-w-32 xl:max-w-44'
         src={picLink('15', 'svg')}
         alt=''
         width={174}
@@ -167,7 +168,7 @@ const cardsData = [
     title: 'Мобильность',
     image: (
       <Image
-        className='max-w-[65px] md:max-w-full'
+        className='max-w-[65px] md:max-w-28 xl:max-w-40'
         src={picLink('16', 'svg')}
         alt=''
         width={157}
@@ -181,7 +182,7 @@ const cardsData = [
     title: 'Общественное значение',
     image: (
       <Image
-        className='max-w-[46px] md:max-w-full'
+        className='max-w-[46px] md:max-w-16 xl:max-w-24'
         src={picLink('17', 'svg')}
         alt=''
         width={97}
@@ -284,7 +285,11 @@ const RublevoPage = () => {
     <div className='mt-30 md:mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
-          title='СберСити в Рублево-Архангельском'
+          title={
+            <span className='whitespace-pre-wrap md:whitespace-normal'>
+              {'СберСити \nв Рублево-Архангельском'}
+            </span>
+          }
           coverLink={picLink('01')}
           coverLink2={picLink('02')}
           coverLink2Title='Дождевой сад'
@@ -293,9 +298,10 @@ const RublevoPage = () => {
           location='Москва'
           subTitle={
             <div className='flex flex-col'>
-              <span className='text-h4-mob md:text-h4 font-medium tracking-normal'>
-                Архитектурное проектирование и авторский надзор
-                Рублево-Архангельское
+              <span className='text-h4-mob md:text-h4 font-medium tracking-normal whitespace-pre-wrap md:whitespace-normal'>
+                {
+                  'Архитектурное проектирование \nи авторский надзор СберСити \nв Рублево-Архангельское'
+                }
               </span>
               <span className='text-body-caption-mob md:text-body-regular font-light mt-4 md:mt-6'>
                 Данные взяты с сайта sbercity.ru
@@ -324,12 +330,10 @@ const RublevoPage = () => {
             </span>
           </div>
           <div className='col-span-2 md:col-span-4 mt-4 md:mt-0'>
-            <span className='text-body-regular-mob md:text-body-regular font-light'>
-              От центральной части района протянутся зелёные лучи, которые
-              свяжут урбанизированную территорию с парком на набережной реки.
-              Проект благоустройства уличных общественных пространств
-              основывается на ясной иерархии улиц, едином дизайн-коде и
-              применении экологичных решений озеленения.
+            <span className='text-body-regular-mob md:text-body-regular font-light md:whitespace-pre-wrap'>
+              {
+                'От центральной части района протянутся зелёные лучи, которые свяжут урбанизированную территорию с парком \nна набережной реки. Проект благоустройства уличных общественных пространств основывается на ясной иерархии улиц, едином дизайн-коде и применении экологичных решений озеленения.'
+              }
             </span>
           </div>
           <div className='hidden md:grid col-span-2 md:col-start-5 md:col-span-8 mt-10'>
@@ -347,14 +351,10 @@ const RublevoPage = () => {
       <PageMarginWithTitle>
         <Grid className='md:mt-50'>
           <div className='col-span-2 md:col-span-4 flex flex-col'>
-            <span className='text-body-regular-mob md:text-body-regular font-light block'>
-              Для планирования, подготовки и проектированияблагоустройства
-              уличных общественных пространств было выделено 4 типа улиц. В
-              основе типологизации лежат такие параметры, как пешеходная и
-              транспортная активность, функции окружающий зданий. Это позволило
-              сформулировать специфику функционирования окружающих зданий каждой
-              улицы, которая нашла отражение в решениях, предусмотренных для
-              каждого типа.
+            <span className='text-body-regular-mob md:text-body-regular font-light block md:whitespace-pre-wrap'>
+              {
+                'Для планирования, подготовки и проектированияблагоустройства уличных общественных пространств было выделено 4 типа улиц. В основе типологизации лежат такие параметры, как пешеходная и транспортная активность, функции окружающий зданий. \nЭто позволило сформулировать специфику функционирования окружающих зданий каждой улицы, которая нашла отражение в решениях, предусмотренных для каждого типа.'
+              }
             </span>
           </div>
           <div className='hidden md:block col-span-5'>
@@ -396,16 +396,16 @@ const RublevoPage = () => {
           </div>
         </Grid>
         <Grid className='mt-50'>
-          <div className='col-span-2 md:col-span-12 mb-2'>
+          <div className='col-span-2 md:col-span-12 md:mb-2 mb-6'>
             <span className='text-h3-mob md:text-h4 font-medium'>
               Ключевые дизайн-принципы
             </span>
           </div>
         </Grid>
-        <Grid className='mb-20 md:mb-50 pt-5'>
+        <Grid className='mb-20 md:mb-50 md:pt-5'>
           {cardsData.map(({ description, title, image }, index) => (
             <div
-              className='col-span-1 pt-4 border-t border-medium-grey md:col-span-4 mt-10'
+              className={'col-span-1 pt-4 md:col-span-4 md:mt-10'}
               key={title + index}
             >
               <IconCard
@@ -474,12 +474,16 @@ const RublevoPage = () => {
         <Grid className='md:hidden text-body-caption-mob font-medium mt-6'>
           <div className='col-span-1 space-y-2'>
             {data[0].map((item) => (
-              <span key={item} className='block'>{item}</span>
+              <span key={item} className='block'>
+                {item}
+              </span>
             ))}
           </div>
           <div className='col-span-1 space-y-2'>
             {data[1].map((item) => (
-              <span key={item} className='block'>{item}</span>
+              <span key={item} className='block'>
+                {item}
+              </span>
             ))}
           </div>
           <div className='col-start-2 col-span-1 mt-10'>

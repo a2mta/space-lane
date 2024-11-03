@@ -4,7 +4,7 @@ import Grid from './Grid';
 import Image from 'next/image';
 
 const ProjectMainPicWithInfo: FC<{
-  title: string;
+  title: string | ReactNode;
   coverLink?: string;
   coverLink2?: string;
   coverLink2Title?: string;

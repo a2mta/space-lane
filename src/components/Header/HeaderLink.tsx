@@ -10,7 +10,7 @@ const HeaderLink: FC<{ url: string; text: string }> = ({ text, url }) => {
   const isActive = pathname === url;
   return (
     <span
-      className={`cursor-pointer ${classNames({
+      className={`cursor-pointer text-body-regular ${classNames({
         'text-medium-grey': isActive,
       })}`}
     >

@@ -222,7 +222,7 @@ const FragmentCard: FC<{
 }> = ({ description, image, title }) => (
   <Grid>
     <div className='col-span-2 md:col-span-4 border-t border-medium-grey'>
-      <span className='md:text-h5 text-h4 mt-6 block font-medium'>{title}</span>
+      <span className='xl:text-h4 md:text-h5 text-h4 mt-6 block font-medium'>{title}</span>
       <span className='mt-4 text-body-regular block whitespace-pre-wrap'>
         {description}
       </span>
@@ -467,7 +467,7 @@ const NovoseltsevoPage = async () => {
             </div>
             <div className='col-span-2 md:col-span-12 md:mt-12'>
               <ImageSlider image1={picLink('20')} image2={picLink('19')} />
-              <span className='text-body-regular-mob md:text-h5 font-light mt-4 md:mt-10 block whitespace-pre-wrap'>
+              <span className='text-body-regular-mob md:text-h5 font-light mt-4 md:mt-10 block whitespace-pre-wrap xl:whitespace-normal'>
                 {t('general_plan.description')}
               </span>
             </div>

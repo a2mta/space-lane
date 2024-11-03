@@ -43,7 +43,7 @@ const smallArchForms = [
   },
   {
     title: 'Постоянные',
-    desc: 'Некоторые обладают мобильностью, такие как поворотные кресла с навесом, что позволяет дать больше сценариев для использования пространства между холмами',
+    desc: 'Некоторые обладают мобильностью, такие как поворотные кресла с навесом, что позволяет дать больше сценариев \nдля использования пространства между холмами',
   },
 ];
 
@@ -805,7 +805,7 @@ const CorsoPage = async () => {
                 {smallArchForms.map((item, index) => (
                   <div key={item.title + index} className='flex flex-col'>
                     <span className='text-h5 font-medium'>{item.title}</span>
-                    <span className='text-body-regular font-light block mt-2'>
+                    <span className='text-body-regular font-light block mt-2 whitespace-pre-wrap xl:whitespace-normal'>
                       {item.desc}
                     </span>
                   </div>
