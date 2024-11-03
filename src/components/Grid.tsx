@@ -18,7 +18,7 @@ const Grid: FC<
         `md:grid-cols-${cols || 12}`,
         `grid-cols-${colsM || 2}`,
         `xl:gap-x-${gapX || 10}`,
-        `md:gap-x-${gapX || 10}`,
+        gapX ? `md:gap-x-${gapX}` : '',
         'gap-x-5',
         className
       )}

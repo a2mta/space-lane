@@ -20,13 +20,13 @@ const PageMarginWithTitle: FC<
         >
           {title && (
             <div className='w-full mt-50'>
-              <h4 className='text-h4'>{title}</h4>
+              <h4 className='text-h3-mob md:text-h4 font-medium'>{title}</h4>
             </div>
           )}
         </div>
       )}
       {withBorder && (
-        <div className='border-b h w-full border-medium-grey mt-6' />
+        <div className='border-b h w-full border-medium-grey mt-4 md:mt-6' />
       )}
       {children && (
         <div

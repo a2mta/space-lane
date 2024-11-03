@@ -5,8 +5,76 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React, { FC, ReactElement } from 'react';
 import { createTranslation } from '../../../i18n/server';
+import { addLeadingZero } from '@/utils';
 
-const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
+const analyzeData = [
+  {
+    percent: '50%',
+    title: 'analyzeData.families_with_children.title',
+    desc1: 'analyzeData.families_with_children.desc1',
+    desc2: 'analyzeData.families_with_children.desc2',
+    desc3: 'analyzeData.families_with_children.desc3',
+  },
+  {
+    percent: '25%',
+    title: 'analyzeData.young_people.title',
+    desc1: 'analyzeData.young_people.desc1',
+    desc2: 'analyzeData.young_people.desc2',
+    desc3: 'analyzeData.young_people.desc3',
+  },
+  {
+    percent: '15%',
+    title: 'analyzeData.elderly_people.title',
+    desc1: 'analyzeData.elderly_people.desc1',
+    desc2: 'analyzeData.elderly_people.desc2',
+    desc3: 'analyzeData.elderly_people.desc3',
+  },
+  {
+    percent: '5%',
+    title: 'analyzeData.regional_visitors.title',
+    desc1: 'analyzeData.regional_visitors.desc1',
+    desc2: 'analyzeData.regional_visitors.desc2',
+    desc3: 'analyzeData.regional_visitors.desc3',
+  },
+];
+
+const AnalyzeDataRowMob: FC<{
+  title: string;
+  index: string;
+  percent: string;
+  desc1: string;
+  desc2: string;
+  desc3: string;
+  t: any;
+}> = ({ t, desc1, desc2, desc3, percent, title, index }) => (
+  <Grid>
+    <div className='col-span-2 pb-2 border-b border-medium-grey mb-4'>
+      <span className='text-body-caption-10 font-light text-grey'>{index}</span>
+    </div>
+    <div className='col-span-1'>
+      <span className='text-red text-body-regular-mob font-medium block mb-4'>
+        {t(title)}
+      </span>
+      <span className='text-h2-mob font-medium'>{percent}</span>
+    </div>
+    <div className='col-span-1'>
+      <span className='text-body-regular-mob font-light pb-2 border-b border-medium-grey block'>
+        {t(desc1)}
+      </span>
+      <span className='text-body-regular-mob font-light mt-2 block'>
+        {t(desc2)}
+      </span>
+    </div>
+    <div className='col-span-2 mt-2'>
+      <span className='text-body-regular-mob font-light'>{t(desc3)}</span>
+    </div>
+  </Grid>
+);
+
+const DemandTableRows: FC<{ t: any; textForRows: string[] }> = ({
+  textForRows,
+  t,
+}) =>
   textForRows.map((item, index) => (
     <div
       key={item + index}
@@ -20,10 +88,10 @@ const DemandTableRows: FC<{ textForRows: string[] }> = ({ textForRows }) =>
         <span
           className={classNames(
             { 'text-h2': index === 0 },
-            { 'text-body-regular': index > 0 }
+            { 'text-body-regular font-light': index > 0 }
           )}
         >
-          {item}
+          {t(item)}
         </span>
       </div>
     </div>
@@ -38,7 +106,7 @@ const ConclusionRow: FC<{ number: string; text: string }> = ({
       <span className='text-h4 text-medium-grey'>{number}</span>
     </div>
     <div className='col-span-7 flex items-center'>
-      <span className='text-body-regular'>{text}</span>
+      <span className='text-body-regular font-light'>{text}</span>
     </div>
   </div>
 );
@@ -72,7 +140,9 @@ const VerticalGraphWithTitle: FC<{
     <div className='h-full flex items-end'>
       <VerticalGraph text={graphTitle} className={className} />
     </div>
-    <span className='mt-1 text-body-caption text-grey min-h-10'>{title}</span>
+    <span className='mt-1 text-body-caption font-medium text-grey min-h-10'>
+      {title}
+    </span>
   </div>
 );
 
@@ -83,7 +153,7 @@ const VerticalGraph: FC<{ className?: string; text: string }> = ({
   <div
     className={classNames('w-full flex items-end text-white p-1', className)}
   >
-    <span className='text-h4'>{text}</span>
+    <span className='text-h4 font-medium'>{text}</span>
   </div>
 );
 
@@ -92,7 +162,7 @@ const HorizontalGraph: FC<{ className?: string; text: string }> = ({
   className,
 }) => (
   <div className={classNames('w-full text-white px-6 py-2', className)}>
-    <span className='text-h4'>{text}</span>
+    <span className='text-h4 font-medium'>{text}</span>
   </div>
 );
 
@@ -105,16 +175,18 @@ const PriceGraphCol: FC<{
 }> = ({ numberOfRooms, percent, textBot, textMid, textTop }) => (
   <div className='flex flex-col px-2 border-l border-l-grey'>
     <span className='text-h4 mb-2'>{percent}%</span>
-    <span className='text-grey text-body-caption'>{numberOfRooms}</span>
+    <span className='text-grey text-body-caption font-medium'>
+      {numberOfRooms}
+    </span>
     <div className='flex flex-col mt-6 space-y-2 text-white mb-24'>
       <div className='flex items-end h-[120px] bg-red p-2'>
-        <span className='text-h4'>{textTop}</span>
+        <span className='text-h4 font-medium'>{textTop}</span>
       </div>
       <div className='flex items-end h-[105px] bg-medium-red p-2'>
-        <span className='text-h4'>{textMid}</span>
+        <span className='text-h4 font-medium'>{textMid}</span>
       </div>
       <div className='flex items-end h-20 bg-medium-grey p-2'>
-        <span className='text-h4'>{textBot}</span>
+        <span className='text-h4 font-medium'>{textBot}</span>
       </div>
     </div>
   </div>
@@ -162,13 +234,13 @@ const ConsultingPage = async () => {
   return (
     <>
       <Head>
-        <title>Консалтинг</title>
+        <title>{t('page_titles.consulting')}</title>
       </Head>
       <PageMarginWithTitle withBorder title={t('page_titles.consulting')}>
         <section>
           <Grid>
-            <div className='col-span-12 mb-50 pt-16 space-y-[30px]'>
-              <span className='text-h5 block'>
+            <div className='col-span-2 md:col-span-12 mb-30 md:mb-50 mt-10 md:mt-16 space-y-4 md:space-y-[30px] text-body-regular-mob md:text-h5 font-light'>
+              <span className='block'>
                 Space Lane на этапе предпроектных исследований использует
                 различные аналитические методики, помогающие собрать необходимые
                 данные и погрузиться в контекст. В частности мы выполняем оценку
@@ -177,14 +249,14 @@ const ConsultingPage = async () => {
                 запросов, осуществляем аудит и анализ данных.
               </span>
 
-              <span className='text-h5 block'>
+              <span className='block'>
                 Работая с общественными пространствами, мы разрабатываем метрики
                 оценки качества развития городских пространств и методологии
                 оценки эффектов развития территорий. Ещё одно важное направление
                 деятельности бюро — разработка программ профессиональных
                 мероприятий: от семинаров до конференций.
               </span>
-              <span className='text-h5 block'>
+              <span className='block'>
                 В качестве примера аналитического исследования предлагаем
                 ознакомиться с анализом рынка ИЖС
               </span>
@@ -192,20 +264,22 @@ const ConsultingPage = async () => {
           </Grid>
         </section>
       </PageMarginWithTitle>
-      <span className='w-full h-[1px] mb-6 bg-medium-grey'></span>
+      <span className='w-full h-[1px] mb-4 md:mb-6 bg-medium-grey'></span>
       <PageMarginWithTitle>
         <section>
           <Grid>
-            <div className='col-span-4 flex flex-col'>
-              <h4 className='text-h4'>Анализ рынка</h4>
-              <p className='text-grey mt-4 text-body-caption'>
+            <div className='col-span-2 md:col-span-4 flex flex-col'>
+              <h4 className='text-h3-mob md:text-h4 font-medium'>
+                Анализ рынка
+              </h4>
+              <p className='text-grey mt-4 text-body-caption-10 md:text-body-caption font-medium'>
                 (Исследование сделано в IV квартале 2023 года на основании
                 анализа рынка ИЖС Московской области с использованием
                 аналитических материалов ДОМ.рф, ВЦИОМ, Домклик и др.)
               </p>
             </div>
-            <div className='col-span-4'>
-              <p className='text-body-regular'>
+            <div className='col-span-2 md:col-span-4 mt-10 md:mt-0'>
+              <p className='text-body-regular-mob md:text-body-regular font-light'>
                 За последние годы большое количество льготных ипотечных программ
                 и постпандемийные последствия в виде ростачисленности
                 сотрудников, работающих удалённо, изменилицелевую аудиторию
@@ -215,42 +289,94 @@ const ConsultingPage = async () => {
                 недвижимости.
               </p>
             </div>
-            <div className='col-span-4'>
-              <p className='text-body-regular'>
-                За 3 года доля ипотечных сделок на рынке ИЖС выросла в 2,5 раза,
-                при этом самую высокую динамику в 2023 году показало
-                кредитование строительства частных домов. Значительный рост
-                выдачи ипотек обоснован тем, что сегодня строительство частного
-                дома с привлечением профессиональных подрядчиков доступно в
-                рамках всех льготных ипотечных программ.
+            <div className='col-span-2 md:col-span-4 block md:mt-0 mt-6'>
+              <p className='text-body-regular-mob md:text-body-regular font-light xl:whitespace-pre-wrap'>
+                {
+                  'За 3 года доля ипотечных сделок на рынке ИЖС выросла \nв 2,5 раза, при этом самую высокую динамику в 2023 году показало кредитование строительства частных домов. Значительный рост выдачи ипотек обоснован тем, что сегодня строительство частного дома с привлечением профессиональных подрядчиков доступно в рамках всех льготных ипотечных программ.'
+                }
               </p>
             </div>
           </Grid>
         </section>
       </PageMarginWithTitle>
-      <PageMarginWithTitle className='bg-beige mt-50'>
+      <div className='bg-beige mt-10 md:hidden'>
+        <PageMarginWithTitle>
+          <Grid className='my-10'>
+            <div className='col-span-2 mb-10'>
+              <span className='text-body-regular-mob font-light'>
+                Для целей дальнейшего анализа используются данные аналитических
+                исследований, как о покупателях ИЖС, так и пользователях ипотеки
+                на ИЖС, которая наиболее востребована именно в комфорт-классе.
+              </span>
+            </div>
+            <div className='col-span-1'>
+              <div className='flex flex-col bg-red h-[265px] text-white p-[10px] justify-between'>
+                <span className='text-body-caption font-medium'>
+                  Постоянное проживание
+                </span>
+                <span className='text-h3-mob font-medium'>58%</span>
+              </div>
+            </div>
+            <div className='col-span-1'>
+              <div className='flex flex-col space-y-4'>
+                <div className='flex flex-col bg-grey h-[140px] text-white p-[10px] justify-between'>
+                  <span className='text-body-caption font-medium whitespace-pre-wrap'>
+                    {'Отдых в выходные \nи праздники'}
+                  </span>
+                  <span className='text-h3-mob font-medium'>37%</span>
+                </div>
+                <div className='flex flex-col bg-medium-grey h-[109px] text-white p-[10px] justify-between'>
+                  <span className='text-body-caption font-medium whitespace-pre-wrap'>
+                    Инвестиционные цели
+                  </span>
+                  <span className='text-h3-mob font-medium'>5%</span>
+                </div>
+              </div>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+      </div>
+      <PageMarginWithTitle className='md:hidden space-y-14 mt-30'>
+        {analyzeData.map((item, index) => (
+          <AnalyzeDataRowMob
+            t={t}
+            index={`${addLeadingZero(index + 1)}/04`}
+            {...item}
+            key={index + item.percent}
+          />
+        ))}
+        <Grid>
+          <div className='col-span-2 text-body-caption-10 font-medium space-y-4 text-grey'>
+            <span className='block'>{t('consulting.demand1')}</span>
+            <span className='block'>{t('consulting.demand2')}</span>
+            <span className='block'>{t('consulting.demand3')}</span>
+          </div>
+        </Grid>
+      </PageMarginWithTitle>
+
+      <PageMarginWithTitle className='bg-beige mt-50 hidden md:block'>
         <section>
           <Grid className='my-20'>
-            <div className='col-span-4'>
-              <p className='text-body-regular'>
+            <div className='col-span-2 md:col-span-4'>
+              <p className='text-body-regular font-light'>
                 Для целей дальнейшего анализа используются данные аналитических
                 исследований, как о покупателях ИЖС, так и пользователях ипотеки
                 на ИЖС, которая наиболее востребована именно в комфорт-классе.
               </p>
             </div>
-            <div className='col-span-8'>
+            <div className='col-span-2 md:col-span-8'>
               <Graph />
             </div>
           </Grid>
         </section>
       </PageMarginWithTitle>
-      <PageMarginWithTitle>
+      <PageMarginWithTitle className='hidden md:block'>
         <div className='mt-50'>
           <section>
-            <Grid className='col-span-12'>
+            <Grid className='col-span-2 md:col-span-12'>
               <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5'>
+                  <span className='text-red text-h5 font-light'>
                     Доля в общем
                     <br />
                     объёме спроса
@@ -259,22 +385,26 @@ const ConsultingPage = async () => {
               </div>
               <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5'>Группа</span>
+                  <span className='text-red text-h5 font-light'>Группа</span>
                 </div>
               </div>
               <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5'>Средний возраст</span>
+                  <span className='text-red text-h5 font-light'>
+                    Средний возраст
+                  </span>
                 </div>
               </div>
               <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5'>Состав семьи</span>
+                  <span className='text-red text-h5 font-light'>
+                    Состав семьи
+                  </span>
                 </div>
               </div>
               <div className='col-span-4 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5'>
+                  <span className='text-red text-h5 font-light'>
                     Цель приобретения недвижимости
                   </span>
                 </div>
@@ -282,71 +412,42 @@ const ConsultingPage = async () => {
             </Grid>
             <Grid className='col-span-12 mt-10'>
               <DemandTableRows
-                textForRows={[
-                  '50%',
-                  'Семьи с детьми',
-                  'от 35 до 45 лет',
-                  '1–2 ребёнка',
-                  `Часто уже имеют недвижимость в столице
-                    и приобретают домдля расширения пространства. Хотят увезти
-                    детей из «загазованного мегаполиса на природу».`,
-                ]}
+                t={t}
+                textForRows={Object.values(analyzeData[0])}
               />
             </Grid>
             <Grid className='col-span-12 mt-10'>
               <DemandTableRows
-                textForRows={[
-                  '25%',
-                  'Молодые люди',
-                  'до 35 лет',
-                  'Пары без детей и одинокие',
-                  `Состоявшиеся в карьерном плане люди со стабильным доходом. Часто
-                    это первое жильё, которое планируют приобретать за счёт ипотечного
-                    займа.`,
-                ]}
+                t={t}
+                textForRows={Object.values(analyzeData[1])}
               />
             </Grid>
             <Grid className='col-span-12 mt-10'>
               <DemandTableRows
-                textForRows={[
-                  '15%',
-                  'Люди старшего возраста',
-                  'Старше 50 лет',
-                  'Взрослые дети на перспективу для детей и внуков',
-                  `Приобретают дом для спокойной жизни на природе илина перспективу для детей и внуков. Чаще других приобретаютнедвижимость за счёт собственных средств.`,
-                ]}
+                t={t}
+                textForRows={Object.values(analyzeData[2])}
               />
             </Grid>
             <Grid className='col-span-12 mt-10'>
               <DemandTableRows
-                textForRows={[
-                  '5%',
-                  'Приезжие из регионов',
-                  '-',
-                  '-',
-                  `Это могут быть как молодые люди, так и семьи и даже пенсионеры, переехавшие в Москву и подмосковье. Имеют стабильный доход и постоянную работу в Москве.`,
-                ]}
+                t={t}
+                textForRows={Object.values(analyzeData[3])}
               />
             </Grid>
             <Grid className='col-span-12 mt-20'>
               <div className='col-span-4'>
-                <span className='text-body-caption text-grey'>
-                  01/ Льготной, семейной, дальневосточной, сельской ипотеки, а
-                  также ипотеки для IT — специалистов. Также обсуждается
-                  введение льготной ипотеки на ИЖС, которая объединит все
-                  форматы частного домостроения.
+                <span className='text-body-caption font-medium text-grey'>
+                  {t('consulting.demand1')}
                 </span>
               </div>
               <div className='col-span-4'>
-                <span className='text-body-caption text-grey'>
-                  02/ Аналитика ГК «Самолёт», август 2022г.
+                <span className='text-body-caption font-medium text-grey'>
+                  {t('consulting.demand2')}
                 </span>
               </div>
               <div className='col-span-4'>
-                <span className='text-body-caption text-grey'>
-                  03/ Составлено на основании ЦИАН Аналитики (2019), данных
-                  группы МЕТА (ноябрь 2022).аналитики ГК «Самолёт» (август
-                  2022).
+                <span className='text-body-caption font-medium text-grey'>
+                  {t('consulting.demand3')}
                 </span>
               </div>
             </Grid>
@@ -354,30 +455,29 @@ const ConsultingPage = async () => {
           <section>
             <Grid className='col-span-12 mt-50'>
               <div className='col-span-4 col-start-5'>
-                <h4 className='text-h4'>Стоимость и площадь</h4>
-                <span className='text-body-caption text-grey mt-2'>
-                  Средняя стоимость дома в мск
+                <h4 className='text-h4 font-medium'>
+                  {t('consulting.section6.title')}
+                </h4>
+                <span className='text-body-caption font-medium text-grey mt-2'>
+                  {t('consulting.section6.subtitle')}
                 </span>
               </div>
             </Grid>
             <Grid className='col-span-12 mt-30'>
               <div className='col-span-4 space-y-6'>
-                <h5 className='text-h5'>
-                  Предпочтительная площадь дома в зависимости от кол-ва комнат в
-                  РФ, м²
+                <h5 className='text-h5 font-light'>
+                  {t('consulting.section6.paragraph1')}
                 </h5>
                 <div>
-                  <span className='text-body-regular'>
-                    Для аудитории Москвы и московской области принимаются
-                    наиболее предпочтительной площадь 80-процентного квантиля
-                    из-за более высоких доходов населения.
+                  <span className='text-body-regular font-light'>
+                    {t('consulting.section6.paragraph2')}
                   </span>
                 </div>
               </div>
               <div className='col-span-1'>
                 <PriceGraphCol
                   percent={6}
-                  numberOfRooms='2 комнаты'
+                  numberOfRooms={t('consulting.section6.graph1.rooms')}
                   textTop='70'
                   textMid='50'
                   textBot='45'
@@ -386,7 +486,7 @@ const ConsultingPage = async () => {
               <div className='col-span-1'>
                 <PriceGraphCol
                   percent={24}
-                  numberOfRooms='3 комнаты'
+                  numberOfRooms={t('consulting.section6.graph2.rooms')}
                   textTop='100'
                   textMid='80'
                   textBot='60'
@@ -395,7 +495,7 @@ const ConsultingPage = async () => {
               <div className='col-span-1'>
                 <PriceGraphCol
                   percent={36}
-                  numberOfRooms='4 комнаты'
+                  numberOfRooms={t('consulting.section6.graph3.rooms')}
                   textTop='130'
                   textMid='100'
                   textBot='75'
@@ -404,7 +504,7 @@ const ConsultingPage = async () => {
               <div className='col-span-1'>
                 <PriceGraphCol
                   percent={33}
-                  numberOfRooms='5 и более'
+                  numberOfRooms={t('consulting.section6.graph4.rooms')}
                   textTop='130'
                   textMid='100'
                   textBot='75'
@@ -419,23 +519,28 @@ const ConsultingPage = async () => {
                       height={22}
                       alt='percent icon'
                     />
-                    <span className='ml-2 text-body-caption'>
-                      процент от тех, у кого есть потребность в индивидуальных
-                      домах
+                    <span className='ml-2 text-body-caption font-medium'>
+                      {t('consulting.section6.legend1')}
                     </span>
                   </div>
                   <div className='flex space-x-10'>
                     <div className='flex items-end'>
                       <div className='h-10 w-10 bg-red mr-2' />
-                      <span className='text-body-caption'>80% квантиль</span>
+                      <span className='text-body-caption font-medium'>
+                        {t('consulting.section6.legend2')}
+                      </span>
                     </div>
                     <div className='flex items-end'>
                       <div className='h-10 w-10 bg-medium-red mr-2' />
-                      <span className='text-body-caption'>Медиана</span>
+                      <span className='text-body-caption font-medium'>
+                        {t('consulting.section6.legend3')}
+                      </span>
                     </div>
                     <div className='flex items-end'>
                       <div className='h-10 w-10 bg-medium-grey mr-2' />
-                      <span className='text-body-caption'>20% квантиль</span>
+                      <span className='text-body-caption font-medium'>
+                        {t('consulting.section6.legend4')}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -458,7 +563,7 @@ const ConsultingPage = async () => {
               <HorizontalGraphWithTitle
                 className='bg-light-red col-span-4'
                 title={
-                  <span className='mb-4 text-body-regular text-grey'>
+                  <span className='mb-4 text-body-regular text-grey font-light'>
                     02 — Медианная стоимость участка 8 сот. <br /> в Московской
                     области
                   </span>
@@ -472,7 +577,7 @@ const ConsultingPage = async () => {
               />
             </div>
             <div className='col-span-4'>
-              <span className='block mt-10 text-body-regular'>
+              <span className='block mt-10 text-body-regular font-light'>
                 Медианная стоимость строящегося жилого дома в Подмосковье
                 составляет около 60 тыс. ₽ за 1 м². Средняя стоимость объекта
                 недвижимости, приобретённого по программе ИЖС ипотеки на 16%
@@ -483,7 +588,7 @@ const ConsultingPage = async () => {
               </span>
             </div>
           </Grid>
-          <Grid className='text-grey text-body-caption mt-20'>
+          <Grid className='text-grey text-body-caption font-medium mt-20'>
             <div className='col-span-4'>
               <span>01/ По данным Домклик в мае — сентябре 2023 г.</span>
             </div>
@@ -506,19 +611,19 @@ const ConsultingPage = async () => {
         <section className='mt-50'>
           <Grid>
             <div className='col-start-5 col-span-4'>
-              <span className='text-h4'>Предпочтения аудитории</span>
+              <span className='text-h4 font-medium'>
+                {t('consulting.section7.title')}
+              </span>
             </div>
             <div className='col-start-9 col-span-3'>
-              <span className='text-body-regular'>
-                Наполнение дома все чаще характеризуется более продуманной
-                планировкой, большим количеством спален, наличием домашних
-                офисов и дополнительными пространствами для проведения досуга.
+              <span className='text-body-regular font-light'>
+                {t('consulting.section7.paragraph1')}
               </span>
             </div>
           </Grid>
           <Grid className='mt-40'>
             <div className='col-span-4 flex flex-col'>
-              <span className='mb-10'>Желаемый материал дома</span>
+              <span className='mb-10'>{t('consulting.section7.material')}</span>
               <div className='flex flex-col space-y-10'>
                 <HorizontalGraphWithTitle
                   graphTitle='48%'
@@ -588,7 +693,7 @@ const ConsultingPage = async () => {
               </div>
             </div>
           </Grid>
-          <Grid className='mt-20 text-body-caption text-grey'>
+          <Grid className='mt-20 text-body-caption font-medium text-grey'>
             <div className='col-span-4'>
               <span>
                 Согласно данным Дом.РФ на основании данных ВЦИОМ, 2023 г.
@@ -605,18 +710,18 @@ const ConsultingPage = async () => {
         <section className='mt-50'>
           <Grid className='pt-6 border-t border-grey'>
             <div className='col-span-4 flex flex-col justify-between'>
-              <span className='text-h5'>
+              <span className='text-h5 font-light'>
                 Предпочтительное наполнение дома и территории (% от аудитории)
               </span>
-              <span className='text-body-caption text-grey'>
+              <span className='text-body-caption font-medium text-grey'>
                 Аналитика ГК «Самолёт», август 2022 г.
               </span>
             </div>
             <div className='col-span-8 h-[522px] grid grid-cols-8 gap-x-10'>
               <div className='col-span-1 flex flex-col justify-between mb-5 border-l border-medium-grey pl-2'>
-                <span className='text-h4'>70%</span>
-                <span className='text-h4'>40%</span>
-                <span className='text-h4'>10%</span>
+                <span className='text-h4 font-medium'>70%</span>
+                <span className='text-h4 font-medium'>40%</span>
+                <span className='text-h4 font-medium'>10%</span>
               </div>
               <VerticalGraphWithTitle
                 graphTitle='71%'
@@ -659,8 +764,8 @@ const ConsultingPage = async () => {
         <section className='mt-50'>
           <Grid>
             <div className='col-span-8 col-start-5'>
-              <span className='text-h4'>Сценарии жизни семьи</span>
-              <div className='text-body-regular mt-6'>
+              <span className='text-h4 font-medium'>Сценарии жизни семьи</span>
+              <div className='text-body-regular font-light mt-6'>
                 Исследование показывает что больше 40% нашего дома используется
                 намного реже, чем вся остальная его часть. Центром активностей
                 семейного взаимодействия является кухня и комната отдыха с
@@ -690,7 +795,7 @@ const ConsultingPage = async () => {
         <section className='mt-50'>
           <Grid>
             <div className='col-start-5 col-end-12'>
-              <span className='text-h4'>Ключевые выводы</span>
+              <span className='text-h4 font-medium'>Ключевые выводы</span>
             </div>
             <div className='col-start-2 col-end-12 flex flex-col gap-y-10 mt-24'>
               <ConclusionRow

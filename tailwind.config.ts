@@ -63,6 +63,7 @@ const config: Config = {
         h3: ['3rem', 'initial'],
         'h3-mob': ['1.5rem', '2.125rem'],
         h2: ['3.75rem', '4.375rem'],
+        'h2-mob': ['2.125rem', '2.75rem'],
         h5: ['1.5rem', '2.25rem'],
         h6: ['1.25rem', 'initial'],
         'h5-regular': ['1.5rem', '2.125rem'],
