@@ -137,7 +137,11 @@ const cardsData = [
       'В решениях — внимание к интересам различных категорий пользователей, особенно к маломобильным группам, детям и пожилым людям.',
   },
   {
-    title: <span className='whitespace-pre-wrap md:whitespace-normal'>{'Сомасштабность \nчеловеку'}</span>,
+    title: (
+      <span className='whitespace-pre-wrap md:whitespace-normal'>
+        {'Сомасштабность \nчеловеку'}
+      </span>
+    ),
     image: (
       <Image
         className='max-w-[60px] md:max-w-32 xl:max-w-40'
@@ -406,7 +410,7 @@ const RublevoPage = () => {
           {cardsData.map(({ description, title, image }, index) => (
             <div
               className={'col-span-1 pt-4 md:col-span-4 md:mt-10'}
-              key={title + index}
+              key={index}
             >
               <IconCard
                 noP
@@ -427,14 +431,17 @@ const RublevoPage = () => {
         src={picLink('34')}
         title='Бульвар. Визуализация проектного предложения.'
       />
-      <ImageWithCaption
-        className='hidden md:block'
-        width={1760}
-        height={1100}
-        fullWidth
-        src={picLink('14')}
-        title='Бульвар. Визуализация проектного предложения.'
-      />
+      <div className='aspect-video relative'>
+        <ImageWithCaption
+          className='hidden md:block'
+          fill
+          // width={1760}
+          // height={1100}
+          fullWidth
+          src={picLink('14')}
+          title='Бульвар. Визуализация проектного предложения.'
+        />
+      </div>
       <PageMarginWithTitle>
         <Grid className='mt-36 md:mt-50'>
           <div className='col-span-2 md:col-span-4'>

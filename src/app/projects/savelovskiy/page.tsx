@@ -6,7 +6,7 @@ import ProjectMainPicWithInfo from '@/components/ProjectMainPicWithInfo';
 import ProjectPicWithTitle from '@/components/ProjectPicWithTitle';
 import { makePicLink } from '@/utils';
 import Image from 'next/image';
-import React, { FC } from 'react';
+import React, { FC, ReactElement } from 'react';
 
 const picLink = makePicLink('savelovskiy');
 
@@ -38,6 +38,180 @@ const BulletList: FC<{ title: string; items: string[] }> = ({
   </div>
 );
 
+const clustersCollapseData = [
+  {
+    collapseTitle: '01 Переход через ж/д пути по Новодмитровской улице',
+    title:
+      'В данный момент доступ к рассматриваемой территории с западной части ограничен железно-дорожными путями. Для создания новой комфортной вело-пешеходной связи предлагается 2 варианта организации перехода.',
+    desc: [
+      '01 Создание нового общественного пространства площади',
+      '02 Установка Арт-объекта',
+      '03 Организация новой пешеходной связи через ж/д пути',
+    ],
+    picsMid: [
+      <Image key={1} src={picLink('15')} alt='' width={560} height={318} />,
+      <Image key={2} src={picLink('16')} alt='' width={560} height={134} />,
+    ],
+    picsRight: [
+      <div key={1} className='flex space-y-2 flex-col'>
+        <Image src={picLink('17')} alt='' width={560} height={190} />
+        <span>Арт-объект «Кракен»</span>
+      </div>,
+      <div key={2} className='flex space-y-2 flex-col'>
+        <Image src={picLink('18')} alt='' width={560} height={190} />
+        <span>Велосипедно — Пешеходный мост в городе Дармштадт Германия</span>
+      </div>,
+    ],
+  },
+  {
+    collapseTitle: '02 Новодмитровская ул. между Хлебзаводом и Флаконом',
+    title:
+      'Рассматриваемый фрагмент находится между арт-кварталом «Хлебозавод», Дизайн-заводом «Флакон». На части ул. Новодмитровской предлагается организация улицы совмещённого использования пешеходов и автомобилей, что позволит организовать комфортную пешеходную связь между двумя кластерами. Предлагается устройство абсолютно новой входной группы на Флакон.',
+    desc: [
+      '01 Организация новой входной группы на «Флакон»',
+      '02 Организация знакового мощения',
+      '03 Установка Арт-объекта',
+      '04 Организация улицы совмещённого использования для автомобилей и пешеходов',
+    ],
+    picsMid: [
+      <Image key={1} src={picLink('20')} alt='' width={560} height={536} />,
+    ],
+    picsRight: [
+      <div key={1} className='flex space-y-2 flex-col'>
+        <Image src={picLink('21')} alt='' width={560} height={190} />
+        <span>Daning Road, Jin’An District, Shanghai, China</span>
+      </div>,
+      <div key={2} className='flex space-y-2 flex-col'>
+        <Image src={picLink('22')} alt='' width={560} height={190} />
+        <span>Sion, Zwit serland</span>
+      </div>,
+    ],
+  },
+  {
+    collapseTitle: '03 Входная группа Флакона на Большой Новодмитровской',
+    title:
+      'Перед входом на территорию Дизайн-завода «Флакон» предлагается организовать новую площадь. Её пространство станет многофункциональным за счёт мобильных модульных элементов. Площадь может использоваться для проведения мероприятий, как пространство для встреч или место отдыха.',
+    desc: [
+      '01 Организация улицы совмещённого использования для автомобилей и пешеходов',
+      '02 Организация многофункциональной площадки для мероприятий, изменяемой в зависимости от программы',
+    ],
+    picsMid: [
+      <Image key={1} src={picLink('23')} alt='' width={560} height={536} />,
+    ],
+    picsRight: [
+      <div key={1} className='flex space-y-2 flex-col'>
+        <Image src={picLink('24')} alt='' width={560} height={190} />
+        <span>Shanghai, China</span>
+      </div>,
+      <div key={2} className='flex space-y-2 flex-col'>
+        <Image src={picLink('25')} alt='' width={560} height={190} />
+        <span>Green Cloud, China</span>
+      </div>,
+    ],
+  },
+  {
+    collapseTitle:
+      '04 Новодмитровская ул. у храма Рождества Пресвятой Богородицы в Бутырской Слободе',
+    title:
+      'Реорганизация территории вокруг храма Рождества Пресвятой Богородицы позволит создать новую туристическую достопримечательность. С помощью парклетов можно создавать временные зоны отдыха вместо парковок в узких местах улицы.',
+    desc: [
+      '01 Организация парклетов',
+      '02 Организация общественной площадки',
+      '03 Организация знакового мощения',
+    ],
+    picsMid: [
+      <Image key={1} src={picLink('26')} alt='' width={560} height={536} />,
+    ],
+    picsRight: [
+      <div key={1} className='flex space-y-2 flex-col'>
+        <Image src={picLink('27')} alt='' width={560} height={190} />
+        <span>Парклет</span>
+      </div>,
+      <div key={2} className='flex space-y-2 flex-col'>
+        <Image src={picLink('28')} alt='' width={560} height={190} />
+        <span>St. Urbanus Kirchplatz, Gelsenkirchen, Germany</span>
+      </div>,
+    ],
+  },
+  {
+    collapseTitle: '05 Бутырская ул. у Савёловского вокзала',
+    title:
+      'Новый пешеходный путь свяжет Савёловский вокзали креативный кластер «Флакон». Бывший проезд вдоль промышленных зданий станет пространством совмещённого использования. На месте хаотичных парковок предлагается организовать озеленённые места для отдыха.',
+    desc: [
+      '01 Организация улицы совмещённого использования для автомобилей и пешеходов',
+      '02 Реорганизация озеленения',
+      '03 Организация новых общественных площадок',
+    ],
+    picsMid: [
+      <Image key={1} src={picLink('29')} alt='' width={560} height={536} />,
+    ],
+    picsRight: [
+      <div key={1} className='flex space-y-2 flex-col'>
+        <Image src={picLink('30')} alt='' width={560} height={190} />
+        <span>Boblingen, Germany</span>
+      </div>,
+      <div key={2} className='flex space-y-2 flex-col'>
+        <Image src={picLink('31')} alt='' width={560} height={190} />
+        <span>Pitt Street Mall, Sydney</span>
+      </div>,
+    ],
+  },
+];
+
+const ClusterCollapse01: FC<{
+  title: string;
+  desc: string[];
+  picsMid: ReactElement[];
+  picsRight: ReactElement[];
+  collapseTitle: string;
+}> = ({ desc, picsMid, collapseTitle, picsRight, title }) => (
+  <Collapse title={collapseTitle}>
+    <Grid>
+      <div className='col-span-2 md:col-span-4 text-body-regular-mob md:text-body-regular font-light flex justify-between flex-col'>
+        <div className='flex flex-col'>
+          <span className='mb-10 md:mb-6 block'>{title}</span>
+          <div className='hidden md:block space-y-4'>
+            {desc.map((item, index) => (
+              <span key={item + index} className='block'>
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+        <Image
+          className='hidden md:block'
+          src={picLink('19')}
+          alt=''
+          width={393}
+          height={96}
+        />
+      </div>
+      <div className='col-span-2 md:col-span-4 space-y-6'>
+        {picsMid.map((pic) => pic)}
+      </div>
+      <div className='mt-6 col-span-2 md:hidden'>
+        <div className='space-y-4'>
+          {desc.map((item, index) => (
+            <span key={item + index} className='block'>
+              {item}
+            </span>
+          ))}
+        </div>
+        <Image
+          className='mt-6 mb-10'
+          src={picLink('32')}
+          alt=''
+          width={261}
+          height={70}
+        />
+      </div>
+      <div className='col-span-2 md:col-span-4 text-body-caption font-medium space-y-6 md:space-y-4'>
+        {picsRight.map((pic) => pic)}
+      </div>
+    </Grid>
+  </Collapse>
+);
+
 const SavelovskiyPage = () => {
   return (
     <div className='mt-30 md:mt-50 w-full'>
@@ -62,11 +236,10 @@ const SavelovskiyPage = () => {
             </span>
           </div>
           <div className='col-span-2 md:col-span-6'>
-            <span className='text-body-regular font-light md:font-light md:text-h5 tracking-normal'>
-              Большая Новодмитровская улица находится в Бутырском районе на
-              севере Москвы. К ней примыкают такие знаковые городские
-              пространства как арт-квартал «Хлебозавод», дизайн-завод «Флакон»,
-              Савёловский вокзал и ряд офисных центров.
+            <span className='text-body-regular font-light md:font-light md:text-h5 tracking-normal md:whitespace-pre-wrap whitespace-normal'>
+              {
+                'Большая Новодмитровская улица находится в Бутырском районе \nна севере Москвы. К ней примыкают такие знаковые городские пространства как арт-квартал «Хлебозавод», дизайн-завод «Флакон», Савёловский вокзал и ряд офисных центров.'
+              }
             </span>
           </div>
           <div className='col-span-2 md:col-span-12 mt-4 md:mt-30 mb-10 md:mb-20'>
@@ -205,10 +378,10 @@ const SavelovskiyPage = () => {
               <span className='text-h4-mob lg:text-h5 font-medium'>
                 Интенсивность фотофиксации по данным социальных сетей
               </span>
-              <span className='text-body-regular-mob lg:text-body-regular font-light'>
-                Схема тепловой активности демонстрирует концентрацию
-                пользователей в функционально насыщенных точках. Это говорит о
-                востребованности разнообразных видов досуга на территории
+              <span className='text-body-regular-mob lg:text-body-regular font-light md:whitespace-pre-wrap whitespace-normal'>
+                {
+                  'Схема тепловой активности демонстрирует концентрацию пользователей в функционально насыщенных точках. \nЭто говорит о востребованности разнообразных видов досуга на территории'
+                }
               </span>
             </div>
             <div className='hidden grid-cols-4 gap-x-10 lg:grid'>
@@ -234,12 +407,10 @@ const SavelovskiyPage = () => {
             </span>
           </div>
           <div className='col-span-2 md:col-span-7'>
-            <span className='text-body-regular-mob md:text-body-regular lg:text-h5 font-light'>
-              Помимо популярных у жителей городских площадок, к улице примыкает
-              несколько недействующих промышленных объектов, требующих
-              ревитализации - бывший Московский троллейбусно-ремонтный завод и
-              НПП «Темп» им. Ф. Короткова. Это потенциальные участки
-              концентрации деловой и творческой активности в районе
+            <span className='text-body-regular-mob md:text-body-regular lg:text-h5 font-light md:whitespace-pre-wrap whitespace-normal'>
+              {
+                'Помимо популярных у жителей городских площадок, к улице примыкает несколько недействующих промышленных объектов, требующих ревитализации - бывший Московский троллейбусно-ремонтный завод и НПП «Темп» им. Ф. Короткова. \nЭто потенциальные участки концентрации деловой и творческой активности в районе'
+              }
             </span>
           </div>
           <div className='col-span-2 md:col-span-12 space-y-4 mt-10 md:mt-20'>
@@ -250,30 +421,11 @@ const SavelovskiyPage = () => {
               title='Схема предлагаемых изменений на рассматриваемой территории'
             />
           </div>
-          <section className='col-span-2 md:col-span-12 mt-14 mb-50 hidden md:grid'>
-            <Collapse title='01 Переход через ж/д пути по Новодмитровской улице' />
-            <Collapse title='02 Новодмитровская ул. между Хлебзаводом и Флаконом' />
-            <Collapse title='03 Входная группа Флакона на Большой Новодмитровской' />
-            <Collapse title='04 ул. Новодмитровская у храма Рождества Пресвятой Богородицы в Бутырской Слободе' />
-            <Collapse title='05 ул. Бутырская у Савёловского вокзала' />
+          <section className='col-span-2 md:col-span-12 mt-14 mb-50'>
+            {clustersCollapseData.map((data) => (
+              <ClusterCollapse01 key={data.collapseTitle} {...data} />
+            ))}
           </section>
-          <div className='col-span-2 md:hidden'>
-            <Collapse title='01 Переход через Ж/Д пути по Новодмитровской улице'>
-              ss
-            </Collapse>
-            <Collapse title='02 Новодмитровская ул. между Хлебзаводоми Флаконом'>
-              ss
-            </Collapse>
-            <Collapse title='03 Входная группа Флакона на Большой Новодмитровской'>
-              ss
-            </Collapse>
-            <Collapse title='04 ул. Новодмитровская у храма Рождества Пресвятой Богородицы в Бутырской слободе'>
-              ss
-            </Collapse>
-            <Collapse title='05 ул. Бутырская у Савёловского вокзала'>
-              ss
-            </Collapse>
-          </div>
           <div className='mt-32 md:mt-0 col-span-2 md:col-span-4'>
             <span className='mb-4 md:mb-0 block text-h5 lg:text-h4 font-medium'>
               Ядро Савёловского кластера
@@ -316,7 +468,7 @@ const SavelovskiyPage = () => {
               ]}
             />
           </div>
-          <div className='mt-16 md:mt-0 md:border-0 border-t border-medium-grey col-span-2 md:col-span-8'>
+          <div className='mt-16 md:mt-0 md:border-0 md:border-t border-medium-grey col-span-2 md:col-span-8'>
             <Grid className=''>
               <div className='md:mt-0 mt-4 col-span-2 md:col-span-12 md:order-1 order-2'>
                 <Image
@@ -340,7 +492,7 @@ const SavelovskiyPage = () => {
             </Grid>
           </div>
         </Grid>
-        <Grid className='mt-16 md:mt-30 border-t border-medium-grey pt-2 md:pt-6'>
+        <Grid className='mt-16 md:mt-30 md:border-t border-medium-grey pt-2 md:pt-6'>
           <div className='col-span-2 md:col-span-4'>
             <span className='text-body-regular-mob md:text-body-regular'>
               Проект предлагает обустройство кафе и магазинов в первых этажах
