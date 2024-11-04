@@ -4,16 +4,15 @@ import React from 'react';
 
 const HeaderMobile = () => {
   return (
-    <header className='flex md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white border-b border-medium-grey'>
-      <Link href='/'>
+    <header className='flex min-h-[40px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white border-b border-medium-grey'>
         <Image
           priority={true}
           src='/icons/logo.svg'
+          className='h-[15px] w-[125px]'
           width={125}
           height={15}
           alt='space lane logo'
         />
-      </Link>
       <Image
           priority={true}
           src='/icons/burger.svg'
