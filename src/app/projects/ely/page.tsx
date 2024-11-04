@@ -461,7 +461,7 @@ const ElyPage = async () => {
                 </div>
               </Grid>
             </div>
-            <div className='col-span-4 space-y-6'>
+            <div className='col-span-4 space-y-6 mt-10 md:mt-0'>
               <MapDescRow
                 title='74,6 га'
                 subTitle='Площадь коттеджного посёлка'
