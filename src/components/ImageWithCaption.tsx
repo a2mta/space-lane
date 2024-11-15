@@ -10,9 +10,19 @@ const ImageWithCaption: FC<{
   height?: number;
   className?: string;
   fullWidth?: boolean;
+  autoHeight?: boolean;
   fill?: boolean;
   title: string;
-}> = ({ height, fill, src, title, width, fullWidth, className }) => {
+}> = ({
+  height,
+  fill,
+  src,
+  autoHeight,
+  title,
+  width,
+  fullWidth,
+  className,
+}) => {
   const titleBlock = (
     <span className='text-body-caption-mob md:text-body-caption font-light mt-2 block'>
       {title}
@@ -21,14 +31,17 @@ const ImageWithCaption: FC<{
   return (
     <div
       className={classNames(
-        'flex flex-col h-full md:h-auto',
+        'flex flex-col md:h-auto',
+        { 'h-full': !autoHeight },
         { relative: fill },
         className
       )}
     >
       <Image alt='' fill={fill} width={width} height={height} src={src} />
       {fullWidth ? (
-        <PageMarginWithTitle className={classNames({ 'bottom-[-30px] absolute': fill })}>
+        <PageMarginWithTitle
+          className={classNames({ 'bottom-[-30px] absolute': fill })}
+        >
           <Grid>
             <div className='col-span-2 md:col-span-8'>{titleBlock}</div>
           </Grid>

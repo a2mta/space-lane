@@ -7,6 +7,154 @@ import React, { FC, ReactElement } from 'react';
 import { createTranslation } from '../../../i18n/server';
 import { addLeadingZero } from '@/utils';
 
+type PriceGraphColProps = {
+  percent: number;
+  numberOfRooms: string;
+  textTop: string;
+  textMid: string;
+  textBot: string;
+};
+
+const priceGraphColData = [
+  {
+    percent: 6,
+    numberOfRooms: 'consulting.section6.graph1.rooms',
+    textTop: '70',
+    textMid: '50',
+    textBot: '45',
+  },
+  {
+    percent: 24,
+    numberOfRooms: 'consulting.section6.graph2.rooms',
+    textTop: '100',
+    textMid: '80',
+    textBot: '60',
+  },
+  {
+    percent: 36,
+    numberOfRooms: 'consulting.section6.graph3.rooms',
+    textTop: '130',
+    textMid: '100',
+    textBot: '75',
+  },
+  {
+    percent: 33,
+    numberOfRooms: 'consulting.section6.graph4.rooms',
+    textTop: '130',
+    textMid: '100',
+    textBot: '75',
+  },
+];
+
+const horizontalGraphData = [
+  {
+    graphTitle: '48%',
+    title: 'consulting.section7.materials.brick',
+    className: 'bg-red col-span-8',
+  },
+  {
+    graphTitle: '39%',
+    title: 'consulting.section7.materials.concrete',
+    className: 'bg-medium-red col-span-7',
+  },
+  {
+    graphTitle: '24%',
+    title: 'consulting.section7.materials.wood',
+    className: 'bg-light-red col-span-6',
+  },
+  {
+    graphTitle: '7%',
+    title: 'consulting.section7.materials.frame',
+    className: 'bg-grey col-span-3',
+  },
+  {
+    graphTitle: '5%',
+    title: 'consulting.section7.materials.other',
+    className: 'bg-grey col-span-2',
+  },
+];
+
+const horizontalGraphData2 = [
+  {
+    graphTitle: '72%',
+    title: 'consulting.section7.stories.one',
+    className: 'bg-red col-span-8',
+  },
+  {
+    graphTitle: '21%',
+    title: 'consulting.section7.stories.two',
+    className: 'bg-medium-red col-span-6',
+  },
+  {
+    graphTitle: '5%',
+    title: 'consulting.section7.stories.three',
+    className: 'bg-light-red col-span-3',
+  },
+  {
+    graphTitle: '2%',
+    title: 'consulting.section7.stories.four',
+    className: 'bg-grey col-span-2',
+  },
+];
+
+const horizontalGraphData3 = [
+  {
+    graphTitle: '75%',
+    title: 'consulting.section7.finishes.turnkey',
+    className: 'bg-red col-span-8',
+  },
+  {
+    graphTitle: '25%',
+    title: 'consulting.section7.finishes.without',
+    className: 'bg-medium-red col-span-6',
+  },
+];
+
+const verticalGraphData = [
+  {
+    graphTitle: '71%',
+    title: 'consulting.section8.graphs.dining',
+    className: 'bg-medium-red h-full',
+    width: 'w-full',
+  },
+  {
+    graphTitle: '51%',
+    title: 'consulting.section8.graphs.living',
+    className: 'bg-medium-red h-[85%]',
+    width: 'w-[85%]',
+  },
+  {
+    graphTitle: '47%',
+    title: 'consulting.section8.graphs.dressing',
+    className: 'bg-medium-red h-[80%]',
+    width: 'w-[80%]',
+  },
+  {
+    graphTitle: '47%',
+    title: 'consulting.section8.graphs.parking',
+    className: 'bg-medium-red h-[80%]',
+    width: 'w-[80%]',
+  },
+  {
+    graphTitle: '70%',
+    title: 'consulting.section8.graphs.gazebo',
+    className: 'bg-medium-red h-[95%]',
+    width: 'w-[95%]',
+  },
+  {
+    graphTitle: '67%',
+    title: 'consulting.section8.graphs.bbq',
+    className: 'bg-medium-red h-[93%]',
+    width: 'w-[93%]',
+  },
+  {
+    graphTitle: '66%',
+    title: 'consulting.section8.graphs.bath',
+    className: 'bg-medium-red h-[91%]',
+    width: 'w-[91%]',
+  },
+];
+
 const analyzeData = [
   {
     percent: '50%',
@@ -35,6 +183,21 @@ const analyzeData = [
     desc1: 'analyzeData.regional_visitors.desc1',
     desc2: 'analyzeData.regional_visitors.desc2',
     desc3: 'analyzeData.regional_visitors.desc3',
+  },
+];
+
+const auditoryDataMob = [
+  {
+    title: 'consulting.section7.material',
+    data: horizontalGraphData,
+  },
+  {
+    title: 'consulting.section7.floors',
+    data: horizontalGraphData2,
+  },
+  {
+    title: 'consulting.section7.floors',
+    data: horizontalGraphData2,
   },
 ];
 
@@ -69,6 +232,34 @@ const AnalyzeDataRowMob: FC<{
       <span className='text-body-regular-mob font-light'>{t(desc3)}</span>
     </div>
   </Grid>
+);
+
+const PriceGraphMob: FC<PriceGraphColProps> = ({
+  numberOfRooms,
+  percent,
+  textBot,
+  textMid,
+  textTop,
+}) => (
+  <div className='flex pt-4 border-t border-medium-grey'>
+    <div className='flex flex-col space-y-2 mr-6'>
+      <span className='text-h3-mob font-medium'>{percent}%</span>
+      <span className='block text-body-caption-10 font-medium'>
+        {numberOfRooms}
+      </span>
+    </div>
+    <div className='flex space-x-2 items-end'>
+      <div className='bg-red w-28 h-40 p-4 flex items-end'>
+        <span className='text-h3-mob font-medium text-white'>{textTop}</span>
+      </div>
+      <div className='bg-medium-red w-28 h-32 p-4 flex items-end'>
+        <span className='text-h3-mob font-medium text-white'>{textMid}</span>
+      </div>
+      <div className='bg-medium-grey w-28 h-24 p-4 flex items-end'>
+        <span className='text-h3-mob font-medium text-white'>{textBot}</span>
+      </div>
+    </div>
+  </div>
 );
 
 const DemandTableRows: FC<{ t: any; textForRows: string[] }> = ({
@@ -118,11 +309,15 @@ const HorizontalGraphWithTitle: FC<{
 }> = ({ graphTitle, className, title }) => {
   return (
     <div className='flex flex-col'>
-      {typeof title === 'string' ? (
-        <span className='mb-4 text-body-regular text-grey'>{title}</span>
-      ) : (
-        title
-      )}
+      <span className='md:mb-4 mb-2 block'>
+        {typeof title === 'string' ? (
+          <span className='block text-body-caption-10 md:text-body-regular font-light text-grey md:whitespace-pre-wrap'>
+            {title}
+          </span>
+        ) : (
+          title
+        )}
+      </span>
 
       <div className='grid grid-cols-8'>
         <HorizontalGraph text={graphTitle} className={className} />
@@ -161,18 +356,18 @@ const HorizontalGraph: FC<{ className?: string; text: string }> = ({
   text,
   className,
 }) => (
-  <div className={classNames('w-full text-white px-6 py-2', className)}>
-    <span className='text-h4 font-medium'>{text}</span>
+  <div className={classNames('w-full text-white px-2 md:px-6 py-2', className)}>
+    <span className='text-h5-mob md:text-h4 font-medium'>{text}</span>
   </div>
 );
 
-const PriceGraphCol: FC<{
-  percent: number;
-  numberOfRooms: string;
-  textTop: string;
-  textMid: string;
-  textBot: string;
-}> = ({ numberOfRooms, percent, textBot, textMid, textTop }) => (
+const PriceGraphCol: FC<PriceGraphColProps> = ({
+  numberOfRooms,
+  percent,
+  textBot,
+  textMid,
+  textTop,
+}) => (
   <div className='flex flex-col px-2 border-l border-l-grey'>
     <span className='text-h4 mb-2'>{percent}%</span>
     <span className='text-grey text-body-caption font-medium'>
@@ -376,36 +571,36 @@ const ConsultingPage = async () => {
             <Grid className='col-span-2 md:col-span-12'>
               <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5 font-light'>
-                    Доля в общем
-                    <br />
-                    объёме спроса
-                  </span>
-                </div>
-              </div>
-              <div className='col-span-2 grid'>
-                <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5 font-light'>Группа</span>
-                </div>
-              </div>
-              <div className='col-span-2 grid'>
-                <div className='flex items-end pb-2 border-b border-medium-grey'>
-                  <span className='text-red text-h5 font-light'>
-                    Средний возраст
+                  <span className='text-red text-h5 font-light whitespace-pre-wrap'>
+                    {t('consulting.section5.column1')}
                   </span>
                 </div>
               </div>
               <div className='col-span-2 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5 font-light'>
-                    Состав семьи
+                    {t('consulting.section5.column2')}
+                  </span>
+                </div>
+              </div>
+              <div className='col-span-2 grid'>
+                <div className='flex items-end pb-2 border-b border-medium-grey'>
+                  <span className='text-red text-h5 font-light'>
+                    {t('consulting.section5.column3')}
+                  </span>
+                </div>
+              </div>
+              <div className='col-span-2 grid'>
+                <div className='flex items-end pb-2 border-b border-medium-grey'>
+                  <span className='text-red text-h5 font-light'>
+                    {t('consulting.section5.column4')}
                   </span>
                 </div>
               </div>
               <div className='col-span-4 grid'>
                 <div className='flex items-end pb-2 border-b border-medium-grey'>
                   <span className='text-red text-h5 font-light'>
-                    Цель приобретения недвижимости
+                    {t('consulting.section5.column5')}
                   </span>
                 </div>
               </div>
@@ -474,42 +669,19 @@ const ConsultingPage = async () => {
                   </span>
                 </div>
               </div>
-              <div className='col-span-1'>
-                <PriceGraphCol
-                  percent={6}
-                  numberOfRooms={t('consulting.section6.graph1.rooms')}
-                  textTop='70'
-                  textMid='50'
-                  textBot='45'
-                />
-              </div>
-              <div className='col-span-1'>
-                <PriceGraphCol
-                  percent={24}
-                  numberOfRooms={t('consulting.section6.graph2.rooms')}
-                  textTop='100'
-                  textMid='80'
-                  textBot='60'
-                />
-              </div>
-              <div className='col-span-1'>
-                <PriceGraphCol
-                  percent={36}
-                  numberOfRooms={t('consulting.section6.graph3.rooms')}
-                  textTop='130'
-                  textMid='100'
-                  textBot='75'
-                />
-              </div>
-              <div className='col-span-1'>
-                <PriceGraphCol
-                  percent={33}
-                  numberOfRooms={t('consulting.section6.graph4.rooms')}
-                  textTop='130'
-                  textMid='100'
-                  textBot='75'
-                />
-              </div>
+              {priceGraphColData.map(
+                ({ numberOfRooms, percent, textBot, textMid, textTop }) => (
+                  <div className='col-span-1' key={percent}>
+                    <PriceGraphCol
+                      percent={percent}
+                      numberOfRooms={t(numberOfRooms)}
+                      textTop={textTop}
+                      textMid={textMid}
+                      textBot={textBot}
+                    />
+                  </div>
+                )
+              )}
               <div className='col-span-4 flex items-end'>
                 <div className='flex flex-col border-l border-l-orange pl-10'>
                   <div className='flex mb-7'>
@@ -549,65 +721,262 @@ const ConsultingPage = async () => {
           </section>
         </div>
       </PageMarginWithTitle>
+      {/* MOBILE SECTION */}
+      <section className='md:hidden w-full mt-30'>
+        <PageMarginWithTitle>
+          <Grid>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium'>
+                {t('consulting.section6.title')}
+              </span>
+              <span className='text-body-regular-mob font-light block mt-4 mb-10'>
+                {t('consulting.section6.subtitle')}
+              </span>
+              <span className='text-h5-mob font-medium'>
+                {t('consulting.section6.paragraph1')}
+              </span>
+              <span className='text-body-regular-mob font-light block mt-4'>
+                {t('consulting.section6.paragraph2')}
+              </span>
+              <div className='flex mb-7 items-center mt-10'>
+                <span className='text-h5-mob font-medium'>%</span>
+                <span className='ml-2 text-body-caption-mob font-light'>
+                  {t('consulting.section6.legend1')}
+                </span>
+              </div>
+              <div className='flex space-x-4 mt-6'>
+                <div className='flex items-end'>
+                  <div className='bg-red w-6 h-6 mr-2' />
+                  <span className='text-body-caption-10 font-light'>
+                    {t('consulting.section6.legend2')}
+                  </span>
+                </div>
+                <div className='flex items-end'>
+                  <div className='bg-medium-red w-6 h-6 mr-2' />
+                  <span className='text-body-caption-10 font-light'>
+                    {t('consulting.section6.legend3')}
+                  </span>
+                </div>
+                <div className='flex items-end'>
+                  <div className='bg-medium-grey w-6 h-6 mr-2' />
+                  <span className='text-body-caption-10 font-light'>
+                    {t('consulting.section6.legend4')}
+                  </span>
+                </div>
+              </div>
+              <div className='flex flex-col space-y-10 mt-16'>
+                {priceGraphColData.map(
+                  ({ numberOfRooms, percent, textBot, textMid, textTop }) => (
+                    <PriceGraphMob
+                      key={percent}
+                      numberOfRooms={t(numberOfRooms)}
+                      percent={percent}
+                      textBot={textBot}
+                      textMid={textMid}
+                      textTop={textTop}
+                    />
+                  )
+                )}
+              </div>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+      </section>
       <PageMarginWithTitle className='bg-beige mt-40'>
-        <section className='my-20'>
-          <Grid className='col-span-12 '>
-            <div className='col-span-8 flex flex-col space-y-10'>
+        <section className='md:my-20 my-10'>
+          <Grid className='col-span-2 md:col-span-12 '>
+            <div className='col-span-2 md:col-span-8 flex flex-col space-y-8 md:space-y-10 md:order-1 order-2'>
               <HorizontalGraphWithTitle
                 className='bg-red col-span-8'
-                title='01 — Медианная стоимость строящегося жилого дома площадью 150 м²
-                (ИКС) в Московской области'
-                graphTitle='8,8 млн. руб'
+                title={t('consulting.section11.graph1.title')}
+                graphTitle={t('consulting.section11.graph1.graphTitle')}
               />
 
               <HorizontalGraphWithTitle
                 className='bg-light-red col-span-4'
                 title={
-                  <span className='mb-4 text-body-regular text-grey font-light'>
-                    02 — Медианная стоимость участка 8 сот. <br /> в Московской
-                    области
+                  <span className='md:text-body-regular text-body-caption-10 text-grey font-light md:whitespace-pre-wrap'>
+                    {t('consulting.section11.graph2.title')}
                   </span>
                 }
-                graphTitle='2,2 млн. руб'
+                graphTitle={t('consulting.section11.graph2.graphTitle')}
               />
               <HorizontalGraphWithTitle
                 className='bg-medium-red col-span-7'
-                title='03 — Средняя стоимость объекта недвижимости, приобретенного по программе ИЖС ипотеки в Московской области'
-                graphTitle='7,4 млн. руб'
+                title={t('consulting.section11.graph3.title')}
+                graphTitle={t('consulting.section11.graph3.graphTitle')}
               />
             </div>
-            <div className='col-span-4'>
-              <span className='block mt-10 text-body-regular font-light'>
-                Медианная стоимость строящегося жилого дома в Подмосковье
-                составляет около 60 тыс. ₽ за 1 м². Средняя стоимость объекта
-                недвижимости, приобретённого по программе ИЖС ипотеки на 16%
-                ниже медианной стоимости вне зависимости от типа сделки.
-                Незначительная разница подтверждает, что объекты, приобретённые
-                с использованием кредитных инструментов, соответствуют медианным
-                показателям рынка в целом.
+            <div className='col-span-2 md:col-span-4 md:order-2 order-1'>
+              <span className='block xl:mt-10 text-body-regular-mob mb-10 md:mb-0 md:text-body-regular font-light'>
+                {t('consulting.section11.paragraph1')}
               </span>
             </div>
           </Grid>
-          <Grid className='text-grey text-body-caption font-medium mt-20'>
-            <div className='col-span-4'>
-              <span>01/ По данным Домклик в мае — сентябре 2023 г.</span>
+          <Grid className='text-grey text-body-caption font-medium mt-10 md:mt-20 md:space-y-0 space-y-4'>
+            <div className='col-span-2 md:col-span-4'>
+              <span>{t('consulting.section11.paragraph2')}</span>
             </div>
-            <div className='col-span-4'>
-              <span>
-                02/ Расчет на основании данных Сбербанка о количестве и объеме
-                выданных ипотек в Московской области в августе 2023г.
-              </span>
+            <div className='col-span-2 md:col-span-4'>
+              <span>{t('consulting.section11.paragraph3')}</span>
             </div>
-            <div className='col-span-4'>
-              <span>
-                03/ Те к кого, есть потребность в индивидуальном доме в 5-летней
-                перспективе. ВЦИОМ 2021, расчеты ДОМ.РФ
-              </span>
+            <div className='col-span-2 md:col-span-4'>
+              <span>{t('consulting.section11.paragraph4')}</span>
             </div>
           </Grid>
         </section>
       </PageMarginWithTitle>
-      <PageMarginWithTitle>
+      {/* MOBILE */}
+
+      <section className='mt-30 md:hidden'>
+        <PageMarginWithTitle>
+          <Grid>
+            <div className='col-span-2 space-y-4 mb-10'>
+              <span className='text-h3-mob font-medium'>
+                {t('consulting.section7.title')}
+              </span>
+              <span className='block text-body-regular-mob font-light'>
+                {t('consulting.section7.paragraph1')}
+              </span>
+            </div>
+          </Grid>
+          <div className='flex flex-col space-y-10'>
+            {auditoryDataMob.map(({ title, data }) => (
+              <Grid className='pt-4 border-t border-medium-grey' key={title}>
+                <div className='col-span-2 mb-6'>
+                  <span className='text-body-regular-mob font-medium'>
+                    {t(title)}
+                  </span>
+                </div>
+                <div className='col-span-1 space-y-4'>
+                  {data.map(
+                    ({ className, graphTitle, title }, index) =>
+                      index % 2 === 0 && (
+                        <HorizontalGraphWithTitle
+                          key={title}
+                          graphTitle={graphTitle}
+                          title={t(title)}
+                          className={className}
+                        />
+                      )
+                  )}
+                </div>
+                <div className='col-span-1 space-y-4'>
+                  {data.map(
+                    ({ className, graphTitle, title }, index) =>
+                      index % 2 !== 0 && (
+                        <HorizontalGraphWithTitle
+                          key={title}
+                          graphTitle={graphTitle}
+                          title={t(title)}
+                          className={className}
+                        />
+                      )
+                  )}
+                </div>
+              </Grid>
+            ))}
+          </div>
+          <div className='flex flex-col mt-10 text-body-caption-10 font-light space-y-4'>
+            <span>{t('consulting.section7.data_source1')}</span>
+            <span>{t('consulting.section7.data_source2')}</span>
+            <span>{t('consulting.section7.data_source3')}</span>
+          </div>
+        </PageMarginWithTitle>
+      </section>
+      <section className='md:hidden mt-20'>
+        <PageMarginWithTitle>
+          <Grid>
+            <div className='col-span-2'>
+              <span className='text-body-regular-mob font-medium'>
+                {t('consulting.section8.title')}
+              </span>
+              <div className='flex justify-between text-body-regular-mob font-medium mt-10 pb-2 border-b border-medium-grey'>
+                <span>10%</span>
+                <span>50%</span>
+                <span>70%</span>
+              </div>
+              <div className='flex flex-col space-y-4 mt-6'>
+                {verticalGraphData.map(
+                  ({ width, className, graphTitle, title }) => (
+                    <div className='flex flex-col' key={title}>
+                      <span className='text-body-caption-10 font-medium mb-2'>
+                        {t(title)}
+                      </span>
+                      <div className={width}>
+                        <HorizontalGraph
+                          text={graphTitle}
+                          className={className}
+                        />
+                      </div>
+                    </div>
+                  )
+                )}
+              </div>
+              <span className='block mt-10 text-body-caption-10 font-medium'>
+                {t('consulting.section8.data_source')}
+              </span>
+            </div>
+          </Grid>
+          <Grid className='mt-30'>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium'>
+                {t('consulting.section9.title')}
+              </span>
+              <span className='text-body-regular-mob font-light block mt-4'>
+                {t('consulting.section9.paragraph1')}
+              </span>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <Image
+          className='mt-10'
+          src='/pics/consultation/scenario-graph-1.png'
+          width={480}
+          height={234}
+          alt=''
+        />
+        <div className='flex items-center px-14'>
+          <Image
+            className='mt-16'
+            src='/pics/consultation/scenario-graph-2.png'
+            width={363}
+            height={362}
+            alt=''
+          />
+        </div>
+        <PageMarginWithTitle>
+          <Grid className='mt-30'>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium block mb-10'>
+                {t('consulting.section10.title')}
+              </span>
+              <div className='flex space-y-4 flex-col'>
+                {(
+                  t('consulting.section10.conclusions', {
+                    returnObjects: true,
+                  }) as string[]
+                ).map((item, index) => (
+                  <div
+                    className='flex pb-4 border-b border-medium-grey'
+                    key={item}
+                  >
+                    <span className='text-h5-mob font-medium mr-4 text-medium-grey'>
+                      {addLeadingZero(index + 1)}
+                    </span>
+                    <span className='text-body-regular-mob font-medium'>
+                      {t(item)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+      </section>
+
+      {/* DESKTOP */}
+      <PageMarginWithTitle className='hidden md:block'>
         <section className='mt-50'>
           <Grid>
             <div className='col-start-5 col-span-4'>
@@ -622,154 +991,97 @@ const ConsultingPage = async () => {
             </div>
           </Grid>
           <Grid className='mt-40'>
-            <div className='col-span-4 flex flex-col'>
+            <div className='col-span-2 md:col-span-4 flex flex-col'>
               <span className='mb-10'>{t('consulting.section7.material')}</span>
               <div className='flex flex-col space-y-10'>
-                <HorizontalGraphWithTitle
-                  graphTitle='48%'
-                  title='Кирпич'
-                  className='bg-red col-span-8'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='39%'
-                  title='Пено — и газобетон'
-                  className='bg-medium-red col-span-7'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='24%'
-                  title='Дерево (брус)'
-                  className='bg-light-red col-span-6'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='7%'
-                  title='Каркас (дерево)'
-                  className='bg-grey col-span-3'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='5%'
-                  title='Не имеет значение'
-                  className='bg-grey col-span-2'
-                />
+                {horizontalGraphData.map(({ className, graphTitle, title }) => (
+                  <HorizontalGraphWithTitle
+                    key={title}
+                    graphTitle={graphTitle}
+                    title={t(title)}
+                    className={className}
+                  />
+                ))}
               </div>
             </div>
-            <div className='col-span-4 flex flex-col'>
-              <span className='mb-10'>Этажность</span>
+            <div className='col-span-2 md:col-span-4 flex flex-col'>
+              <span className='mb-10'>{t('consulting.section7.floors')}</span>
               <div className='flex flex-col space-y-10'>
-                <HorizontalGraphWithTitle
-                  graphTitle='72%'
-                  title='Одноэтажные дома'
-                  className='bg-red col-span-8'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='21%'
-                  title='Двухэтажные дома'
-                  className='bg-medium-red col-span-6'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='5%'
-                  title='Одно — или двух этажные дома'
-                  className='bg-light-red col-span-3'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='2%'
-                  title='Двух — или трехэтажные дома'
-                  className='bg-grey col-span-2'
-                />
+                {horizontalGraphData2.map(
+                  ({ className, graphTitle, title }) => (
+                    <HorizontalGraphWithTitle
+                      key={title}
+                      graphTitle={graphTitle}
+                      title={t(title)}
+                      className={className}
+                    />
+                  )
+                )}
               </div>
             </div>
-            <div className='col-span-4 flex flex-col'>
-              <span className='mb-10'>Желаемый уровень отделки дома</span>
+            <div className='col-span-2 md:col-span-4 flex flex-col'>
+              <span className='mb-10'>{t('consulting.section7.finish')}</span>
               <div className='flex flex-col space-y-10'>
-                <HorizontalGraphWithTitle
-                  graphTitle='75%'
-                  title='Под ключ'
-                  className='bg-red col-span-8'
-                />
-                <HorizontalGraphWithTitle
-                  graphTitle='25%'
-                  title='Без отделки'
-                  className='bg-medium-red col-span-6'
-                />
+                {horizontalGraphData3.map(
+                  ({ className, graphTitle, title }) => (
+                    <HorizontalGraphWithTitle
+                      key={title}
+                      graphTitle={graphTitle}
+                      title={t(title)}
+                      className={className}
+                    />
+                  )
+                )}
               </div>
             </div>
           </Grid>
           <Grid className='mt-20 text-body-caption font-medium text-grey'>
             <div className='col-span-4'>
-              <span>
-                Согласно данным Дом.РФ на основании данных ВЦИОМ, 2023 г.
-              </span>
+              <span>{t('consulting.section7.data_source1')}</span>
             </div>
             <div className='col-span-4'>
-              <span>Согласно данным по кредитам на ИЖС, Домклик, 2023 г.</span>
+              <span>{t('consulting.section7.data_source2')}</span>
             </div>
             <div className='col-span-4'>
-              <span>Ведомости Недвижимость, апрель 2022 г.</span>
+              <span>{t('consulting.section7.data_source3')}</span>
             </div>
           </Grid>
         </section>
         <section className='mt-50'>
-          <Grid className='pt-6 border-t border-grey'>
-            <div className='col-span-4 flex flex-col justify-between'>
-              <span className='text-h5 font-light'>
-                Предпочтительное наполнение дома и территории (% от аудитории)
+          <Grid className='xl:pt-6 xl:border-t border-grey'>
+            <div className='md:col-span-12 xl:col-span-4 flex flex-col justify-between'>
+              <span className='text-h5 font-light xl:mb-0 md:mb-6'>
+                {t('consulting.section8.title')}
               </span>
-              <span className='text-body-caption font-medium text-grey'>
-                Аналитика ГК «Самолёт», август 2022 г.
+              <span className='block md:mb-10 xl:mb-0 text-body-caption font-medium text-grey'>
+                {t('consulting.section8.data_source')}
               </span>
             </div>
-            <div className='col-span-8 h-[522px] grid grid-cols-8 gap-x-10'>
+            <div className='md:col-span-12 xl:col-span-8 h-[522px] grid grid-cols-8 gap-x-10'>
               <div className='col-span-1 flex flex-col justify-between mb-5 border-l border-medium-grey pl-2'>
                 <span className='text-h4 font-medium'>70%</span>
                 <span className='text-h4 font-medium'>40%</span>
                 <span className='text-h4 font-medium'>10%</span>
               </div>
-              <VerticalGraphWithTitle
-                graphTitle='71%'
-                title='Столовая'
-                className='bg-medium-red h-full'
-              />
-              <VerticalGraphWithTitle
-                graphTitle='51%'
-                title='Кладовая'
-                className='bg-medium-red h-[85%]'
-              />
-              <VerticalGraphWithTitle
-                graphTitle='47%'
-                title='Гардеробная'
-                className='bg-medium-red h-[80%]'
-              />
-              <VerticalGraphWithTitle
-                graphTitle='47%'
-                title='Гараж'
-                className='bg-medium-red h-[80%]'
-              />
-              <VerticalGraphWithTitle
-                graphTitle='70%'
-                title='Беседка'
-                className='bg-medium-red h-[95%]'
-              />
-              <VerticalGraphWithTitle
-                graphTitle='67%'
-                title='Зона для барбекю'
-                className='bg-medium-red h-[93%]'
-              />
-              <VerticalGraphWithTitle
-                graphTitle='66%'
-                title='Баня'
-                className='bg-medium-red h-[91%]'
-              />
+              {verticalGraphData.map(({ className, graphTitle, title }) => (
+                <VerticalGraphWithTitle
+                  key={title}
+                  graphTitle={graphTitle}
+                  title={t(title)}
+                  className={className}
+                />
+              ))}
             </div>
           </Grid>
         </section>
         <section className='mt-50'>
           <Grid>
             <div className='col-span-8 col-start-5'>
-              <span className='text-h4 font-medium'>Сценарии жизни семьи</span>
+              <span className='text-h4 font-medium'>
+                {t('consulting.section9.title')}
+              </span>
               <div className='text-body-regular font-light mt-6'>
-                Исследование показывает что больше 40% нашего дома используется
-                намного реже, чем вся остальная его часть. Центром активностей
-                семейного взаимодействия является кухня и комната отдыха с
-                телевизором и компьютером.
+                {t('consulting.section9.paragraph1')}
               </div>
             </div>
           </Grid>
@@ -795,37 +1107,22 @@ const ConsultingPage = async () => {
         <section className='mt-50'>
           <Grid>
             <div className='col-start-5 col-end-12'>
-              <span className='text-h4 font-medium'>Ключевые выводы</span>
+              <span className='text-h4 font-medium'>
+                {t('consulting.section10.title')}
+              </span>
             </div>
             <div className='col-start-2 col-end-12 flex flex-col gap-y-10 mt-24'>
-              <ConclusionRow
-                number='01'
-                text='58% аудитории приобретают дома для постоянного проживания'
-              />
-              <ConclusionRow
-                number='02'
-                text='Снижение возраста среднестатистического покупателя'
-              />
-              <ConclusionRow
-                number='03'
-                text='75% аудитории — люди до 45 лет, в большинстве пары с детьми'
-              />
-              <ConclusionRow
-                number='04'
-                text='Льготные программы расширяют использование ипотеки ИЖС'
-              />
-              <ConclusionRow
-                number='05'
-                text='Сокращение площади жилых домов: 74% аудитории предпочитают дома от 80 до 180 м²'
-              />
-              <ConclusionRow
-                number='06'
-                text='Покупатели предпочитают каменные одноэтажные дома с отделкой «под ключ»'
-              />
-              <ConclusionRow
-                number='07'
-                text='Увеличение ключевой ставки приведёт к росту ипотечных ставок и отрицательно скажется на спросе'
-              />
+              {(
+                t('consulting.section10.conclusions', {
+                  returnObjects: true,
+                }) as string[]
+              ).map((item, index) => (
+                <ConclusionRow
+                  key={item}
+                  number={addLeadingZero(index + 1)}
+                  text={item}
+                />
+              ))}
             </div>
           </Grid>
         </section>
