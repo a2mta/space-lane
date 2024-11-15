@@ -939,8 +939,8 @@ const OleniyParkPage = async () => {
               <H5Medium>Идеология</H5Medium>
             </div>
             <div className='col-span-2 md:col-span-4'>
-              <H5Medium className='mb-12'>
-                Разнообразие маршрутов и уникальный пользовательский опыт
+              <H5Medium className='mb-12 md:whitespace-pre-wrap'>
+                {`Разнообразие маршрутов \nи уникальный пользовательский опыт`}
               </H5Medium>
               <div className='flex flex-col space-y-10 pb-10'>
                 {routesData.map((item, index) => (
