@@ -11,7 +11,7 @@ export const MapDescRow: FC<{
       'flex-col': !horizontal,
     })}
   >
-    <span className='font-medium text-h3-mob md:text-h4 xl:text-h3 md:min-w-[130px]'>{title}</span>
+    <span className='font-medium text-h3-mob md:text-h4 xl:text-h3 md:min-w-24 xl:min-w-32'>{title}</span>
     <div className='flex items-end flex-1'>
       <span
         className={classNames('text-body-regular-mob md:text-body-regular font-light', {

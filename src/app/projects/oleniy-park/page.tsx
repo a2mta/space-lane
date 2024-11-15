@@ -258,11 +258,11 @@ const RouteCard: FC<{ title: string; subTitle: string }> = ({
   subTitle,
   title,
 }) => (
-  <Grid cols={8}>
-    <div className='col-span-3'>
+  <Grid cols={8} >
+    <div className='md:col-span-4 xl:col-span-3'>
       <BodyMedium className='text-grey'>{title}</BodyMedium>
     </div>
-    <div className='col-span-5'>
+    <div className='md:col-span-4 xl:col-span-5'>
       <BodyMedium>{subTitle}</BodyMedium>
     </div>
   </Grid>

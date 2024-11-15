@@ -15,7 +15,7 @@ const DescriptionRow: FC<{ title: string; subTitle: string }> = ({
   title,
 }) => (
   <div className='flex flex-col pb-4 border-b border-b-grey tracking-normal'>
-    <span className='text-h5 font-medium lg:font-normal lg:text-h4 mb-2'>
+    <span className='text-h5 xl:text-h4 font-medium mb-2'>
       {title}
     </span>
     <span className='text-body-regular font-light'>{subTitle}</span>

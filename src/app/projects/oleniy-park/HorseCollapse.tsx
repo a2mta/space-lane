@@ -84,7 +84,7 @@ const HorseCollapse = () => {
                       Перспективный маршрут К3
                     </BodyMedium>
                     <Image
-                      className='md:hidden  mt-1'
+                      className='md:hidden mt-1'
                       src={picLink('58')}
                       width={110}
                       height={17}
@@ -92,12 +92,12 @@ const HorseCollapse = () => {
                     />
                   </div>
                   <BodyRegular>
-                    10 км — 1,5–2 часа + 1 час остановки
+                    10 км — 1,5–2 часа + 1 час остановки
                   </BodyRegular>
                 </div>
                 <div className='col-span-1 hidden md:block'>
                   <Image
-                    className='w-full mt-1 h-4'
+                    className='w-full mt-1 h-4 object-contain'
                     src={picLink('58')}
                     width={110}
                     height={17}

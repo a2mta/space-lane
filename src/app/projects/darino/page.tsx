@@ -97,7 +97,7 @@ const aksonometry2 = [
 ];
 
 const aksonometry3 = [
-  'Зона барабекю',
+  'Зона барбекю',
   'Амфитеатр',
   'Пинг-понг',
   'Лежаки',
@@ -127,11 +127,11 @@ const DarinoMapDescRow: FC<{ title: string; desc: string }> = ({
   desc,
   title,
 }) => (
-  <Grid cols={4} className='border-b border-grey pb-2'>
-    <div className='col-span-2'>
-      <span className='text-h3 font-medium'>{title}</span>
+  <Grid colsXL={4} cols={8} className='border-b border-grey md:pb-4 xl:pb-2'>
+    <div className='col-span-2 md:col-span-3 xl:col-span-2'>
+      <span className='md:text-h5 xl:text-h3 font-medium'>{title}</span>
     </div>
-    <div className='col-span-2'>
+    <div className='col-span-2 md:col-span-5 xl:col-span-2'>
       <span className='text-body-regular font-light'>{desc}</span>
     </div>
   </Grid>
@@ -156,12 +156,18 @@ const DarinoPage = async () => {
           year='2023'
         />
       </section>
-      <Image src={picLink('03')} width={1160} height={771} alt='' />
+      <Image
+        className='mt-10 md:hidden'
+        src={picLink('25')}
+        width={480}
+        height={364}
+        alt=''
+      />
 
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
-            <div className='hidden md:blockmd:col-span-8'>
+          <Grid className='mt-8 md:mt-50'>
+            <div className='hidden md:block md:col-span-8'>
               <Image src={picLink('03')} width={1160} height={771} alt='' />
             </div>
             <div className='col-span-2 md:col-span-4'>
@@ -211,7 +217,7 @@ const DarinoPage = async () => {
               <Image alt='' src={picLink('06')} width={1123} height={943} />
             </div>
             <div className='col-span-2 md:col-span-4 border-l border-grey pl-10'>
-              <div className='flex flex-col space-y-10'>
+              <div className='flex flex-col space-y-6 xl:space-y-10'>
                 {mapSpaceDescData.map(({ desc, title }, index) => (
                   <DarinoMapDescRow
                     desc={t(desc)}
@@ -275,10 +281,13 @@ const DarinoPage = async () => {
               <Image alt='' src={picLink('11')} width={1160} height={690} />
             </div>
             <div className='col-span-2 md:col-span-4 bg-beige p-10'>
-              <span className='text-h4'>Аксонометрия</span>
+              <span className='text-h4 font-medium'>Аксонометрия</span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry.map((item, index) => (
-                  <span className='text-body-medium' key={item + index}>
+                  <span
+                    className='text-body-regular font-medium'
+                    key={item + index}
+                  >
                     {addLeadingZero(index + 1)} {item}
                   </span>
                 ))}
@@ -322,7 +331,7 @@ const DarinoPage = async () => {
               <span className='text-h4 font-medium'>Аксонометрия</span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry2.map((item, index) => (
-                  <span key={item} className='text-body-medium'>
+                  <span key={item} className='text-body-regular font-medium'>
                     {addLeadingZero(index + 1)} {item}
                   </span>
                 ))}
@@ -369,7 +378,7 @@ const DarinoPage = async () => {
               <span className='text-h4 font-medium'>Аксонометрия</span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry3.map((item, index) => (
-                  <span key={item} className='text-body-medium'>
+                  <span key={item} className='text-body-regular font-medium'>
                     {addLeadingZero(index + 1)} {item}
                   </span>
                 ))}
@@ -394,7 +403,7 @@ const DarinoPage = async () => {
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium'>Линейный участок</span>
-              <span className='text-body-medium block mt-4'>
+              <span className='text-body-regular md:font-medium xl:font-light block mt-4'>
                 Центральная улица посёлка поделена на три линейных участка. Они
                 отличаются друг от друга по стилю озеленения и благоустройства
                 по мере продвижения от КПП до дальних участков.

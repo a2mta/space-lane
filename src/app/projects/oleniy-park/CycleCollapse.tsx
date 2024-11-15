@@ -114,7 +114,7 @@ const CycleCollapse = () => {
                     <Image
                       src={picLink('53')}
                       alt=''
-                      style={{ objectFit: 'contain' }}
+                      className='object-contain'
                       fill
                     />
                   </div>
