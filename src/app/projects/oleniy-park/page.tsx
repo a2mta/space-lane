@@ -402,7 +402,7 @@ const HomeCard: FC<{
       <div className='col-span-1 md:col-span-2 space-y-2 md:space-y-4'>
         {items.map((item, index) => (
           <span
-            className='text-body-caption-10 md:text-body-regular block font-medium md:font-light'
+            className='text-body-caption-10 md:text-body-caption xl:text-body-regular block font-medium md:font-light'
             key={item + index}
           >
             {addLeadingZero(index + 1)} — {item}
@@ -723,7 +723,7 @@ const OleniyParkPage = async () => {
               <Image alt='' width={410} height={629} src={picLink('21')} />
             </div>
             <div className='col-span-2 md:col-span-5'>
-              <BodyRegular className='mt-14'>
+              <BodyRegular className='mt-10 xl:mt-14'>
                 Здание проката оборудования и инвентаря для разного рода
                 прогулок в парке: велоснаряжение, палки для скандинавской
                 ходьбы, палатки и оборудование для кэмпинга, фонарки и пр.
@@ -748,7 +748,7 @@ const OleniyParkPage = async () => {
               <Image alt='' width={410} height={629} src={picLink('23')} />
             </div>
             <div className='col-span-2 md:col-span-5'>
-              <BodyRegular className='mt-14'>
+              <BodyRegular className='mt-10 xl:mt-14'>
                 Визитная карточка парка. Место прибытия и регистрация
                 посетителей. Ознакомление с правилами пользования и кодексом
                 парка. Выбор дальнейшего маршрута и пути размещения.
@@ -778,7 +778,7 @@ const OleniyParkPage = async () => {
               <Image alt='' width={410} height={629} src={picLink('25')} />
             </div>
             <div className='col-span-2 md:col-span-5'>
-              <BodyRegular className='mt-14'>
+              <BodyRegular className='mt-10 xl:mt-14'>
                 Небольшое кафе с открытой террасой и видом на парк.Без
                 полноценной готовочной.
               </BodyRegular>
