@@ -1,8 +1,11 @@
+'use client';
 import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import classNames from 'classnames';
 import Image from 'next/image';
-import React, { FC } from 'react';
+import React, { FC, use, useEffect, useRef, useState } from 'react';
+import animationData from './animation.json';
+import Lottie from 'lottie-web';
 
 const Avatar: FC<{
   className?: string;
@@ -32,8 +35,38 @@ const Avatar: FC<{
 );
 
 const AboutPage = () => {
+  const [animationVisible, toggleVisibility] = useState(true);
+  const [containerVisible, toggleContainer] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (containerRef.current) {
+      const animation = Lottie.loadAnimation({
+        container: containerRef.current,
+        animationData: animationData,
+        loop: false,
+        autoplay: false,
+        name: 'screen',
+      });
+      animation.play();
+      animation.addEventListener('complete', () => {
+        toggleVisibility(false);
+        setTimeout(() => {
+          toggleContainer(false);
+        }, 1200);
+      });
+    }
+  }, []);
   return (
     <PageMarginWithTitle withBorder title='О нас'>
+      {containerVisible && (
+        <div
+          className={classNames(
+            'z-[999999] fixed w-screen bg-white h-screen top-0 left-0 transition-opacity duration-1000 md:block hidden',
+            { 'opacity-0': !animationVisible }
+          )}
+          ref={containerRef}
+        />
+      )}
       <section>
         <Grid className='mt-6'>
           <h2 className='text-h5-mob xl:text-h2 md:text-h3 col-span-2 md:col-span-10 md:mb-10 font-medium'>

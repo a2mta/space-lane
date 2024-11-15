@@ -439,8 +439,8 @@ const ElyPage = async () => {
       </section>
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-8 mt-13 border border-medium-grey py-14 px-10'>
+          <Grid className='mt-20 md:mt-50'>
+            <div className='hidden md:block col-span-8 mt-13 border border-medium-grey py-14 px-10'>
               <Grid cols={8}>
                 <div className='col-span-3 space-y-4'>
                   <span className='block text-body-regular text-grey'>
@@ -461,7 +461,42 @@ const ElyPage = async () => {
                 </div>
               </Grid>
             </div>
-            <div className='col-span-4 space-y-6 mt-10 md:mt-0'>
+            <div className='col-span-2 md:hidden'>
+              <Image alt='' width={440} height={634} src={picLink('38')} />
+            </div>
+            <div className='col-span-4 space-y-6 mt-10 md:mt-0 md:hidden'>
+              <MapDescRow
+                title='74,6 га'
+                horizontal
+                subTitle='Площадь коттеджного посёлка'
+              />
+              <MapDescRow
+                horizontal
+                title='2,5 тыс.'
+                subTitle='Жителей посёлка'
+              />
+              <MapDescRow
+                title='0,68 га'
+                horizontal
+                subTitle='Озеленённые пространства общественного пользования'
+              />
+              <MapDescRow
+                title='0,12 га.'
+                horizontal
+                subTitle='Средняя площадь земельных участков'
+              />
+              <MapDescRow
+                horizontal
+                title='41 чел/км²'
+                subTitle='Плотность населения'
+              />
+              <MapDescRow
+                horizontal
+                title='2,6 тыс. м²/га'
+                subTitle='Плотность застройки'
+              />
+            </div>
+            <div className='col-span-4 space-y-6 mt-10 md:mt-0 hidden md:block'>
               <MapDescRow
                 title='74,6 га'
                 subTitle='Площадь коттеджного посёлка'
@@ -484,55 +519,57 @@ const ElyPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-4'>
-              <span className='text-h4 block'>Схема генерального плана</span>
-              <span className='text-body-regular mt-4 block'>
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-4'>
+              <span className='text-h3-mob md:text-h4 font-medium block'>
+                Схема генерального плана
+              </span>
+              <span className='text-body-regular-mob font-medium md:text-body-regular md:font-light mt-4 block'>
                 На въезде в коттеджный посёлок со стороны д. Елизарово, примыкая
                 к КПП, расположена проектируемая общественная зона. Проект
                 разделён на два этапа. В первый этап вошла зона КПП, в которой
                 появится офис продаж посёлка и приветственная зона.
               </span>
-              <span className='text-h5-regular block mt-10 mb-8'>
+              <span className='hidden md:block text-h5-regular mt-10 mb-8'>
                 Экспликация
               </span>
-              <div className='flex flex-col space-y-6'>
+              <div className='flex-col space-y-6 hidden md:flex'>
                 {explicationData.map(({ icon, text }, index) => (
                   <ExplicationRow text={text} icon={icon} key={text + index} />
                 ))}
               </div>
             </div>
-            <div className='col-span-5'>
+            <div className='col-span-2 md:col-span-5'>
               <Image alt='' width={710} height={724} src={picLink('04')} />
             </div>
-            <div className='col-span-3 space-y-10'>
+            <div className='col-span-2 md:col-span-3 space-y-10'>
               <div className='flex flex-col'>
-                <span className='text-body-regular mb-4'>
+                <span className='text-body-caption font-medium md:text-body-regular md:font-light mb-2 md:mb-4'>
                   Входная группа у КПП
                 </span>
                 <Image alt='' width={410} height={289} src={picLink('05')} />
               </div>
               <div className='flex flex-col'>
-                <span className='text-body-regular mb-4'>
+                <span className='text-body-caption font-medium md:text-body-regular md:font-light mb-2 md:mb-4'>
                   Зелёный бульвар со спортивной и детской зоной
                 </span>
-                <Image alt='' width={410} height={289} src={picLink('06')} />
+                <Image alt='' width={410} height={284} src={picLink('06')} />
               </div>
             </div>
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-8 flex justify-between flex-col'>
-              <div>
-                <Image alt='' width={1160} height={770} src={picLink('07')} />
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-8 flex justify-between flex-col'>
+              <div className='hidden md:block'>
+                <Image alt='' width={1160} height={720} src={picLink('07')} />
                 <span className='text-body-caption mt-2'>
                   Фото реализации 1-го этапа (в процессе)
                 </span>
               </div>
               <Grid cols={8} className='mt-3'>
-                <div className='col-start-5 col-span-4'>
-                  <span className='text-body-regular'>
+                <div className='col-span-2 md:col-start-5 md:col-span-4'>
+                  <span className='text-body-regular-mob md:text-body-regular font-light md:mt-4 block'>
                     Объёмно-пространственная структура въездной зоны формируется
                     системой общественных площадей вокруг главного въезда в
                     посёлок. Каждая площадь несёт определённую функцию,
@@ -541,9 +578,9 @@ const ElyPage = async () => {
                 </div>
               </Grid>
             </div>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <Image alt='' width={560} height={770} src={picLink('08')} />
-              <span className='mt-10 text-body-regular block'>
+              <span className='mt-10 text-body-regular font-light block'>
                 Кольцевые прогулочные маршруты формируют связное общественное
                 пространство, удовлетворяющее потребности всех групп
                 пользователей.
@@ -553,7 +590,7 @@ const ElyPage = async () => {
         </section>
         <section>
           <Grid className='mt-50'>
-            <div className='col-span-4'>
+            <div className='col-span-2 md:col-span-4'>
               <span className='text-h4'>
                 Схема функционального зонирования общественного ядра посёлка
               </span>

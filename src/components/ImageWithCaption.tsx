@@ -21,7 +21,7 @@ const ImageWithCaption: FC<{
   return (
     <div
       className={classNames(
-        'flex flex-col h-full',
+        'flex flex-col h-full md:h-auto',
         { relative: fill },
         className
       )}

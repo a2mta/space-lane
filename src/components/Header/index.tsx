@@ -5,7 +5,7 @@ import HeaderLink from './HeaderLink';
 
 const Header = () => {
   return (
-    <header className='hidden md:flex font-manrope px-20 justify-between py-7 bg-white border-b border-medium-grey'>
+    <header className='sticky top-0 z-[999] hidden md:flex font-manrope px-20 justify-between py-7 bg-white'>
       <div className='flex'>
         <Link href='/'>
           <Image
