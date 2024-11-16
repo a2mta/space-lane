@@ -258,7 +258,7 @@ const RouteCard: FC<{ title: string; subTitle: string }> = ({
   subTitle,
   title,
 }) => (
-  <Grid cols={8} >
+  <Grid cols={8} colsXL={8}>
     <div className='md:col-span-4 xl:col-span-3'>
       <BodyMedium className='text-grey'>{title}</BodyMedium>
     </div>
@@ -377,7 +377,7 @@ const HomeCard: FC<{
   items: string[];
 }> = ({ image, imageMob, index, items, title }) => (
   <div className='col-span-2 md:col-span-6 pt-6 mb-24 border-t border-grey'>
-    <Grid cols={6}>
+    <Grid cols={6} colsXL={6}>
       <div className='col-span-2 md:col-span-6 mb-6'>
         <H5Medium>
           {index} — {title}

@@ -22,7 +22,7 @@ const CycleCollapse = () => {
         </div>
         <div className='col-span-2 md:col-span-4 order-3 md:order-2'>
           <div className='flex flex-col'>
-            <Grid cols={4} >
+            <Grid cols={4} colsXL={4}>
               <div className='flex flex-col space-y-4 col-span-3'>
                 <div className='flex justify-between items-center'>
                   <BodyMedium className='text-grey md:text-black'>
@@ -42,7 +42,7 @@ const CycleCollapse = () => {
           </div>
           <div className='flex flex-col md:mt-10'>
             <div className='flex flex-col space-y-6'>
-              <Grid cols={4} >
+              <Grid cols={4} colsXL={4}>
                 <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                   <div className='flex justify-between items-center'>
                     <BodyMedium className='text-grey md:text-black'>
@@ -58,7 +58,7 @@ const CycleCollapse = () => {
                   <div className='w-full mt-1 h-4 bg-[#80C5BF]' />
                 </div>
               </Grid>
-              <Grid cols={4} >
+              <Grid cols={4} colsXL={4}>
                 <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                   <div className='flex justify-between items-center'>
                     <BodyMedium className='text-grey md:text-black'>
@@ -74,7 +74,7 @@ const CycleCollapse = () => {
                   <div className='w-full mt-1 h-4 bg-[#459289]' />
                 </div>
               </Grid>
-              <Grid cols={4} >
+              <Grid cols={4} colsXL={4}>
                 <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                   <div className='flex justify-between items-center'>
                     <BodyMedium className='text-grey md:text-black'>
@@ -88,7 +88,7 @@ const CycleCollapse = () => {
                   <div className='w-full mt-1 h-4 bg-[#357989]' />
                 </div>
               </Grid>
-              <Grid cols={4} >
+              <Grid cols={4} colsXL={4}>
                 <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                   <div className='flex justify-between items-center'>
                     <BodyMedium className='text-grey md:text-black'>

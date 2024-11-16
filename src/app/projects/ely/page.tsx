@@ -9,135 +9,136 @@ import classNames from 'classnames';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import { MapDescRow } from '@/components/MapDescRow';
 import { ExplicationRow } from '@/components/ExplicationRow';
+import ImageSlider from '@/components/Slider';
 const picLink = makePicLink('ely');
 
 const zonePlanData = [
   {
-    title: 'Зона посетителей',
+    title: 'ely.visitor_zone',
     items: [
       {
         n: '1.1',
-        title: 'Морозильная камера',
+        title: 'ely.freezer',
         area: '304.8',
       },
       {
         n: '1.2',
-        title: 'Холл',
+        title: 'ely.hall',
         area: '32.4',
       },
       {
         n: '1.3',
-        title: 'Санузел',
+        title: 'ely.bathroom',
         area: '11.3',
       },
       {
         n: '1.4',
-        title: 'Санузел',
+        title: 'ely.bathroom',
         area: '11.7',
       },
       {
         n: '1.5',
-        title: 'Гардероб',
+        title: 'ely.cloakroom',
         area: '7.0',
       },
       {
         n: '1.6',
-        title: 'Обеденный зал',
+        title: 'ely.dining_room',
         area: '128.3',
       },
       {
         n: '1.7',
-        title: 'Обеденный зал',
+        title: 'ely.dining_room',
         area: '128.3',
       },
     ],
   },
   {
-    title: 'Зона персонала',
+    title: 'ely.staff_zone',
     items: [
       {
         n: '1.11',
-        title: 'Тамбур',
+        title: 'ely.entrance_hall',
         area: '3.2',
       },
       {
         n: '1.12',
-        title: 'Раздевалка',
+        title: 'ely.dressing_room',
         area: '8.4',
       },
       {
         n: '1.13',
-        title: 'Санузел',
+        title: 'ely.bathroom',
         area: '2.0',
       },
       {
         n: '1.14',
-        title: 'Комната персонала',
+        title: 'ely.staff_room',
         area: '9.6',
       },
     ],
   },
   {
-    title: 'Зона технологии',
+    title: 'ely.technology_zone',
     items: [
       {
         n: '1.15',
-        title: 'Коридор',
+        title: 'ely.corridor',
         area: '25.2',
       },
       {
         n: '1.16',
-        title: 'Загрузочная',
+        title: 'ely.loading_area',
         area: '7.3',
       },
       {
         n: '1.17',
-        title: 'Кладовая',
+        title: 'ely.storage_room',
         area: '10.7',
       },
       {
         n: '1.18',
-        title: 'Овощехранилище',
+        title: 'ely.vegetable_storage',
         area: '14.1',
       },
       {
         n: '1.19',
-        title: 'ПУИ',
+        title: 'ely.pui',
         area: '4.5',
       },
       {
         n: '1.20',
-        title: 'Морозильная камера',
+        title: 'ely.freezer',
         area: '8.9',
       },
       {
         n: '1.21',
-        title: 'Овощной цех',
+        title: 'ely.vegetable_workshop',
         area: '9.1',
       },
       {
         n: '1.22',
-        title: 'Холодный цех',
+        title: 'ely.cold_workshop',
         area: '15.4',
       },
       {
         n: '1.23',
-        title: 'Мясно-рыбный цех',
+        title: 'ely.meat_fish_workshop',
         area: '14.5',
       },
       {
         n: '1.24',
-        title: 'Горячий цех',
+        title: 'ely.hot_workshop',
         area: '31.5',
       },
       {
         n: '1.25',
-        title: 'Раздаточная',
+        title: 'ely.distribution',
         area: '7.5',
       },
       {
         n: '1.26',
-        title: 'Моечная',
+        title: 'ely.washing_room',
         area: '6.6',
       },
     ],
@@ -201,7 +202,7 @@ const DecorationRow: FC<{
 );
 
 const ZoneDataRow: FC<{ text: string; icon?: string }> = ({ text, icon }) => (
-  <Grid cols={4}>
+  <Grid cols={4} colsXL={4}>
     <div className='col-span-2'>{text}</div>
     <div className='col-span-2'>
       <span className={classNames('w-28 block h-6 mr-4', icon)} />
@@ -213,7 +214,7 @@ const MaterialRow: FC<{ text: string; icon?: string | ReactElement }> = ({
   text,
   icon,
 }) => (
-  <Grid cols={4}>
+  <Grid cols={4} colsXL={4}>
     <div className='col-span-1'>
       {typeof icon === 'string' ? (
         <span className={classNames('w-full block h-[26px] mr-4', icon)} />
@@ -230,7 +231,7 @@ const TrendRow: FC<{
   description: string;
   icon: ReactElement;
 }> = ({ description, icon, title }) => (
-  <Grid cols={8}>
+  <Grid cols={8} colsXL={8}>
     <div className='col-span-4'>
       <span className='text-h5'>{title}</span>
       <span className='text-body-regular block mt-4'>{description}</span>
@@ -441,7 +442,7 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-20 md:mt-50'>
             <div className='hidden md:block col-span-8 mt-13 border border-medium-grey py-14 px-10'>
-              <Grid cols={8}>
+              <Grid cols={8} colsXL={8}>
                 <div className='col-span-3 space-y-4'>
                   <span className='block text-body-regular text-grey'>
                     <span className='font-semibold text-black'>58 минут</span>{' '}
@@ -567,7 +568,7 @@ const ElyPage = async () => {
                   Фото реализации 1-го этапа (в процессе)
                 </span>
               </div>
-              <Grid cols={8} className='mt-3'>
+              <Grid cols={8} colsXL={8} className='mt-3'>
                 <div className='col-span-2 md:col-start-5 md:col-span-4'>
                   <span className='text-body-regular-mob md:text-body-regular font-light md:mt-4 block'>
                     Объёмно-пространственная структура въездной зоны формируется
@@ -594,7 +595,7 @@ const ElyPage = async () => {
               <span className='text-h4'>
                 Схема функционального зонирования общественного ядра посёлка
               </span>
-              <Grid cols={4} className='mt-10'>
+              <Grid cols={4} colsXL={4} className='mt-10'>
                 <div className='col-span-2'>
                   <span className='text-h4'>3,65 га</span>
                   <span className='text-body-regular block mt-4'>
@@ -629,7 +630,7 @@ const ElyPage = async () => {
               <Image alt='' width={860} height={725} src={picLink('10')} />
             </div>
             <div className='col-span-6'>
-              <Grid cols={6}>
+              <Grid cols={6} colsXL={6}>
                 <div className='col-span-3 flex flex-col space-y-4'>
                   {landScaping.slice(0, 10).map((item, index) => (
                     <span key={item + index}>{`${addLeadingZero(
@@ -645,7 +646,7 @@ const ElyPage = async () => {
                   ))}
                 </div>
                 <div className='col-span-6 mt-16 p-6 border border-medium-grey'>
-                  <Grid cols={6}>
+                  <Grid cols={6} colsXL={6}>
                     <div className='col-span-6 flex space-x-4 mb-4'>
                       <span className='text-body'>Экспликация зданий</span>
                       <span className='w-[100px] h-[26px] bg-[#DE6141] block'></span>
@@ -712,12 +713,11 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-12'>
-              <ImageWithCaption
-                height={940}
-                width={1760}
-                src={picLink('19')}
-                title='На слайдере отображены летний и зимний сценарии функционирования общественного центра посёлка'
-              />
+              <ImageSlider image1={picLink('39')} image2={picLink('40')} />
+              <span className='text-body-regular font-light block mt-2'>
+                На слайдере отображены летний и зимний сценарии функционирования
+                общественного центра посёлка
+              </span>
             </div>
           </Grid>
         </section>
@@ -800,7 +800,7 @@ const ElyPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid cols={12} className='mt-50'>
+          <Grid cols={12} colsXL={12} className='mt-50'>
             <div className='col-span-4'>
               <Image alt='' width={560} height={386} src={picLink('30')} />
             </div>
@@ -852,6 +852,7 @@ const ElyPage = async () => {
             <div className='col-span-6'>
               <Grid
                 cols={6}
+                colsXL={6}
                 className='pb-2 text-body-regular font-medium text-grey'
               >
                 <div className='col-span-1 col-start-3'>№</div>
@@ -863,23 +864,26 @@ const ElyPage = async () => {
                   <Grid
                     key={title + index}
                     cols={6}
+                    colsXL={6}
                     className='border-t border-black pt-4'
                   >
                     <div className='col-span-2'>
-                      <span className='text-h5'>{title}</span>
+                      <span className='text-h5'>{t(title)}</span>
                     </div>
                     <div className='col-span-4'>
                       {items.map(({ area, n, title }) => (
                         <Grid
                           key={n}
                           cols={4}
+                          colsXL={4}
+                          colsXL={4}
                           className=' text-black text-body-regular border-b border-medium-grey pb-2'
                         >
                           <div className='col-span-1'>
                             <span>{n}</span>
                           </div>
                           <div className='col-span-2'>
-                            <span>{title}</span>
+                            <span>{t(title)}</span>
                           </div>
                           <div className='col-span-1'>
                             <span>{area}</span>
@@ -888,6 +892,8 @@ const ElyPage = async () => {
                       ))}
                       <Grid
                         cols={4}
+                        colsXL={4}
+                        colsXL={4}
                         className='text-black text-body-regular font-medium pb-2'
                       >
                         <div className='col-span-1'>
@@ -904,6 +910,7 @@ const ElyPage = async () => {
                 ))}
                 <Grid
                   cols={6}
+                  colsXL={6}
                   className='border-t border-black pt-4 text-h5 font-medium'
                 >
                   <div className='col-span-2'>

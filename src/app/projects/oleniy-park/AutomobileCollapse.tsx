@@ -18,34 +18,24 @@ const AutomobileCollapse = () => {
         </div>
         <div className='col-span-2 md:col-span-4 order-3 md:order-2'>
           <div className='flex flex-col'>
-              <Grid cols={4}>
-                <div className='col-span-2 xl:col-span-12 md:col-span-4 flex justify-center md:justify-end mb-10'>
-                  <div className='flex flex-col'>
-                    <span className='text-body-caption-10 md:text-body-regular font-medium mb-2'>
-                      Технический транспорт
-                    </span>
-                    <Image
-                      src={picLink('61')}
-                      width={400}
-                      height={234}
-                      alt=''
-                    />
-                  </div>
+            <Grid cols={4} colsXL={4}>
+              <div className='col-span-2 xl:col-span-12 md:col-span-4 flex justify-center md:justify-end mb-10'>
+                <div className='flex flex-col'>
+                  <span className='text-body-caption-10 md:text-body-regular font-medium mb-2'>
+                    Технический транспорт
+                  </span>
+                  <Image src={picLink('61')} width={400} height={234} alt='' />
                 </div>
-                <div className='col-span-2 xl:col-span-12 md:col-span-4 flex justify-center md:justify-end mb-10'>
-                  <div className='flex flex-col'>
-                    <span className='text-body-caption-10 md:text-body-regular font-medium mb-2'>
-                      Автомобили для экскурсий
-                    </span>
-                    <Image
-                      src={picLink('62')}
-                      width={400}
-                      height={290}
-                      alt=''
-                    />
-                  </div>
+              </div>
+              <div className='col-span-2 xl:col-span-12 md:col-span-4 flex justify-center md:justify-end mb-10'>
+                <div className='flex flex-col'>
+                  <span className='text-body-caption-10 md:text-body-regular font-medium mb-2'>
+                    Автомобили для экскурсий
+                  </span>
+                  <Image src={picLink('62')} width={400} height={290} alt='' />
                 </div>
-              </Grid>
+              </div>
+            </Grid>
           </div>
         </div>
         <div className='col-span-2 md:col-span-8 order-2 md:order-3'>

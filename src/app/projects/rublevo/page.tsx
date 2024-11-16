@@ -14,7 +14,7 @@ const MapLegendRow: FC<{ text: string; icon?: string | ReactElement }> = ({
   text,
   icon,
 }) => (
-  <Grid cols={3}>
+  <Grid cols={3} colsXL={3}>
     <div className='col-span-1'>
       <div className='flex items-center justify-center w-[70px] md:w-full'>
         {icon}

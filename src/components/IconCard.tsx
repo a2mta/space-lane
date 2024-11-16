@@ -28,7 +28,7 @@ export const IconCard: FC<IconCardProps> = ({
   >
     <div className='flex flex-col mb-6'>
       <div className='flex justify-between'>
-        <Grid cols={4} colsM={4} className='w-full'>
+        <Grid cols={4} colsXL={4} colsM={4} className='w-full'>
           <div className='col-span-4 hidden md:block'>
             <span className='text-body-caption-mob md:text-h6 lg:text-h5 font-light mb-2 block'>
               {index}

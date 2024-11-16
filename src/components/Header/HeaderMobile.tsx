@@ -4,7 +4,7 @@ import React from 'react';
 
 const HeaderMobile = () => {
   return (
-    <header className='sticky top-0 z-50 flex min-h-[40px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white border-b border-medium-grey'>
+    <header className='sticky top-0 z-50 flex min-h-[40px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white'>
         <Image
           priority={true}
           src='/icons/logo.svg'

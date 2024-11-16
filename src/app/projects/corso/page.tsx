@@ -54,7 +54,7 @@ const greyCardsData = [
     icon: (
       <Image
         src={picLink('14', 'svg')}
-        className='xl:w-full xl:h-full'
+        className='xl:w-20 xl:h-full'
         width={56}
         height={56}
         alt=''
@@ -68,7 +68,7 @@ const greyCardsData = [
     icon: (
       <Image
         src={picLink('15', 'svg')}
-        className='xl:w-full xl:h-full'
+        className='xl:w-28 xl:h-full'
         width={74}
         height={69}
         alt=''
@@ -82,7 +82,7 @@ const greyCardsData = [
     icon: (
       <Image
         src={picLink('16', 'svg')}
-        className='xl:w-full xl:h-full'
+        className='xl:w-24 xl:h-full'
         width={69}
         height={63}
         alt=''
@@ -96,7 +96,7 @@ const greyCardsData = [
     icon: (
       <Image
         src={picLink('17', 'svg')}
-        className='xl:w-full xl:h-full'
+        className='xl:w-28 xl:h-full'
         width={85}
         height={41}
         alt=''
@@ -110,7 +110,7 @@ const greyCardsData = [
     icon: (
       <Image
         src={picLink('18', 'svg')}
-        className='xl:w-full xl:h-full'
+        className='xl:w-28 xl:h-full'
         width={85}
         height={49}
         alt=''
@@ -124,7 +124,7 @@ const greyCardsData = [
     icon: (
       <Image
         src={picLink('19', 'svg')}
-        className='xl:w-full xl:h-full'
+        className='xl:w-28 xl:h-full'
         width={85}
         height={63}
         alt=''
@@ -303,7 +303,7 @@ const PlayZoneRow: FC<{ title: string; desc: string[] }> = ({
   desc,
   title,
 }) => (
-  <Grid cols={4} className='pt-4 border-t border-medium-grey'>
+  <Grid cols={4} colsXL={4} className='pt-4 border-t border-medium-grey'>
     <div className='col-span-2'>
       <span>{title}</span>
     </div>
@@ -496,7 +496,7 @@ const CorsoPage = async () => {
             <div className='col-span-2 md:col-span-8 md:mt-0 mt-8'>
               <ReadMore>
                 {[
-                  <Grid key={1} cols={8}>
+                  <Grid key={1} cols={8} colsXL={8}>
                     <div className='xl:col-span-4 col-span-8'>
                       <span className='text-body-regular-mob md:text-body-regular font-light'>
                         Итальянские мотивы чувствуются не только в планировочных
@@ -521,7 +521,7 @@ const CorsoPage = async () => {
                       </span>
                     </div>
                   </Grid>,
-                  <Grid key={2} cols={8}>
+                  <Grid key={2} cols={8} colsXL={8}>
                     <div className='xl:col-span-4 mt-4 xl:mt-0 block col-span-8'>
                       <span className='text-body-regular-mob md:text-body-regular font-light'>
                         Как и в итальянских Альпах, в Прибайкальском регионе

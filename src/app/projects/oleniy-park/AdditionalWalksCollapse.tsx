@@ -12,7 +12,7 @@ const AdditionalWalksCollapse = () => {
       <Grid>
         <div className='col-span-2 md:col-span-4 order-1 md:order-2 mb-10 md:mb-0'>
           <div className='flex flex-col'>
-            <Grid cols={4}>
+            <Grid cols={4} colsXL={4}>
               <div className='col-span-2 md:col-span-8 xl:col-span-12'>
                 <span className='text-body-regular-mob md:text-body-regular font-medium'>
                   Для туристов, проживающих в парке долгое время, предлагаются

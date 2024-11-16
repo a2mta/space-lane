@@ -52,7 +52,7 @@ const ProjectMainPicWithInfo: FC<{
             )}
           </div>
           <div className='md:col-start-9 md:col-span-4 col-span-2 text-body-regular space-y-4 md:mt-0 mt-4'>
-            <Grid cols={10}>
+            <Grid cols={10} colsXL={10}>
               <div className='md:col-span-5 col-span-1'>
                 <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Местоположение
@@ -62,7 +62,7 @@ const ProjectMainPicWithInfo: FC<{
                 <span>{location}</span>
               </div>
             </Grid>
-            <Grid cols={10}>
+            <Grid cols={10} colsXL={10}>
               <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Площадь
@@ -72,7 +72,7 @@ const ProjectMainPicWithInfo: FC<{
                 <span>{area}</span>
               </div>
             </Grid>
-            <Grid cols={10}>
+            <Grid cols={10} colsXL={10}>
               <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Год
@@ -82,7 +82,7 @@ const ProjectMainPicWithInfo: FC<{
                 <span>{year}</span>
               </div>
             </Grid>
-            <Grid cols={10}>
+            <Grid cols={10} colsXL={10}>
               <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Статус проекта
@@ -92,7 +92,7 @@ const ProjectMainPicWithInfo: FC<{
                 <span>{status}</span>
               </div>
             </Grid>
-            <Grid cols={10}>
+            <Grid cols={10} colsXL={10}>
               <div className=' md:col-span-5 col-span-1'>
                 <span className='text-body-regular-mob md:text-body-regular font-light text-grey'>
                   Тип

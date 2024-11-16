@@ -22,7 +22,7 @@ const WalkCollapse = () => {
         <div className='col-span-2 md:col-span-4 order-3 md:order-2'>
           <div className='flex flex-col space-y-6'>
             <H5Medium>Короткие маршруты</H5Medium>
-            <Grid cols={4}>
+            <Grid cols={4} colsXL={4}>
               <div className='flex flex-col space-y-4 col-span-3'>
                 <div className='flex justify-between items-center'>
                   <BodyMedium className='text-grey md:text-black'>
@@ -45,7 +45,7 @@ const WalkCollapse = () => {
           <div className='flex flex-col mt-10'>
             <H5Medium className='mb-6'>Длинные маршруты</H5Medium>
             <div className='flex flex-col space-y-6'>
-              <Grid cols={4}>
+              <Grid cols={4} colsXL={4}>
                 <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                   <div className='flex justify-between items-center'>
                     <BodyMedium className='text-grey md:text-black'>
@@ -61,7 +61,7 @@ const WalkCollapse = () => {
                   <div className='w-full mt-1 h-4 bg-[#E1E887]' />
                 </div>
               </Grid>
-              <Grid cols={4}>
+              <Grid cols={4} colsXL={4}>
                 <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                   <div className='flex justify-between items-center'>
                     <BodyMedium className='text-grey md:text-black'>
@@ -78,7 +78,7 @@ const WalkCollapse = () => {
                   <div className='w-full mt-1 h-4 bg-[#94B479]' />
                 </div>
               </Grid>
-              <Grid cols={4}>
+              <Grid cols={4} colsXL={4}>
                 <div className='flex flex-col space-y-4 col-span-2 md:col-span-3'>
                   <div className='flex justify-between items-center'>
                     <BodyMedium className='text-grey md:text-black'>

@@ -192,7 +192,7 @@ const HouseCard: FC<HouseCardInfo> = ({ desc, image, index, title }) => (
       {image}
     </div>
     <div className='col-span-7'>
-      <Grid cols={7} className='border-b border-medium-grey'>
+      <Grid cols={7} colsXL={7} className='border-b border-medium-grey'>
         <div className='col-span-3 border-l border-medium-grey pb-8'>
           <span className='ml-4 text-body font-medium'>Элемент здания</span>
         </div>
@@ -203,6 +203,7 @@ const HouseCard: FC<HouseCardInfo> = ({ desc, image, index, title }) => (
       {desc.map((item, index) => (
         <Grid
           cols={7}
+          colsXL={7}
           key={item.color + index}
           className='py-4 border-b border-medium-grey text-body-regular font-light'
         >
