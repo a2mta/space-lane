@@ -147,32 +147,32 @@ const zonePlanData = [
 
 const decorationData = [
   {
-    title: 'Декоративная въездная группа',
+    title: 'ely.decoration_group',
     description: [
-      'Высадка хвойных и лиственных деревьев и кустарников',
-      'Декоративные пейзажные группы из сортовых растений',
-      'Всесезонная декоративность',
-      'Декоративные элементы — камни, отсыпка',
+      'ely.coniferous_trees',
+      'ely.decorative_groups',
+      'ely.all_season_decor',
+      'ely.decorative_elements',
     ],
     image: '24',
   },
   {
-    title: 'Сенсорный сад на территориидетского сада',
+    title: 'ely.sensory_garden',
     description: [
-      'Смешение декоративных сортовых растений с местными',
-      'Работа с текстурой, запахами, цветом растений для создания среды изучения природы',
-      'Дополнительные акценты — камни, бревна, отсыпка',
-      'Декоративные элементы — камни, отсыпка',
+      'ely.mixed_plants',
+      'ely.texture_smell',
+      'ely.additional_accents',
+      'ely.decorative_elements',
     ],
     image: '25',
   },
   {
-    title: 'Зелёный бульвар',
+    title: 'ely.green_boulevard',
     description: [
-      'Характерные местные виды растений',
-      'Природоподобные посадки групп растений',
-      'Одна нейтральная цветовая гамма',
-      'Дополнительные акценты — камни, бревна,отсыпка',
+      'ely.local_plants',
+      'ely.natural_plantings',
+      'ely.neutral_color_scheme',
+      'ely.additional_accents',
     ],
     image: '26',
   },
@@ -242,79 +242,70 @@ const TrendRow: FC<{
 
 const materialData = [
   {
-    text: 'Стены, кровли — Фальцованный окрашенныйметалл. Ламели. RAL7013',
+    text: 'ely.materialData.walls_roofs_metal',
     icon: 'bg-[#62615F]',
   },
   {
-    text: 'Стены, кровли, ламели — Рейка светлых тонов под светлый дуб. RAL7044',
+    text: 'ely.materialData.walls_roofs_light',
     icon: <Image alt='' width={110} height={26} src={picLink('34')} />,
   },
   {
-    text: 'Стены цокольная часть — Светлый бетон/штукатурка RAL7047',
+    text: 'ely.materialData.walls_basement',
     icon: 'bg-[#CCCCCD]',
   },
   {
-    text: 'Профили окон, дверей. RAL7010',
+    text: 'ely.materialData.window_profiles',
     icon: 'bg-[#888888]',
   },
 ];
 
 const trendData = [
   {
-    title: 'Природоподобность и местные растения',
-    description:
-      'Используются характерные для местности растения с акцентными включениями декоративных сортовых растений. Формируемое озеленение становится частью природной экосистемы, а значит устойчиво и не нуждается в сложном уходе.',
+    title: 'ely.trendData.nature_similarity',
+    description: 'ely.trendData.nature_similarity_desc',
     icon: <Image alt='' width={464} height={368} src={picLink('21')} />,
   },
   {
-    title: 'Возможности ландшафта',
-    description:
-      'Организация дождевых садов и биодренажных канав для сбора дождевой и ливневой воды и перенаправление её в существующие водные объекты согласно рельефу.Сохранение холмистого рельефа. Сложные и крутые склоны укрепляются специальными посадками кустарников и многолетних травянистых растений.',
+    title: 'ely.trendData.landscape_opportunities',
+    description: 'ely.trendData.landscape_opportunities_desc',
     icon: <Image alt='' width={560} height={218} src={picLink('22')} />,
   },
   {
-    title: 'Приоритет озеленения в среде',
-    description:
-      'Жизнь в зелёной среде улучшает физическое и психическое здоровье, способствуя физической активности, ускоряя психологическое восстановление и снятие стресса. Максимально возможные площади отдаются под организацию озеленения.',
+    title: 'ely.trendData.green_priority',
+    description: 'ely.trendData.green_priority_desc',
     icon: <Image alt='' width={560} height={412} src={picLink('23')} />,
   },
 ];
 
 const solutionData = [
   {
-    title: 'Элементы',
-    description:
-      'Выявление стратегии озеленения и расстановки элементов благоустройства и навигации на территориях общего пользования и улично-дорожной сети.',
+    title: 'ely.solutionData.elements',
+    description: 'ely.solutionData.elements_desc',
     icon: picLink('13'),
   },
   {
-    title: 'Локальные центры',
-    description:
-      'Создание сети взаимосвязанных центров городской жизни и функционального разнообразия для повышения качества инфраструктуры в посёлке.',
+    title: 'ely.solutionData.local_centers',
+    description: 'ely.solutionData.local_centers_desc',
     icon: picLink('14'),
   },
   {
-    title: 'Пространственные регламенты',
-    description:
-      'Формулирование регламентов для поддержания целостного образа жилых пространств и архитектурной концепции.',
+    title: 'ely.solutionData.spatial_regulations',
+    description: 'ely.solutionData.spatial_regulations_desc',
     icon: picLink('15'),
   },
   {
-    title: 'Оптимизация пространств',
-    description:
-      'Изменение профилей улично-дорожной сети в пользу организации вело-пешеходных тротуаров, озеленённых пространств и зон кратковременного отдыха.',
+    title: 'ely.solutionData.space_optimization',
+    description: 'ely.solutionData.space_optimization_desc',
     icon: picLink('16'),
   },
   {
-    title: 'Комплексное благоустройство',
-    description:
-      'Проектирование улиц не только как функционального городского элемента, но и как комфортных и безопасных озеленённых пространств для пользователей.',
+    title: 'ely.solutionData.comprehensive_improvement',
+    description: 'ely.solutionData.comprehensive_improvement_desc',
     icon: picLink('17'),
   },
   {
-    title: 'Маршруты',
-    description:
-      'Разработка пешеходных, велосипедных и транспортных маршрутов, способных повысить проницаемость территории и обеспечить пешеходную доступность.',
+    title: 'ely.solutionData.routes',
+    description: 'ely.solutionData.routes_desc',
     icon: picLink('18'),
   },
 ];
@@ -334,88 +325,102 @@ const SolutionCard: FC<{
 );
 
 const zoneData = [
-  { text: 'Променад (активный ритейл)', icon: 'bg-[#D56241]' },
-  { text: 'Спортивная зона', icon: 'bg-[#CFA689]' },
-  { text: 'Зелёная площадь', icon: 'bg-[#5F7043]' },
-  { text: 'Малая площадь', icon: 'bg-[#9EA98E]' },
-  { text: 'Городская площадь', icon: 'bg-[#B6BC97]' },
-  { text: 'Зелёный транзит', icon: 'bg-[#364835]' },
-  { text: 'Площадь у КПП', icon: 'bg-[#DCBDA8]' },
-  { text: 'Детский центр', icon: 'bg-[#D69277]' },
-  { text: 'Парковка', icon: 'bg-[#646464]' },
-  { text: 'Хозяйственная зона', icon: 'bg-[#ABABA9]' },
+  { text: 'ely.zoneData.promenade', icon: 'bg-[#D56241]' },
+  { text: 'ely.zoneData.sports_zone', icon: 'bg-[#CFA689]' },
+  { text: 'ely.zoneData.green_square', icon: 'bg-[#5F7043]' },
+  { text: 'ely.zoneData.small_square', icon: 'bg-[#9EA98E]' },
+  { text: 'ely.zoneData.city_square', icon: 'bg-[#B6BC97]' },
+  { text: 'ely.zoneData.green_transit', icon: 'bg-[#364835]' },
+  { text: 'ely.zoneData.checkpoint_square', icon: 'bg-[#DCBDA8]' },
+  { text: 'ely.zoneData.child_center', icon: 'bg-[#D69277]' },
+  { text: 'ely.zoneData.parking', icon: 'bg-[#646464]' },
+  { text: 'ely.zoneData.utility_zone', icon: 'bg-[#ABABA9]' },
 ];
 
 const landScaping = [
-  'Берёзовая аллея',
-  'Приветственная зона у КПП',
-  'Зелёная парковка',
-  'Малая площадь — зона отдыха, выход кафе',
-  'Выход на главную площадь',
-  'Зона отдыха в тени деревьев',
-  'Игровой газон зеленой площади',
-  'Шезлонги у холма',
-  'Игровая зона',
-  'Амфитеатр',
-  'Навес с пунктом охраны',
-  'Террасы ресторана',
-  'Прогулочный променад',
-  'Зелёный буфер с зонами отдыха',
-  'Скейт—парк',
-  'Баскетбольное кольцо',
-  'Гамаки в существующих деревьях',
-  'Качели',
-  'Кострище',
+  'ely.landScaping.birch_avenue',
+  'ely.landScaping.welcome_area',
+  'ely.landScaping.green_parking',
+  'ely.landScaping.small_square',
+  'ely.landScaping.main_square_exit',
+  'ely.landScaping.shaded_rest_area',
+  'ely.landScaping.play_lawn',
+  'ely.landScaping.sun_loungers',
+  'ely.landScaping.play_area',
+  'ely.landScaping.amphitheater',
+  'ely.landScaping.shelter_with_guard',
+  'ely.landScaping.restaurant_terraces',
+  'ely.landScaping.promenade',
+  'ely.landScaping.green_buffer',
+  'ely.landScaping.skate_park',
+  'ely.landScaping.basketball_hoop',
+  'ely.landScaping.hammocks',
+  'ely.landScaping.swings',
+  'ely.landScaping.fire_pit',
 ];
 
 const buildingExplication = [
-  'Ресторан на 100 мест',
-  'Павильон',
-  'Супермаркет',
-  'Бар',
-  'Многофункциональное здание',
-  'Детский центр',
-  'Хоз.блок',
+  'ely.buildingExplication.restaurant',
+  'ely.buildingExplication.pavilion',
+  'ely.buildingExplication.supermarket',
+  'ely.buildingExplication.bar',
+  'ely.buildingExplication.multi_functional_building',
+  'ely.buildingExplication.child_center',
+  'ely.buildingExplication.utility_block',
 ];
 
 const explicationData = [
   {
-    text: 'Границы территории поселка',
+    text: 'ely.explicationData.boundaries',
     icon: 'border-dashed border-[#676968] border',
   },
+  { text: 'ely.explicationData.land_plots', icon: 'bg-[#969F6A]' },
+  { text: 'ely.explicationData.public_areas', icon: 'bg-[#5F7043]' },
+  { text: 'ely.explicationData.design_area', icon: 'bg-[#CC7755]' },
+  { text: 'ely.explicationData.road_network', icon: 'bg-[#AEAEAC]' },
+  { text: 'ely.explicationData.oopt_area', icon: 'bg-lineGradient' },
   {
-    text: 'Земельные участки',
-    icon: 'bg-[#969F6A]',
-  },
-  {
-    text: 'Общественные территории',
-    icon: 'bg-[#5F7043]',
-  },
-  {
-    text: 'Территория проектирования',
-    icon: 'bg-[#CC7755]',
-  },
-  {
-    text: 'Улично-дорожная сеть поселка',
-    icon: 'bg-[#AEAEAC]',
-  },
-  {
-    text: 'Территория ООПТ',
-    icon: 'bg-lineGradient',
-  },
-  {
-    text: 'Существующие здания и сооружения',
+    text: 'ely.explicationData.existing_buildings',
     icon: 'border border-[#676968]',
   },
+  { text: 'ely.explicationData.residential_areas', icon: 'bg-[#D1D7D7]' },
+  { text: 'ely.explicationData.water_bodies', icon: 'bg-[#A7C5E7]' },
+];
+
+const mapDescRowData = [
+  { title: 'ely.mapDescRow.area', subTitle: 'ely.mapDescRow.area_sub' },
   {
-    text: 'Жилые территории',
-    icon: 'bg-[#D1D7D7]',
+    title: 'ely.mapDescRow.residents',
+    subTitle: 'ely.mapDescRow.residents_sub',
   },
   {
-    text: 'Водные объекты',
-    icon: 'bg-[#A7C5E7]',
+    title: 'ely.mapDescRow.green_spaces',
+    subTitle: 'ely.mapDescRow.green_spaces_sub',
+  },
+  {
+    title: 'ely.mapDescRow.avg_land_area',
+    subTitle: 'ely.mapDescRow.avg_land_area_sub',
+  },
+  {
+    title: 'ely.mapDescRow.population_density',
+    subTitle: 'ely.mapDescRow.population_density_sub',
+  },
+  {
+    title: 'ely.mapDescRow.building_density',
+    subTitle: 'ely.mapDescRow.building_density_sub',
   },
 ];
+
+const pageInfo = {
+  title: 'ely.pageInfo.title',
+  coverLink2Title: 'ely.pageInfo.coverLink2Title',
+  status: 'ely.pageInfo.status',
+  area: 'ely.pageInfo.area',
+  location: 'ely.pageInfo.location',
+  subTitle: 'ely.pageInfo.subTitle',
+  type: 'ely.pageInfo.type',
+  year: 'ely.pageInfo.year',
+};
 
 const ElyPage = async () => {
   const { t } = await createTranslation('common');
@@ -424,18 +429,16 @@ const ElyPage = async () => {
     <div className='mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
-          title={'Коттеджный посёлок «Ели»'}
+          title={t(pageInfo.title)}
           coverLink={picLink('01')}
           coverLink2={picLink('02')}
-          coverLink2Title='Визуализация 1-го этапа благоустройства'
-          status={t('status.in_progress')}
-          area={'74,6 га'}
-          location={'Городской округ Истра, Московская область'}
-          subTitle={
-            'Мастер-план и архитектурные решения общественных зданий коттеджного посёлка «Ели»'
-          }
-          type={'Исследование, мастер-план, архитектура, благоустройство'}
-          year='2023–2024'
+          coverLink2Title={t(pageInfo.coverLink2Title)}
+          status={t(pageInfo.status)}
+          area={t(pageInfo.area)}
+          location={t(pageInfo.location)}
+          subTitle={t(pageInfo.subTitle)}
+          type={t(pageInfo.type)}
+          year={t(pageInfo.year)}
         />
       </section>
       <PageMarginWithTitle>
@@ -445,16 +448,19 @@ const ElyPage = async () => {
               <Grid cols={8} colsXL={8}>
                 <div className='col-span-3 space-y-4'>
                   <span className='block text-body-regular text-grey'>
-                    <span className='font-semibold text-black'>58 минут</span>{' '}
-                    от москвы
+                    <span className='font-semibold text-black'>
+                      {t('ely.58_minutes_from_moscow')}
+                    </span>
                   </span>
                   <span className='block text-body-regular text-grey'>
-                    <span className='font-semibold text-black'>52 минуты</span>{' '}
-                    от аэропорта Остафьево
+                    <span className='font-semibold text-black'>
+                      {t('ely.52_minutes_from_ostafyevo_airport')}
+                    </span>
                   </span>
                   <span className='block text-body-regular text-grey'>
-                    <span className='font-semibold text-black'>22 минуты</span>{' '}
-                    от аэропорта Внуково
+                    <span className='font-semibold text-black'>
+                      {t('ely.22_minutes_from_vnukovo_airport')}
+                    </span>
                   </span>
                 </div>
                 <div className='col-span-4'>
@@ -466,56 +472,23 @@ const ElyPage = async () => {
               <Image alt='' width={440} height={634} src={picLink('38')} />
             </div>
             <div className='col-span-4 space-y-6 mt-10 md:mt-0 md:hidden'>
-              <MapDescRow
-                title='74,6 га'
-                horizontal
-                subTitle='Площадь коттеджного посёлка'
-              />
-              <MapDescRow
-                horizontal
-                title='2,5 тыс.'
-                subTitle='Жителей посёлка'
-              />
-              <MapDescRow
-                title='0,68 га'
-                horizontal
-                subTitle='Озеленённые пространства общественного пользования'
-              />
-              <MapDescRow
-                title='0,12 га.'
-                horizontal
-                subTitle='Средняя площадь земельных участков'
-              />
-              <MapDescRow
-                horizontal
-                title='41 чел/км²'
-                subTitle='Плотность населения'
-              />
-              <MapDescRow
-                horizontal
-                title='2,6 тыс. м²/га'
-                subTitle='Плотность застройки'
-              />
+              {mapDescRowData.map(({ title, subTitle }, index) => (
+                <MapDescRow
+                  title={t(title)}
+                  horizontal
+                  subTitle={t(subTitle)}
+                  key={index}
+                />
+              ))}
             </div>
             <div className='col-span-4 space-y-6 mt-10 md:mt-0 hidden md:block'>
-              <MapDescRow
-                title='74,6 га'
-                subTitle='Площадь коттеджного посёлка'
-              />
-              <MapDescRow title='2,5 тыс.' subTitle='Жителей посёлка' />
-              <MapDescRow
-                title='0,68 га'
-                subTitle='Озеленённые пространства общественного пользования'
-              />
-              <MapDescRow
-                title='0,12 га.'
-                subTitle='Средняя площадь земельных участков'
-              />
-              <MapDescRow title='41 чел/км²' subTitle='Плотность населения' />
-              <MapDescRow
-                title='2,6 тыс. м²/га'
-                subTitle='Плотность застройки'
-              />
+              {mapDescRowData.map(({ title, subTitle }, index) => (
+                <MapDescRow
+                  title={t(title)}
+                  subTitle={t(subTitle)}
+                  key={index}
+                />
+              ))}
             </div>
           </Grid>
         </section>
@@ -523,20 +496,21 @@ const ElyPage = async () => {
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h3-mob md:text-h4 font-medium block'>
-                Схема генерального плана
+                {t('ely.general_plan_scheme')}
               </span>
               <span className='text-body-regular-mob font-medium md:text-body-regular md:font-light mt-4 block'>
-                На въезде в коттеджный посёлок со стороны д. Елизарово, примыкая
-                к КПП, расположена проектируемая общественная зона. Проект
-                разделён на два этапа. В первый этап вошла зона КПП, в которой
-                появится офис продаж посёлка и приветственная зона.
+                {t('ely.entry_description')}
               </span>
               <span className='hidden md:block text-h5-regular mt-10 mb-8'>
-                Экспликация
+                {t('ely.explication')}
               </span>
               <div className='flex-col space-y-6 hidden md:flex'>
                 {explicationData.map(({ icon, text }, index) => (
-                  <ExplicationRow text={text} icon={icon} key={text + index} />
+                  <ExplicationRow
+                    text={t(text)}
+                    icon={icon}
+                    key={text + index}
+                  />
                 ))}
               </div>
             </div>
@@ -546,13 +520,13 @@ const ElyPage = async () => {
             <div className='col-span-2 md:col-span-3 space-y-10'>
               <div className='flex flex-col'>
                 <span className='text-body-caption font-medium md:text-body-regular md:font-light mb-2 md:mb-4'>
-                  Входная группа у КПП
+                  {t('ely.checkpoint_group')}
                 </span>
                 <Image alt='' width={410} height={289} src={picLink('05')} />
               </div>
               <div className='flex flex-col'>
                 <span className='text-body-caption font-medium md:text-body-regular md:font-light mb-2 md:mb-4'>
-                  Зелёный бульвар со спортивной и детской зоной
+                  {t('ely.green_boulevard')}
                 </span>
                 <Image alt='' width={410} height={284} src={picLink('06')} />
               </div>
@@ -562,19 +536,16 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-8 flex justify-between flex-col'>
-              <div className='hidden md:block'>
+              <div className='hidden md:block relative'>
                 <Image alt='' width={1160} height={720} src={picLink('07')} />
-                <span className='text-body-caption mt-2'>
-                  Фото реализации 1-го этапа (в процессе)
+                <span className='text-body-caption font-light mt-2 absolute bottom-[-2]'>
+                  {t('ely.photo_implementation_stage_1')}
                 </span>
               </div>
-              <Grid cols={8} colsXL={8} className='mt-3'>
+              <Grid cols={8} colsXL={8} className='md:mt-0 mt-3'>
                 <div className='col-span-2 md:col-start-5 md:col-span-4'>
-                  <span className='text-body-regular-mob md:text-body-regular font-light md:mt-4 block'>
-                    Объёмно-пространственная структура въездной зоны формируется
-                    системой общественных площадей вокруг главного въезда в
-                    посёлок. Каждая площадь несёт определённую функцию,
-                    соответствующую находящимся рядом общественным зданиям.
+                  <span className='text-body-regular-mob md:text-body-regular font-light md:mt-10 block'>
+                    {t('ely.entry_zone_structure')}
                   </span>
                 </div>
               </Grid>
@@ -582,9 +553,7 @@ const ElyPage = async () => {
             <div className='col-span-2 md:col-span-4'>
               <Image alt='' width={560} height={770} src={picLink('08')} />
               <span className='mt-10 text-body-regular font-light block'>
-                Кольцевые прогулочные маршруты формируют связное общественное
-                пространство, удовлетворяющее потребности всех групп
-                пользователей.
+                {t('ely.walking_routes')}
               </span>
             </div>
           </Grid>
@@ -593,25 +562,25 @@ const ElyPage = async () => {
           <Grid className='mt-50'>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h4'>
-                Схема функционального зонирования общественного ядра посёлка
+                {t('ely.functional_zoning_scheme')}
               </span>
               <Grid cols={4} colsXL={4} className='mt-10'>
                 <div className='col-span-2'>
                   <span className='text-h4'>3,65 га</span>
                   <span className='text-body-regular block mt-4'>
-                    Площадь территории проектирования
+                    {t('ely.design_area')}
                   </span>
                 </div>
                 <div className='col-span-2'>
                   <span className='text-h4'>2038,1 м²</span>
                   <span className='text-body-regular block mt-4'>
-                    Площадь общественных зданий
+                    {t('ely.public_buildings_area')}
                   </span>
                 </div>
                 <div className='col-span-4 h-[1px] bg-grey mt-40'></div>
                 <div className='col-span-4 space-y-6 mt-6'>
                   {zoneData.map(({ icon, text }) => (
-                    <ZoneDataRow text={text} icon={icon} key={text + icon} />
+                    <ZoneDataRow text={t(text)} icon={icon} key={text + icon} />
                   ))}
                 </div>
               </Grid>
@@ -624,7 +593,7 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-50'>
             <span className='col-span-12 mb-16 text-h4'>
-              Решения по благоустройству
+              {t('ely.improvement_solutions')}
             </span>
             <div className='col-span-6'>
               <Image alt='' width={860} height={725} src={picLink('10')} />
@@ -635,34 +604,36 @@ const ElyPage = async () => {
                   {landScaping.slice(0, 10).map((item, index) => (
                     <span key={item + index}>{`${addLeadingZero(
                       index + 1
-                    )} — ${item}`}</span>
+                    )} — ${t(item)}`}</span>
                   ))}
                 </div>
                 <div className='col-span-3 flex flex-col space-y-4'>
                   {landScaping.slice(10).map((item, index) => (
                     <span key={item + index}>{`${addLeadingZero(
                       index + 11
-                    )} — ${item}`}</span>
+                    )} — ${t(item)}`}</span>
                   ))}
                 </div>
                 <div className='col-span-6 mt-16 p-6 border border-medium-grey'>
                   <Grid cols={6} colsXL={6}>
                     <div className='col-span-6 flex space-x-4 mb-4'>
-                      <span className='text-body'>Экспликация зданий</span>
+                      <span className='text-body'>
+                        {t('ely.building_explication')}
+                      </span>
                       <span className='w-[100px] h-[26px] bg-[#DE6141] block'></span>
                     </div>
                     <div className='col-span-2 flex flex-col space-y-2'>
                       {buildingExplication.slice(0, 4).map((item, index) => (
                         <span key={item + index}>{`${addLeadingZero(
                           index + 1
-                        )} — ${item}`}</span>
+                        )} — ${t(item)}`}</span>
                       ))}
                     </div>
                     <div className='col-span-4 flex flex-col space-y-2'>
                       {buildingExplication.slice(4).map((item, index) => (
                         <span key={item + index}>{`${addLeadingZero(
                           index + 5
-                        )} — ${item}`}</span>
+                        )} — ${t(item)}`}</span>
                       ))}
                     </div>
                   </Grid>
@@ -674,14 +645,9 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-4'>
-              <span className='text-h4'>Визуализация</span>
+              <span className='text-h4'>{t('ely.visualization')}</span>
               <span className='mt-6 text-body-regular block'>
-                Зоны у КПП образуют приветственные площади посёлка. Прогулочный
-                путь посетителя проходит либо через систему общественных
-                площадей, либо вдоль променада с объектами ритейла. Шумная
-                спортивная зона отделена от прогулочных зелёной парковкой и
-                проездом в качестве буфера. Территория Детского центра имеет
-                отдельные въезды, расположенные внутри территории посёлка.
+                {t('ely.checkpoint_areas')}
               </span>
             </div>
             <div className='col-span-8 space-y-10'>
@@ -689,13 +655,13 @@ const ElyPage = async () => {
                 width={1160}
                 height={820}
                 src={picLink('11')}
-                title='Скейт-парк'
+                title={t('ely.skate_park')}
               />
               <ImageWithCaption
                 width={1160}
                 height={820}
                 src={picLink('12')}
-                title='«Зелёная площадь» с амфитеатром'
+                title={t('ely.green_square_amphitheater')}
               />
             </div>
           </Grid>
@@ -703,10 +669,15 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-12'>
-              <span className='text-h4'>Комплексное решение</span>
+              <span className='text-h4'>{t('ely.comprehensive_solution')}</span>
             </div>
-            {solutionData.map((item) => (
-              <SolutionCard {...item} key={item.title} />
+            {solutionData.map(({ title, description, icon }) => (
+              <SolutionCard
+                description={t(description)}
+                icon={icon}
+                title={t(title)}
+                key={title}
+              />
             ))}
           </Grid>
         </section>
@@ -715,8 +686,7 @@ const ElyPage = async () => {
             <div className='col-span-12'>
               <ImageSlider image1={picLink('39')} image2={picLink('40')} />
               <span className='text-body-regular font-light block mt-2'>
-                На слайдере отображены летний и зимний сценарии функционирования
-                общественного центра посёлка
+                {t('ely.slider_description')}
               </span>
             </div>
           </Grid>
@@ -724,19 +694,10 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-4 flex justify-between flex-col'>
-              <span className='text-h4'>Концепция освещения</span>
+              <span className='text-h4'>{t('ely.lighting_concept')}</span>
               <div className='flex flex-col space-y-4 text-body-regular'>
-                <span>
-                  Предлагается использовать диммирование — способ управления
-                  интенсивностью освещения. Диммирование позволит сэкономить
-                  электроэнергию и снизить засветку в тёмное время суток.
-                </span>
-                <span>
-                  Рекомендуется снижать яркость уличного освещения от центра
-                  посёлка к периметру, чтобы избежать светового загрязнения
-                  лесной территории и не нарушать тем самым биоритмы птиц и
-                  животных.
-                </span>
+                <span>{t('ely.dimming_proposal')}</span>
+                <span>{t('ely.brightness_recommendation')}</span>
               </div>
             </div>
             <div className='col-span-8'>
@@ -744,7 +705,7 @@ const ElyPage = async () => {
                 height={709}
                 width={1160}
                 src={picLink('20')}
-                title='Прогулочная зона бульвара'
+                title={t('ely.boulevard_walking_area')}
               />
             </div>
           </Grid>
@@ -752,36 +713,39 @@ const ElyPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-4'>
-              <span className='text-h4'>
-                Основные тенденции и зонирование озеленения
-              </span>
+              <span className='text-h4'>{t('ely.main_trends_zoning')}</span>
             </div>
             <div className='col-span-8 space-y-32'>
-              {trendData.map((trend) => (
-                <TrendRow {...trend} key={trend.title} />
+              {trendData.map(({ description, icon, title }) => (
+                <TrendRow
+                  description={t(description)}
+                  icon={icon}
+                  title={t(title)}
+                  key={title}
+                />
               ))}
             </div>
           </Grid>
         </section>
         <section className='mt-50 space-y-10'>
           {decorationData.map((item) => (
-            <DecorationRow {...item} key={item.title} />
+            <DecorationRow
+              description={item.description.map((d) => t(d))}
+              image={item.image}
+              title={t(item.title)}
+              key={item.title}
+            />
           ))}
         </section>
         <section>
           <Grid className='mt-50'>
             <div className='col-span-4'>
-              <span className='text-h4'>Архитектурная концепция</span>
+              <span className='text-h4'>{t('ely.architectural_concept')}</span>
               <span className='text-body-regular block mt-6'>
-                Архитектурная концепция приближена к «Новому русскому стилю» с
-                его гипертрофированными традиционными элементами (скатная крыша,
-                арки) и лаконичным формообразованием, выраженной декоративностью
-                текстур, смелым использованием цвета в отделке фасадов.
+                {t('ely.architectural_concept_description')}
               </span>
               <span className='text-body-regular block mt-4'>
-                Для общественного центра разработана линейка объектов — ресторан
-                на 100 мест, павильон-бар, супермаркет и многофункциональное
-                здание.
+                {t('ely.public_center_objects')}
               </span>
             </div>
             <div className='col-span-8'>
@@ -815,11 +779,11 @@ const ElyPage = async () => {
             </div>
             <div className='col-span-4 mt-32 flex justify-end flex-col'>
               <span className='text-body-regular font-medium mb-8'>
-                Материалы отделки фасадов
+                {t('ely.facade_materials')}
               </span>
               <div className='flex flex-col space-y-6'>
                 {materialData.map(({ icon, text }, index) => (
-                  <MaterialRow key={index + text} text={text} icon={icon} />
+                  <MaterialRow key={index + text} text={t(text)} icon={icon} />
                 ))}
               </div>
             </div>
@@ -832,7 +796,7 @@ const ElyPage = async () => {
                 width={1760}
                 height={1244}
                 src={picLink('35')}
-                title='Вечерний вид ресторана'
+                title={t('ely.evening_view')}
               />
             </div>
           </Grid>
@@ -856,8 +820,8 @@ const ElyPage = async () => {
                 className='pb-2 text-body-regular font-medium text-grey'
               >
                 <div className='col-span-1 col-start-3'>№</div>
-                <div className='col-span-2'>Наименование</div>
-                <div className='col-span-1'>Площадь, м²</div>
+                <div className='col-span-2'>{t('ely.zone_name')}</div>
+                <div className='col-span-1'>{t('ely.zone_area')}</div>
               </Grid>
               <div className='flex flex-col space-y-4'>
                 {zonePlanData.map(({ title, items }, index) => (
@@ -876,7 +840,6 @@ const ElyPage = async () => {
                           key={n}
                           cols={4}
                           colsXL={4}
-                          colsXL={4}
                           className=' text-black text-body-regular border-b border-medium-grey pb-2'
                         >
                           <div className='col-span-1'>
@@ -893,11 +856,10 @@ const ElyPage = async () => {
                       <Grid
                         cols={4}
                         colsXL={4}
-                        colsXL={4}
                         className='text-black text-body-regular font-medium pb-2'
                       >
                         <div className='col-span-1'>
-                          <span>Итого</span>
+                          <span>{t('ely.total')}</span>
                         </div>
                         <div className='col-span-1 col-start-4'>
                           {items
@@ -914,7 +876,7 @@ const ElyPage = async () => {
                   className='border-t border-black pt-4 text-h5 font-medium'
                 >
                   <div className='col-span-2'>
-                    <span>Общий итог</span>
+                    <span>{t('ely.overall_total')}</span>
                   </div>
                   <div className='col-span-1 col-start-6'>
                     {zonePlanData
