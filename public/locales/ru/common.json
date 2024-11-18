@@ -9,6 +9,13 @@
     "in_progress": "В реализации",
     "in_release_process": "В процессе реализации"
   },
+  "menu": {
+    "about": "О проекте",
+    "projects": "Проекты",
+    "consulting": "Консалтинг",
+    "media": "Медиа",
+    "contacts": "Контакты"
+  },
   "area": {
     "5_4_ha": "5,4 га",
     "roadway_surface_area": "Площадь покрытия проезжей части",
