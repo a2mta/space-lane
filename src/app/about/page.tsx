@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import React, { FC, use, useEffect, useRef, useState } from 'react';
 import animationData from './animation.json';
-import Lottie from 'lottie-web';
+import Lottie, { AnimationItem } from 'lottie-web';
 
 const Avatar: FC<{
   className?: string;
@@ -35,33 +35,47 @@ const Avatar: FC<{
 );
 
 const AboutPage = () => {
+  useEffect(() => {}, []);
   const [animationVisible, toggleVisibility] = useState(true);
   const [containerVisible, toggleContainer] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
+  const animation = useRef<AnimationItem | null>(null);
   useEffect(() => {
+    document.documentElement.style.overflow = 'hidden';
     if (containerRef.current) {
-      const animation = Lottie.loadAnimation({
+      animation.current = Lottie.loadAnimation({
         container: containerRef.current,
         animationData: animationData,
         loop: false,
         autoplay: false,
         name: 'screen',
       });
-      animation.play();
-      animation.addEventListener('complete', () => {
-        toggleVisibility(false);
-        setTimeout(() => {
-          toggleContainer(false);
-        }, 1200);
-      });
+      animation.current.play();
     }
-  }, []);
+    setTimeout(() => {
+      if (animationVisible) {
+        handleVisibility();
+      }
+    }, 10000);
+  }, [animationVisible]);
+  const handleVisibility = () => {
+    toggleVisibility(false);
+    if (animation.current) {
+      animation.current.stop();
+    }
+    setTimeout(() => {
+      document.documentElement.style.overflow = 'auto';
+
+      toggleContainer(false);
+    }, 1000);
+  };
   return (
     <PageMarginWithTitle withBorder title='О нас'>
       {containerVisible && (
         <div
+          onClick={handleVisibility}
           className={classNames(
-            'z-[999999] fixed w-screen bg-white h-screen top-0 left-0 transition-opacity duration-1000 md:block hidden',
+            'z-[999999] cursor-pointer fixed w-screen bg-white h-screen top-0 left-0 transition-opacity duration-1000 md:block hidden',
             { 'opacity-0': !animationVisible }
           )}
           ref={containerRef}

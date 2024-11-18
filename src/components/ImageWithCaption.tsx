@@ -37,7 +37,7 @@ const ImageWithCaption: FC<{
         className
       )}
     >
-      <Image alt='' fill={fill} width={width} height={height} src={src} />
+      <Image className='w-full' alt='' fill={fill} width={width} height={height} src={src} />
       {fullWidth ? (
         <PageMarginWithTitle
           className={classNames({ 'bottom-[-30px] absolute': fill })}

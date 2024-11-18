@@ -10,6 +10,8 @@ import ImageWithCaption from '@/components/ImageWithCaption';
 import { MapDescRow } from '@/components/MapDescRow';
 import { ExplicationRow } from '@/components/ExplicationRow';
 import ImageSlider from '@/components/Slider';
+import MobileSlider from '@/components/MobileSlider';
+import Collapse from '@/components/Collapse';
 const picLink = makePicLink('ely');
 
 const zonePlanData = [
@@ -231,12 +233,20 @@ const TrendRow: FC<{
   description: string;
   icon: ReactElement;
 }> = ({ description, icon, title }) => (
-  <Grid cols={8} colsXL={8}>
-    <div className='col-span-4'>
-      <span className='text-h5'>{title}</span>
-      <span className='text-body-regular block mt-4'>{description}</span>
+  <Grid
+    cols={8}
+    colsXL={8}
+    className='border-t border-medium-grey pt-2 md:pt-0 md:border-none'
+  >
+    <div className='col-span-2 md:col-span-4'>
+      <span className='text-h5-mob md:text-h5 font-medium'>{title}</span>
+      <span className='text-body-regular-mob md:text-body-regular font-light block mt-4'>
+        {description}
+      </span>
     </div>
-    <div className='col-span-4'>{icon}</div>
+    <div className='col-start-2 md:col-start-5 col-span-1 md:col-span-4 mt-6 md:mt-0'>
+      {icon}
+    </div>
   </Grid>
 );
 
@@ -315,12 +325,22 @@ const SolutionCard: FC<{
   description: string;
   icon: string;
 }> = ({ description, icon, title }) => (
-  <div className='mt-32 col-span-4 border-t border-grey pt-4'>
+  <div className='mt-6 md:mt-32 md:col-span-4 border-t border-medium-grey md:border-grey pt-4'>
     <div className='flex justify-between'>
-      <span className='text-h5'>{title}</span>
-      <Image alt='' src={icon} width={110} height={68} />
+      <span className='text-body-caption-10 font-medium md:font-light md:text-h5'>
+        {title}
+      </span>
+      <Image
+        alt=''
+        className='h-[34px] md:h-auto max-w-fit md:max-w-fit object-contain object-right'
+        src={icon}
+        width={110}
+        height={68}
+      />
     </div>
-    <span className='mt-6 block text-body-regular'>{description}</span>
+    <span className='mt-2 md:mt-6 block text-body-caption-mob font-light md:font-medium md:text-body-regular'>
+      {description}
+    </span>
   </div>
 );
 
@@ -449,18 +469,25 @@ const ElyPage = async () => {
                 <div className='col-span-3 space-y-4'>
                   <span className='block text-body-regular text-grey'>
                     <span className='font-semibold text-black'>
-                      {t('ely.58_minutes_from_moscow')}
-                    </span>
+                      {t('ely.58_minutes_from_moscow.58')}
+                    </span>{' '}
+                    {t('ely.58_minutes_from_moscow.from_moscow')}
                   </span>
                   <span className='block text-body-regular text-grey'>
                     <span className='font-semibold text-black'>
-                      {t('ely.52_minutes_from_ostafyevo_airport')}
-                    </span>
+                      {t('ely.52_minutes_from_ostafyevo_airport.52')}
+                    </span>{' '}
+                    {t(
+                      'ely.52_minutes_from_ostafyevo_airport.from_ostafyevo_airport'
+                    )}
                   </span>
                   <span className='block text-body-regular text-grey'>
                     <span className='font-semibold text-black'>
-                      {t('ely.22_minutes_from_vnukovo_airport')}
-                    </span>
+                      {t('ely.22_minutes_from_vnukovo_airport.22')}
+                    </span>{' '}
+                    {t(
+                      'ely.22_minutes_from_vnukovo_airport.from_vnukovo_airport'
+                    )}
                   </span>
                 </div>
                 <div className='col-span-4'>
@@ -492,13 +519,313 @@ const ElyPage = async () => {
             </div>
           </Grid>
         </section>
+
+        <section className='md:hidden mt-30'>
+          <Grid>
+            <div className='col-span-2'>
+              <span className='text-h3-mob md:text-h4 font-medium block'>
+                {t('ely.general_plan_scheme')}
+              </span>
+              <span className='text-body-regular-mob md:text-body-regular font-light mt-4 block'>
+                {t('ely.entry_description')}
+              </span>
+            </div>
+          </Grid>
+        </section>
+      </PageMarginWithTitle>
+      {/* MOBILE */}
+      <section className='md:hidden'>
+        <Image
+          alt=''
+          width={710}
+          height={724}
+          src={picLink('41')}
+          className='mt-10 mb-6'
+        />
+        <PageMarginWithTitle>
+          <section>
+            <Grid>
+              <div className='col-span-2'>
+                <span className='text-h5-mob font-medium block mb-6'>
+                  {t('ely.explication')}
+                </span>
+              </div>
+              <div className='col-span-1 space-y-4'>
+                {explicationData.slice(0, 5).map(({ icon, text }, index) => (
+                  <ExplicationRow
+                    text={t(text)}
+                    icon={icon}
+                    key={text + index}
+                  />
+                ))}
+              </div>
+              <div className='col-span-1 space-y-4'>
+                {explicationData.slice(5).map(({ icon, text }, index) => (
+                  <ExplicationRow
+                    text={t(text)}
+                    icon={icon}
+                    key={text + index}
+                  />
+                ))}
+              </div>
+              <div className='col-span-2 mt-10'>
+                <span className='text-body-caption-10 font-medium mb-2 block'>
+                  {t('ely.checkpoint_group')}
+                </span>
+                <Image alt='' width={440} height={308} src={picLink('05')} />
+              </div>
+              <div className='col-span-2 mt-6'>
+                <span className='text-body-caption-10 font-medium mb-2 block'>
+                  {t('ely.green_boulevard')}
+                </span>
+                <Image alt='' width={440} height={308} src={picLink('06')} />
+              </div>
+            </Grid>
+            <Grid className='mt-30'>
+              <div className='col-span-2'>
+                <span className='text-body-regular-mob font-light'>
+                  {t('ely.entry_zone_structure')}
+                </span>
+              </div>
+            </Grid>
+          </section>
+        </PageMarginWithTitle>
+        <ImageWithCaption
+          className='md:hidden mt-6'
+          src={picLink('42')}
+          width={408}
+          height={318}
+          fullWidth
+          title={t('ely.photo_implementation_stage_1')}
+        />
+        <PageMarginWithTitle>
+          <Grid>
+            <div className='col-span-2 my-6'>
+              <span className='text-body-regular-mob font-light'>
+                {t('ely.walking_routes')}
+              </span>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <Image
+          alt=''
+          className='md:hidden'
+          src={picLink('43')}
+          width={480}
+          height={558}
+        />
+        <PageMarginWithTitle className='mt-30'>
+          <Grid>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium'>
+                {t('ely.improvement_solutions')}
+              </span>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <Image
+          src={picLink('44')}
+          width={480}
+          height={406}
+          alt=''
+          className='mt-10 mb-6'
+        />
+        <PageMarginWithTitle>
+          <Grid className='text-body-caption-10 font-medium'>
+            <div className='col-span-1 space-y-2'>
+              {landScaping.slice(0, 10).map((item, index) => (
+                <span className='block' key={item + index}>{`${addLeadingZero(
+                  index + 1
+                )} — ${t(item)}`}</span>
+              ))}
+            </div>
+            <div className='col-span-1 space-y-2'>
+              {landScaping.slice(10).map((item, index) => (
+                <span className='block' key={item + index}>{`${addLeadingZero(
+                  index + 11
+                )} — ${t(item)}`}</span>
+              ))}
+            </div>
+          </Grid>
+          <Grid className='mt-6 border-t border-medium-grey pt-4'>
+            <div className='col-span-2 mb-4 flex items-center'>
+              <span className='text-body-regular font-medium'>
+                {t('ely.building_explication')}
+              </span>
+              <span className='w-14 h-4 bg-orange block ml-4' />
+            </div>
+            <div className='col-span-1 text-body-caption-10 font-medium space-y-2'>
+              {buildingExplication.slice(0, 4).map((item, index) => (
+                <span className='block' key={item + index}>{`${addLeadingZero(
+                  index + 1
+                )} — ${t(item)}`}</span>
+              ))}
+            </div>
+            <div className='col-span-1 text-body-caption-10 font-medium space-y-2'>
+              {buildingExplication.slice(4).map((item, index) => (
+                <span className='block' key={item + index}>{`${addLeadingZero(
+                  index + 5
+                )} — ${t(item)}`}</span>
+              ))}
+            </div>
+          </Grid>
+          <Grid className='mt-30'>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium'>
+                {t('ely.visualization')}
+              </span>
+            </div>
+            <div className='col-span-2'>
+              <span className='text-body-regular-mob font-light block mt-4'>
+                {t('ely.checkpoint_areas')}
+              </span>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <ImageWithCaption
+          width={1160}
+          className='mt-10 mb-12'
+          height={820}
+          fullWidth
+          src={picLink('11')}
+          title={t('ely.skate_park')}
+        />
+        <ImageWithCaption
+          width={1160}
+          height={820}
+          fullWidth
+          src={picLink('12')}
+          title={t('ely.green_square_amphitheater')}
+        />
+        <PageMarginWithTitle className='mt-30'>
+          <Grid>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium'>
+                {t('ely.comprehensive_solution')}
+              </span>
+            </div>
+            <div className='col-span-1'>
+              {solutionData.slice(0, 3).map(({ title, description, icon }) => (
+                <SolutionCard
+                  description={t(description)}
+                  icon={icon}
+                  title={t(title)}
+                  key={title}
+                />
+              ))}
+            </div>
+            <div className='col-span-1'>
+              {solutionData.slice(3).map(({ title, description, icon }) => (
+                <SolutionCard
+                  description={t(description)}
+                  icon={icon}
+                  title={t(title)}
+                  key={title}
+                />
+              ))}
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <MobileSlider
+          className='mt-30'
+          height={256}
+          width={480}
+          image1={{
+            src: picLink('45'),
+            title: t('ely.summer'),
+          }}
+          image2={{
+            src: picLink('46'),
+            title: t('ely.winter'),
+          }}
+        />
+        <PageMarginWithTitle className='mt-30'>
+          <Grid>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium'>
+                {t('ely.lighting_concept')}
+              </span>
+              <div className='flex flex-col space-y-4 text-body-regular-mob font-light mt-4'>
+                <span>{t('ely.dimming_proposal')}</span>
+                <span>{t('ely.brightness_recommendation')}</span>
+              </div>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <ImageWithCaption
+          className='mt-10'
+          width={1160}
+          height={820}
+          fullWidth
+          src={picLink('20')}
+          title={t('ely.boulevard_walking_area')}
+        />
+        <PageMarginWithTitle className='mt-30'>
+          <Grid>
+            <div className='col-span-2'>
+              <span className='text-h3-mob font-medium'>
+                {t('ely.main_trends_zoning')}
+              </span>
+            </div>
+            <div className='col-span-2 mt-10 space-y-10'>
+              {trendData.map(({ description, icon, title }) => (
+                <TrendRow
+                  description={t(description)}
+                  icon={icon}
+                  title={t(title)}
+                  key={title}
+                />
+              ))}
+            </div>
+            <div className='col-span-2 mt-10 space-y-6'>
+              {decorationData.map(({ description, image, title }) => (
+                <Collapse key={title} title={t(title)}>
+                  <div className='flex flex-col text-body-regular-mob font-light space-y-4'>
+                    {description.map((item, index) => (
+                      <span key={item + index}>- {t(item)} </span>
+                    ))}
+                  </div>
+                  <div className='relative aspect-video mt-6'>
+                    <Image alt='' fill src={picLink(image)} />
+                  </div>
+                </Collapse>
+              ))}
+            </div>
+            <div className='col-span-2 mt-30'>
+              <span className='text-h3-mob font-medium'>
+                {t('ely.architectural_concept')}
+              </span>
+              <Image
+                className='my-10'
+                alt=''
+                width={480}
+                height={340}
+                src={picLink('27')}
+              />
+              <div className='flex flex-col space-y-4 text-body-regular-mob font-light'>
+                <span>{t('ely.architectural_concept_description')}</span>
+                <span>{t('ely.public_center_objects')}</span>
+              </div>
+            </div>
+          </Grid>
+        </PageMarginWithTitle>
+        <ImageWithCaption
+          className='mt-10'
+          title={t('ely.evening_restaurant')}
+          width={490}
+          height={340}
+          fullWidth
+          src={picLink('27')}
+        />
+      </section>
+      <PageMarginWithTitle className='hidden md:block'>
         <section>
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h3-mob md:text-h4 font-medium block'>
                 {t('ely.general_plan_scheme')}
               </span>
-              <span className='text-body-regular-mob font-medium md:text-body-regular md:font-light mt-4 block'>
+              <span className='text-body-regular-mob md:text-body-regular font-light mt-4 block'>
                 {t('ely.entry_description')}
               </span>
               <span className='hidden md:block text-h5-regular mt-10 mb-8'>
@@ -544,7 +871,7 @@ const ElyPage = async () => {
               </div>
               <Grid cols={8} colsXL={8} className='md:mt-0 mt-3'>
                 <div className='col-span-2 md:col-start-5 md:col-span-4'>
-                  <span className='text-body-regular-mob md:text-body-regular font-light md:mt-10 block'>
+                  <span className='text-body-regular font-light mt-10 block'>
                     {t('ely.entry_zone_structure')}
                   </span>
                 </div>
@@ -695,7 +1022,7 @@ const ElyPage = async () => {
           <Grid className='mt-50'>
             <div className='col-span-4 flex justify-between flex-col'>
               <span className='text-h4'>{t('ely.lighting_concept')}</span>
-              <div className='flex flex-col space-y-4 text-body-regular'>
+              <div className='flex flex-col space-y-4 text-body-regular font-light'>
                 <span>{t('ely.dimming_proposal')}</span>
                 <span>{t('ely.brightness_recommendation')}</span>
               </div>
