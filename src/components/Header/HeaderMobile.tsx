@@ -33,14 +33,16 @@ const HeaderMobile = () => {
   return (
     <>
       <header className='z-[1005] sticky top-0 flex min-h-[40px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white '>
-        <Image
-          priority={true}
-          src='/icons/logo.svg'
-          className='h-[15px] w-[125px]'
-          width={125}
-          height={15}
-          alt='space lane logo'
-        />
+        <Link href='/'>
+          <Image
+            priority={true}
+            src='/icons/logo.svg'
+            className='h-[15px] w-[125px]'
+            width={125}
+            height={15}
+            alt='space lane logo'
+          />
+        </Link>
         <Image
           onClick={handleToggle}
           priority={true}
