@@ -4,7 +4,6 @@ import ImageWithCaption from '@/components/ImageWithCaption';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectMainPicWithInfo from '@/components/ProjectMainPicWithInfo';
 import { addLeadingZero, makePicLink } from '@/utils';
-import classNames from 'classnames';
 import Image from 'next/image';
 import React, { FC, ReactElement } from 'react';
 

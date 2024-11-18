@@ -13,7 +13,7 @@ const ProjectCard: FC<{image:string, link: string; title: string; subTitle: stri
       <Link href={`/projects/${link}`} style={{display: 'flex', flexDirection: 'column'}}>
         <div className='overflow-hidden'>
           <Image
-            className='group-hover:scale-110 transition-transform duration-700 ease-out aspect-w-10 aspect-h-9'
+            className='md:group-hover:scale-110 transition-transform duration-700 ease-out aspect-w-10 aspect-h-9'
             src={image}
             height={560}
             width={560}

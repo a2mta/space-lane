@@ -35,12 +35,28 @@ const Avatar: FC<{
 );
 
 const AboutPage = () => {
-  useEffect(() => {}, []);
   const [animationVisible, toggleVisibility] = useState(true);
   const [containerVisible, toggleContainer] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const animation = useRef<AnimationItem | null>(null);
+
   useEffect(() => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+      toggleVisibility(false);
+      toggleContainer(false);
+      document.documentElement.style.overflow = 'auto';
+      return;
+    }
+
+    const hasShownAnimation = sessionStorage.getItem('hasShownAnimation');
+    if (hasShownAnimation) {
+      toggleVisibility(false);
+      toggleContainer(false);
+      document.documentElement.style.overflow = 'auto';
+      return;
+    }
+
     document.documentElement.style.overflow = 'hidden';
     if (containerRef.current) {
       animation.current = Lottie.loadAnimation({
@@ -52,12 +68,14 @@ const AboutPage = () => {
       });
       animation.current.play();
     }
+
     setTimeout(() => {
       if (animationVisible) {
         handleVisibility();
       }
     }, 10000);
   }, [animationVisible]);
+
   const handleVisibility = () => {
     toggleVisibility(false);
     if (animation.current) {
@@ -65,10 +83,11 @@ const AboutPage = () => {
     }
     setTimeout(() => {
       document.documentElement.style.overflow = 'auto';
-
       toggleContainer(false);
+      sessionStorage.setItem('hasShownAnimation', 'true');
     }, 1000);
   };
+
   return (
     <PageMarginWithTitle withBorder title='О нас'>
       {containerVisible && (

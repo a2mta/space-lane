@@ -44,7 +44,10 @@ export const IconCard: FC<IconCardProps> = ({
                   {title}
                 </span>
               </div>
+              <div className='max-h-[42px] md:max-h-max'>
+
               {icon}
+              </div>
             </div>
           </div>
         </Grid>
