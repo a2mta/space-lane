@@ -8,6 +8,7 @@ import { MapDescRow } from '@/components/MapDescRow';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import { ExplicationRow } from '@/components/ExplicationRow';
 import ImageWithCaption from '@/components/ImageWithCaption';
+import Collapse from '@/components/Collapse';
 
 const picLink = makePicLink('darino');
 
@@ -123,16 +124,85 @@ const explicationData = [
   },
 ];
 
+const zonesDataMob = [
+  {
+    title: 'darino.zones.welcome_zone',
+    desc: 'darino.zones.welcome_zone_desc',
+    image: (
+      <Image key={1} alt='' src={picLink('07')} width={480} height={300} />
+    ),
+    surfaceImage: (
+      <Image key={2} alt='' src={picLink('08')} width={480} height={340} />
+    ),
+    //TOO TIRED TO FIX, FUCK THIS
+    surfaces: explicationData,
+  },
+  {
+    title: 'darino.zones.recreation_zone',
+    desc: 'darino.zones.recreation_zone_desc',
+    image: (
+      <Image key={1} alt='' src={picLink('10')} width={480} height={300} />
+    ),
+    axonometry: {
+      image: (
+        <Image key={2} alt='' src={picLink('31')} width={480} height={340} />
+      ),
+      data: aksonometry,
+    },
+    surfaceImage: <Image alt='' src={picLink('28')} width={480} height={286} />,
+    surfaces,
+  },
+  {
+    title: 'darino.zones.children_playground',
+    desc: 'darino.zones.children_playground_desc',
+    image: (
+      <Image key={1} alt='' src={picLink('13')} width={480} height={300} />
+    ),
+    axonometry: {
+      image: (
+        <Image key={2} alt='' src={picLink('29')} width={480} height={280} />
+      ),
+      data: aksonometry2,
+    },
+    surfaceImage: <Image alt='' src={picLink('30')} width={480} height={340} />,
+    surfaces: surfaces2,
+  },
+  {
+    title: 'darino.zones.bbq_zone',
+    desc: 'darino.zones.bbq_zone_desc',
+    image: (
+      <Image key={1} alt='' src={picLink('16')} width={480} height={300} />
+    ),
+    axonometry: {
+      image: (
+        <Image key={2} alt='' src={picLink('32')} width={480} height={288} />
+      ),
+      data: aksonometry3,
+    },
+    surfaceImage: <Image alt='' src={picLink('18')} width={480} height={270} />,
+    surfaces: surfaces2,
+  },
+];
+
 const DarinoMapDescRow: FC<{ title: string; desc: string }> = ({
   desc,
   title,
 }) => (
-  <Grid colsXL={4} cols={8} className='border-b border-grey md:pb-4 xl:pb-2'>
-    <div className='col-span-2 md:col-span-3 xl:col-span-2'>
-      <span className='md:text-h5 xl:text-h3 font-medium'>{title}</span>
+  <Grid
+    colsXL={4}
+    cols={8}
+    colsM={12}
+    className='border-b border-medium-grey pb-4 xl:pb-2'
+  >
+    <div className='md:grid col-span-3 md:col-span-3 xl:col-span-2'>
+      <span className='text-h3-mob md:text-h5 xl:text-h3 font-medium'>
+        {title}
+      </span>
     </div>
-    <div className='col-span-2 md:col-span-5 xl:col-span-2'>
-      <span className='text-body-regular font-light'>{desc}</span>
+    <div className='col-span-9 md:col-span-5 xl:col-span-2'>
+      <span className='text-body-regular-mob md:text-body-regular font-light'>
+        {desc}
+      </span>
     </div>
   </Grid>
 );
@@ -143,16 +213,14 @@ const DarinoPage = async () => {
     <div className='mt-30 lg:mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
-          title={'Дарьино парк'}
+          title={t('darino.title')}
           coverLink={picLink('01')}
           coverLink2={picLink('02')}
           status={t('status.in_release_process')}
-          area={'37 га'}
-          location={'Истринский городской округ Московская область'}
-          subTitle={
-            'Дизайн-проект благоустройства центральной улицы и общественных пространств'
-          }
-          type={'Благоустройство'}
+          area={t('darino.area')}
+          location={t('darino.location')}
+          subTitle={t('darino.subTitle')}
+          type={t('darino.type')}
           year='2023'
         />
       </section>
@@ -170,7 +238,7 @@ const DarinoPage = async () => {
             <div className='hidden md:block md:col-span-8'>
               <Image src={picLink('03')} width={1160} height={771} alt='' />
             </div>
-            <div className='col-span-2 md:col-span-4'>
+            <div className='col-span-2 md:col-span-4 space-y-6 md:space-y-0'>
               {mapDescData.map(({ subTitle, title }, index) => (
                 <MapDescRow
                   title={title}
@@ -185,38 +253,46 @@ const DarinoPage = async () => {
         <section>
           <Grid className='mt-50'>
             <div className='col-span-2 md:col-span-4'>
-              <span className='text-h4 font-medium'>Линейный парк</span>
-            </div>
-            <div className='col-span-2 md:col-span-4'>
-              <span className='text-body-regular font-light'>
-                Центральная ось коттеджного посёлка, прорезающая концентрические
-                круги улочек, становится линейным парком с плодовыми деревьями и
-                цветниками из декоративно-цветущих многолетников. Так у места
-                появится свой неповторимый характер и связь с традицией русской
-                загородной жизни. А череда знаковых пространcтв и зонирование
-                помогут разнообразить сценарии использования территории жителями
-                посёлка
+              <span className='text-h3-mob md:text-h4 font-medium'>
+                {t('darino.line_park')}
               </span>
             </div>
-            <div className='col-span-2 md:col-span-4'>
+            <div className='col-span-2 md:col-span-4 mt-4 md:mt-0'>
+              <span className='text-body-regular font-light'>
+                {t('darino.line_park_desc')}
+              </span>
+            </div>
+            <div className='col-span-2 md:col-span-4 hidden md:block'>
               <Image src={picLink('04')} width={560} height={327} alt='' />
             </div>
-            <div className='col-span-2 md:col-span-12 mt-30'>
+            <div className='col-span-2 md:col-span-12 mt-30 hidden md:block'>
               <Image src={picLink('05')} width={1760} height={210} alt='' />
             </div>
           </Grid>
         </section>
+      </PageMarginWithTitle>
+      <section className='md:hidden'>
+        <Image
+          className='my-10'
+          src={picLink('26')}
+          width={480}
+          height={81}
+          alt=''
+        />
+        <Image alt='' src={picLink('27')} width={480} height={394} />
+      </section>
+      <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
-            <div className='col-span-2 md:col-span-12 mb-40'>
-              <span className='text-h4 font-medium'>
-                Размещение общественных пространств
+          <Grid className='mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-12 mb-16 md:mb-40'>
+              <span className='text-h3-mob md:text-h4 font-medium'>
+                {t('darino.map_desc')}
               </span>
             </div>
             <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('06')} width={1123} height={943} />
             </div>
-            <div className='col-span-2 md:col-span-4 border-l border-grey pl-10'>
+            <div className='mt-16 md:mt-0 col-span-2 md:col-span-4 md:border-l border-grey md:pl-10'>
               <div className='flex flex-col space-y-6 xl:space-y-10'>
                 {mapSpaceDescData.map(({ desc, title }, index) => (
                   <DarinoMapDescRow
@@ -227,28 +303,90 @@ const DarinoPage = async () => {
                 ))}
               </div>
             </div>
+            <div className='col-span-2 md:hidden'>
+              {zonesDataMob.map((item) => (
+                <Collapse
+                  key={item.title}
+                  title={t(item.title)}
+                  borderColor='border-medium-grey'
+                >
+                  <span className='text-body-regular-mob font-light'>
+                    {t(item.desc)}
+                  </span>
+                  <div className='mt-10'>{item.image}</div>
+                  {item.axonometry && (
+                    <Grid className='mt-10'>
+                      <div className='col-span-2 mb-6'>
+                        <span>{t('darino.axonometry')}</span>
+                      </div>
+                      <div className='col-span-2'>{item.axonometry.image}</div>
+                      <div className='col-span-1 text-body-caption-10 font-medium'>
+                        <div className='flex'>
+                          <div className='flex flex-col space-y-2'>
+                            {item.axonometry.data
+                              .slice(0, 2)
+                              .map((item, key) => (
+                                <span key={item + key} className='mr-6'>
+                                  {addLeadingZero(key + 1)} {item}
+                                </span>
+                              ))}
+                          </div>
+                          <div className='flex flex-col space-y-2'>
+                            {item.axonometry.data
+                              .slice(0, 2)
+                              .map((item, key) => (
+                                <span key={item + key} className='mr-6'>
+                                  {addLeadingZero(key + 1)} {item}
+                                </span>
+                              ))}
+                          </div>
+                        </div>
+                      </div>
+                    </Grid>
+                  )}
+                  <div className='mt-10'>{item.surfaceImage}</div>
+                  <Grid>
+                    <div className='col-span-2 block my-6'>
+                      <span className='text-body-regular-mob font-medium'>
+                        {t('darino.surfaces')}
+                      </span>
+                    </div>
+                    <div className='col-span-1 space-y-4'>
+                      {item.surfaces
+                        .slice(0, item.surfaces.length > 6 ? 4 : 3)
+                        .map((item, index) => (
+                          <ExplicationRow {...item} key={item.icon + index} />
+                        ))}
+                    </div>
+                    <div className='col-span-1 space-y-4'>
+                      {item.surfaces
+                        .slice(item.surfaces.length > 6 ? 4 : 3)
+                        .map((item, index) => (
+                          <ExplicationRow {...item} key={item.icon + index} />
+                        ))}
+                    </div>
+                  </Grid>
+                </Collapse>
+              ))}
+            </div>
           </Grid>
         </section>
-        <section>
+        <section className='md:block hidden'>
           <Grid className='mt-50'>
             <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('07')} width={1160} height={725} />
             </div>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium block mb-4'>
-                Въездная зона
+                {t('darino.zones.welcome_zone')}
               </span>
               <span className='text-body-regular font-light'>
-                Парк начинается уже у зоны перед КПП — приветственной площадью.
-                Здесь расположены объекты торговли, места ожидания и спортивные
-                пространства. Спортивная зона предназначена для пользователей
-                всех возрастов, она оборудована элементами для воркаута и
-                площадкой для игр с мячом.
+                {t('darino.zones.welcome_zone_desc')}
               </span>
             </div>
           </Grid>
         </section>
-        <section>
+        <section className='md:block hidden'>
           <Grid className='mt-30'>
             <div className='col-span-2 md:col-span-4 flex flex-end flex-col justify-end space-y-10'>
               {explicationData.map((item, index) => (
@@ -260,16 +398,14 @@ const DarinoPage = async () => {
             </div>
           </Grid>
         </section>
-        <section>
+        <section className='md:block hidden'>
           <Grid className='mt-50 pt-6 border-t border-medium-grey'>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium block mb-4'>
-                Событийная площадь
+                {t('darino.zones.recreation_zone')}
               </span>
               <span className='text-body-regular font-light'>
-                Это камерное общественное пространство позволяет проводить
-                мероприятия, собрания и праздники. Здесь оборудованы места для
-                сидения и навес, в тени которого можно укрыться от солнца.
+                {t('darino.zones.recreation_zone_desc')}
               </span>
             </div>
             <div className='col-span-2 md:col-span-8'>
@@ -281,7 +417,9 @@ const DarinoPage = async () => {
               <Image alt='' src={picLink('11')} width={1160} height={690} />
             </div>
             <div className='col-span-2 md:col-span-4 bg-beige p-10'>
-              <span className='text-h4 font-medium'>Аксонометрия</span>
+              <span className='text-h4 font-medium'>
+                {t('darino.axonometry')}
+              </span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry.map((item, index) => (
                   <span
@@ -296,7 +434,9 @@ const DarinoPage = async () => {
           </Grid>
           <Grid className='mt-10'>
             <div className='col-span-2 md:col-span-4 flex justify-end flex-col'>
-              <span className='text-h5-regular font-light'>Покрытия</span>
+              <span className='text-h5-regular font-light'>
+                {t('darino.surfaces')}
+              </span>
               <div className='flex flex-col space-y-6 mt-8'>
                 {surfaces.map((item, index) => (
                   <ExplicationRow {...item} key={item.text + index} />
@@ -308,27 +448,25 @@ const DarinoPage = async () => {
             </div>
           </Grid>
         </section>
-        <section>
+        <section className='hidden md:block'>
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
             <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('13')} width={1160} height={724} />
             </div>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h4 font-medium block mb-4'>
-                Игровая зона
+                {t('darino.zones.children_playground')}
               </span>
               <span className='text-body-regular font-light'>
-                Детская площадка задумана как обучающее пространство для
-                подвижных и любопытных. В дизайне акцент сделан на натуральные
-                материалы и природное игровое оборудование — пеньки, бревна,
-                песок. Чтобы разнообразить пользовательский опыт, мы добавили на
-                площадку музыкальное и акустическое оборудование.
+                {t('darino.zones.children_playground_desc')}
               </span>
             </div>
           </Grid>
           <Grid className='mt-10'>
             <div className='col-span-2 md:col-span-4 p-10 bg-beige'>
-              <span className='text-h4 font-medium'>Аксонометрия</span>
+              <span className='text-h4 font-medium'>
+                {t('darino.axonometry')}
+              </span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry2.map((item, index) => (
                   <span key={item} className='text-body-regular font-medium'>
@@ -343,7 +481,9 @@ const DarinoPage = async () => {
           </Grid>
           <Grid className='mt-10'>
             <div className='col-span-2 md:col-span-4 flex justify-end flex-col'>
-              <span className='text-h5-regular font-light'>Покрытия</span>
+              <span className='text-h5-regular font-light'>
+                {t('darino.surfaces')}
+              </span>
               <div className='flex flex-col space-y-6 mt-8'>
                 {surfaces2.map((item, index) => (
                   <ExplicationRow {...item} key={item.text + index} />
@@ -355,15 +495,14 @@ const DarinoPage = async () => {
             </div>
           </Grid>
         </section>
-        <section>
+        <section className='hidden md:block'>
           <Grid className='mt-50 pt-6 border-t border-medium-grey'>
             <div className='col-span-2 md:col-span-4'>
-              <span className='text-h4 font-medium'>Зона барбекю</span>
+              <span className='text-h4 font-medium'>
+                {t('darino.zones.bbq_zone')}
+              </span>
               <span className='text-body-regular font-light block mt-4'>
-                На специально оборудованной площадке для барбекю жители могут
-                устраивать пикники или соседские застолья. Здесь также
-                располагаются столы для пинг-понга и лежаки для принятия
-                солнечных ванн.
+                {t('darino.zones.bbq_zone_desc')}
               </span>
             </div>
             <div className='col-span-2 md:col-span-8'>
@@ -375,7 +514,9 @@ const DarinoPage = async () => {
               <Image alt='' src={picLink('17')} width={1160} height={698} />
             </div>
             <div className='col-span-2 md:col-span-4 p-10 bg-beige'>
-              <span className='text-h4 font-medium'>Аксонометрия</span>
+              <span className='text-h4 font-medium'>
+                {t('darino.axonometry')}
+              </span>
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry3.map((item, index) => (
                   <span key={item} className='text-body-regular font-medium'>
@@ -387,7 +528,9 @@ const DarinoPage = async () => {
           </Grid>
           <Grid className='mt-10'>
             <div className='col-span-2 md:col-span-4 flex justify-end flex-col'>
-              <span className='text-h5-regular font-light'>Покрытия</span>
+              <span className='text-h5-regular font-light'>
+                {t('darino.surfaces')}
+              </span>
               <div className='flex flex-col space-y-6 mt-8'>
                 {surfaces3.map((item, index) => (
                   <ExplicationRow {...item} key={item.text + index} />
@@ -399,14 +542,14 @@ const DarinoPage = async () => {
             </div>
           </Grid>
         </section>
-        <section>
+        <section className='hidden md:block'>
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
             <div className='col-span-2 md:col-span-4'>
-              <span className='text-h4 font-medium'>Линейный участок</span>
+              <span className='text-h4 font-medium'>
+                {t('darino.zones.linear_zone')}
+              </span>
               <span className='text-body-regular md:font-medium xl:font-light block mt-4'>
-                Центральная улица посёлка поделена на три линейных участка. Они
-                отличаются друг от друга по стилю озеленения и благоустройства
-                по мере продвижения от КПП до дальних участков.
+                {t('darino.zones.linear_zone_desc')}
               </span>
             </div>
             <div className='col-span-2 md:col-span-8'>
@@ -419,7 +562,7 @@ const DarinoPage = async () => {
             </div>
             <div className='col-span-2 md:col-span-12 my-20'>
               <span className='text-h5 font-medium'>
-                Решения по линейной части
+                {t('darino.linear_zone_title')}
               </span>
             </div>
             <div className='col-span-2 md:col-span-12'>
@@ -428,14 +571,13 @@ const DarinoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-60'>
+          <Grid className='mt-30 md:mt-60'>
             <div className='col-span-2 md:col-span-4'>
-              <span className='text-h4 font-medium'>Аллея</span>
-              <span className='block text-body-regular font-light mt-6'>
-                Участок от КПП до кольцевой разворотной площадки является
-                парадной зоной и представляет собой аллею высоких деревьев
-                регулярной посадки. Здесь размещаются небольшие места отдыха —
-                скамьи и стулья
+              <span className='text-h3-mob md:text-h4 font-medium'>
+                {t('darino.zones2.alley')}
+              </span>
+              <span className='block text-body-regular-mob md:text-body-regular font-light mt-4 md:mt-6'>
+                {t('darino.zones2.alley_desc')}
               </span>
             </div>
             <div className='col-span-2 md:col-span-8'>
@@ -455,59 +597,98 @@ const DarinoPage = async () => {
               />
             </div>
           </Grid>
-          <Grid className='mt-60'>
+        </section>
+      </PageMarginWithTitle>
+      <Image
+        className='mt-20 md:hidden'
+        alt=''
+        src={picLink('24')}
+        width={480}
+        height={423}
+      />
+      <PageMarginWithTitle>
+        <section>
+          <Grid className='mt-30 md:mt-60'>
             <div className='col-span-2 md:col-span-8'>
-              <Image alt='' src={picLink('22')} width={1160} height={828} />
+              <Image
+                alt=''
+                className='hidden md:block'
+                src={picLink('22')}
+                width={1160}
+                height={828}
+              />
             </div>
             <div className='col-span-2 md:col-span-4 flex flex-col justify-between'>
               <div className='flex flex-col'>
-                <span className='text-h4 font-medium'>Променад</span>
-                <span className='block text-body-regular font-light mt-6'>
-                  Отрезок улицы от кольцевой разворотной площадки до участка №
-                  128 ограничен глухим ограждением. Максимально задействуя
-                  площадь пешеходной части, мы предлагаем оборудовать несколько
-                  покет-парков — компактных площадок для отдыха и досуга жителей
-                  прилегающих домов.
+                <span className='text-h3-mob md:text-h4 font-medium'>
+                  {t('darino.zones2.promenade')}
                 </span>
-                <span className='block text-body-regular font-light mt-4'>
-                  Покет-парки могут быть оборудованы не только стандартным
-                  навесом и ограждением, но и дополнительными элементами — при
-                  участии жителей и по их желанию. В покет-парке могут быть
-                  установлены скамейка, стулья, столик для шахмат, детское
-                  обрудование, разбит цветник или устроен сад камней.
+                <span className='block text-body-regular-mob md:text-body-regular font-light mt-4 md:mt-6'>
+                  {t('darino.zones2.promenade_desc')}
+                </span>
+                <span className='block text-body-regular-mob md:text-body-regular font-light mt-4'>
+                  {t('darino.zones2.promenade_desc2')}
                 </span>
               </div>
-              <span className='text-body-regular font-light text-grey'>
-                *Участок совместного проектирования: жители могут установить
-                малые архитектурные формы под свои нужды
+              <span className='hidden md:block text-body-regular font-light text-grey'>
+                {t('darino.zones2.promenade_desc3')}
               </span>
-            </div>
-          </Grid>
-          <Grid className='mt-60'>
-            <div className='col-span-2 md:col-span-4 flex flex-col justify-between'>
-              <div className='flex flex-col'>
-                <span className='text-h4 font-medium'>Сады парка</span>
-                <span className='block text-body-regular font-light mt-6'>
-                  Поскольку на завершающем участке улицы находятся въезды
-                  на жилые участки и нет общественных пространств,
-                  его благоустройство носит выраженный приватный характер. Здесь
-                  разбиваются палисадники, а озеленение приближено
-                  к неформальному садовому.
-                </span>
-              </div>
-              <span className='text-grey text-body-regular font-light'>
-                *Палисадники примыкают к входным группам и являются их частью.
-                Жители могут оформить их как продолжение своих участков. Проект
-                благоустройства предлагает базовый ассортимент растений
-                для палисадников, однако он может быть дополнен по усмотрению
-                жителей.
-              </span>
-            </div>
-            <div className='col-span-2 md:col-span-8'>
-              <Image alt='' src={picLink('22')} width={1160} height={850} />
             </div>
           </Grid>
         </section>
+      </PageMarginWithTitle>
+      <Image
+        alt=''
+        className='md:hidden mt-20'
+        src={picLink('22')}
+        width={480}
+        height={371}
+      />
+
+      <PageMarginWithTitle>
+        <Grid className='md:hidden'>
+          <div className='col-span-2'>
+            <span className='text-body-caption-10 block mt-10 font-light text-grey'>
+              {t('darino.zones2.promenade_desc3')}
+            </span>
+          </div>
+        </Grid>
+        <section>
+          <Grid className='mt-30 md:mt-60'>
+            <div className='col-span-2 md:col-span-4 flex flex-col justify-between'>
+              <div className='flex flex-col'>
+                <span className='text-h3-mob md:text-h4 font-medium'>
+                  {t('darino.zones2.garden_park')}
+                </span>
+                <span className='block text-body-regular-mob md:text-body-regular font-light mt-6'>
+                  {t('darino.zones2.garden_park_desc')}
+                </span>
+              </div>
+              <span className='hidden md:block text-grey text-body-caption-10 md:text-body-regular font-light'>
+                {t('darino.zones2.garden_park_desc2')}
+              </span>
+            </div>
+            <div className='col-span-2 md:col-span-8 md:block hidden'>
+              <Image alt='' src={picLink('23')} width={1160} height={850} />
+            </div>
+          </Grid>
+        </section>
+      </PageMarginWithTitle>
+      <Image
+        alt=''
+        className='mt-20 mb-10 md:hidden'
+        src={picLink('23')}
+        width={480}
+        height={403}
+      />
+      <PageMarginWithTitle>
+        <Grid>
+          <div className='col-span-2'>
+            <span className='md:hidden text-grey text-body-caption-10 font-light block'>
+              {t('darino.zones2.garden_park_desc2')}
+            </span>
+          </div>
+        </Grid>
       </PageMarginWithTitle>
     </div>
   );
