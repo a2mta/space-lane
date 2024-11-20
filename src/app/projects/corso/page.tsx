@@ -792,7 +792,7 @@ const CorsoPage = async () => {
                   Малые архитектурные формы
                 </span>
                 <Image
-                  className='block md:hidden'
+                  className='block md:hidden ml-2'
                   src={picLink('18', 'svg')}
                   width={65}
                   height={37}

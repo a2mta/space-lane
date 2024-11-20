@@ -53,10 +53,10 @@ const HeaderMobile = () => {
     <>
       <header
         className={classNames(
-          'z-[1005] sticky flex min-h-[40px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white transition-top duration-300',
+          'z-[1005] sticky flex min-h-[53px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white transition-top duration-300',
           {
             'top-0': hidden,
-            '-top-14': !hidden,
+            '-top-16': !hidden,
           }
         )}
       >

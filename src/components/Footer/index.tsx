@@ -4,18 +4,25 @@ import PageMarginWithTitle from '../PageMarginWithTitle';
 
 const Footer = () => {
   return (
-    <footer className='font-manrope mt-70 mb-14'>
-      <PageMarginWithTitle>
-        <Grid className='md:grid hidden'>
+    <footer className='font-manrope '>
+      <PageMarginWithTitle className='md:mt-70 md:mb-14 hidden md:block'>
+        <Grid className='md:grid '>
           <span className='col-span-4'>Rus / Eng</span>
           <span className='col-span-7'>Instagram / Telegram</span>
-          <span className='col-span-1 text-right'>(c) 2024</span>
+          <span className='col-span-1 text-right'>© {new Date().getFullYear()}</span>
         </Grid>
-        <div className='md:hidden flex justify-between'>
-          <span>Rus / Eng</span>
-          <span>Instagram / Telegram</span>
-          <span>(c) 2024</span>
-        </div>
+        
+      </PageMarginWithTitle>
+      <PageMarginWithTitle className='md:hidden my-10'>
+        <Grid>
+          <div className='col-span-2 text-body-medium font-medium'>
+            <div className='flex justify-between'>
+              <span>Rus / Eng</span>
+              <span>Instagram / Telegram</span>
+              <span>© {new Date().getFullYear()}</span>
+            </div>
+          </div>
+        </Grid>
       </PageMarginWithTitle>
     </footer>
   );

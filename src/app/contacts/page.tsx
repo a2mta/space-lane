@@ -6,23 +6,42 @@ const ContactsPage = () => {
   return (
     <PageMarginWithTitle withBorder title='Контакты'>
       <Grid className='pt-6'>
-        <div className='col-start-5 col-span-1'>
+        <div className='hidden md:flex col-start-5 col-span-1'>
           <span className='font-medium text-h5 text-grey'>Соц.сети</span>
         </div>
-        <div className='col-span-3 space-y-2 flex flex-col'>
-          <span className='text-h5'>Inst*gram</span>
-          <span className='text-h5'>Behance</span>
-          <span className='text-h5'>Linkedin</span>
+        <div className='hidden md:flex text-h5-mob md:text-h5 font-medium col-span-3 space-y-2  flex-col'>
+          <span>Inst*gram</span>
+          <span>Behance</span>
+          <span>Linkedin</span>
         </div>
-        <div className='col-span-4'>
-          <span className='text-h5 font-medium text-grey'>
+        <div className='mb-20 md:mb-0 col-span-2 md:col-span-4 mt-30'>
+          <span className='text-h5-mob md:text-h5 font-medium text-grey'>
             По вопросам предоставления услуг, организации сотрудничества и
             партнёрств
           </span>
-          <div className='flex flex-col space-y-1 mt-6'>
-            <span className='text-h5 block'>Info@spacelane.ru</span>
-            <span className='text-h5 block'>spacelanemsk@gmail.ru</span>
-            <span className='text-h5 block'>+7 926 066-36-69</span>
+          <div className='text-body-regular-mob md:text-h6 xl:text-h5 font-light flex flex-col space-y-4 md:space-y-1 mt-10 md:mt-6'>
+            <span className='block'>Info@spacelane.ru</span>
+            <span className='block'>spacelanemsk@gmail.ru</span>
+            <span className='block'>+7 926 066-36-69</span>
+          </div>
+          <Grid className='mt-4 md:hidden'>
+            <div className='col-span-1'>
+              <button className='p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey'>
+                Заполнить бриф
+              </button>
+            </div>
+          </Grid>
+        </div>
+        <div className='col-span-1'>
+          <span className='text-h5-mob font-medium text-medium-grey'>
+            Соц.сети
+          </span>
+        </div>
+        <div className='col-span-1'>
+          <div className='flex flex-col space-y-2'>
+            <span>Inst*gram</span>
+            <span>Behance</span>
+            <span>Linkedin</span>
           </div>
         </div>
       </Grid>
