@@ -19,7 +19,7 @@ const PageMarginWithTitle: FC<
           )}
         >
           {title && (
-            <div className='w-full mt-50'>
+            <div className='w-full mt-30 md:mt-50'>
               <h4 className='text-h3-mob md:text-h4 font-medium'>{title}</h4>
             </div>
           )}

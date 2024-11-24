@@ -11,7 +11,7 @@ import classNames from 'classnames';
 const HeaderMobile = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation('common');
-  const [hidden, toggleHidden] = useState(false);
+//   const [hidden, toggleHidden] = useState(false);
   const router = useRouter();
   const iconToShow = isOpen
     ? '/icons/mobile_ menu_cross.svg'
@@ -33,31 +33,31 @@ const HeaderMobile = () => {
     router.push('/' + link);
   };
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
-        toggleHidden(false)
-      } else {
-        toggleHidden(true)
-      }
-      lastScrollY = currentScrollY;
-    };
+//   useEffect(() => {
+//     let lastScrollY = window.scrollY;
+//     const handleScroll = () => {
+//       const currentScrollY = window.scrollY;
+//       if (currentScrollY > lastScrollY) {
+//         toggleHidden(false)
+//       } else {
+//         toggleHidden(true)
+//       }
+//       lastScrollY = currentScrollY;
+//     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+//     window.addEventListener('scroll', handleScroll);
+//     return () => window.removeEventListener('scroll', handleScroll);
+//   }, []);
 
   return (
     <>
       <header
         className={classNames(
           'z-[1005] sticky flex min-h-[53px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white transition-top duration-300',
-          {
-            'top-0': hidden,
-            '-top-16': !hidden,
-          }
+        //   {
+        //     'top-0': hidden,
+        //     '-top-16': !hidden,
+        //   }
         )}
       >
         <Link href='/'>
