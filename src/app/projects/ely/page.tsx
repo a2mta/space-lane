@@ -12,6 +12,7 @@ import { ExplicationRow } from '@/components/ExplicationRow';
 import ImageSlider from '@/components/Slider';
 import MobileSlider from '@/components/MobileSlider';
 import Collapse from '@/components/Collapse';
+import OtherProjects from '@/components/OtherProjects';
 const picLink = makePicLink('ely');
 
 const zonePlanData = [
@@ -1224,6 +1225,7 @@ const ElyPage = async () => {
           </Grid>
         </section>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };

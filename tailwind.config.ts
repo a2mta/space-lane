@@ -19,6 +19,8 @@ const config: Config = {
   theme: {
     aspectRatio: {
       '7/4': '7 / 4',
+      cover: '505 / 374',
+      coverMobile: '796 / 586',
       '5/4': '5 / 4',
       '128/25': '128 / 25',
       square: '1 / 1',

@@ -17,6 +17,7 @@ import CycleCollapse from './CycleCollapse';
 import HorseCollapse from './HorseCollapse';
 import AutomobileCollapse from './AutomobileCollapse';
 import AdditionalWalksCollapse from './AdditionalWalksCollapse';
+import OtherProjects from '@/components/OtherProjects';
 const picLink = makePicLink('oleniy-park');
 
 type RouteRowType = {
@@ -1023,6 +1024,7 @@ const OleniyParkPage = async () => {
           </Grid>
         </section>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };

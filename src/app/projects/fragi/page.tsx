@@ -7,6 +7,7 @@ import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import classNames from 'classnames';
 import { addLeadingZero, makePicLink } from '@/utils';
 import ImageWithCaption from '@/components/ImageWithCaption';
+import OtherProjects from '@/components/OtherProjects';
 
 const picLink = makePicLink('fragi');
 
@@ -517,6 +518,7 @@ const FragiPage = async () => {
           ))}
         </section>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };

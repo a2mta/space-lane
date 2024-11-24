@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import ImageSlider from '@/components/Slider';
 import Collapse from '@/components/Collapse';
 import TwoColumnLegendMob from '@/components/TwoColumnLegendMob';
+import OtherProjects from '@/components/OtherProjects';
 
 const picLink = makePicLink('novoseltsevo');
 
@@ -564,6 +565,7 @@ const NovoseltsevoPage = async () => {
           />
         </section>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };

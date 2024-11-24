@@ -1,6 +1,7 @@
 import Collapse from '@/components/Collapse';
 import Grid from '@/components/Grid';
 import ImageWithCaption from '@/components/ImageWithCaption';
+import OtherProjects from '@/components/OtherProjects';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectMainPicWithInfo from '@/components/ProjectMainPicWithInfo';
 import ProjectPicWithTitle from '@/components/ProjectPicWithTitle';
@@ -15,9 +16,7 @@ const DescriptionRow: FC<{ title: string; subTitle: string }> = ({
   title,
 }) => (
   <div className='flex flex-col pb-4 border-b border-b-grey tracking-normal'>
-    <span className='text-h5 xl:text-h4 font-medium mb-2'>
-      {title}
-    </span>
+    <span className='text-h5 xl:text-h4 font-medium mb-2'>{title}</span>
     <span className='text-body-regular font-light'>{subTitle}</span>
   </div>
 );
@@ -539,6 +538,7 @@ const SavelovskiyPage = () => {
           </div>
         </Grid>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };

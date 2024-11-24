@@ -35,7 +35,7 @@ const CollapseWide: FC<
   }, [isCollapsed]);
 
   const closeButton = (
-    <div className='xl:size-8 md:size-6 size-4'>
+    <div className='xl:size-8 size-6'>
       <Image
         width={32}
         height={32}

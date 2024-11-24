@@ -3,9 +3,7 @@ import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import classNames from 'classnames';
 import Image from 'next/image';
-import React, { FC, use, useEffect, useRef, useState } from 'react';
-import animationData from './animation.json';
-import Lottie, { AnimationItem } from 'lottie-web';
+import React, { FC,  } from 'react';
 
 const Avatar: FC<{
   className?: string;
@@ -35,71 +33,11 @@ const Avatar: FC<{
 );
 
 const AboutPage = () => {
-  const [animationVisible, toggleVisibility] = useState(true);
-  const [containerVisible, toggleContainer] = useState(true);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const animation = useRef<AnimationItem | null>(null);
+  
 
-  useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (isMobile) {
-      toggleVisibility(false);
-      toggleContainer(false);
-      document.documentElement.style.overflow = 'auto';
-      return;
-    }
-
-    const hasShownAnimation = sessionStorage.getItem('hasShownAnimation');
-    if (hasShownAnimation) {
-      toggleVisibility(false);
-      toggleContainer(false);
-      document.documentElement.style.overflow = 'auto';
-      return;
-    }
-
-    document.documentElement.style.overflow = 'hidden';
-    if (containerRef.current) {
-      animation.current = Lottie.loadAnimation({
-        container: containerRef.current,
-        animationData: animationData,
-        loop: false,
-        autoplay: false,
-        name: 'screen',
-      });
-      animation.current.play();
-    }
-
-    setTimeout(() => {
-      if (animationVisible) {
-        handleVisibility();
-      }
-    }, 10000);
-  }, [animationVisible]);
-
-  const handleVisibility = () => {
-    toggleVisibility(false);
-    if (animation.current) {
-      animation.current.stop();
-    }
-    setTimeout(() => {
-      document.documentElement.style.overflow = 'auto';
-      toggleContainer(false);
-      sessionStorage.setItem('hasShownAnimation', 'true');
-    }, 1000);
-  };
 
   return (
     <PageMarginWithTitle withBorder title='О нас'>
-      {containerVisible && (
-        <div
-          onClick={handleVisibility}
-          className={classNames(
-            'z-[999999] cursor-pointer fixed w-screen bg-white h-screen top-0 left-0 transition-opacity duration-1000 md:block hidden',
-            { 'opacity-0': !animationVisible }
-          )}
-          ref={containerRef}
-        />
-      )}
       <section>
         <Grid className='mt-6'>
           <h2 className='text-h5-mob xl:text-h2 md:text-h3 col-span-2 md:col-span-10 md:mb-10 font-medium'>

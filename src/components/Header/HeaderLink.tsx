@@ -7,12 +7,14 @@ import React, { FC } from 'react';
 
 const HeaderLink: FC<{ url: string; text: string }> = ({ text, url }) => {
   const pathname = usePathname();
-  const isActive = pathname === url;
+  const isActive = pathname.split('/')[1] === url.split('/')[1];
   return (
     <span
-      className={`hover:text-medium-grey cursor-pointer text-body-regular ${classNames({
-        'text-medium-grey': isActive,
-      })}`}
+      className={`hover:text-medium-grey cursor-pointer text-body-regular ${classNames(
+        {
+          'text-medium-grey': isActive,
+        }
+      )}`}
     >
       <Link href={url}>{text}</Link>
     </span>

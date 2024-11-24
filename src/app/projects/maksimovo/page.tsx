@@ -11,6 +11,7 @@ import classNames from 'classnames';
 import { GreyCard } from '@/components/GreyCard';
 import Collapse from '@/components/Collapse';
 import { it } from 'node:test';
+import OtherProjects from '@/components/OtherProjects';
 
 const picLink = makePicLink('maksimovo');
 
@@ -719,6 +720,7 @@ const MaksimovoPage = async () => {
           </div>
         </section>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };

@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { IconCard, IconCardMobile } from '@/components/IconCard';
 import ReadMore from '@/components/ReadMore';
 import Collapse from '@/components/Collapse';
+import OtherProjects from '@/components/OtherProjects';
 
 const picLink = makePicLink('corso');
 
@@ -183,15 +184,15 @@ const surfaceData = [
 
 const greenRowData = [
   {
-    title: 'Лиственные породы \u00A0 (сезонное настроение)',
+    title: 'Лиственные породы \n(сезонное настроение)',
     desc: 'Лиственные растения в течение сезона меняют окраску листвы, что внесёт яркие акценты',
   },
   {
-    title: 'Хвойные породы \u00A0 (основной каркас)',
+    title: 'Хвойные породы \n(основной каркас)',
     desc: 'Хвойные растения составляют каркас местных лесов, поэтому для создания во дворе среды, максимально близкой к природной, мы предлагаем использовать хвойные породы как основу круглогодичного зеленого каркаса',
   },
   {
-    title: 'Многолетники \u00A0 (динамичные акценты)',
+    title: 'Многолетники  \n(динамичные акценты)',
     desc: 'Многолетние травы подбираются с учётом смены периода цветения, визуального разнообразия по высоте, цвету, структуре. Это позволит избежать однообразия и статичности пространства',
   },
 ];
@@ -214,7 +215,7 @@ const GreenRow: FC<{ title: string; desc: string; index: string }> = ({
       <span className='text-h4 font-medium'>{index}</span>
     </div>
     <div className='col-span-3'>
-      <span className='text-h5 font-medium'>{title}</span>
+      <span className='text-h5 font-medium xl:whitespace-pre-wrap'>{title}</span>
     </div>
     <div className='col-span-4 col-start-9'>
       <span className='text-body-regular font-light'>{desc}</span>
@@ -846,6 +847,7 @@ const CorsoPage = async () => {
           ))}
         </PageMarginWithTitle>
       </section>
+      <OtherProjects />
     </div>
   );
 };

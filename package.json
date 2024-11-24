@@ -20,7 +20,8 @@
     "nookies": "^2.5.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-i18next": "^15.0.2"
+    "react-i18next": "^15.0.2",
+    "react-swipeable": "^7.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",

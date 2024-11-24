@@ -9,6 +9,7 @@ import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import { ExplicationRow } from '@/components/ExplicationRow';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import Collapse from '@/components/Collapse';
+import OtherProjects from '@/components/OtherProjects';
 
 const picLink = makePicLink('darino');
 
@@ -690,6 +691,7 @@ const DarinoPage = async () => {
           </div>
         </Grid>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };
