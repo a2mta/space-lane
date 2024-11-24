@@ -79,7 +79,7 @@ export default function Home() {
   const handleVisibility = () => {
     toggleVisibility(false);
     if (animation.current) {
-      animation.current.stop();
+      animation.current.pause();
     }
     setTimeout(() => {
       document.documentElement.style.overflow = 'auto';
