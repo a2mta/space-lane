@@ -33,7 +33,7 @@ export default function RootLayout({
           <Header />
           <HeaderMobile />
           <div className='flex flex-col justify-between h-full'>
-            <main className='tracking-h5'>{children}</main>
+            <main className='min-h-[89vh] md:min-h-full tracking-h5'>{children}</main>
             <Footer />
           </div>
         </LocaleProvider>

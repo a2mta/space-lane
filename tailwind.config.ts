@@ -9,7 +9,7 @@ const config: Config = {
   ],
   safelist: [
     ...Array.from({ length: 12 }, (_, i) => `lg:grid-cols-${i + 1}`),
-    ...Array.from({ length: 12 }, (_, i) => `md:grid-cols-${i + 1}`),
+    ...Array.from({ length: 40 }, (_, i) => `md:grid-cols-${i + 1}`),
     ...Array.from({ length: 12 }, (_, i) => `grid-cols-${i + 1}`),
     ...Array.from({ length: 12 }, (_, i) => `xl:grid-cols-${i + 1}`),
     ...Array.from({ length: 12 }, (_, i) => `xl:gap-x-${i + 1}`),

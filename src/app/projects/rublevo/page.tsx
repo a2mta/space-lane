@@ -1,6 +1,7 @@
 import Grid from '@/components/Grid';
 import { IconCard } from '@/components/IconCard';
 import ImageWithCaption from '@/components/ImageWithCaption';
+import OtherProjects from '@/components/OtherProjects';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectMainPicWithInfo from '@/components/ProjectMainPicWithInfo';
 import { addLeadingZero, makePicLink } from '@/utils';
@@ -777,6 +778,7 @@ const RublevoPage = () => {
           </Grid>
         </section>
       </PageMarginWithTitle>
+      <OtherProjects />
     </div>
   );
 };

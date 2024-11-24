@@ -53,7 +53,7 @@ const HeaderMobile = () => {
     <>
       <header
         className={classNames(
-          'z-[1005] sticky flex min-h-[53px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white transition-top duration-300',
+          'z-[1005] sticky flex items-center min-h-[53px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white transition-top duration-300',
           {
             'top-0': hidden,
             '-top-16': !hidden,
@@ -70,15 +70,17 @@ const HeaderMobile = () => {
             alt='space lane logo'
           />
         </Link>
+        <span className='w-[23px] h-[18px]'>
         <Image
           onClick={handleToggle}
           priority={true}
           src={iconToShow}
-          width={24}
-          height={16}
+          width={23}
+          height={18}
           alt=''
           className='cursor-pointer'
         />
+        </span>
       </header>
       {isOpen && (
         <div className='z-[1000] pb-10 pt-11 flex flex-col fixed w-full h-full bg-white'>

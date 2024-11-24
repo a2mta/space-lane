@@ -24,7 +24,7 @@ const ContactsPage = () => {
             <span className='block'>spacelanemsk@gmail.ru</span>
             <span className='block'>+7 926 066-36-69</span>
           </div>
-          <button className='mt-10 max-w-56 p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey flex items-center justify-center'>
+          <button className='hidden md:flex mt-10 max-w-56 p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey  items-center justify-center'>
             <span className='text-body-regular font-medium'>
               Заполнить бриф
             </span>

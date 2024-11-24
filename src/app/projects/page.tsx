@@ -3,7 +3,7 @@ import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import ProjectCard from '@/components/ProjectCard';
 import React from 'react';
 
-const projects = [
+export const projects = [
   {
     title: 'СберСити в Рублево-Архангельском',
     subTitle: 'Благоустройство, авторский надзор',
