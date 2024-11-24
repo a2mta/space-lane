@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import PageMarginWithTitle from './PageMarginWithTitle';
 import Grid from './Grid';
-import { projects as unfilteredProj } from '@/app/projects/page';
+import { projects as unfilteredProj } from '@/utils';
 import ProjectCard from './ProjectCard';
 import Image from 'next/image';
 import classNames from 'classnames';
