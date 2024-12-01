@@ -221,7 +221,7 @@ const HouseCard: FC<HouseCardInfo> = ({ desc, image, index, title }) => (
 );
 
 const HouseCardMobile: FC<HouseCardInfo> = ({ desc, image, title, index }) => (
-  <div className='col-span-2 space-y-14'>
+  <div className='col-span-2'>
     {image}
     <Collapse borderColor='border-medium-grey' title={title}>
       {desc.map((item, index) => (
@@ -317,14 +317,14 @@ const MaksimovoPage = async () => {
     <div className='mt-30 md:mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
-          title={'Коттеджный посёлок «Максимово парк»'}
+          title={'Коттеджный посёлок \n«Максимово парк»'}
           coverLink={picLink('01')}
           coverLink2={picLink('02')}
-          coverLink2Title='Фото до реализации существующего положения'
+          coverLink2Title='Вечерний вид на КПП'
           status={t('status.in_progress')}
           area={'64 га'}
           location={'Городской округ Истра, Московская область'}
-          subTitle='Дизайн-проект благоустройства и типология застройки посёлка «Максимово парк»'
+          subTitle={`Дизайн-проект благоустройства \nи типология застройки посёлка`}
           type={'Исследование, мастер-план, дизайн-код, благоустройство'}
           year='2023–2024'
         />

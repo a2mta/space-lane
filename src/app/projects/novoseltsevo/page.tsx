@@ -12,6 +12,7 @@ import ImageSlider from '@/components/Slider';
 import Collapse from '@/components/Collapse';
 import TwoColumnLegendMob from '@/components/TwoColumnLegendMob';
 import OtherProjects from '@/components/OtherProjects';
+import MobileSlider from '@/components/MobileSlider';
 
 const picLink = makePicLink('novoseltsevo');
 
@@ -32,20 +33,20 @@ const formatOneMob = [
   ],
 ];
 
-const formatThreeMob = [
-  [
-    '01 — Зона отдыха с качелями и местами для сидения',
-    '02 — Стритбол и теннис',
-    '03 — Скейт—парк',
-    '04 — Прогулочные мостки',
-    '05 — Площадка для созерцания природы с мини амфитеатром',
-  ],
-  [
-    '06 — Прогулочные мостки в зоне водного сада',
-    '07 — Место для рыбалки',
-    '08 — Площадка для созерцания природы',
-  ],
-];
+// const formatThreeMob = [
+//   [
+//     '01 — Зона отдыха с качелями и местами для сидения',
+//     '02 — Стритбол и теннис',
+//     '03 — Скейт—парк',
+//     '04 — Прогулочные мостки',
+//     '05 — Площадка для созерцания природы с мини амфитеатром',
+//   ],
+//   [
+//     '06 — Прогулочные мостки в зоне водного сада',
+//     '07 — Место для рыбалки',
+//     '08 — Площадка для созерцания природы',
+//   ],
+// ];
 
 const formatTwoMob = [
   [
@@ -82,6 +83,21 @@ const generalPlanData = [
     '18 — Площадка для барбекю',
     '19 — Смотровая площадка',
     '20 — Место для рыбалки',
+  ],
+];
+
+const generalPlanDataWinter = [
+  [
+    '01 — Теплые павильоны с инфракрасными лампами',
+    '02 — Площадка для игр',
+    '03 — Открытый каток',
+    '04 — Площадка для фестиваля ледяных скульптур',
+  ],
+  [
+    '05 — Новогодняя ярмарка и новогодняя ель',
+    '06 — Круглогодичная тропа',
+    '07 — Место для катания с горки на санях и ватрушках',
+    '08 — Место для зимней рыбалки',
   ],
 ];
 
@@ -202,12 +218,30 @@ const ConceptionCardMob: FC<{
   subTitles: string[];
 }> = ({ image, subTitles, title }) => (
   <Grid>
-    <div className='col-span1'>
-      <Image src={image} alt='' width={210} height={152} />
+    <div className='col-span-2 sm:col-span-1'>
+      <span className='sm:hidden text-body-regular-mob font-medium mb-4 block'>
+        {title}
+      </span>
+      <Image
+        src={image}
+        alt=''
+        className='hidden sm:block'
+        width={210}
+        height={152}
+      />
+      <Image
+        className='sm:hidden'
+        src={image}
+        alt=''
+        width={320}
+        height={236}
+      />
     </div>
-    <div className='col-span-1'>
-      <span className='text-body-regular-mob font-medium'>{title}</span>
-      <div className='flex flex-col space-y-2 text-body-caption-10 mt-4'>
+    <div className='col-span-2 sm:col-span-1'>
+      <span className='hidden sm:block text-body-regular-mob font-medium'>
+        {title}
+      </span>
+      <div className='flex flex-col space-y-2 text-body-caption-10 font-medium mt-4'>
         {subTitles.map((subTitle, index) => (
           <span key={subTitle + index}>{`— ${subTitle}`}</span>
         ))}
@@ -223,7 +257,9 @@ const FragmentCard: FC<{
 }> = ({ description, image, title }) => (
   <Grid>
     <div className='col-span-2 md:col-span-4 border-t border-medium-grey'>
-      <span className='xl:text-h4 md:text-h5 text-h4 mt-6 block font-medium'>{title}</span>
+      <span className='xl:text-h4 md:text-h5 text-h4 mt-6 block font-medium'>
+        {title}
+      </span>
       <span className='mt-4 text-body-regular block whitespace-pre-wrap'>
         {description}
       </span>
@@ -247,7 +283,15 @@ const NovoseltsevoPage = async () => {
           status={t('status.concept')}
           area={t('area.5_4_ha')}
           location={t('location.novoseltsevo')}
-          subTitle={t('subTitle.novoseltsevo')}
+          subTitle={
+            <span className='md:text-h4 text-h4-mob font-medium whitespace-pre-wrap md:whitespace-normal tracking-normal'>
+              <span>{t('subTitle.novoseltsevo_desc')}</span>
+              <span className='hidden md:inline'>
+                {' '}
+                {t('subTitle.novoseltsevo')}
+              </span>
+            </span>
+          }
           type={t('type.research_landscaping')}
           year='2022'
         />
@@ -387,7 +431,6 @@ const NovoseltsevoPage = async () => {
               <ImageWithCaption
                 width={480}
                 height={298}
-                className='mr-[-20px]'
                 title={t('view.sports_zone')}
                 src={picLink('07')}
               />
@@ -405,16 +448,21 @@ const NovoseltsevoPage = async () => {
       {/*  */}
       <PageMarginWithTitle>
         <section>
-          <Grid className='hidden md:grid mt-50'>
-            <div className='col-span-2 md:col-span-8'>
-              <Image width={1160} height={720} alt='' src={picLink('06')} />
-              <span className='text-body-caption mt-2'>
+          <Grid className='hidden md:grid mt-30 md:mt-50'>
+            <div className='col-span-2 md:col-span-8 flex justify-between flex-col'>
+              <div className='hidden md:block relative'>
+                <div className='md:aspect-140/93 xl:aspect-116/77'></div>
+                <Image alt='' fill src={picLink('06')} />
+              </div>
+              <span className='text-body-caption font-medium mt-2'>
                 {t('view.private_zone')}
               </span>
             </div>
             <div className='col-span-2 md:col-span-4'>
-              <Image width={560} height={720} alt='' src={picLink('07')} />
-              <span className='text-body-caption mt-2'>
+              <div className='md:aspect-220/299 xl:aspect-8/11 relative'>
+                <Image fill alt='' src={picLink('07')} />
+              </div>
+              <span className='text-body-caption font-medium mt-2 absolute bottom-[-2]'>
                 {t('view.sports_zone')}
               </span>
             </div>
@@ -445,7 +493,7 @@ const NovoseltsevoPage = async () => {
               />
             ))}
 
-            <div className='col-span-2 space-y-6 md:hidden'>
+            <div className='col-span-2 space-y-10 sm:space-y-6 md:hidden'>
               {conceptionCardsData.map((cardData, index) => (
                 <ConceptionCardMob
                   key={index}
@@ -475,20 +523,36 @@ const NovoseltsevoPage = async () => {
           </Grid>
         </section>
       </PageMarginWithTitle>
-      <Image
-        className='mt-10 md:hidden mb-6'
+      <MobileSlider
+        className='mt-30'
+        height={256}
         width={480}
-        height={300}
-        alt=''
-        src={picLink('21')}
-      />
+        image1={{
+          src: picLink('21'),
+          title: t('ely.summer'),
+        }}
+        image2={{
+          src: picLink('21'),
+          title: t('ely.winter'),
+        }}
+      >
+        {[
+          <PageMarginWithTitle key={1} className='mt-6'>
+            <Grid>
+              <TwoColumnLegendMob items={generalPlanData} />
+            </Grid>
+          </PageMarginWithTitle>,
+          <PageMarginWithTitle key={2} className='mt-6'>
+            <Grid>
+              <TwoColumnLegendMob items={generalPlanDataWinter} />
+            </Grid>
+          </PageMarginWithTitle>,
+        ]}
+      </MobileSlider>
       <PageMarginWithTitle>
         <section className='md:hidden'>
           <Grid>
-            <TwoColumnLegendMob items={generalPlanData} />
-          </Grid>
-          <Grid>
-            <div className='col-span-2'>
+            <div className='col-span-2 mt-4'>
               <Collapse
                 borderColor='border-medium-grey'
                 title={t('fragment.01.title')}

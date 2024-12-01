@@ -8,6 +8,8 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   safelist: [
+    ...Array.from({ length: 12 }, (_, i) => `sm:col-span-${i + 1}`),
+    ...Array.from({ length: 12 }, (_, i) => `sm:grid-cols-${i + 1}`),
     ...Array.from({ length: 12 }, (_, i) => `lg:grid-cols-${i + 1}`),
     ...Array.from({ length: 40 }, (_, i) => `md:grid-cols-${i + 1}`),
     ...Array.from({ length: 12 }, (_, i) => `grid-cols-${i + 1}`),

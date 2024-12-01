@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { addLeadingZero, makePicLink } from '@/utils';
 import ImageWithCaption from '@/components/ImageWithCaption';
 import OtherProjects from '@/components/OtherProjects';
+import Collapse from '@/components/Collapse';
 
 const picLink = makePicLink('fragi');
 
@@ -94,7 +95,7 @@ const PersonDescRow: FC<{ title: string; subTitle: string }> = ({
   title,
 }) => (
   <div className='flex flex-col space-y-2 lg:space-y-4 border-t border-medium-grey md:border-none'>
-    <span className='text-body-medium md:text-body lg:text-h6 font-medium md:mt-0 mt-2'>
+    <span className='text-body-regular-mob md:text-body lg:text-h6 font-medium md:mt-0 mt-2'>
       {title}
     </span>
     <span className='text-body-regular-mob md:text-body-caption lg:text-body-regular font-light'>
@@ -115,25 +116,27 @@ const MosaiqPic: FC<{ src: string; className?: string }> = ({
 );
 
 const DescRow: FC<{
-  index: number;
-  title: string;
+  index?: number;
+  title?: string;
   description: string;
   images: React.JSX.Element[];
 }> = ({ description, index, images, title }) => (
-  <Grid className='border-t border-medium-grey pt-6'>
+  <Grid className='md:border-t border-medium-grey md:pt-6'>
     <div className='col-span-2 md:col-span-1'>
       <span className='text-body-medium-mob md:text-h5 lg:text-h4 font-medium'>
         {index}
-        <span className='text-body-medium-mob font-medium md:hidden'>
-          {' '}
-          {title}
-        </span>
+        {title && (
+          <span className='text-body-medium-mob font-medium md:hidden'>
+            {' '}
+            {title}
+          </span>
+        )}
       </span>
     </div>
     <div className='hidden md:grid col-span-2 md:col-span-3'>
       <span className='text-h5'>{title}</span>
     </div>
-    <div className='md:mt-0 mt-6 mb-4 md:mb-0 col-span-2 md:col-span-4'>
+    <div className='mb-4 md:mb-0 col-span-2 md:col-span-4'>
       <span className='text-body-regular-mob md:text-body-regular font-light'>
         {description}
       </span>
@@ -171,7 +174,7 @@ const FragiPage = async () => {
           area={'4.1 га'}
           location={'Ашхабад, Туркменистан'}
           subTitle={
-            'Эскизное предложение по благоустройству культурно-паркового комплекса в Ашхабаде'
+            'Эскизное предложение \nпо благоустройству культурно-паркового комплекса в Ашхабаде'
           }
           type={'Исследование, благоустройство'}
           year='2022'
@@ -215,7 +218,7 @@ const FragiPage = async () => {
                 народной речью.
               </span>
             </div>
-            <div className='col-span-2 md:col-span-4 space-y-6'>
+            <div className='col-span-2 md:col-span-4 space-y-10 md:space-y-6'>
               <PersonDescRow
                 title='Поэзия'
                 subTitle='Поэтико-философское наследие Махтумкули навеки вошлов культуру туркменского народа как песнь о любви к Богу, Родине, человеку, природе и самой жизни.'
@@ -245,8 +248,8 @@ const FragiPage = async () => {
               Фраги.
             </div>
           </Grid>
-          <div className='flex'>
-            <div className='mt-10 md:hidden flex overflow-x-scroll space-x-4'>
+          <div className='flex flex-col md:hidden'>
+            <div className='mt-10 flex overflow-x-scroll space-x-4 -mr-5'>
               <MosaiqPic src={picLink('04')} />
               <MosaiqPic src={picLink('05')} />
               <MosaiqPic src={picLink('06')} />
@@ -260,6 +263,9 @@ const FragiPage = async () => {
               <MosaiqPic className='md:mt-10' src={picLink('11')} />
               <MosaiqPic className='md:mt-10' src={picLink('12')} />
             </div>
+            <span className='text-body-regular-mob block mt-2 font-light'>
+              1-9
+            </span>
           </div>
           <Grid className='mt-30 hidden md:grid'>
             <MosaiqPic src={picLink('04')} />
@@ -289,7 +295,7 @@ const FragiPage = async () => {
               />
             </div>
             <div className='col-span-2 md:col-span-8'>
-              <span className='md:mb-0 mb-10 text-body-medium md:text-h6 lg:text-h5-regular md:font-light font-medium block'>
+              <span className='md:mb-0 mb-10 text-body-regular-mob md:text-h6 lg:text-h5-regular md:font-light font-medium block'>
                 За основу в дизайне благоустройства были взяты местные мотивы
                 орнаментов. Каждый орнамент соответствует историческим
                 орнаментам, характерным для пяти велаятов Туркменистана.
@@ -506,7 +512,14 @@ const FragiPage = async () => {
         />
       </section>
       <PageMarginWithTitle>
-        <section className='mt-50 space-y-10'>
+        <section className='md:hidden'>
+          {descData.map(({ description, images, title }, index) => (
+            <Collapse borderColor='border-medium-grey' title={`${addLeadingZero(index+1)} ${title}`} key={title}>
+              <DescRow description={description} images={images} />
+            </Collapse>
+          ))}
+        </section>
+        <section className='mt-50 space-y-10 hidden md:block'>
           {descData.map(({ description, images, title }, index) => (
             <DescRow
               description={description}

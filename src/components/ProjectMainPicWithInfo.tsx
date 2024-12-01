@@ -31,7 +31,7 @@ const ProjectMainPicWithInfo: FC<{
       <PageMarginWithTitle>
         <Grid>
           <div className='col-span-2 md:col-span-12 md:mb-10 mb-5'>
-            <div className='text-h3-mob md:text-h2 font-medium'>{title}</div>
+            <div className='whitespace-pre-wrap md:whitespace-normal text-h3-mob md:text-h2 font-medium'>{title}</div>
           </div>
         </Grid>
       </PageMarginWithTitle>

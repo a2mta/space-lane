@@ -1,7 +1,12 @@
 'use client';
 import classNames from 'classnames';
 import Image from 'next/image';
-import React, { FC, useState } from 'react';
+import React, { FC, ReactElement, useState } from 'react';
+
+
+
+
+// it should be documented, but i don't care anymore
 
 const MobileSlider: FC<{
   image1: { src: string; title: string };
@@ -9,7 +14,8 @@ const MobileSlider: FC<{
   width: number;
   height: number;
   className?: string;
-}> = ({ height, width, image1, image2, className }) => {
+  children?: [ReactElement, ReactElement];
+}> = ({ height, width, image1, image2, className, children }) => {
   const [activeSlide, toggleSlide] = useState(0);
   const handleToggle = (slide: number) => toggleSlide(slide);
   const src = [image1.src, image2.src][activeSlide];
@@ -35,6 +41,7 @@ const MobileSlider: FC<{
           {image2.title}
         </span>
       </div>
+      {children && children[activeSlide]}
     </div>
   );
 };

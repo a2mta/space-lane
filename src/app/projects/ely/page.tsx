@@ -867,7 +867,7 @@ const ElyPage = async () => {
               <div className='hidden md:block relative'>
                 <div className="relative md:aspect-140/93 xl:aspect-116/77"></div>
                 <Image alt='' fill src={picLink('07')} />
-                <span className='text-body-caption font-light mt-2 absolute bottom-[-2]'>
+                <span className='text-body-caption font-medium mt-2 absolute bottom-[-2]'>
                   {t('ely.photo_implementation_stage_1')}
                 </span>
               </div>
