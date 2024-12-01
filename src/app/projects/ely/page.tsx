@@ -439,6 +439,7 @@ const pageInfo = {
   area: 'ely.pageInfo.area',
   location: 'ely.pageInfo.location',
   subTitle: 'ely.pageInfo.subTitle',
+  subTitleMobile: 'ely.pageInfo.subTitle_mobile',
   type: 'ely.pageInfo.type',
   year: 'ely.pageInfo.year',
 };
@@ -457,7 +458,12 @@ const ElyPage = async () => {
           status={t(pageInfo.status)}
           area={t(pageInfo.area)}
           location={t(pageInfo.location)}
-          subTitle={t(pageInfo.subTitle)}
+          subTitle={
+            <span className='md:text-h4 text-h4-mob font-medium whitespace-pre-wrap md:whitespace-normal tracking-normal'>
+              <span className='hidden md:inline'>{t(pageInfo.subTitle)}</span>
+              <span className='md:hidden'>{t(pageInfo.subTitleMobile)}</span>
+            </span>
+          }
           type={t(pageInfo.type)}
           year={t(pageInfo.year)}
         />
@@ -780,7 +786,7 @@ const ElyPage = async () => {
             </div>
             <div className='col-span-2 mt-10 space-y-6'>
               {decorationData.map(({ description, image, title }) => (
-                <Collapse key={title} title={t(title)}>
+                <Collapse borderColor='border-medium-grey' key={title} title={t(title)}>
                   <div className='flex flex-col text-body-regular-mob font-light space-y-4'>
                     {description.map((item, index) => (
                       <span key={item + index}>- {t(item)} </span>
@@ -865,7 +871,7 @@ const ElyPage = async () => {
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-8 flex justify-between flex-col'>
               <div className='hidden md:block relative'>
-                <div className="relative md:aspect-140/93 xl:aspect-116/77"></div>
+                <div className='relative md:aspect-140/93 xl:aspect-116/77'></div>
                 <Image alt='' fill src={picLink('07')} />
                 <span className='text-body-caption font-medium mt-2 absolute bottom-[-2]'>
                   {t('ely.photo_implementation_stage_1')}
@@ -881,7 +887,7 @@ const ElyPage = async () => {
             </div>
             <div className='col-span-2 md:col-span-4'>
               <div className='md:aspect-220/299 xl:aspect-8/11 relative'>
-              <Image fill alt='' src={picLink('08')} />
+                <Image fill alt='' src={picLink('08')} />
               </div>
               <span className='mt-10 text-body-regular font-light block'>
                 {t('ely.walking_routes')}

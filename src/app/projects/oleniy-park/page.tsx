@@ -377,7 +377,7 @@ const HomeCard: FC<{
   imageMob: string;
   items: string[];
 }> = ({ image, imageMob, index, items, title }) => (
-  <div className='col-span-2 md:col-span-6 pt-6 mb-24 border-t border-grey'>
+  <div className='col-span-2 md:col-span-6 pt-6 border-t border-grey'>
     <Grid cols={6} colsXL={6}>
       <div className='col-span-2 md:col-span-6 mb-6'>
         <H5Medium>
@@ -679,7 +679,7 @@ const OleniyParkPage = async () => {
         </section>
         <section>
           <Grid className='mt-30 md:hidden'>
-            <div className='col-span-2 md:col-span-12 mb-20'>
+            <div className='col-span-2 md:col-span-12 mb-4'>
               <TextH4>Архитектурные решения</TextH4>
             </div>
             <div className='col-span-2'>
@@ -912,7 +912,7 @@ const OleniyParkPage = async () => {
           </div>
         </Grid>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-30 md:mt-50 space-y-24'>
             {homesData.map((item, index) => (
               <HomeCard
                 key={index}

@@ -226,13 +226,12 @@ const DarinoPage = async () => {
         />
       </section>
       <Image
-        className='mt-10 md:hidden'
+        className='mt-20 sm:mt-10 md:hidden'
         src={picLink('25')}
         width={480}
         height={364}
         alt=''
       />
-
       <PageMarginWithTitle>
         <section>
           <Grid className='mt-8 md:mt-50'>
@@ -252,7 +251,7 @@ const DarinoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 {t('darino.line_park')}
@@ -304,7 +303,7 @@ const DarinoPage = async () => {
                 ))}
               </div>
             </div>
-            <div className='col-span-2 md:hidden'>
+            <div className='mt-30 col-span-2 md:hidden'>
               {zonesDataMob.map((item) => (
                 <Collapse
                   key={item.title}
