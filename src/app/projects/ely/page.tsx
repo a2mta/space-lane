@@ -333,7 +333,7 @@ const SolutionCard: FC<{
       </span>
       <Image
         alt=''
-        className='h-[34px] md:h-auto max-w-fit md:max-w-fit object-contain object-right'
+        className='h-[34px] ml-2 md:h-auto max-w-fit md:max-w-fit object-contain object-right'
         src={icon}
         width={110}
         height={68}
@@ -826,7 +826,7 @@ const ElyPage = async () => {
               <span className='text-h3-mob md:text-h4 font-medium block'>
                 {t('ely.general_plan_scheme')}
               </span>
-              <span className='text-body-regular-mob md:text-body-regular font-light mt-4 block'>
+              <span className='text-body-regular-mob md:text-body-regular font-light mt-4 block md:whitespace-pre-wrap xl:whitespace-normal'>
                 {t('ely.entry_description')}
               </span>
               <span className='hidden md:block text-h5-regular mt-10 mb-8'>
@@ -865,7 +865,8 @@ const ElyPage = async () => {
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-8 flex justify-between flex-col'>
               <div className='hidden md:block relative'>
-                <Image alt='' width={1160} height={720} src={picLink('07')} />
+                <div className="relative md:aspect-140/93 xl:aspect-116/77"></div>
+                <Image alt='' fill src={picLink('07')} />
                 <span className='text-body-caption font-light mt-2 absolute bottom-[-2]'>
                   {t('ely.photo_implementation_stage_1')}
                 </span>
@@ -879,7 +880,9 @@ const ElyPage = async () => {
               </Grid>
             </div>
             <div className='col-span-2 md:col-span-4'>
-              <Image alt='' width={560} height={770} src={picLink('08')} />
+              <div className='md:aspect-220/299 xl:aspect-8/11 relative'>
+              <Image fill alt='' src={picLink('08')} />
+              </div>
               <span className='mt-10 text-body-regular font-light block'>
                 {t('ely.walking_routes')}
               </span>
@@ -974,7 +977,7 @@ const ElyPage = async () => {
           <Grid className='mt-50'>
             <div className='col-span-4'>
               <span className='text-h4'>{t('ely.visualization')}</span>
-              <span className='mt-6 text-body-regular block'>
+              <span className='mt-6 text-body-regular block xl:whitespace-pre-wrap'>
                 {t('ely.checkpoint_areas')}
               </span>
             </div>
@@ -1124,7 +1127,7 @@ const ElyPage = async () => {
                 width={1760}
                 height={1244}
                 src={picLink('35')}
-                title={t('ely.evening_view')}
+                title={t('ely.evening_view_restaurant')}
               />
             </div>
           </Grid>

@@ -76,7 +76,7 @@ const OtherProjects = () => {
             </div>
           </div>
         </div>
-        <div className='col-span-2 md:hidden'>
+        <div className='col-span-2 md:hidden -mr-5'>
           <div className='flex overflow-x-scroll w-full space-x-5'>
             {projects.map((item, index) => (
               <div className='min-w-[80vw]' key={index + item.title}>

@@ -20,7 +20,7 @@ const MapLegendRow: FC<{ text: string; icon?: string | ReactElement }> = ({
         {icon}
       </div>
     </div>
-    <div className='col-span-1 md:col-span-2'>
+    <div className='col-span-1 md:col-span-2 еш'>
       <span className='xl:text-body-regular md:text-body-caption text-body-caption-10 font-medium   ml-4 flex items-center'>
         {text}
       </span>
@@ -32,8 +32,10 @@ const MapLegendRowMobile: FC<{
   text: string;
   icon?: string | ReactElement;
 }> = ({ icon, text }) => (
-  <div className='flex w-full items-start justify-between'>
-    <div className='flex items-center justify-center mr-2'>{icon}</div>
+  <div className='flex w-full items-start'>
+    <div className='flex items-center max-w-[70px] justify-center mr-2'>
+      {icon}
+    </div>
     <span className='xl:text-body-regular md:text-body-caption text-body-caption-10 font-medium'>
       {text}
     </span>
@@ -202,7 +204,7 @@ const mapLegend = [
   {
     icon: (
       <Image
-        className='pt-2 min-w-[70px] md:w-full'
+        className='pt-1 md:pt-2 min-w-[70px] md:w-full'
         src={picLink('05', 'svg')}
         alt=''
         width={110}
@@ -214,7 +216,7 @@ const mapLegend = [
   {
     icon: (
       <Image
-        className='pt-2 min-w-[70px] md:w-full'
+        className='pt-1 md:pt-2 min-w-[70px] md:w-full'
         src={picLink('06', 'svg')}
         alt=''
         width={110}
@@ -226,7 +228,7 @@ const mapLegend = [
   {
     icon: (
       <Image
-        className='pt-2 min-w-[70px] md:w-full'
+        className='pt-1 md:pt-2 min-w-[70px] md:w-full'
         src={picLink('07', 'svg')}
         alt=''
         width={110}
@@ -238,7 +240,7 @@ const mapLegend = [
   {
     icon: (
       <Image
-        className='pt-2 min-w-[70px] md:w-full'
+        className='pt-1 md:pt-2 min-w-[70px] md:w-full'
         src={picLink('08', 'svg')}
         alt=''
         width={110}
@@ -250,7 +252,7 @@ const mapLegend = [
   {
     icon: (
       <Image
-        className='pt-2 min-w-[70px] md:w-full'
+        className='pt-1 md:pt-2 min-w-[70px] md:w-full'
         src={picLink('09', 'svg')}
         alt=''
         width={110}
@@ -381,7 +383,7 @@ const RublevoPage = () => {
       <PageMarginWithTitle>
         <Grid className='mt-6 md:hidden'>
           <div className='col-span-2 sm:col-span-1 space-y-4'>
-            {mapLegend.slice(0, 4).map((item, index) => (
+            {mapLegend.slice(0, 5).map((item, index) => (
               <MapLegendRowMobile
                 key={index}
                 text={item.text}
@@ -431,19 +433,17 @@ const RublevoPage = () => {
         src={picLink('34')}
         title='Бульвар. Визуализация проектного предложения.'
       />
-      <div className='aspect-video relative'>
-        <ImageWithCaption
-          className='hidden md:block'
-          fill
-          // width={1760}
-          // height={1100}
-          fullWidth
-          src={picLink('14')}
-          title='Бульвар. Визуализация проектного предложения.'
-        />
-      </div>
+
+      <ImageWithCaption
+        className=''
+        fill
+        fullWidth
+        src={picLink('14')}
+        title='Бульвар. Визуализация проектного предложения.'
+      />
+
       <PageMarginWithTitle>
-        <Grid className='mt-36 md:mt-50'>
+        <Grid className='mt-30 md:mt-50'>
           <div className='col-span-2 md:col-span-4'>
             <span className='text-h3-mob md:text-h4 font-medium'>Бульвар</span>
             <span className='block mt-6 md:mt-4 text-body-regular-mob md:text-body-regular font-light'>
@@ -712,8 +712,15 @@ const RublevoPage = () => {
           alt=''
         />
         <Image
-          className='mt-10'
+          className='hidden md:block mt-10'
           src={picLink('31')}
+          width={480}
+          height={612}
+          alt=''
+        />
+        <Image
+          className='md:hidden my-10'
+          src={picLink('40')}
           width={480}
           height={612}
           alt=''
@@ -738,7 +745,7 @@ const RublevoPage = () => {
           </Grid>
         </PageMarginWithTitle>
         <Image
-          className='mt-28 mb-6'
+          className='mt-16 md:mt-28 mb-6'
           src={picLink('39')}
           width={480}
           height={304}

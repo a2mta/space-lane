@@ -11,7 +11,7 @@ export const ExplicationRow: FC<{
     ) : (
       icon
     )}
-    <span className='ml-2 md:ml-4 flex items-center text-body-caption-mob font-light md:text-body-regular'>
+    <span className='md:whitespace-pre-wrap xl:whitespace-normal ml-2 md:ml-4 flex items-center text-body-caption-mob font-light md:text-body-regular'>
       {text}
     </span>
   </div>

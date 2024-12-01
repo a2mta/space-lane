@@ -34,27 +34,27 @@ const surfaces = [
   { text: 'Асфальтированная проезжая часть', icon: 'bg-[#939393]' },
   { text: 'Проезжая часть из бетонной плитки', icon: 'bg-[#C4C4C4]' },
   {
-    text: 'Техническая зона тротуара из бетонной плитки',
+    text: 'Техническая зона тротуара \nиз бетонной плитки',
     icon: 'bg-[#B5B4B0]',
   },
   { text: 'Пешеходная часть из бетонной плитки', icon: 'bg-[#C5C4C2]' },
   {
-    text: 'Входные и рекреационные зоны из гранитного отсева',
+    text: 'Входные и рекреационные зоны \nиз гранитного отсева',
     icon: 'bg-[#CAAC94]',
   },
-  { text: 'Рекреационные зоны из деревянного настила', icon: 'bg-[#CDA172]' },
+  { text: 'Рекреационные зоны \nиз деревянного настила', icon: 'bg-[#CDA172]' },
 ];
 
 const surfaces2 = [
   { text: 'Асфальтированная проезжая часть', icon: 'bg-[#939393]' },
   { text: 'Проезжая часть из бетонной плитки', icon: 'bg-[#C4C4C4]' },
   {
-    text: 'Техническая зона тротуара из бетонной плитки',
+    text: 'Техническая зона тротуара \nиз бетонной плитки',
     icon: 'bg-[#B5B4B0]',
   },
   { text: 'Пешеходная часть из бетонной плитки', icon: 'bg-[#C5C4C2]' },
   {
-    text: 'Входные и рекреационные зоны из гранитного отсева',
+    text: 'Входные и рекреационные зоны \nиз гранитного отсева',
     icon: 'bg-[#CAAC94]',
   },
   {
@@ -67,7 +67,7 @@ const surfaces2 = [
 const surfaces3 = [
   { text: 'Асфальтированная проезжая часть', icon: 'bg-[#939393]' },
   {
-    text: 'Техническая зона тротуара из бетонной плитки',
+    text: 'Техническая зона тротуара \nиз бетонной плитки',
     icon: 'bg-[#C4C4C4]',
   },
   { text: 'Пешеходная часть из бетонной плитки', icon: 'bg-[#B5B4B0]' },
@@ -76,7 +76,7 @@ const surfaces3 = [
     icon: 'bg-[#C5C4C2]',
   },
   {
-    text: 'Входные и рекреационные зоны из гранитного отсева',
+    text: 'Входные и рекреационные зоны \nиз гранитного отсева',
     icon: 'bg-[#CAAC94]',
   },
   { text: 'Рекреационные зоны из деревянного настила', icon: 'bg-[#CDA172]' },
@@ -110,12 +110,12 @@ const explicationData = [
   { text: 'Асфальтированная проезжая часть', icon: 'bg-[#939393]' },
   { text: 'Проезжая часть из бетонной плитки', icon: 'bg-[#C5C4C2]' },
   {
-    text: 'Техническая зона тротуара из бетонной плитки',
+    text: 'Техническая зона тротуара \nиз бетонной плитки',
     icon: 'bg-[#B5B4B0]',
   },
   { text: 'Пешеходная часть из бетонной плитки', icon: 'bg-[#C4C4C4]' },
   {
-    text: 'Входные и рекреационные зоны из гранитного отсева',
+    text: 'Входные и рекреационные зоны \nиз гранитного отсева',
     icon: 'bg-[#CAAC94]',
   },
   { text: 'Рекреационные зоны из деревянного настила', icon: 'bg-[#CDA172]' },
@@ -427,7 +427,7 @@ const DarinoPage = async () => {
                     className='text-body-regular font-medium'
                     key={item + index}
                   >
-                    {addLeadingZero(index + 1)} {item}
+                    {addLeadingZero(index + 1)}–{item}
                   </span>
                 ))}
               </div>
@@ -458,7 +458,7 @@ const DarinoPage = async () => {
               <span className='text-h4 font-medium block mb-4'>
                 {t('darino.zones.children_playground')}
               </span>
-              <span className='text-body-regular font-light'>
+              <span className='text-body-regular font-light md:whitespace-pre-wrap xl:whitespace-normal'>
                 {t('darino.zones.children_playground_desc')}
               </span>
             </div>
@@ -471,7 +471,7 @@ const DarinoPage = async () => {
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry2.map((item, index) => (
                   <span key={item} className='text-body-regular font-medium'>
-                    {addLeadingZero(index + 1)} {item}
+                    {addLeadingZero(index + 1)}–{item}
                   </span>
                 ))}
               </div>
@@ -521,7 +521,7 @@ const DarinoPage = async () => {
               <div className='flex flex-col space-y-4 mt-6'>
                 {aksonometry3.map((item, index) => (
                   <span key={item} className='text-body-regular font-medium'>
-                    {addLeadingZero(index + 1)} {item}
+                    {addLeadingZero(index + 1)}–{item}
                   </span>
                 ))}
               </div>
@@ -661,7 +661,7 @@ const DarinoPage = async () => {
                 <span className='text-h3-mob md:text-h4 font-medium'>
                   {t('darino.zones2.garden_park')}
                 </span>
-                <span className='block text-body-regular-mob md:text-body-regular font-light mt-6'>
+                <span className='block text-body-regular-mob md:text-body-regular font-light mt-6 md:whitespace-pre-wrap xl:whitespace-normal'>
                   {t('darino.zones2.garden_park_desc')}
                 </span>
               </div>

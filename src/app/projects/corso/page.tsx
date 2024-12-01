@@ -215,7 +215,9 @@ const GreenRow: FC<{ title: string; desc: string; index: string }> = ({
       <span className='text-h4 font-medium'>{index}</span>
     </div>
     <div className='col-span-3'>
-      <span className='text-h5 font-medium xl:whitespace-pre-wrap'>{title}</span>
+      <span className='text-h5 font-medium xl:whitespace-pre-wrap'>
+        {title}
+      </span>
     </div>
     <div className='col-span-4 col-start-9'>
       <span className='text-body-regular font-light'>{desc}</span>
@@ -488,11 +490,18 @@ const CorsoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50 mb-20'>
-            <div className='col-span-2 md:col-span-4'>
+          <Grid className='mt-30 md:mt-50 md:mb-20'>
+            <div className='col-span-2 md:col-span-4 flex justify-between'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 Озеленение
               </span>
+              <Image
+                src={picLink('17', 'svg')}
+                className='md:hidden'
+                width={93}
+                height={45}
+                alt=''
+              />
             </div>
             <div className='col-span-2 md:col-span-8 md:mt-0 mt-8'>
               <ReadMore>
@@ -566,14 +575,19 @@ const CorsoPage = async () => {
                 Схема озеленения
               </span>
               <span className='mt-6 block text-body-regular-mob md:text-body-regular font-light'>
-                Мы добиваемся ощущения выраженной идентичности за счёт
-                использования характерных для этой местности растений
-                (рододендрон, таволга, сосна, берёза). Преобладающие хвойные и
-                декоративно-цветущие насаждения создают визуально
-                привлекательную среду в течение всего года. Многолетние
-                травянистые растения имитируют альпийские луговые сообщества.
-                Озеленение нацелено на создание устойчивой структуры лесного
-                сообщества, благодаря посадке растений крупными массивами
+                <span>
+                  Мы добиваемся ощущения выраженной идентичности за счёт
+                  использования характерных для этой местности растений
+                  (рододендрон, таволга, сосна, берёза). Преобладающие хвойные и
+                  декоративно-цветущие насаждения создают визуально
+                  привлекательную среду в течение всего года.{' '}
+                </span>
+                <span className='block md:inline mt-2 md:mt-0'>
+                  Многолетние травянистые растения имитируют альпийские луговые
+                  сообщества. Озеленение нацелено на создание устойчивой
+                  структуры лесного сообщества, благодаря посадке растений
+                  крупными массивами
+                </span>
               </span>
             </div>
             <div className='hidden md:block col-span-2 md:col-span-8'>
@@ -583,7 +597,7 @@ const CorsoPage = async () => {
         </section>
       </PageMarginWithTitle>
       <Image
-        src={picLink('20')}
+        src={picLink('22')}
         width={480}
         height={467}
         alt=''
@@ -631,7 +645,7 @@ const CorsoPage = async () => {
       </div>
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4'>
               <div className='flex justify-between'>
                 <span className='text-h3-mob md:text-h4 font-medium'>
@@ -648,9 +662,10 @@ const CorsoPage = async () => {
             </div>
             <div className='col-span-2 md:col-span-8 mt-6 md:mt-0 mb-10 md:mb-0'>
               <span className='text-body-regular-mob md:text-h5-regular font-light'>
-                Покрытия поддерживают по тонам и материалы фасадов зданий. &nbsp; Вдоль
-                фасадов выложен тёмный гранит габбро, на основной пешеходной
-                части используется светлая бетонная тротуарная плитка «Оригами»
+                Покрытия поддерживают по тонам и материалы фасадов зданий.
+                &nbsp; Вдоль фасадов выложен тёмный гранит габбро, на основной
+                пешеходной части используется светлая бетонная тротуарная плитка
+                «Оригами»
               </span>
             </div>
             {surfaceData.map((item) => (

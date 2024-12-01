@@ -15,7 +15,7 @@ const DescriptionRow: FC<{ title: string; subTitle: string }> = ({
   subTitle,
   title,
 }) => (
-  <div className='flex flex-col pb-4 border-b border-b-grey tracking-normal'>
+  <div className='flex flex-col pb-6 md:pb-4 border-b border-b-grey tracking-normal'>
     <span className='text-h5 xl:text-h4 font-medium mb-2'>{title}</span>
     <span className='text-body-regular font-light'>{subTitle}</span>
   </div>
@@ -222,26 +222,26 @@ const SavelovskiyPage = () => {
           status='Концепция'
           area='5,2 га'
           location='Москва'
-          subTitle='Дизайн-проект благоустройства ул. Большая Новодмитровская и территории Дизайн-завода «Флакон»'
+          subTitle={`Дизайн-проект благоустройства \nул. Большая Новодмитровская и территории Дизайн-завода «Флакон»`}
           type='Исследование, благоустройство'
           year='2019'
         />
       </section>
       <PageMarginWithTitle>
         <Grid className='mt-30 md:mt-50'>
-          <div className='col-span-2 md:col-span-6 mb-10 font-medium'>
+          <div className='col-span-2 md:col-span-6 mb-10 font-medium order-1'>
             <span className='text-h3-mob md:text-h4 tracking-normal'>
               Большая Новодмитровская улица
             </span>
           </div>
-          <div className='col-span-2 md:col-span-6'>
+          <div className='col-span-2 md:col-span-6 order-2'>
             <span className='text-body-regular font-light md:font-light md:text-h5 tracking-normal md:whitespace-pre-wrap whitespace-normal'>
               {
                 'Большая Новодмитровская улица находится в Бутырском районе \nна севере Москвы. К ней примыкают такие знаковые городские пространства как арт-квартал «Хлебозавод», дизайн-завод «Флакон», Савёловский вокзал и ряд офисных центров.'
               }
             </span>
           </div>
-          <div className='col-span-2 md:col-span-12 mt-4 md:mt-30 mb-10 md:mb-20'>
+          <div className='col-span-2 md:col-span-12 mt-4 md:mt-30 mb-10 md:mb-20 order-3'>
             <Image
               objectFit='cover'
               src='/pics/projects/savelovskiy/03.png'
@@ -250,7 +250,7 @@ const SavelovskiyPage = () => {
               height={640}
             />
           </div>
-          <div className='col-span-2 md:col-span-6 space-y-10'>
+          <div className='col-span-2 md:col-span-6 space-y-10 order-5 md:order-4 mt-16 md:mt-0'>
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/04.png'
               title='Хлебозавод'
@@ -260,7 +260,7 @@ const SavelovskiyPage = () => {
               title='Флакон'
             />
           </div>
-          <div className='col-span-2 md:col-span-3 space-y-6 lg:space-y-10'>
+          <div className='col-span-2 md:col-span-3 space-y-6 lg:space-y-10 order-4 md:order-5'>
             <DescriptionRow
               subTitle='проживает в Бутырском районе'
               title='71 458 человек'
@@ -274,7 +274,7 @@ const SavelovskiyPage = () => {
               title='35 минут'
             />
           </div>
-          <div className='col-span-2 md:col-span-3'>
+          <div className='col-span-2 md:col-span-3 order-4 md:order-6 mt-6 md:mt-0'>
             <div className='space-y-10'>
               <DescriptionRow
                 subTitle='плотность населения'
@@ -296,20 +296,20 @@ const SavelovskiyPage = () => {
               </span>
             </div>
           </div>
-          <div className='col-span-2 md:col-span-6 mt-10'>
+          <div className='col-span-2 md:col-span-6 mt-10 order-7'>
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/05.png'
               title='Савёловский вокзал'
             />
           </div>
-          <div className='col-span-2 md:col-span-6 mt-10'>
+          <div className='col-span-2 md:col-span-6 mt-10 order-8'>
             <ProjectPicWithTitle
               coverLink='/pics/projects/savelovskiy/06.png'
               title='Офисный центр «Новодмитровский»'
             />
           </div>
         </Grid>
-        <Grid className='mt-50'>
+        <Grid className='mt-30 md:mt-50'>
           <div className='col-span-2 md:col-span-4 mb-10 md:mb-0'>
             <span className='text-h5 font-medium lg:text-h4 tracking-normal'>
               Цифровая антропология и ГИС-аналитика
@@ -349,14 +349,9 @@ const SavelovskiyPage = () => {
               src={picLink('08')}
               alt=''
             />
-            <Image
-              width={1160}
-              height={508}
-              src={picLink('14')}
-              alt=''
-              className='md:hidden'
-            />
-
+            <div className='md:hidden -mx-5'>
+              <Image width={1160} height={508} src={picLink('14')} alt='' />
+            </div>
             <div className='grid grid-cols-4 gap-x-10 lg:hidden mt-6'>
               <div className='col-span-2 flex items-end justify-start'>
                 <div className='size-10 lg:size-12 bg-dark-blue aspect-square'></div>
@@ -412,15 +407,16 @@ const SavelovskiyPage = () => {
               }
             </span>
           </div>
-          <div className='col-span-2 md:col-span-12 space-y-4 mt-10 md:mt-20'>
+          <div className='col-span-2 md:col-span-12 space-y-4 mt-10 md:mt-20 -mx-5 md:-mx-0'>
             <ImageWithCaption
               width={1760}
               height={674}
+              extraDescriptionMargin
               src='/pics/projects/savelovskiy/09.png'
               title='Схема предлагаемых изменений на рассматриваемой территории'
             />
           </div>
-          <section className='col-span-2 md:col-span-12 mt-14 mb-50'>
+          <section className='col-span-2 md:col-span-12 mt-14 md:mb-50'>
             {clustersCollapseData.map((data) => (
               <ClusterCollapse01 key={data.collapseTitle} {...data} />
             ))}
@@ -478,7 +474,7 @@ const SavelovskiyPage = () => {
                   height={798}
                 />
               </div>
-              <div className='col-span-2 md:col-span-12 md:order-2 order-1 mt-2 md:mt-6 lg:mt-10'>
+              <div className='col-span-2 md:col-span-12 md:order-2 order-1 mt-2 md:mt-6 lg:mt-10 border-t border-medium-grey md:border-0 pt-2 md:pt-0'>
                 <span className='text-body-regular-mob md:text-body-regular lg:text-h5 block'>
                   На Большой Новодмитровской улице нет жилых домов, что
                   позволяет без ущерба перекрывать ее и проводить тематические
@@ -492,14 +488,14 @@ const SavelovskiyPage = () => {
           </div>
         </Grid>
         <Grid className='mt-16 md:mt-30 md:border-t border-medium-grey pt-2 md:pt-6'>
-          <div className='col-span-2 md:col-span-4'>
+          <div className='col-span-2 md:col-span-4 border-t border-medium-grey md:border-0 pt-2 md:pt-0'>
             <span className='text-body-regular-mob md:text-body-regular whitespace-normal md:whitespace-pre-wrap'>
               {
                 'Проект предлагает обустройство кафе и магазинов в первых этажах некоторых зданий, создание летних террасс вдоль фасадов, а также интервенции в духе тактического урбанизма (парклеты, временные конструкции). \nЭто привлечет новую аудиторию, повысит привлекательность территории для потенциальных арендаторов из сервисного сектора и запустит механизм трансформации локальной экономики'
               }
             </span>
           </div>
-          <div className='col-span-2 md:col-span-8 md:mt-0 mt-4'>
+          <div className='col-span-2 md:col-span-8 md:mt-0 mt-4 -mx-5 md:-mx-0'>
             <Image
               objectFit='cover'
               src='/pics/projects/savelovskiy/11.png'

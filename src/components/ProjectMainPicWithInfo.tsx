@@ -44,7 +44,7 @@ const ProjectMainPicWithInfo: FC<{
         <Grid className='md:pt-10 pt-4'>
           <div className='md:col-span-8 col-span-2'>
             {typeof subTitle === 'string' ? (
-              <span className='md:text-h4 text-h4-mob font-medium  tracking-normal'>
+              <span className='md:text-h4 text-h4-mob font-medium whitespace-pre-wrap md:whitespace-normal tracking-normal'>
                 {subTitle}
               </span>
             ) : (

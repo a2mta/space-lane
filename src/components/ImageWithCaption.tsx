@@ -12,6 +12,7 @@ const ImageWithCaption: FC<{
   fullWidth?: boolean;
   autoHeight?: boolean;
   fill?: boolean;
+  extraDescriptionMargin?: boolean;
   title: string;
 }> = ({
   height,
@@ -19,6 +20,7 @@ const ImageWithCaption: FC<{
   src,
   autoHeight,
   title,
+  extraDescriptionMargin,
   width,
   fullWidth,
   className,
@@ -37,7 +39,14 @@ const ImageWithCaption: FC<{
         className
       )}
     >
-      <Image className='w-full' alt='' fill={fill} width={width} height={height} src={src} />
+      <Image
+        className='w-full'
+        alt=''
+        fill={fill}
+        width={width}
+        height={height}
+        src={src}
+      />
       {fullWidth ? (
         <PageMarginWithTitle
           className={classNames({ 'bottom-[-30px] absolute': fill })}
@@ -48,7 +57,13 @@ const ImageWithCaption: FC<{
         </PageMarginWithTitle>
       ) : (
         <Grid>
-          <div className='col-span-2 md:col-span-8'>{titleBlock}</div>
+          <div
+            className={classNames('col-span-2 md:col-span-8', {
+              'mx-5': extraDescriptionMargin,
+            })}
+          >
+            {titleBlock}
+          </div>
         </Grid>
       )}
     </div>
