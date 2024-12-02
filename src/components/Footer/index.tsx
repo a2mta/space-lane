@@ -14,7 +14,7 @@ const Footer = () => {
       </PageMarginWithTitle>
       <PageMarginWithTitle className='md:hidden my-10'>
         <Grid>
-          <div className='col-span-2 text-body-regular font-medium'>
+          <div className='col-span-2 text-body-regular-mob font-medium'>
             <div className='flex justify-between'>
               <span>Rus / Eng</span>
               <span>Instagram / Telegram</span>

@@ -15,7 +15,7 @@ export default function Home() {
 
   const { push } = useRouter();
 
-  const { link, subTitle, title } = projects[coverIndex];
+  const { link, subTitle, coverSubTitle, title } = projects[coverIndex];
   const [animationVisible, toggleVisibility] = useState(true);
   const [containerVisible, toggleContainer] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -156,7 +156,7 @@ export default function Home() {
               </span>
               <div className='flex justify-between items-center mt-4'>
                 <span className='block text-body-regular-mob md:text-body-regular font-light md:font-medium'>
-                  {subTitle}
+                  {coverSubTitle || subTitle}
                 </span>
                 <span className='w-6 h-4 md:w-8 md:h-7'>
                   <Image

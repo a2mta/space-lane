@@ -40,6 +40,8 @@ export const projects = [
   {
     title: 'Коттеджный посёлок «Ели»',
     coverImage: '/pics/cover/04.png',
+    coverSubTitle:
+      'Мастер-план и архитектурные решения общественных зданий коттеджного посёлка «Ели»',
     subTitle: 'Исследование, мастер-план, архитектура, благоустройство',
     link: 'ely',
     image: '/pics/projects/ely.png',

@@ -57,7 +57,7 @@ const OtherProjects = () => {
               Другие проекты
             </span>
             <div className='hidden md:flex space-x-4 xl:space-x-6 h-9 py-1 items-center'>
-              <span className='md:w-10 relative aspect-square'>
+              <span className='md:w-10 relative aspect-square hover:opacity-45'>
                 <Image
                   onClick={handlePrev}
                   className='cursor-pointer'
@@ -66,7 +66,7 @@ const OtherProjects = () => {
                   alt=''
                 />
               </span>
-              <span className='md:w-10 relative aspect-square'>
+              <span className='md:w-10 relative aspect-square hover:opacity-45'>
                 <Image
                   onClick={handleNext}
                   className='cursor-pointer'
