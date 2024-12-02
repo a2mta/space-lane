@@ -269,7 +269,7 @@ const PointDataRow: FC<{
       <span className='text-body-regular font-light'>{subTitle}</span>
     </div>
     <div className='col-span-4'>{image}</div>
-    <div className='col-span-4 space-y-6'>
+    <div className='col-span-4 space-y-6 border-l border-medium-grey pl-8'>
       {points.map((item, index) => (
         <span key={item + index} className='block'>
           <span className='text-body font-medium'>
@@ -464,6 +464,12 @@ const MaksimovoPage = async () => {
               </span>
             </div>
           </Grid>
+          <Grid className='md:grid hidden'>
+            <div className='col-span-8 mt-50 space-y-10'>
+              <Image src={picLink('21')} width={1160} height={698} alt='' />
+              <Image src={picLink('22')} width={1160} height={698} alt='' />
+            </div>
+          </Grid>
         </section>
       </PageMarginWithTitle>
       <Image
@@ -487,11 +493,33 @@ const MaksimovoPage = async () => {
               бывают звери: зайцы, птицы: тетерева, дрозды и соловьи…»
             </span>
           </div>
+          <div className='col-span-2 mt-30 space-y-4 -mx-5 mb-14'>
+            <Image src={picLink('21')} width={480} height={290} alt='' />
+            <Image src={picLink('22')} width={480} height={290} alt='' />
+          </div>
         </Grid>
         <section className='mt-20 hidden md:block'>
           {pointsData.map((item) => (
             <PointDataRow {...item} key={item.title} />
           ))}
+          <Grid className='mt-50'>
+            <div className='col-start-5 col-span-8 mb-10'>
+              <Image src={picLink('23')} width={1160} height={773} alt='' />
+            </div>
+            <div className='col-span-4'>
+              <div className='md:aspect-220/299 xl:aspect-8/11 relative'>
+                <Image src={picLink('25')} fill alt='' />
+              </div>
+            </div>
+            <div className='col-span-8'>
+              <div className='relative md:aspect-140/93 xl:aspect-116/77'>
+                <Image src={picLink('24')} fill alt='' />
+              </div>
+            </div>
+            <div className='col-span-12 mt-10'>
+              <Image src={picLink('26')} width={1760} height={986} alt='' />
+            </div>
+          </Grid>
         </section>
         <section className='md:hidden'>
           <Grid>
@@ -537,39 +565,20 @@ const MaksimovoPage = async () => {
               </div>
             ))}
           </Grid>
-        </section>
-      </PageMarginWithTitle>
-      <PageMarginWithTitle collapseMob>
-        <section>
-          <Grid className='mt-50'>
-            <div className='col-span-2 md:col-span-12'>
-              <ImageWithCaption
-                width={1760}
-                className='block md:hidden'
-                height={1100}
-                fullWidth
-                src={picLink('09')}
-                title='Визуализация второстепенной улицы (2-я и 3-я линии)'
-              />
-              <ImageWithCaption
-                className='hidden md:block'
-                width={1760}
-                height={1100}
-                src={picLink('09')}
-                title='Визуализация второстепенной улицы (2-я и 3-я линии)'
-              />
+          <Grid className='mt-30 -mx-5 space-y-4'>
+            <div className='col-span-2'>
+              <Image src={picLink('26')} width={1760} height={986} alt='' />
             </div>
-            <div className='hidden md:grid col-span-2 md:col-span-8 md:col-start-5 mt-12'>
-              <ImageWithCaption
-                width={1160}
-                height={698}
-                src={picLink('10')}
-                title='Вид на улицу возле центрального сквера'
-              />
+            <div className='col-span-2'>
+              <Image src={picLink('23')} width={1160} height={773} alt='' />
+            </div>
+            <div className='col-span-2'>
+              <Image src={picLink('24')} width={480} height={320} alt='' />
             </div>
           </Grid>
         </section>
       </PageMarginWithTitle>
+
       <PageMarginWithTitle>
         <section>
           <Grid className='mt-30 md:mt-50'>
@@ -606,12 +615,12 @@ const MaksimovoPage = async () => {
         </section>
       </PageMarginWithTitle>
       <ImageWithCaption
-        className='mt-20 md:hidden'
-        width={1160}
+        width={1760}
+        className='block md:hidden mt-10'
+        height={1100}
         fullWidth
-        height={698}
-        src={picLink('10')}
-        title='Вид на улицу возле центрального сквера'
+        src={picLink('09')}
+        title='Визуализация второстепенной улицы (2-я и 3-я линии)'
       />
       <PageMarginWithTitle>
         <section>
@@ -628,6 +637,19 @@ const MaksimovoPage = async () => {
                 key={item.title}
               />
             ))}
+          </Grid>
+        </section>
+        <section>
+          <Grid className='mt-50'>
+            <div className='col-span-2 md:col-span-12'>
+              <ImageWithCaption
+                className='hidden md:block'
+                width={1760}
+                height={1100}
+                src={picLink('09')}
+                title='Визуализация второстепенной улицы (2-я и 3-я линии)'
+              />
+            </div>
           </Grid>
         </section>
         <section>

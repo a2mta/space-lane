@@ -822,7 +822,7 @@ const ElyPage = async () => {
           width={490}
           height={340}
           fullWidth
-          src={picLink('27')}
+          src={picLink('35')}
         />
       </section>
       <PageMarginWithTitle className='hidden md:block'>

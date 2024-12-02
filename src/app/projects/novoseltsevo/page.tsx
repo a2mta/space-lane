@@ -525,14 +525,14 @@ const NovoseltsevoPage = async () => {
       </PageMarginWithTitle>
       <MobileSlider
         className='mt-30'
-        height={256}
+        height={300}
         width={480}
         image1={{
           src: picLink('21'),
           title: t('ely.summer'),
         }}
         image2={{
-          src: picLink('21'),
+          src: picLink('25'),
           title: t('ely.winter'),
         }}
       >
