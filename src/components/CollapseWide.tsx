@@ -82,6 +82,7 @@ const CollapseWide: FC<
         <div className='col-span-2 md:col-span-4'>
           <div className='flex justify-between'>
             <span className='text-body-regular-mob md:text-body-regular block font-medium'>
+              <span className='md:hidden'>{index}{' '}</span>
               {title}
             </span>
             <span className='md:hidden'>{closeButton}</span>

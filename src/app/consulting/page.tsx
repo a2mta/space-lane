@@ -196,8 +196,8 @@ const auditoryDataMob = [
     data: horizontalGraphData2,
   },
   {
-    title: 'consulting.section7.floors',
-    data: horizontalGraphData2,
+    title: 'consulting.section7.finish',
+    data: horizontalGraphData3,
   },
 ];
 
@@ -776,7 +776,7 @@ const ConsultingPage = async () => {
           </Grid>
         </PageMarginWithTitle>
       </section>
-      <PageMarginWithTitle className='bg-beige mt-40'>
+      <PageMarginWithTitle className='bg-light-grey mt-40'>
         <section className='md:my-20 my-10'>
           <Grid className='col-span-2 md:col-span-12 '>
             <div className='col-span-2 md:col-span-8 flex flex-col space-y-8 md:space-y-10 md:order-1 order-2'>
@@ -940,7 +940,7 @@ const ConsultingPage = async () => {
           />
         </div>
         <PageMarginWithTitle>
-          <Grid className='mt-30'>
+          <Grid className='mt-30 md:mb-0 mb-40'>
             <div className='col-span-2'>
               <span className='text-h3-mob font-medium block mb-10'>
                 {t('consulting.section10.title')}

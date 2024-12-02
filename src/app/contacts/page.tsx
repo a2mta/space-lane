@@ -38,7 +38,7 @@ const ContactsPage = () => {
           </Grid>
         </div>
         <div className='col-span-1 md:hidden'>
-          <span className='text-h5-mob font-medium text-medium-grey'>
+          <span className='text-h5-mob font-medium text-grey'>
             Соц.сети
           </span>
         </div>
