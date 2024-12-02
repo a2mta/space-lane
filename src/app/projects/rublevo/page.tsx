@@ -425,22 +425,25 @@ const RublevoPage = () => {
           ))}
         </Grid>
       </PageMarginWithTitle>
-      <ImageWithCaption
-        className='md:hidden'
-        width={480}
-        height={372}
-        fullWidth
-        src={picLink('34')}
-        title='Бульвар. Визуализация проектного предложения.'
-      />
-
-      <ImageWithCaption
-        className=''
-        fill
-        fullWidth
-        src={picLink('14')}
-        title='Бульвар. Визуализация проектного предложения.'
-      />
+      <div className='md:hidden'>
+        <ImageWithCaption
+          width={480}
+          height={372}
+          fullWidth
+          src={picLink('34')}
+          title='Бульвар. Визуализация проектного предложения.'
+        />
+      </div>
+      <div className='relative aspect-video hidden md:block'>
+        <ImageWithCaption
+          className=''
+          fullWidth
+          width={1920}
+          height={1200}
+          src={picLink('14')}
+          title='Бульвар. Визуализация проектного предложения.'
+        />
+      </div>
 
       <PageMarginWithTitle>
         <Grid className='mt-30 md:mt-50'>
