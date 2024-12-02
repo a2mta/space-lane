@@ -647,10 +647,9 @@ const MaksimovoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-50 hidden md:grid'>
             <div className='col-span-2 md:col-span-12'>
               <ImageWithCaption
-                className='hidden md:block'
                 width={1760}
                 height={1100}
                 src={picLink('09')}
