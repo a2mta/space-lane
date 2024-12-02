@@ -66,6 +66,22 @@ const typologyData = [
   },
 ];
 
+const mapDescData = [
+  { subTitle: 'До Кремля', title: '79 км' },
+  { subTitle: 'До Истры', title: '6 км' },
+  { subTitle: 'До железнодорожной станции Истра', title: '7 км' },
+  { subTitle: 'До аэропорта Шереметьево', title: '63 км' },
+  { subTitle: 'До станции Пятницкое шоссе', title: '45 км' },
+];
+
+const mapDescDataMob = [
+  { subTitle: 'До Истры', title: '6 км' },
+  { subTitle: 'До железнодорожной станции Истра', title: '7 км' },
+  { subTitle: 'До аэропорта Шереметьево', title: '63 км' },
+  { subTitle: 'До станции Пятницкое шоссе', title: '45 км' },
+  { subTitle: 'До Кремля', title: '79 км' },
+];
+
 const pointsData = [
   {
     title: 'Контрольно-пропускной пункт',
@@ -348,24 +364,15 @@ const MaksimovoPage = async () => {
                 src={picLink('03')}
               />
             </div>
-            <div className='md:mt-0 mt-6 col-span-2 md:col-span-4 space-y-6'>
-              <MapDescRow subTitle='До Кремля' title='79 км' horizontal />
-              <MapDescRow subTitle='До Истры' title='6 км' horizontal />
-              <MapDescRow
-                subTitle='До железнодорожной станции Истра'
-                title='7 км'
-                horizontal
-              />
-              <MapDescRow
-                subTitle='До аэропорта Шереметьево'
-                title='6 км'
-                horizontal
-              />
-              <MapDescRow
-                subTitle='До станции Пятницкое шоссе'
-                title='45 км'
-                horizontal
-              />
+            <div className='md:hidden md:mt-0 mt-6 col-span-2 md:col-span-4 space-y-6'>
+              {mapDescDataMob.map((item, index) => (
+                <MapDescRow key={index} {...item} horizontal />
+              ))}
+            </div>
+            <div className='hidden md:block md:mt-0 mt-6 col-span-2 md:col-span-4 space-y-6'>
+              {mapDescData.map((item, index) => (
+                <MapDescRow key={index} {...item} horizontal />
+              ))}
             </div>
           </Grid>
         </section>
