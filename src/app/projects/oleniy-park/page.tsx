@@ -18,6 +18,7 @@ import HorseCollapse from './HorseCollapse';
 import AutomobileCollapse from './AutomobileCollapse';
 import AdditionalWalksCollapse from './AdditionalWalksCollapse';
 import OtherProjects from '@/components/OtherProjects';
+import classNames from 'classnames';
 const picLink = makePicLink('oleniy-park');
 
 type RouteRowType = {
@@ -377,7 +378,17 @@ const HomeCard: FC<{
   imageMob: string;
   items: string[];
 }> = ({ image, imageMob, index, items, title }) => (
-  <div className='col-span-2 md:col-span-6 pt-6 border-t border-grey'>
+  <div
+    className={classNames(
+      'col-span-2 md:col-span-6 pt-6 border-t border-grey',
+      //   ABSOLUTE DOG SHIT
+      {
+        'mt-16 md:mt-0': +index === 2,
+        'md:mt-24': +index > 2,
+        'mt-16': +index > 2,
+      }
+    )}
+  >
     <Grid cols={6} colsXL={6}>
       <div className='col-span-2 md:col-span-6 mb-6'>
         <H5Medium>
@@ -428,7 +439,9 @@ const OleniyParkPage = async () => {
           area={'Более 100 га'}
           location={'Липецкая область Краснинский район, с. Суходол'}
           subTitle={
-            'Мастер-план развития территории природного парка в Липецкой области'
+            <span className='md:text-h4 text-h4-mob font-medium md:whitespace-pre-wrap tracking-normal'>
+              {`Мастер-план развития территории природного парка\nв Липецкой области`}
+            </span>
           }
           type={'Исследование, мастер-план, архитектура, благоустройство'}
           year='2022'
@@ -912,7 +925,7 @@ const OleniyParkPage = async () => {
           </div>
         </Grid>
         <section>
-          <Grid className='mt-30 md:mt-50 space-y-24'>
+          <Grid className='mt-30 md:mt-50'>
             {homesData.map((item, index) => (
               <HomeCard
                 key={index}
@@ -923,7 +936,7 @@ const OleniyParkPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-30 md:mt-16'>
+          <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4 md:mb-0 mb-4'>
               <TextH4>Туристические маршруты</TextH4>
             </div>

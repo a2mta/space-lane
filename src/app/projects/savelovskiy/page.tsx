@@ -222,7 +222,16 @@ const SavelovskiyPage = () => {
           status='Концепция'
           area='5,2 га'
           location='Москва'
-          subTitle={`Дизайн-проект благоустройства \nул. Большая Новодмитровская и территории Дизайн-завода «Флакон»`}
+          subTitle={
+            <span className='md:text-h4 text-h4-mob font-medium whitespace-pre-wrap tracking-normal'>
+              <span className='hidden md:inline'>
+                {`Дизайн-проект благоустройства ул. Большая Новодмитровская \nи территории Дизайн-завода «Флакон»`}
+              </span>
+              <span className='md:hidden'>
+                {`Дизайн-проект благоустройства \nул. Большая Новодмитровская и территории Дизайн-завода «Флакон»`}
+              </span>
+            </span>
+          }
           type='Исследование, благоустройство'
           year='2019'
         />
@@ -311,8 +320,8 @@ const SavelovskiyPage = () => {
         </Grid>
         <Grid className='mt-30 md:mt-50'>
           <div className='col-span-2 md:col-span-4 mb-10 md:mb-0'>
-            <span className='text-h5 font-medium lg:text-h4 tracking-normal'>
-              Цифровая антропология и ГИС-аналитика
+            <span className='text-h5 font-medium lg:text-h4 tracking-normal whitespace-pre-wrap'>
+              {`Цифровая антропология \nи ГИС-аналитика`}
             </span>
           </div>
           <div className='col-span-2 md:col-span-8'>

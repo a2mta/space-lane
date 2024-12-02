@@ -166,7 +166,9 @@ const FragiPage = async () => {
     <div className='mt-30 md:mt-50 w-full'>
       <section>
         <ProjectMainPicWithInfo
-          title={'Культурно-парковый комплекс Махтумкули Фраги'}
+          title={
+            <span className='md:whitespace-pre-wrap'>{`Культурно-парковый\nкомплекс Махтумкули Фраги`}</span>
+          }
           coverLink={picLink('01')}
           coverLink2={picLink('02')}
           coverLink2Title='Фото до реализации существующего положения'
@@ -174,7 +176,10 @@ const FragiPage = async () => {
           area={'4.1 га'}
           location={'Ашхабад, Туркменистан'}
           subTitle={
-            'Эскизное предложение \nпо благоустройству культурно-паркового комплекса в Ашхабаде'
+            <span className='md:text-h4 text-h4-mob font-medium tracking-normal whitespace-pre-wrap'>
+              <span className='md:hidden'>{`Эскизное предложение \nпо благоустройству культурно-паркового комплекса в Ашхабаде`}</span>
+              <span className='hidden md:inline-block'>{`Эскизное предложение по благоустройству\nкультурно-паркового комплекса в Ашхабаде`}</span>
+            </span>
           }
           type={'Исследование, благоустройство'}
           year='2022'
@@ -284,7 +289,7 @@ const FragiPage = async () => {
         </section>
         <section>
           <Grid className='mt-50 border-t border-medium-grey pt-6'>
-            <div className='col-span-2 md:col-span-4 order-1 md:order-2'>
+            <div className='col-span-2 md:col-span-4'>
               <Image src={picLink('13')} alt='' width={560} height={442} />
               <Image
                 className='md:hidden block mt-10'
@@ -514,7 +519,11 @@ const FragiPage = async () => {
       <PageMarginWithTitle>
         <section className='md:hidden'>
           {descData.map(({ description, images, title }, index) => (
-            <Collapse borderColor='border-medium-grey' title={`${addLeadingZero(index+1)} ${title}`} key={title}>
+            <Collapse
+              borderColor='border-medium-grey'
+              title={`${addLeadingZero(index + 1)} ${title}`}
+              key={title}
+            >
               <DescRow description={description} images={images} />
             </Collapse>
           ))}

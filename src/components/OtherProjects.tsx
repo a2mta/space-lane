@@ -56,23 +56,25 @@ const OtherProjects = () => {
             <span className='text-h3-mob md:text-h4 font-medium'>
               Другие проекты
             </span>
-            <div className='hidden md:flex space-x-4 xl:space-x-6 h-9 py-1'>
-              <Image
-                onClick={handlePrev}
-                className='cursor-pointer'
-                src='/icons/arrow-left.svg'
-                width={24}
-                height={24}
-                alt=''
-              />
-              <Image
-                onClick={handleNext}
-                className='cursor-pointer'
-                src='/icons/arrow-right.svg'
-                width={24}
-                height={24}
-                alt=''
-              />
+            <div className='hidden md:flex space-x-4 xl:space-x-6 h-9 py-1 items-center'>
+              <span className='md:w-10 relative aspect-square'>
+                <Image
+                  onClick={handlePrev}
+                  className='cursor-pointer'
+                  src='/icons/arrow-left.svg'
+                  fill
+                  alt=''
+                />
+              </span>
+              <span className='md:w-10 relative aspect-square'>
+                <Image
+                  onClick={handleNext}
+                  className='cursor-pointer'
+                  src='/icons/arrow-right.svg'
+                  fill
+                  alt=''
+                />
+              </span>
             </div>
           </div>
         </div>
@@ -85,7 +87,7 @@ const OtherProjects = () => {
             ))}
           </div>
         </div>
-        <div className='hidden md:flex col-span-12 md:min-h-[40rem] justify-between items-center'>
+        <div className='hidden md:flex col-span-12 md:min-h-[41rem] justify-between items-center'>
           <div className='overflow-hidden flex relative h-full w-full'>
             {[...Array(3)].map((_, index) => (
               <div

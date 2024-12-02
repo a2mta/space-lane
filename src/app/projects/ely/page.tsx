@@ -326,7 +326,7 @@ const SolutionCard: FC<{
   description: string;
   icon: string;
 }> = ({ description, icon, title }) => (
-  <div className='mt-6 md:mt-32 md:col-span-4 border-t border-medium-grey md:border-grey pt-4'>
+  <div className='mt-6 md:mt-32 md:col-span-4 border-t border-medium-grey pt-4'>
     <div className='flex justify-between'>
       <span className='text-body-caption-10 font-medium md:font-light md:text-h5'>
         {title}
@@ -1032,7 +1032,7 @@ const ElyPage = async () => {
           <Grid className='mt-50'>
             <div className='col-span-4 flex justify-between flex-col'>
               <span className='text-h4'>{t('ely.lighting_concept')}</span>
-              <div className='flex flex-col space-y-4 text-body-regular font-light'>
+              <div className='flex flex-col space-y-4 text-body-regular font-light md:mb-6'>
                 <span>{t('ely.dimming_proposal')}</span>
                 <span>{t('ely.brightness_recommendation')}</span>
               </div>

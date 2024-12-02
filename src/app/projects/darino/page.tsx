@@ -220,7 +220,14 @@ const DarinoPage = async () => {
           status={t('status.in_release_process')}
           area={t('darino.area')}
           location={t('darino.location')}
-          subTitle={t('darino.subTitle')}
+          subTitle={
+            <span className='md:text-h4 text-h4-mob font-medium whitespace-pre-wraptracking-normal'>
+              <span className='hidden md:inline-block'>
+                {t('darino.subTitle')}
+              </span>
+              <span className='md:hidden'>{t('darino.subTitle_mobile')}</span>
+            </span>
+          }
           type={t('darino.type')}
           year='2023'
         />
@@ -372,7 +379,7 @@ const DarinoPage = async () => {
           </Grid>
         </section>
         <section className='md:block hidden'>
-          <Grid className='mt-50'>
+          <Grid className='mt-50 pt-6 border-t border-medium-grey'>
             <div className='col-span-2 md:col-span-8'>
               <Image alt='' src={picLink('07')} width={1160} height={725} />
             </div>

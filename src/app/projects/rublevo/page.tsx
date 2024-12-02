@@ -305,9 +305,14 @@ const RublevoPage = () => {
           subTitle={
             <div className='flex flex-col'>
               <span className='text-h4-mob md:text-h4 font-medium tracking-normal whitespace-pre-wrap md:whitespace-normal'>
-                {
-                  'Архитектурное проектирование \nи авторский надзор СберСити \nв Рублево-Архангельское'
-                }
+                <span className='md:hidden'>
+                  {
+                    'Архитектурное проектирование \nи авторский надзор СберСити \nв Рублево-Архангельское'
+                  }
+                </span>
+                <span className='hidden md:block'>
+                  Архитектурное проектирование и авторский надзор
+                </span>
               </span>
               <span className='text-body-caption-mob md:text-body-regular font-light mt-4 md:mt-6'>
                 Данные взяты с сайта sbercity.ru
@@ -608,7 +613,7 @@ const RublevoPage = () => {
         <section>
           <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-4 mb-4 md:mb-0'>
-              <span className='text-h3-mob md:text-h5 font-medium'>
+              <span className='text-h3-mob md:text-h4 font-medium'>
                 Выбор деревьев
               </span>
             </div>
