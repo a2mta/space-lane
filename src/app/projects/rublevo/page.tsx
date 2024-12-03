@@ -445,7 +445,7 @@ const RublevoPage = () => {
           fullWidth
           width={1920}
           height={1200}
-          src={picLink('14')}
+          src={picLink('41')}
           title='Бульвар. Визуализация проектного предложения.'
         />
       </div>
