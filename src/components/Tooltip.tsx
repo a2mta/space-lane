@@ -1,10 +1,15 @@
 'use client';
 import Image from 'next/image';
-import React, { FC, ReactElement, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import React, { FC, ReactElement, useEffect, useState } from 'react';
 
 const Tooltip: FC<{ children: ReactElement }> = ({ children }) => {
   const [isTooltipVisible, setTooltipVisibility] = useState(false);
   const toggleTooltip = () => setTooltipVisibility(!isTooltipVisible);
+  const pathname = usePathname();
+  useEffect(() => {
+    setTooltipVisibility(false);
+  }, [pathname]);
   return (
     <>
       {React.cloneElement(children, { onClick: toggleTooltip })}
