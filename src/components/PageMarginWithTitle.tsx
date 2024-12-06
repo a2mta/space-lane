@@ -1,14 +1,15 @@
 import classNames from 'classnames';
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC, PropsWithChildren, ReactElement } from 'react';
 
 const PageMarginWithTitle: FC<
   PropsWithChildren & {
     className?: string;
     title?: string;
+    subTitle?: ReactElement;
     withBorder?: boolean;
     collapseMob?: boolean;
   }
-> = ({ children, title, className, withBorder, collapseMob }) => {
+> = ({ children, title, subTitle, className, withBorder, collapseMob }) => {
   return (
     <>
       {title && (
@@ -19,8 +20,9 @@ const PageMarginWithTitle: FC<
           )}
         >
           {title && (
-            <div className='w-full mt-30 md:mt-50'>
+            <div className='w-full mt-30 md:mt-50 flex justify-between items-center'>
               <h4 className='text-h3-mob md:text-h4 font-medium'>{title}</h4>
+              {subTitle}
             </div>
           )}
         </div>
