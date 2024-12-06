@@ -31,7 +31,7 @@ const Footer = () => {
               <Tooltip>
                 <span>Rus / Eng</span>
               </Tooltip>
-              <span>Instagram / Telegram</span>
+              <span>Insta / TG</span>
               <span>© {new Date().getFullYear()}</span>
             </div>
           </div>

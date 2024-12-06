@@ -150,7 +150,7 @@ export default function Home() {
             </div>
           </div>
           <div className='col-span-2 md:col-span-4'>
-            <div className='flex cursor-pointer flex-col' onClick={handleClick}>
+            <div className='flex group cursor-pointer md:hover:text-grey flex-col' onClick={handleClick}>
               <span className='text-body-regular-mob md:text-h6 xl:text-h5 font-medium pb-2 border-b border-medium-grey'>
                 {title}
               </span>
@@ -158,7 +158,7 @@ export default function Home() {
                 <span className='block text-body-regular-mob md:text-body-regular font-light md:font-medium'>
                   {coverSubTitle || subTitle}
                 </span>
-                <span className='min-w-[26px] relative ml-2 h-[24px] md:min-w-8 md:h-7'>
+                <span className='min-w-[26px] md:group-hover:opacity-50 relative ml-2 h-[24px] md:min-w-8 md:h-7'>
                   <Image
                     src='/icons/arrow-right.svg'
                     alt=''
