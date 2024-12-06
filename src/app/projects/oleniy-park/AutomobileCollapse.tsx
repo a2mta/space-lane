@@ -8,7 +8,7 @@ const picLink = makePicLink('oleniy-park');
 
 const AutomobileCollapse = () => {
   return (
-    <Collapse title='04 Автомобильные маршруты (дополнительная инфраструктура)'>
+    <Collapse borderColor='border-medium-grey' title='04 Автомобильные маршруты (дополнительная инфраструктура)'>
       <Grid>
         <div className='col-span-2 md:col-start-5 md:col-span-8 xl:col-span-6 xl:col-start-5 mb-10 order-1'>
           <span className='text-body-regular-mob md:text-h5 font-medium'>

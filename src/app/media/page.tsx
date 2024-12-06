@@ -119,7 +119,7 @@ const MediaPage = async () => {
   const { t } = await createTranslation('common');
   return (
     <PageMarginWithTitle withBorder title='Медиа'>
-      <Grid className='md:mb-0 mb-40'>
+      <Grid className='md:mb-0 mb-30'>
         <div className='col-span-12 mt-16 md:mt-30'>
           {data.map(({ cover, links, description, subTitle, title }, index) => (
             <CollapseWide

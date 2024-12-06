@@ -356,7 +356,7 @@ const CorsoPage = async () => {
           status={t('status.in_release_process')}
           area={'0,87 га'}
           location={'Иркутск'}
-          subTitle={'Дизайн-проект благоустройства в Правобережном г. Иркустка'}
+          subTitle={`Дизайн-проект благоустройства \nв Правобережном г. Иркустка`}
           type={'Благоустройство'}
           year='2022'
         />
@@ -396,7 +396,7 @@ const CorsoPage = async () => {
       </section>
       <PageMarginWithTitle>
         <section>
-          <Grid className='mt-30 md:mt-50 pt-6'>
+          <Grid className='mt-30 md:mt-50 md:pt-6'>
             <div className='col-span-2 md:col-span-12 mb-6'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 Планировочные принципы

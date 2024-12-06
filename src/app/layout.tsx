@@ -28,12 +28,12 @@ export default function RootLayout({
 
   return (
     <html lang={locale}>
-      <body className={myFont.variable + ' font-manrope flex flex-col'}>
+      <body className={myFont.variable + ' font-manrope flex flex-col min-h-[100dvh]'}>
         <LocaleProvider value={locale}>
           <Header />
           <HeaderMobile />
-          <div className='flex flex-col w-full justify-between h-full'>
-            <main className='min-h-[89vh] md:min-h-full tracking-h5'>
+          <div className='flex flex-1 flex-col w-full justify-between h-full'>
+            <main className='tracking-h5'>
               {children}
             </main>
             <Footer />

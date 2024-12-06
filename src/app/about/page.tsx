@@ -72,7 +72,7 @@ const AboutPage = () => {
           </div>
         </Grid>
       </section>
-      <section>
+      <section className='mb-30 md:mb-0'>
         <Grid className='md:border-t border-medium-grey md:pt-4'>
           <h5 className='text-h5-mob font-medium md:text-h5-regular md:font-light col-span-2 xl:col-span-1 text-grey pb-2 md:pb-0 border-b border-medium-grey md:border-none'>
             Команда
@@ -82,7 +82,7 @@ const AboutPage = () => {
             предлагая решения от разработки видения развития территории и
             мастер-плана до проектирования объекта любой сложности.
           </h5>
-          <div className='md:col-start-5 col-span-2 md:col-span-8 mt-16 mb-56'>
+          <div className='md:col-start-5 col-span-2 md:col-span-8 mt-16 mb-30 md:mb-56'>
             <Grid cols={10} colsXL={10}>
               <Avatar
                 name='Даниил Хлебников'
@@ -115,7 +115,7 @@ const AboutPage = () => {
             </Grid>
           </div>
         </Grid>
-        <Grid className='col-span-12 grid-cols-12 md:border-t border-medium-grey pt-4'>
+        <Grid className='col-span-12 grid-cols-12 md:border-t border-medium-grey md:pt-4'>
           <h5 className='text-h5-mob font-medium md:text-h5 md:font-light col-span-2 xl:col-span-1 text-grey pb-2 md:pb-0 border-b border-medium-grey md:border-none'>
             Клиенты
           </h5>

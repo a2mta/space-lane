@@ -49,7 +49,7 @@ const OtherProjects = () => {
   };
 
   return (
-    <PageMarginWithTitle className='mt-30 md:mt-60 mb-30 md:mb-0'>
+    <PageMarginWithTitle className='mt-36 md:mt-60 mb-30 md:mb-0'>
       <Grid>
         <div className='col-span-2 md:col-span-12 mb-10 md:mb-16'>
           <div className='flex justify-between items-center'>
@@ -87,7 +87,7 @@ const OtherProjects = () => {
             ))}
           </div>
         </div>
-        <div className='hidden md:flex col-span-12 md:min-h-[41rem] justify-between items-center'>
+        <div className='hidden md:flex col-span-12 md:aspect-otherProjects justify-between items-center'>
           <div className='overflow-hidden flex relative h-full w-full'>
             {[...Array(3)].map((_, index) => (
               <div

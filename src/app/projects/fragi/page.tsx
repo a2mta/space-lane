@@ -288,7 +288,7 @@ const FragiPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50 border-t border-medium-grey pt-6'>
+          <Grid className='mt-30 md:mt-50 border-t border-medium-grey pt-6'>
             <div className='col-span-2 md:col-span-4'>
               <Image src={picLink('13')} alt='' width={560} height={442} />
               <Image
@@ -316,8 +316,8 @@ const FragiPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-30 md:mt-50'>
-            <div className='col-span-2 md:col-span-4 pt-14'>
+          <Grid className='mt-20 md:mt-50'>
+            <div className='col-span-2 md:col-span-4 md:pt-14'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 Генеральный план благоустройства
               </span>
@@ -517,7 +517,7 @@ const FragiPage = async () => {
         />
       </section>
       <PageMarginWithTitle>
-        <section className='md:hidden'>
+        <section className='mt-10 md:hidden'>
           {descData.map(({ description, images, title }, index) => (
             <Collapse
               borderColor='border-medium-grey'

@@ -406,7 +406,7 @@ const RublevoPage = () => {
             ))}
           </div>
         </Grid>
-        <Grid className='mt-50'>
+        <Grid className='mt-30 md:mt-50'>
           <div className='col-span-2 md:col-span-12 md:mb-2 mb-6'>
             <span className='text-h3-mob md:text-h4 font-medium'>
               Ключевые дизайн-принципы
@@ -778,16 +778,16 @@ const RublevoPage = () => {
           </Grid>
         </PageMarginWithTitle>
       </section>
-      <PageMarginWithTitle>
+      <PageMarginWithTitle className='hidden md:block'>
         <section>
           <Grid className='mt-30'>
-            <div className='hidden md:grid col-span-4'>
+            <div className='col-span-4'>
               <Image src={picLink('31')} width={560} height={706} alt='' />
             </div>
-            <div className='hidden md:grid col-span-8'>
+            <div className='col-span-8'>
               <Image src={picLink('32')} width={1160} height={782} alt='' />
             </div>
-            <div className='hidden md:grid col-start-3 col-span-8 mt-30'>
+            <div className='col-start-3 col-span-8 mt-30'>
               <Image src={picLink('33')} width={1160} height={812} alt='' />
             </div>
           </Grid>

@@ -8,7 +8,7 @@ const picLink = makePicLink('oleniy-park');
 
 const AdditionalWalksCollapse = () => {
   return (
-    <Collapse title='05 Пешие (дополнительная инфраструктура)'>
+    <Collapse borderColor='border-medium-grey' title='05 Пешие (дополнительная инфраструктура)'>
       <Grid>
         <div className='col-span-2 md:col-span-4 order-1 md:order-2 mb-10 md:mb-0'>
           <div className='flex flex-col'>

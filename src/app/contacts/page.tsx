@@ -6,7 +6,7 @@ import React from 'react';
 const ContactsPage = () => {
   return (
     <PageMarginWithTitle withBorder title='Контакты'>
-      <Grid className='pt-6'>
+      <Grid className='pt-6 mb-30 md:mb-0'>
         <div className='hidden md:flex col-start-5 col-span-1'>
           <span className='font-medium md:text-h6 xl:text-h5 text-grey mr-2'>
             Соц.сети

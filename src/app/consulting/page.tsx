@@ -940,7 +940,7 @@ const ConsultingPage = async () => {
           />
         </div>
         <PageMarginWithTitle>
-          <Grid className='mt-30 md:mb-0 mb-40'>
+          <Grid className='md:mb-0 my-30'>
             <div className='col-span-2'>
               <span className='text-h3-mob font-medium block mb-10'>
                 {t('consulting.section10.title')}

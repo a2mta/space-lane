@@ -158,12 +158,11 @@ export default function Home() {
                 <span className='block text-body-regular-mob md:text-body-regular font-light md:font-medium'>
                   {coverSubTitle || subTitle}
                 </span>
-                <span className='w-6 h-4 md:w-8 md:h-7'>
+                <span className='min-w-[26px] relative ml-2 h-[24px] md:min-w-8 md:h-7'>
                   <Image
                     src='/icons/arrow-right.svg'
                     alt=''
-                    width={31}
-                    height={28}
+                    fill
                   />
                 </span>
               </div>

@@ -59,7 +59,7 @@ const ProjectMainPicWithInfo: FC<{
                 </span>
               </div>
               <div className='md:col-span-5 col-span-1'>
-                <span>{location}</span>
+                <span className='whitespace-pre-wrap md:whitespace-normal'>{location}</span>
               </div>
             </Grid>
             <Grid cols={10} colsXL={10}>

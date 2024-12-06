@@ -380,7 +380,7 @@ const HomeCard: FC<{
 }> = ({ image, imageMob, index, items, title }) => (
   <div
     className={classNames(
-      'col-span-2 md:col-span-6 pt-6 border-t border-grey',
+      'col-span-2 md:col-span-6 pt-6 border-t border-medium-grey',
       //   ABSOLUTE DOG SHIT
       {
         'mt-16 md:mt-0': +index === 2,
@@ -437,7 +437,7 @@ const OleniyParkPage = async () => {
           coverLink2={picLink('02')}
           status={t('status.in_progress')}
           area={'Более 100 га'}
-          location={'Липецкая область Краснинский район, с. Суходол'}
+          location={`Липецкая область Краснинский район, \nс. Суходол`}
           subTitle={
             <span className='md:text-h4 text-h4-mob font-medium md:whitespace-pre-wrap tracking-normal'>
               {`Мастер-план развития территории природного парка\nв Липецкой области`}

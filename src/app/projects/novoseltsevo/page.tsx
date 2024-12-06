@@ -475,7 +475,7 @@ const NovoseltsevoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-12 mb-10 md:mb-16'>
               <span className='text-h3-mob md:text-h4 font-medium'>
                 {t('concept.greenery')}
@@ -508,7 +508,7 @@ const NovoseltsevoPage = async () => {
           </Grid>
         </section>
         <section>
-          <Grid className='mt-50'>
+          <Grid className='mt-30 md:mt-50'>
             <div className='col-span-2 md:col-span-12'>
               <span className='text-h3-mob md:text-h4 whitespace-pre-wrap font-medium'>
                 {t('general_plan.title')}
@@ -524,7 +524,7 @@ const NovoseltsevoPage = async () => {
         </section>
       </PageMarginWithTitle>
       <MobileSlider
-        className='mt-30'
+        className='mt-10 md:mt-30'
         height={300}
         width={480}
         image1={{

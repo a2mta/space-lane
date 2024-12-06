@@ -23,7 +23,7 @@ const ProjectsPage = () => {
         </>
       }
     >
-      <Grid className='mt-30 gap-y-10'>
+      <Grid className='mt-30 mb-30 md:mb-0 gap-y-10'>
         {projects.map((item, index) => (
           <div key={index + item.title} className='col-span-4 relative '>
             <ProjectCard
