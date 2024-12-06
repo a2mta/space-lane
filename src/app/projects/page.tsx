@@ -12,7 +12,7 @@ const ProjectsPage = () => {
       title='Проекты'
       subTitle={
         <>
-          <Link href='/Space Lane Portfolio.pdf' target='__blank'>
+          <Link href='/SpaceLanePortfolio.pdf' target='__blank'>
             <h5 className='hidden md:inline-block text-h6 xl:text-h5 font-medium text-grey cursor-pointer'>
               Скачать порфтолио
             </h5>
