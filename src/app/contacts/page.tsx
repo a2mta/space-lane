@@ -28,12 +28,10 @@ const ContactsPage = () => {
             <span className='block'>+7 926 066-36-69</span>
           </div>
           <Link
-            className='hidden md:flex mt-10 max-w-56 p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey  items-center justify-center'
+            className='hidden hover:text-white hover:bg-black transition-colors text-body-regular font-medium md:flex mt-10 max-w-56 p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey  items-center justify-center'
             href='/brief'
           >
-            <span className='text-body-regular font-medium'>
-              Заполнить бриф
-            </span>
+            Заполнить бриф
           </Link>
           <Grid className='md:hidden mt-4'>
             <div className='col-span-1'>

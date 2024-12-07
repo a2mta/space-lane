@@ -25,7 +25,7 @@ const ProjectCard: FC<{
           />
         </div>
         <span className='mt-4 mb-2 text-body-regular-mob md:text-body-regular xl:text-h5 font-medium'>{title}</span>
-        <span className='text-body-regular-mob md:text-body-regular font-light md:font-medium'>{subTitle}</span>
+        <span className='text-body-regular-mob md:text-body-regular text-grey font-light md:font-medium'>{subTitle}</span>
       </Link>
     </div>
   );

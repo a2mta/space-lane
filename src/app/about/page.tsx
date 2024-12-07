@@ -40,13 +40,11 @@ const AboutPage = () => {
     <PageMarginWithTitle withBorder title='О нас'>
       <section>
         <Grid className='mt-6'>
-          <h2 className='text-h5-mob xl:text-h2 md:text-h3 col-span-2 md:col-span-10 md:mb-10 font-medium'>
-            Space Lane — современное архитектурное бюро, основанное Даниилом
-            Хлебниковым в 2019 году.
+          <h2 className='text-h5-mob xl:text-h2 md:text-h3 col-span-2 md:col-span-10 md:mb-10 font-medium md:whitespace-pre-wrap'>
+           {`Space Lane — современное архитектурное бюро, основанное Даниилом Хлебниковым \nв 2019 году.`}
           </h2>
-          <h2 className='text-h5-mob xl:text-h2 md:text-h3 mt-4 md:mt-0 col-span-2 md:col-span-11 font-medium'>
-            Мы занимаемся архитектурным проектированием, стратегическим
-            городским консалтингом и просветительской деятельностью.
+          <h2 className='text-h5-mob xl:text-h2 md:text-h3 mt-4 md:mt-0 col-span-2 md:col-span-11 font-medium md:whitespace-pre-wrap'>
+            {`Мы занимаемся архитектурным проектированием, стратегическим городским консалтингом \nи просветительской деятельностью.`}
           </h2>
           <div className='col-span-2 md:col-start-5 md:col-end-12 mb-30 md:mb-52 mt-10 text-body-regular-mob md:text-h5-regular'>
             <h5>
