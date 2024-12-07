@@ -436,24 +436,13 @@ const ConsultingPage = async () => {
           <Grid>
             <div className='col-span-2 md:col-span-12 mb-30 md:mb-50 mt-10 md:mt-16 space-y-4 md:space-y-[30px] text-body-regular-mob md:text-h5 font-light'>
               <span className='block'>
-                Space Lane на этапе предпроектных исследований использует
-                различные аналитические методики, помогающие собрать необходимые
-                данные и погрузиться в контекст. В частности мы выполняем оценку
-                градостроительного потенциала и инвестиционной привлекательности
-                территории, проводим исследования для выявления сообществ и их
-                запросов, осуществляем аудит и анализ данных.
-              </span>
-
-              <span className='block'>
-                Работая с общественными пространствами, мы разрабатываем метрики
-                оценки качества развития городских пространств и методологии
-                оценки эффектов развития территорий. Ещё одно важное направление
-                деятельности бюро — разработка программ профессиональных
-                мероприятий: от семинаров до конференций.
+                {t('consulting.section1.paragraph1')}
               </span>
               <span className='block'>
-                В качестве примера аналитического исследования предлагаем
-                ознакомиться с анализом рынка ИЖС
+                {t('consulting.section1.paragraph2')}
+              </span>
+              <span className='block'>
+                {t('consulting.section1.paragraph3')}
               </span>
             </div>
           </Grid>
@@ -465,24 +454,20 @@ const ConsultingPage = async () => {
           <Grid>
             <div className='col-span-2 md:col-span-4 flex flex-col'>
               <h4 className='text-h3-mob md:text-h4 font-medium'>
-                Анализ рынка
+                {t('consulting.section2.title')}
               </h4>
               <p className='text-grey mt-4 text-body-caption-10 md:text-body-caption font-medium'>
-                (Исследование сделано в IV квартале 2023 года на основании
-                анализа рынка ИЖС Московской области с использованием
-                аналитических материалов ДОМ.рф, ВЦИОМ, Домклик и др.)
+                {t('consulting.section2.subtitle')}
               </p>
             </div>
             <div className='col-span-2 md:col-span-4 mt-10 md:mt-0'>
               <p className='text-body-regular-mob md:text-body-regular font-light md:whitespace-pre-wrap xl:whitespace-normal'>
-                {`За последние годы большое количество льготных ипотечных программ \nи постпандемийные последствия в виде ростачисленности сотрудников, работающих удалённо, изменилицелевую аудиторию рынка ИЖС, снизив средний возраст среднестатистического покупателя, минимальный требуемый доход и, как следствие, предпочтения покупателя относительно желаемого объекта недвижимости.`}
+                {t('consulting.section2.paragraph1')}
               </p>
             </div>
             <div className='col-span-2 md:col-span-4 block md:mt-0 mt-6'>
               <p className='text-body-regular-mob md:text-body-regular font-light xl:whitespace-pre-wrap'>
-                {
-                  'За 3 года доля ипотечных сделок на рынке ИЖС выросла \nв 2,5 раза, при этом самую высокую динамику в 2023 году показало кредитование строительства частных домов. Значительный рост выдачи ипотек обоснован тем, что сегодня строительство частного дома с привлечением профессиональных подрядчиков доступно в рамках всех льготных ипотечных программ.'
-                }
+                {t('consulting.section2.paragraph2')}
               </p>
             </div>
           </Grid>
@@ -493,9 +478,7 @@ const ConsultingPage = async () => {
           <Grid className='my-10'>
             <div className='col-span-2 mb-10'>
               <span className='text-body-regular-mob font-light'>
-                Для целей дальнейшего анализа используются данные аналитических
-                исследований, как о покупателях ИЖС, так и пользователях ипотеки
-                на ИЖС, которая наиболее востребована именно в комфорт-классе.
+                {t('consulting.section3.paragraph1')}
               </span>
             </div>
             <div className='col-span-1'>

@@ -9,7 +9,7 @@ const ContactsPage = () => {
       <Grid className='pt-6 mb-30 md:mb-0'>
         <div className='hidden md:flex col-start-5 col-span-1'>
           <span className='font-medium md:text-h6 xl:text-h5 text-grey mr-2'>
-            Соц.сети
+            Соцсети
           </span>
         </div>
         <div className='hidden md:flex text-h5-mob md:text-h6 xl:text-h5 font-medium col-span-3 space-y-2  flex-col'>
@@ -23,8 +23,8 @@ const ContactsPage = () => {
             партнёрств
           </span>
           <div className='text-body-regular-mob md:text-h6 xl:text-h5 font-light flex flex-col space-y-4 md:space-y-2 mt-10 md:mt-6'>
-            <span className='block'>Info@spacelane.ru</span>
-            <span className='block'>spacelanemsk@gmail.ru</span>
+            <span className='block'>info@spacelane.ru</span>
+            <span className='block'>spacelanemsk@gmail.com</span>
             <span className='block'>+7 926 066-36-69</span>
           </div>
           <Link
@@ -45,7 +45,7 @@ const ContactsPage = () => {
           </Grid>
         </div>
         <div className='col-span-1 md:hidden'>
-          <span className='text-h5-mob font-medium text-grey'>Соц.сети</span>
+          <span className='text-h5-mob font-medium text-grey'>Соцсети</span>
         </div>
         <div className='col-span-1 md:hidden'>
           <div className='flex flex-col space-y-2'>

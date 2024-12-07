@@ -142,7 +142,7 @@ const HeaderMobile = () => {
                 )}
               </div>
               <span className='text-body-regular-mob font-light block mt-6'>
-                spacelanemsk@gmail.ru
+                spacelanemsk@gmail.com
               </span>
               <span className='text-body-regular-mob font-light block mt-4'>
                 +7 926 066-36-69
@@ -185,7 +185,7 @@ const HeaderMobile = () => {
                     )}
                   </div>
                   <span className='text-body-regular-mob font-light block mt-6'>
-                    spacelanemsk@gmail.ru
+                    spacelanemsk@gmail.com
                   </span>
                   <span className='text-body-regular-mob font-light block mt-4'>
                     +7 926 066-36-69
