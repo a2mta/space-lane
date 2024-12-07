@@ -6,9 +6,10 @@ import { projects } from '@/utils';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useState, useEffect, useRef } from 'react';
-import animationData from './animation.json';
-import Lottie, { AnimationItem } from 'lottie-web';
+import { useState } from 'react';
+
+import MobileCover from '@/components/MobileCover';
+import DesktopCover from '@/components/DesktopCover';
 
 export default function Home() {
   const [coverIndex, setIndex] = useState(0);
@@ -16,46 +17,6 @@ export default function Home() {
   const { push } = useRouter();
 
   const { link, subTitle, coverSubTitle, title } = projects[coverIndex];
-  const [animationVisible, toggleVisibility] = useState(true);
-  const [containerVisible, toggleContainer] = useState(true);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const animation = useRef<AnimationItem | null>(null);
-
-  useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (isMobile) {
-      toggleVisibility(false);
-      toggleContainer(false);
-      document.documentElement.style.overflow = 'auto';
-      return;
-    }
-
-    const hasShownAnimation = sessionStorage.getItem('hasShownAnimation');
-    if (hasShownAnimation) {
-      toggleVisibility(false);
-      toggleContainer(false);
-      document.documentElement.style.overflow = 'auto';
-      return;
-    }
-
-    document.documentElement.style.overflow = 'hidden';
-    if (containerRef.current) {
-      animation.current = Lottie.loadAnimation({
-        container: containerRef.current,
-        animationData: animationData,
-        loop: false,
-        autoplay: false,
-        name: 'screen',
-      });
-      animation.current.play();
-    }
-
-    setTimeout(() => {
-      if (animationVisible) {
-        handleVisibility();
-      }
-    }, 10000);
-  }, [animationVisible]);
 
   const handleNext = () => {
     setIndex((prevIndex) => (prevIndex + 1) % projects.length);
@@ -76,30 +37,10 @@ export default function Home() {
     push(`/projects/${link}`);
   };
 
-  const handleVisibility = () => {
-    toggleVisibility(false);
-    if (animation.current) {
-      animation.current.pause();
-    }
-    setTimeout(() => {
-      document.documentElement.style.overflow = 'auto';
-      toggleContainer(false);
-      sessionStorage.setItem('hasShownAnimation', 'true');
-    }, 1000);
-  };
-
   return (
     <>
-      {containerVisible && (
-        <div
-          onClick={handleVisibility}
-          className={classNames(
-            'z-[999999] cursor-pointer fixed w-screen bg-white h-screen top-0 left-0 transition-opacity duration-1000 md:block hidden',
-            { 'opacity-0': !animationVisible }
-          )}
-          ref={containerRef}
-        />
-      )}
+      <DesktopCover />
+      <MobileCover />
       <PageMarginWithTitle>
         <Grid className='mt-20 md:mt-32 xl:mt-16'>
           <div className='col-span-2 md:col-span-7 md:col-start-2 mb-6 md:mb-0'>
@@ -150,7 +91,10 @@ export default function Home() {
             </div>
           </div>
           <div className='col-span-2 md:col-span-4'>
-            <div className='flex group cursor-pointer md:hover:text-grey flex-col' onClick={handleClick}>
+            <div
+              className='flex group cursor-pointer md:hover:text-grey flex-col'
+              onClick={handleClick}
+            >
               <span className='text-body-regular-mob md:text-h6 xl:text-h5 font-medium pb-2 border-b border-medium-grey'>
                 {title}
               </span>
@@ -159,11 +103,7 @@ export default function Home() {
                   {coverSubTitle || subTitle}
                 </span>
                 <span className='min-w-[26px] md:group-hover:opacity-50 relative ml-2 h-[24px] md:min-w-8 md:h-7'>
-                  <Image
-                    src='/icons/arrow-right.svg'
-                    alt=''
-                    fill
-                  />
+                  <Image src='/icons/arrow-right.svg' alt='' fill />
                 </span>
               </div>
             </div>

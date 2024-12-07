@@ -11,9 +11,14 @@ const Footer = () => {
           <span className='col-span-4'>
             <div>
               <span className='relative'>
-                Rus /{' '}
+                <span className='hover:text-medium-grey cursor-pointer'>
+                  Rus
+                </span>{' '}
+                /{' '}
                 <Tooltip>
-                  <span className='text-medium-grey cursor-pointer'>Eng</span>
+                  <span className='hover:text-medium-grey cursor-pointer'>
+                    Eng
+                  </span>
                 </Tooltip>
               </span>
             </div>

@@ -27,16 +27,22 @@ const ContactsPage = () => {
             <span className='block'>spacelanemsk@gmail.ru</span>
             <span className='block'>+7 926 066-36-69</span>
           </div>
-          <div className='hidden md:flex mt-10 max-w-56 p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey  items-center justify-center'>
+          <Link
+            className='hidden md:flex mt-10 max-w-56 p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey  items-center justify-center'
+            href='/brief'
+          >
             <span className='text-body-regular font-medium'>
-              <Link href='/brief'>Заполнить бриф</Link>
+              Заполнить бриф
             </span>
-          </div>
-          <Grid className='mt-4 md:hidden'>
+          </Link>
+          <Grid className='md:hidden mt-4'>
             <div className='col-span-1'>
-              <div className='text-center p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey'>
-                <Link href='/brief'>Заполнить бриф</Link>
-              </div>
+              <Link
+                href='/brief'
+                className='flex justify-center items-center text-center p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey'
+              >
+                Заполнить бриф
+              </Link>
             </div>
           </Grid>
         </div>
