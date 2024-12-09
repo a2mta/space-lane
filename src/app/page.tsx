@@ -19,11 +19,18 @@ import dynamic from 'next/dynamic';
 
 export default function Home() {
   const [coverIndex, setIndex] = useState(0);
-  const [hasShownAnimation, setHasShownAnimation] = useState(false);
+  const [hasShownAnimation, setHasShownAnimation] = useState<
+    boolean | undefined
+  >(undefined);
   const [bgContainerVisible, toggleBgContainer] = useState(!hasShownAnimation);
 
   useEffect(() => {
     setHasShownAnimation(!!sessionStorage.getItem('hasShownAnimation'));
+    console.log(
+      'EFFECT',
+      hasShownAnimation,
+      !!sessionStorage.getItem('hasShownAnimation')
+    );
     if (!!sessionStorage.getItem('hasShownAnimation')) {
       toggleBgContainer(false);
     }
@@ -52,7 +59,6 @@ export default function Home() {
     push(`/projects/${link}`);
   };
 
-
   const onAnimationShow = (status: boolean) => {
     setHasShownAnimation(status);
     setTimeout(() => {
@@ -60,16 +66,16 @@ export default function Home() {
       sessionStorage.setItem('hasShownAnimation', 'true');
     }, 1000);
   };
-
+  console.info('PRERENDER', !!hasShownAnimation);
   return (
     <>
       <DesktopCover
         onAnimationShow={onAnimationShow}
-        hasShownAnimation={!!hasShownAnimation}
+        hasShownAnimation={typeof hasShownAnimation === 'undefined' ? true : hasShownAnimation}
       />
       <MobileCover
         onAnimationShow={onAnimationShow}
-        hasShownAnimation={!!hasShownAnimation}
+        hasShownAnimation={typeof hasShownAnimation === 'undefined' ? true : hasShownAnimation}
       />
       <div
         className={classNames(

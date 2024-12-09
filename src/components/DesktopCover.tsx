@@ -7,7 +7,7 @@ import classNames from 'classnames';
 const DesktopCover: FC<{
   hasShownAnimation: boolean;
   onAnimationShow: (status: boolean) => void;
-}> = ({ hasShownAnimation, onAnimationShow }) => {
+}> = ({ hasShownAnimation = false, onAnimationShow }) => {
   const [animationVisible, toggleVisibility] = useState(true);
   const [containerVisible, toggleContainer] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,6 +23,7 @@ const DesktopCover: FC<{
       return;
     }
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    console.info('INSIDE ANIMATION', hasShownAnimation)
     if (isMobile || hasShownAnimation) {
       toggleVisibility(false);
       toggleContainer(false);
