@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef, useState } from 'react';
 import animationData from '../app/animation.json';
 import Lottie, { AnimationItem } from 'lottie-web';
