@@ -15,12 +15,12 @@ const DesktopCover = () => {
     if (isMobile || hasShownAnimation) {
       toggleVisibility(false);
       toggleContainer(false);
-      if (document) {
+      if (typeof document !== 'undefined') {
         document.documentElement.style.overflow = 'auto';
       }
       return;
     }
-    if (document) {
+    if (typeof document !== 'undefined') {
       document.documentElement.style.overflow = 'hidden';
     }
     if (containerRef.current) {
@@ -47,7 +47,7 @@ const DesktopCover = () => {
       animation.current.pause();
     }
     setTimeout(() => {
-      if (document) {
+      if (typeof document !== 'undefined') {
         document.documentElement.style.overflow = 'auto';
       }
       toggleContainer(false);

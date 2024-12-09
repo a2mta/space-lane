@@ -16,7 +16,7 @@ const HeaderMobile = () => {
 
   const handleToggle = () => {
     setIsOpen((wasOpen) => {
-      if (document) {
+      if (typeof document !== 'undefined') {
         if (wasOpen) {
           document.documentElement.style.overflow = 'auto';
         } else {
@@ -29,7 +29,7 @@ const HeaderMobile = () => {
 
   const handleClick = (link: string) => {
     setIsOpen(false);
-    if (document) {
+    if (typeof document !== 'undefined') {
       document.documentElement.style.overflow = 'auto';
     }
     router.push('/' + link);
