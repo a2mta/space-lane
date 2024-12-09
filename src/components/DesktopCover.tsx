@@ -15,11 +15,14 @@ const DesktopCover = () => {
     if (isMobile || hasShownAnimation) {
       toggleVisibility(false);
       toggleContainer(false);
-      document.documentElement.style.overflow = 'auto';
+      if (document) {
+        document.documentElement.style.overflow = 'auto';
+      }
       return;
     }
-
-    document.documentElement.style.overflow = 'hidden';
+    if (document) {
+      document.documentElement.style.overflow = 'hidden';
+    }
     if (containerRef.current) {
       animation.current = Lottie.loadAnimation({
         container: containerRef.current,
@@ -44,7 +47,9 @@ const DesktopCover = () => {
       animation.current.pause();
     }
     setTimeout(() => {
-      document.documentElement.style.overflow = 'auto';
+      if (document) {
+        document.documentElement.style.overflow = 'auto';
+      }
       toggleContainer(false);
       sessionStorage.setItem('hasShownAnimation', 'true');
     }, 1000);
