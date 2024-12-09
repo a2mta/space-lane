@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PageMarginWithTitle from '../PageMarginWithTitle';
 import Grid from '../Grid';
 import { useTranslation } from '../../../i18n/client';
@@ -13,14 +13,19 @@ const HeaderMobile = () => {
   const { t } = useTranslation('common');
   const [hidden, toggleHidden] = useState(false);
   const router = useRouter();
+  const docRef = useRef<Document>();
+
+  useEffect(() => {
+    docRef.current = document;
+  }, []);
 
   const handleToggle = () => {
     setIsOpen((wasOpen) => {
-      if (typeof document !== 'undefined') {
+      if (docRef.current) {
         if (wasOpen) {
-          document.documentElement.style.overflow = 'auto';
+          docRef.current.documentElement.style.overflow = 'auto';
         } else {
-          document.documentElement.style.overflow = 'hidden';
+          docRef.current.documentElement.style.overflow = 'hidden';
         }
       }
       return !wasOpen;
@@ -29,16 +34,16 @@ const HeaderMobile = () => {
 
   const handleClick = (link: string) => {
     setIsOpen(false);
-    if (typeof document !== 'undefined') {
-      document.documentElement.style.overflow = 'auto';
+    if (docRef.current) {
+      docRef.current.documentElement.style.overflow = 'auto';
     }
     router.push('/' + link);
   };
 
   useEffect(() => {
     if (typeof window === 'undefined') {
-        return;
-      }
+      return;
+    }
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -50,8 +55,8 @@ const HeaderMobile = () => {
       lastScrollY = currentScrollY;
     };
     if (typeof window === 'undefined') {
-        return;
-      }
+      return;
+    }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

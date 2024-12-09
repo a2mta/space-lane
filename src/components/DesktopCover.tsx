@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import animationData from '../app/animation.json';
 import Lottie, { AnimationItem } from 'lottie-web';
@@ -9,6 +9,11 @@ const DesktopCover = () => {
   const [containerVisible, toggleContainer] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const animation = useRef<AnimationItem | null>(null);
+  const docRef = useRef<Document>();
+
+  useEffect(() => {
+    docRef.current = document;
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -19,13 +24,13 @@ const DesktopCover = () => {
     if (isMobile || hasShownAnimation) {
       toggleVisibility(false);
       toggleContainer(false);
-      if (typeof document !== 'undefined') {
-        document.documentElement.style.overflow = 'auto';
+      if (docRef.current) {
+        docRef.current.documentElement.style.overflow = 'auto';
       }
       return;
     }
-    if (typeof document !== 'undefined') {
-      document.documentElement.style.overflow = 'hidden';
+    if (docRef.current) {
+      docRef.current.documentElement.style.overflow = 'hidden';
     }
     if (containerRef.current) {
       animation.current = Lottie.loadAnimation({
@@ -51,8 +56,8 @@ const DesktopCover = () => {
       animation.current.pause();
     }
     setTimeout(() => {
-      if (typeof document !== 'undefined') {
-        document.documentElement.style.overflow = 'auto';
+      if (docRef.current) {
+        docRef.current.documentElement.style.overflow = 'auto';
       }
       toggleContainer(false);
       sessionStorage.setItem('hasShownAnimation', 'true');
