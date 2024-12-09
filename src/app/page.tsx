@@ -19,9 +19,11 @@ import dynamic from 'next/dynamic';
 
 export default function Home() {
   const [coverIndex, setIndex] = useState(0);
-  const [hasShownAnimation, setHasShownAnimation] = useState(
-    !!sessionStorage.getItem('hasShownAnimation')
-  );
+  const [hasShownAnimation, setHasShownAnimation] = useState(false);
+
+  useEffect(() => {
+    setHasShownAnimation(!!sessionStorage.getItem('hasShownAnimation'));
+  }, []);
 
   const { push } = useRouter();
 
