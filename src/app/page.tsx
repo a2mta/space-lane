@@ -8,8 +8,13 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-import MobileCover from '@/components/MobileCover';
-import DesktopCover from '@/components/DesktopCover';
+const MobileCover = dynamic(() => import('@/components/MobileCover'), {
+  ssr: false,
+});
+const DesktopCover = dynamic(() => import('@/components/DesktopCover'), {
+    ssr: false,
+  });
+import dynamic from 'next/dynamic';
 
 export default function Home() {
   const [coverIndex, setIndex] = useState(0);
