@@ -11,6 +11,9 @@ const DesktopCover = () => {
   const animation = useRef<AnimationItem | null>(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const hasShownAnimation = sessionStorage.getItem('hasShownAnimation');
     if (isMobile || hasShownAnimation) {

@@ -36,6 +36,9 @@ const HeaderMobile = () => {
   };
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+        return;
+      }
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -46,7 +49,9 @@ const HeaderMobile = () => {
       }
       lastScrollY = currentScrollY;
     };
-
+    if (typeof window === 'undefined') {
+        return;
+      }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

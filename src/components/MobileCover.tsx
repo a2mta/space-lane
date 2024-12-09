@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const MobileCover = () => {
   const [hasShownAnimation, setHasShownAnimation] = useState(false);
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
   const hasShownAnimationStorage = sessionStorage.getItem('hasShownAnimation');
 
   const coverElement = useRef<HTMLImageElement>(null);
@@ -27,6 +27,10 @@ const MobileCover = () => {
       }
     };
   }, [hasShownAnimation]);
+  if (typeof window === 'undefined') {
+    return;
+  }
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
   if (!isMobile || hasShownAnimationStorage) return null;
   return (
     !hasShownAnimation && (
