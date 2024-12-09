@@ -1,9 +1,10 @@
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 
-const MobileCover = () => {
-  const [hasShownAnimation, setHasShownAnimation] = useState(false);
-
+const MobileCover: FC<{
+  hasShownAnimation: boolean;
+  onAnimationShow: (status: boolean) => void;
+}> = ({ hasShownAnimation, onAnimationShow }) => {
   const hasShownAnimationStorage = sessionStorage.getItem('hasShownAnimation');
 
   const coverElement = useRef<HTMLImageElement>(null);
@@ -11,7 +12,7 @@ const MobileCover = () => {
     if (hasShownAnimation) return;
     const handleAnimationEnd = () => {
       setTimeout(() => {
-        setHasShownAnimation(true);
+        onAnimationShow(true);
         sessionStorage.setItem('hasShownAnimation', 'true');
       }, 500);
     };

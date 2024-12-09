@@ -47,7 +47,7 @@ const HeaderMobile = () => {
     let lastScrollY = window.scrollY;
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY > lastScrollY) {
+      if (currentScrollY > lastScrollY && !isOpen) {
         toggleHidden(false);
       } else {
         toggleHidden(true);
@@ -59,13 +59,13 @@ const HeaderMobile = () => {
     }
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isOpen]);
 
   return (
     <>
       <header
         className={classNames(
-          'z-[1005] sticky flex items-center min-h-[53px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white transition-top duration-300',
+          'z-[49] sticky flex items-center min-h-[53px] md:hidden h-14 font-manrope px-5 justify-between py-5 bg-white transition-top duration-300',
           {
             'top-0': hidden,
             '-top-16': !hidden,
@@ -132,7 +132,7 @@ const HeaderMobile = () => {
       </header>
       <div
         className={classNames(
-          'fixed inset-0 bg-white z-[1000] transition-opacity duration-300 ease-in-out',
+          'fixed inset-0 bg-white z-[48] transition-opacity duration-300 ease-in-out',
           {
             'opacity-100': isOpen,
             'opacity-0 pointer-events-none': !isOpen,
@@ -183,7 +183,7 @@ const HeaderMobile = () => {
         )}
       </div>
       {isOpen && (
-        <div className='z-[1000] pb-10 pt-11 flex flex-col fixed w-full h-full bg-white'>
+        <div className='z-[48] pb-10 pt-11 flex flex-col fixed w-full h-full bg-white'>
           <div className='flex justify-between flex-col h-full'>
             <PageMarginWithTitle className='mt-30'>
               <Grid>

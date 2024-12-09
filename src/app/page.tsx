@@ -6,18 +6,22 @@ import { projects } from '@/utils';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const MobileCover = dynamic(() => import('@/components/MobileCover'), {
   ssr: false,
 });
 const DesktopCover = dynamic(() => import('@/components/DesktopCover'), {
-    ssr: false,
-  });
+  ssr: false,
+});
+
 import dynamic from 'next/dynamic';
 
 export default function Home() {
   const [coverIndex, setIndex] = useState(0);
+  const [hasShownAnimation, setHasShownAnimation] = useState(
+    !!sessionStorage.getItem('hasShownAnimation')
+  );
 
   const { push } = useRouter();
 
@@ -42,10 +46,37 @@ export default function Home() {
     push(`/projects/${link}`);
   };
 
+  const [bgContainerVisible, toggleBgContainer] = useState(!hasShownAnimation);
+
+  const onAnimationShow = (status: boolean) => {
+    setHasShownAnimation(status);
+    setTimeout(() => {
+      toggleBgContainer(false);
+      sessionStorage.setItem('hasShownAnimation', 'true');
+    }, 1000);
+  };
+
   return (
     <>
-      <DesktopCover />
-      <MobileCover />
+      <DesktopCover
+        onAnimationShow={onAnimationShow}
+        hasShownAnimation={!!hasShownAnimation}
+      />
+      <MobileCover
+        onAnimationShow={onAnimationShow}
+        hasShownAnimation={!!hasShownAnimation}
+      />
+      <div
+        className={classNames(
+          'fixed bg-white size-full top-0 left-0 z-50 transition-opacity duration-1000',
+          {
+            flex: bgContainerVisible,
+            hidden: !bgContainerVisible,
+            'opacity-0': hasShownAnimation,
+            'opacity-100': !hasShownAnimation,
+          }
+        )}
+      ></div>
       <PageMarginWithTitle>
         <Grid className='mt-20 md:mt-32 xl:mt-16'>
           <div className='col-span-2 md:col-span-7 md:col-start-2 mb-6 md:mb-0'>
