@@ -20,9 +20,13 @@ import dynamic from 'next/dynamic';
 export default function Home() {
   const [coverIndex, setIndex] = useState(0);
   const [hasShownAnimation, setHasShownAnimation] = useState(false);
+  const [bgContainerVisible, toggleBgContainer] = useState(!hasShownAnimation);
 
   useEffect(() => {
     setHasShownAnimation(!!sessionStorage.getItem('hasShownAnimation'));
+    if (!!sessionStorage.getItem('hasShownAnimation')) {
+      toggleBgContainer(false);
+    }
   }, []);
 
   const { push } = useRouter();
@@ -48,7 +52,6 @@ export default function Home() {
     push(`/projects/${link}`);
   };
 
-  const [bgContainerVisible, toggleBgContainer] = useState(!hasShownAnimation);
 
   const onAnimationShow = (status: boolean) => {
     setHasShownAnimation(status);
