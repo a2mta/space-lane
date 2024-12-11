@@ -34,7 +34,7 @@ export default function Home() {
   const projects = unsortedProjects.reduce((acc, project) => {
     if (project.link === 'ely') return [project, ...acc];
     return [...acc, project];
-  }, []) as any;
+  }, [] as any) as any;
 
   const { push } = useRouter();
 
