@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-// import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,7 +7,6 @@ import { getLocale } from '../../i18n/server';
 import { LocaleProvider } from '@/hooks/locale-provider';
 import HeaderMobile from '@/components/Header/HeaderMobile';
 
-// const inter = Inter({ subsets: ['latin'] });
 const myFont = localFont({
   src: '../../public/fonts/Manrope-VariableFont_wght.ttf',
   variable: '--font-manrope',
@@ -17,6 +15,14 @@ const myFont = localFont({
 export const metadata: Metadata = {
   title: 'Space Lane',
   keywords: 'architecture, consulting, urban, planning',
+  openGraph: {
+    images: {
+      url: '/opengraph-image.png',
+      width: 1000,
+      height: 770,
+      type: 'image/png',
+    },
+  },
   description:
     'Space Lane — архитектура, консалтинг и городское планирование. Мы найдем подход и решения для объекта любого масштаба и сложности. Свяжитесь с нами для сотрудничества.',
 };

@@ -182,7 +182,14 @@ const HeaderMobile = () => {
                         >
                           Insta
                         </Link>{' '}
-                        / TG
+                        /{' '}
+                        <Link
+                          href='https://t.me/space_lane'
+                          target='__blank'
+                          rel='noopener'
+                        >
+                          TG
+                        </Link>
                       </span>
                       <span>© {new Date().getFullYear()}</span>
                     </div>
@@ -236,7 +243,14 @@ const HeaderMobile = () => {
                       >
                         Insta
                       </Link>{' '}
-                      / TG
+                      /{' '}
+                      <Link
+                        href='https://t.me/space_lane'
+                        target='__blank'
+                        rel='noopener'
+                      >
+                        TG
+                      </Link>
                     </span>
                     <span>© {new Date().getFullYear()}</span>
                   </div>

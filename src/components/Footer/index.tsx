@@ -24,7 +24,24 @@ const Footer = () => {
               </span>
             </div>
           </span>
-          <span className='col-span-7'>Instagram / Telegram</span>
+
+          <span className='col-span-7'>
+            <Link
+              href='https://www.instagram.com/space_lane'
+              target='__blank'
+              rel='noopener'
+            >
+              Inst*gram
+            </Link>{' '}
+            /{' '}
+            <Link
+              href='https://t.me/space_lane'
+              target='__blank'
+              rel='noopener'
+            >
+              Telegram
+            </Link>
+          </span>
           <span className='col-span-1 text-right'>
             © {new Date().getFullYear()}
           </span>
@@ -45,7 +62,14 @@ const Footer = () => {
                 >
                   Insta
                 </Link>{' '}
-                / TG
+                /{' '}
+                <Link
+                  href='https://t.me/space_lane'
+                  target='__blank'
+                  rel='noopener'
+                >
+                  TG
+                </Link>
               </span>
               <span>© {new Date().getFullYear()}</span>
             </div>
