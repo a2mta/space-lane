@@ -159,7 +159,9 @@ const HeaderMobile = () => {
                       )}
                     </div>
                     <span className='text-body-regular-mob font-light block mt-6'>
-                      spacelanemsk@gmail.com
+                      <Link href='mailto:spacelanemsk@gmail.com'>
+                        spacelanemsk@gmail.com
+                      </Link>
                     </span>
                     <span className='text-body-regular-mob font-light block mt-4'>
                       +7 926 066-36-69
@@ -172,7 +174,16 @@ const HeaderMobile = () => {
                   <div className='col-span-2 text-body-medium font-medium'>
                     <div className='flex justify-between'>
                       <span>Rus / Eng</span>
-                      <span>Insta / TG</span>
+                      <span>
+                        <Link
+                          href='https://www.instagram.com/space_lane'
+                          target='__blank'
+                          rel='noopener'
+                        >
+                          Insta
+                        </Link>{' '}
+                        / TG
+                      </span>
                       <span>© {new Date().getFullYear()}</span>
                     </div>
                   </div>
@@ -202,7 +213,9 @@ const HeaderMobile = () => {
                     )}
                   </div>
                   <span className='text-body-regular-mob font-light block mt-6'>
-                    spacelanemsk@gmail.com
+                    <Link href='mailto:spacelanemsk@gmail.com'>
+                      spacelanemsk@gmail.com
+                    </Link>
                   </span>
                   <span className='text-body-regular-mob font-light block mt-4'>
                     +7 926 066-36-69
@@ -215,7 +228,16 @@ const HeaderMobile = () => {
                 <div className='col-span-2 text-body-regular-mob font-medium'>
                   <div className='flex justify-between'>
                     <span>Rus / Eng</span>
-                    <span>Insta / TG</span>
+                    <span>
+                      <Link
+                        href='https://www.instagram.com/space_lane'
+                        target='__blank'
+                        rel='noopener'
+                      >
+                        Insta
+                      </Link>{' '}
+                      / TG
+                    </span>
                     <span>© {new Date().getFullYear()}</span>
                   </div>
                 </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '../Grid';
 import PageMarginWithTitle from '../PageMarginWithTitle';
 import Tooltip from '../Tooltip'; // Import Tooltip
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -36,7 +37,16 @@ const Footer = () => {
               <Tooltip>
                 <span>Rus / Eng</span>
               </Tooltip>
-              <span>Insta / TG</span>
+              <span>
+                <Link
+                  href='https://www.instagram.com/space_lane'
+                  target='__blank'
+                  rel='noopener'
+                >
+                  Insta
+                </Link>{' '}
+                / TG
+              </span>
               <span>© {new Date().getFullYear()}</span>
             </div>
           </div>
