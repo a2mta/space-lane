@@ -2,11 +2,11 @@
 import { useSwipeable } from 'react-swipeable';
 import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
-import { projects } from '@/utils';
+import { projects as unsortedProjects } from '@/utils';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const MobileCover = dynamic(() => import('@/components/MobileCover'), {
   ssr: false,
@@ -26,15 +26,15 @@ export default function Home() {
 
   useEffect(() => {
     setHasShownAnimation(!!sessionStorage.getItem('hasShownAnimation'));
-    console.log(
-      'EFFECT',
-      hasShownAnimation,
-      !!sessionStorage.getItem('hasShownAnimation')
-    );
     if (!!sessionStorage.getItem('hasShownAnimation')) {
       toggleBgContainer(false);
     }
   }, []);
+
+  const projects = unsortedProjects.reduce((acc, project) => {
+    if (project.link === 'ely') return [project, ...acc];
+    return [...acc, project];
+  }, [] as any);
 
   const { push } = useRouter();
 
@@ -66,16 +66,19 @@ export default function Home() {
       sessionStorage.setItem('hasShownAnimation', 'true');
     }, 1000);
   };
-  console.info('PRERENDER', !!hasShownAnimation);
   return (
     <>
       <DesktopCover
         onAnimationShow={onAnimationShow}
-        hasShownAnimation={typeof hasShownAnimation === 'undefined' ? true : hasShownAnimation}
+        hasShownAnimation={
+          typeof hasShownAnimation === 'undefined' ? true : hasShownAnimation
+        }
       />
       <MobileCover
         onAnimationShow={onAnimationShow}
-        hasShownAnimation={typeof hasShownAnimation === 'undefined' ? true : hasShownAnimation}
+        hasShownAnimation={
+          typeof hasShownAnimation === 'undefined' ? true : hasShownAnimation
+        }
       />
       <div
         className={classNames(

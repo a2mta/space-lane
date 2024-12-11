@@ -23,7 +23,6 @@ const DesktopCover: FC<{
       return;
     }
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    console.info('INSIDE ANIMATION', hasShownAnimation)
     if (isMobile || hasShownAnimation) {
       toggleVisibility(false);
       toggleContainer(false);

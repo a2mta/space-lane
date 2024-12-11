@@ -1,9 +1,15 @@
+'use client'
 import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const ContactsPage = () => {
+  const router = useRouter();
+  const handleMobileRedirect = () => {
+    router.push('/brief');
+  };
   return (
     <PageMarginWithTitle withBorder title='Контакты'>
       <Grid className='pt-6 mb-30 md:mb-0'>
@@ -35,12 +41,9 @@ const ContactsPage = () => {
           </Link>
           <Grid className='md:hidden mt-4'>
             <div className='col-span-1'>
-              <Link
-                href='/brief'
-                className='flex justify-center items-center text-center p-2 bg-transparent hover:bg-transparent text-inherit font-inherit m-0 cursor-pointer border border-grey'
-              >
+              <button onClick={handleMobileRedirect} className='flex active:text-white active:bg-black  justify-center items-center text-center p-2 bg-transparent  text-inherit font-inherit m-0 cursor-pointer border border-grey'>
                 Заполнить бриф
-              </Link>
+              </button>
             </div>
           </Grid>
         </div>

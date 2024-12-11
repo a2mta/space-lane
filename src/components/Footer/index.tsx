@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className='font-manrope '>
       <PageMarginWithTitle className='mt-70 mb-14 hidden md:block'>
-        <Grid className='md:grid '>
+        <Grid className='md:grid text-body-regular'>
           <span className='col-span-4'>
             <div>
               <span className='relative'>
