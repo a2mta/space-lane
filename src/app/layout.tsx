@@ -6,6 +6,9 @@ import localFont from 'next/font/local';
 import { getLocale } from '../../i18n/server';
 import { LocaleProvider } from '@/hooks/locale-provider';
 import HeaderMobile from '@/components/Header/HeaderMobile';
+import { Suspense } from 'react';
+import { YaMetrika } from '@/components/YaMetrika';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const myFont = localFont({
   src: '../../public/fonts/Manrope-VariableFont_wght.ttf',
@@ -41,6 +44,10 @@ export default function RootLayout({
           myFont.variable + ' font-manrope flex flex-col min-h-[100dvh]'
         }
       >
+        <Suspense>
+          <YaMetrika />
+          <GoogleAnalytics gaId='G-3QE8ZSYJR8' />
+        </Suspense>
         <LocaleProvider value={locale}>
           <Header />
           <HeaderMobile />

@@ -1,6 +1,7 @@
 'use client';
 import Grid from '@/components/Grid';
 import PageMarginWithTitle from '@/components/PageMarginWithTitle';
+import classNames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
@@ -8,8 +9,12 @@ import React from 'react';
 const ContactsPage = () => {
   const router = useRouter();
   const handleMobileRedirect = () => {
+    setIsButtonActive(true);
     router.push('/brief');
   };
+
+  const [isButtonActive, setIsButtonActive] = React.useState(false);
+
   return (
     <PageMarginWithTitle withBorder title='Контакты'>
       <Grid className='pt-6 mb-30 md:mb-0'>
@@ -75,7 +80,12 @@ const ContactsPage = () => {
             <div className='col-span-1'>
               <button
                 onClick={handleMobileRedirect}
-                className='flex active:text-white active:bg-black  justify-center items-center text-center p-2 bg-transparent  text-inherit font-inherit m-0 cursor-pointer border border-grey'
+                className={classNames(
+                  'flex justify-center items-center text-center p-2 bg-transparent  text-inherit font-inherit m-0 cursor-pointer border border-grey',
+                  {
+                    'text-white bg-black': isButtonActive,
+                  }
+                )}
               >
                 Заполнить бриф
               </button>
