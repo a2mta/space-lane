@@ -8,7 +8,7 @@ import { LocaleProvider } from '@/hooks/locale-provider';
 import HeaderMobile from '@/components/Header/HeaderMobile';
 import { Suspense } from 'react';
 import { YaMetrika } from '@/components/YaMetrika';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
 const myFont = localFont({
   src: '../../public/fonts/Manrope-VariableFont_wght.ttf',
@@ -48,6 +48,7 @@ export default function RootLayout({
         <Suspense>
           <YaMetrika />
           <GoogleAnalytics gaId='G-3QE8ZSYJR8' />
+          <GoogleTagManager gtmId='GTM-K865WDP4' />
         </Suspense>
         <LocaleProvider value={locale}>
           <Header />
