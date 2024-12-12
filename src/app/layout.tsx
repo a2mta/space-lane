@@ -17,6 +17,7 @@ const myFont = localFont({
 
 export const metadata: Metadata = {
   title: 'Space Lane',
+  metadataBase: new URL('https://spacelane.ru'),
   keywords: 'architecture, consulting, urban, planning',
   openGraph: {
     images: {
