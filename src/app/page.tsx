@@ -16,6 +16,7 @@ const DesktopCover = dynamic(() => import('@/components/DesktopCover'), {
 });
 
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
 export default function Home() {
   const [coverIndex, setIndex] = useState(0);
@@ -68,6 +69,9 @@ export default function Home() {
   };
   return (
     <>
+      <Head>
+        <meta name='googlebot' content='nosnippet' />
+      </Head>
       <DesktopCover
         onAnimationShow={onAnimationShow}
         hasShownAnimation={
