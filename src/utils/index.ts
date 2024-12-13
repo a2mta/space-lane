@@ -69,7 +69,7 @@ export const projects = [
   },
   {
     title: 'Олений парк',
-    coverImage: '/pics/cover/08.png',
+    coverImage: '/pics/cover/0_8.png',
     subTitle: 'Исследование, мастер-план, архитектура, благоустройство',
     link: 'oleniy-park',
     image: '/pics/projects/oleniy-park.png',
