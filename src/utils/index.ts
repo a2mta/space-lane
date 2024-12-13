@@ -72,7 +72,7 @@ export const projects = [
     coverImage: '/pics/cover/0_8.png',
     subTitle: 'Исследование, мастер-план, архитектура, благоустройство',
     link: 'oleniy-park',
-    image: '/pics/projects/oleniy-park.png',
+    image: '/pics/projects/oleniy-park-cover.png',
   },
   {
     title: 'Савеловский кластер',
