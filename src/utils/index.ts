@@ -21,7 +21,7 @@ export const projects = [
     subTitle: 'Благоустройство, авторский надзор',
     coverImage: '/pics/cover/01.png',
     link: 'rublevo',
-    image: '/pics/projects/rublevo-cover.png',
+    image: '/pics/projects/rublevo.png',
   },
   {
     title: 'Коттеджный поселок «Новосельцево»',
@@ -44,7 +44,7 @@ export const projects = [
       'Мастер-план и архитектурные решения общественных зданий коттеджного посёлка «Ели»',
     subTitle: 'Исследование, мастер-план, архитектура, благоустройство',
     link: 'ely',
-    image: '/pics/projects/ely.png',
+    image: '/pics/projects/ely-cover.png',
   },
   {
     title: 'Коттеджный поселок «Максимово парк»',
