@@ -21,7 +21,7 @@ export const projects = [
     subTitle: 'Благоустройство, авторский надзор',
     coverImage: '/pics/cover/01.png',
     link: 'rublevo',
-    image: '/pics/projects/rublevo.png',
+    image: '/pics/projects/rublevo-cover.png',
   },
   {
     title: 'Коттеджный поселок «Новосельцево»',
