@@ -27,6 +27,7 @@ const Footer = () => {
 
           <span className='col-span-7'>
             <Link
+              className='hover:text-medium-grey'
               href='https://www.instagram.com/space_lane'
               target='__blank'
               rel='noopener'
@@ -35,6 +36,7 @@ const Footer = () => {
             </Link>{' '}
             /{' '}
             <Link
+              className='hover:text-medium-grey'
               href='https://t.me/space_lane'
               target='__blank'
               rel='noopener'
@@ -50,7 +52,7 @@ const Footer = () => {
       <PageMarginWithTitle className='md:hidden my-10'>
         <Grid>
           <div className='col-span-2 text-body-regular-mob font-medium'>
-            <div className='flex justify-between'>
+            <div className='flex justify-between relative'>
               <Tooltip>
                 <span>Rus / Eng</span>
               </Tooltip>

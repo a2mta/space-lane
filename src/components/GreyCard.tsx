@@ -9,7 +9,7 @@ export const GreyCard: FC<{
 }> = ({ desc, className, index, title }) => (
   <div
     className={classNames(
-      'col-span-2 md:col-span-4 md:p-6 flex justify-between flex-col border-t border-medium-grey pt-1 md:pt-6 md:border-none md:bg-light-grey md:aspect-[5/4] xl:min-h-max xl:aspect-[7/4] mb-10 md:mb-0',
+      'md:min-h-96 col-span-2 md:col-span-4 md:p-6 flex justify-between flex-col border-t border-medium-grey pt-1 md:pt-6 md:border-none md:bg-light-grey  xl:min-h-max xl:aspect-[7/4] mb-10 md:mb-0',
       className
     )}
   >

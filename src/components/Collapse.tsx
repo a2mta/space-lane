@@ -8,6 +8,7 @@ import React, {
   useState,
 } from 'react';
 import Grid from './Grid';
+import classNames from 'classnames';
 
 const Collapse: FC<
   { title: string; borderColor?: string } & PropsWithChildren
@@ -31,11 +32,19 @@ const Collapse: FC<
   return (
     <div className='pt-6 md:py-6 tracking-wider'>
       <div className='pb-4 lg:pb-6 flex justify-between'>
-        <Grid className='w-full' colsM={6}>
+        <Grid
+          className={classNames('w-full', {
+            'cursor-pointer': isCollapsed,
+          })}
+          onClick={() => isCollapsed && toggleCollapse()}
+          colsM={6}
+        >
           <span
-            className={`block text-body-regular-mob md:text-h6 lg:text-h5 font-medium col-span-5 md:col-span-7 transition-all duration-300 ease-in-out ${
-              !isCollapsed ? 'md:col-start-5' : ''
-            }`}
+            onClick={() => !isCollapsed && toggleCollapse()}
+            className={classNames(
+              { 'md:col-start-5 cursor-pointer': !isCollapsed },
+              'block text-body-regular-mob md:text-h6 lg:text-h5 font-medium col-span-5 md:col-span-7 transition-all duration-300 ease-in-out'
+            )}
           >
             {title}
           </span>

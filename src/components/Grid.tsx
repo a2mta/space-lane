@@ -1,5 +1,9 @@
 import classNames from 'classnames';
-import React, { FC, PropsWithChildren } from 'react';
+import React, {
+  FC,
+  MouseEventHandler,
+  PropsWithChildren,
+} from 'react';
 
 const Grid: FC<
   PropsWithChildren & {
@@ -8,10 +12,12 @@ const Grid: FC<
     colsM?: number;
     colsXL?: number;
     gapX?: number;
+    onClick?: MouseEventHandler<HTMLDivElement>;
   }
-> = ({ className, children, cols, colsM, colsXL, gapX }) => {
+> = ({ className, onClick, children, cols, colsM, colsXL, gapX }) => {
   return (
     <div
+      onClick={onClick}
       className={classNames(
         'grid',
         `grid-cols-${colsM || 2}`,

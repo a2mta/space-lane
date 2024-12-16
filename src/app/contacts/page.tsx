@@ -26,6 +26,7 @@ const ContactsPage = () => {
         <div className='hidden md:flex text-h5-mob md:text-h6 xl:text-h5 font-medium col-span-3 space-y-2  flex-col'>
           <span>
             <Link
+              className='hover:text-medium-grey'
               href='https://www.instagram.com/space_lane'
               target='__blank'
               rel='noopener'
@@ -35,6 +36,7 @@ const ContactsPage = () => {
           </span>
           <span>
             <Link
+              className='hover:text-medium-grey'
               href='https://www.behance.net/spacelane'
               target='__blank'
               rel='noopener'
@@ -44,6 +46,7 @@ const ContactsPage = () => {
           </span>
           <span>
             <Link
+              className='hover:text-medium-grey'
               href='https://www.linkedin.com/company/space-lane/'
               target='__blank'
               rel='noopener'

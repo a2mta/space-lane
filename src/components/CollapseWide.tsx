@@ -49,8 +49,18 @@ const CollapseWide: FC<
     </div>
   );
 
+  const handleClickMobile = () => {
+    toggleCollapse();
+  };
+
   return (
-    <div className='py-6 tracking-wider border-b md:border-b-0 md:border-t border-medium-grey'>
+    <div
+      className={classNames(
+        'py-6 tracking-wider border-b md:border-b-0 md:border-t border-medium-grey',
+        { 'cursor-pointer': isCollapsed }
+      )}
+      onClick={() => isCollapsed && toggleCollapse()}
+    >
       <Grid className='transition-max-height duration-500'>
         <div className='hidden md:block col-span-4 row-span-2 relative'>
           <div className='transition-all duration-300 overflow-hidden relative top-0 w-full h-full'>
@@ -79,16 +89,26 @@ const CollapseWide: FC<
             </div>
           </div>
         </div>
-        <div className='col-span-2 md:col-span-4'>
+        <div
+          className={classNames('col-span-2 md:col-span-4', {
+            'md:cursor-pointer': !isCollapsed,
+          })}
+          onClick={toggleCollapse}
+        >
           <div className='flex justify-between'>
             <span className='text-body-regular-mob md:text-body-regular block font-medium'>
-              <span className='md:hidden'>{index}{' '}</span>
+              <span className='md:hidden'>{index} </span>
               {title}
             </span>
             <span className='md:hidden'>{closeButton}</span>
           </div>
         </div>
-        <div className='col-span-2 md:col-span-3'>
+        <div
+          className={classNames('col-span-2 md:col-span-3', {
+            'md:cursor-pointer': !isCollapsed,
+          })}
+          onClick={toggleCollapse}
+        >
           <span className='text-body-regular-mob md:text-body-regular font-light mt-4 md:mt-0 block md:font-medium'>
             {shortDesc}
           </span>
