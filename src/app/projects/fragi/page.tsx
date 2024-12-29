@@ -289,7 +289,7 @@ const FragiPage = async () => {
         </section>
         <section>
           <Grid className='mt-30 md:mt-50 border-t border-medium-grey pt-6'>
-            <div className='col-span-2 md:col-span-4'>
+            <div className='col-span-2 md:col-span-4 md:order-1 order-2'>
               <Image src={picLink('13')} alt='' width={560} height={442} />
               <Image
                 className='md:hidden block mt-10'
@@ -299,7 +299,7 @@ const FragiPage = async () => {
                 height={270}
               />
             </div>
-            <div className='col-span-2 md:col-span-8'>
+            <div className='col-span-2 md:col-span-8 order-1 md:order-2'>
               <span className='md:mb-0 mb-10 text-body-regular-mob md:text-h6 lg:text-h5-regular md:font-light font-medium block'>
                 За основу в дизайне благоустройства были взяты местные мотивы
                 орнаментов. Каждый орнамент соответствует историческим
