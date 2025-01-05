@@ -67,6 +67,11 @@ export default function Home() {
       sessionStorage.setItem('hasShownAnimation', 'true');
     }, 1000);
   };
+  useEffect(() => {
+    console.log(
+      '🧑🏼‍💻 Made by Dmitrii Gusarov \n✉️ If you like what you see and want to work together, get in touch with me at dmitry.gusarov.dev@gmail.com\n🔗 Also check my other works at https://dmitri-g.dev '
+    );
+  });
   return (
     <>
       <Head>
