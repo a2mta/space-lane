@@ -106,8 +106,8 @@ const AboutPage = () => {
               />
               <Avatar
                 className='mt-10 md:mt-0'
-                name='Анна Успенская'
-                title='Ведущий архитектор'
+                name='Дарья Дахова'
+                title='Архитектор-проектировщик'
                 url='/pics/about/05.png'
               />
             </Grid>
