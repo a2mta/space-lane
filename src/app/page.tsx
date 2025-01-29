@@ -102,7 +102,7 @@ export default function Home() {
       ></div>
       <PageMarginWithTitle>
         <Grid className='mt-20 md:mt-32 xl:mt-16'>
-          <div className='col-span-2 md:col-span-7 md:col-start-2 mb-6 md:mb-0'>
+          <div className='col-span-2 md:col-span-6 xl:col-start-2 md:col-start-2 xl:col-span-7  mb-6 md:mb-0'>
             <div
               className='relative aspect-coverMobile md:aspect-cover'
               {...handlers}
@@ -149,7 +149,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className='col-span-2 md:col-span-4'>
+          <div className='col-span-2 md:col-span-5 xl:col-span-4'>
             <div
               className='flex group cursor-pointer md:hover:text-grey flex-col'
               onClick={handleClick}

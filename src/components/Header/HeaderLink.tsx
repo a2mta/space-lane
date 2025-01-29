@@ -16,7 +16,7 @@ const HeaderLink: FC<{ url: string; text: string }> = ({ text, url }) => {
         }
       )}`}
     >
-      <Link href={url}>{text}</Link>
+      <Link className='whitespace-nowrap' href={url}>{text}</Link>
     </span>
   );
 };
