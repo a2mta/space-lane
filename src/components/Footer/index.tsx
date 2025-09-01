@@ -32,7 +32,7 @@ const Footer = () => {
               target='__blank'
               rel='noopener'
             >
-              Inst*gram
+              Inst*gram (запрещен в России, принадлежит Meta)
             </Link>{' '}
             /{' '}
             <Link
@@ -49,7 +49,7 @@ const Footer = () => {
           </span>
         </Grid>
       </PageMarginWithTitle>
-      <PageMarginWithTitle className='md:hidden my-10'>
+      <PageMarginWithTitle className='md:hidden mt-10'>
         <Grid>
           <div className='col-span-2 text-body-regular-mob font-medium'>
             <div className='flex justify-between relative'>
@@ -62,7 +62,7 @@ const Footer = () => {
                   target='__blank'
                   rel='noopener'
                 >
-                  Insta
+                  Insta*
                 </Link>{' '}
                 /{' '}
                 <Link
@@ -75,6 +75,7 @@ const Footer = () => {
               </span>
               <span>© {new Date().getFullYear()}</span>
             </div>
+            <span className='text-body-caption-10 text-grey block mt-3 mb-6'>*запрещен в России, принадлежит Meta</span>
           </div>
         </Grid>
       </PageMarginWithTitle>

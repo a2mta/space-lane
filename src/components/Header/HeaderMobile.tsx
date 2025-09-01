@@ -180,7 +180,7 @@ const HeaderMobile = () => {
                           target='__blank'
                           rel='noopener'
                         >
-                          Insta
+                          Insta*
                         </Link>{' '}
                         /{' '}
                         <Link
@@ -201,7 +201,7 @@ const HeaderMobile = () => {
         )}
       </div>
       {isOpen && (
-        <div className='z-[48] pb-10 pt-11 flex flex-col fixed w-full h-full bg-white'>
+        <div className='z-[48]  pt-11 flex flex-col fixed w-full h-full bg-white'>
           <div className='flex justify-between flex-col h-full'>
             <PageMarginWithTitle className='mt-30'>
               <Grid>
@@ -233,7 +233,7 @@ const HeaderMobile = () => {
             <PageMarginWithTitle>
               <Grid>
                 <div className='col-span-2 text-body-regular-mob font-medium'>
-                  <div className='flex justify-between'>
+                  <div className='flex justify-between relative'>
                     <span>Rus / Eng</span>
                     <span>
                       <Link
@@ -241,7 +241,7 @@ const HeaderMobile = () => {
                         target='__blank'
                         rel='noopener'
                       >
-                        Insta
+                        Insta*
                       </Link>{' '}
                       /{' '}
                       <Link
@@ -254,6 +254,9 @@ const HeaderMobile = () => {
                     </span>
                     <span>© {new Date().getFullYear()}</span>
                   </div>
+                  <span className='text-body-caption-10 text-grey block mt-3 mb-6'>
+                    *запрещен в России, принадлежит Meta
+                  </span>
                 </div>
               </Grid>
             </PageMarginWithTitle>
