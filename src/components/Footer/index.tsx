@@ -75,7 +75,9 @@ const Footer = () => {
               </span>
               <span>© {new Date().getFullYear()}</span>
             </div>
-            <span className='text-body-caption-10 text-grey block mt-3 mb-6'>*запрещен в России, принадлежит Meta</span>
+            <span className='text-body-caption-10 text-grey block mt-3 mb-6'>
+              *запрещен в России, принадлежит Meta
+            </span>
           </div>
         </Grid>
       </PageMarginWithTitle>

@@ -9,6 +9,7 @@ import HeaderMobile from '@/components/Header/HeaderMobile';
 import { Suspense } from 'react';
 import { YaMetrika } from '@/components/YaMetrika';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import CookieModal from '@/components/CoolieModal';
 
 const myFont = localFont({
   src: '../../public/fonts/Manrope-VariableFont_wght.ttf',
@@ -58,6 +59,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </LocaleProvider>
+        <CookieModal />
       </body>
     </html>
   );
