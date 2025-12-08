@@ -6,7 +6,7 @@ import localFont from 'next/font/local';
 import { getLocale } from '../../i18n/server';
 import { LocaleProvider } from '@/hooks/locale-provider';
 import HeaderMobile from '@/components/Header/HeaderMobile';
-import { Suspense } from 'react';
+import { Suspense, use } from 'react';
 import { YaMetrika } from '@/components/YaMetrika';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import CookieModal from '@/components/CoolieModal';
@@ -37,7 +37,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const locale = getLocale();
+  const locale = use(getLocale());
 
   return (
     <html lang={locale}>
