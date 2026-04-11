@@ -85,30 +85,30 @@ const AboutPage = () => {
               <Avatar
                 name='Даниил Хлебников'
                 title='Архитектор, основатель компании'
-                url='/pics/about/01.png'
+                url='/pics/about/01.webp'
               />
               <Avatar
                 name='Роман Падурарь'
                 title='Архитектор'
-                url='/pics/about/02.png'
+                url='/pics/about/02.webp'
               />
               <Avatar
                 className='mt-10 md:mt-0'
                 name='Иван Макогон'
                 title='Ведущий архитектор'
-                url='/pics/about/03.png'
+                url='/pics/about/03.webp'
               />
               <Avatar
                 className='mt-10 md:mt-0'
                 name='Иван Ваганов'
                 title='Главный архитектор проектов'
-                url='/pics/about/04.png'
+                url='/pics/about/04.webp'
               />
               <Avatar
                 className='mt-10 md:mt-0'
                 name='Дарья Дахова'
                 title='Архитектор-проектировщик'
-                url='/pics/about/05.png'
+                url='/pics/about/05.webp'
               />
             </Grid>
           </div>

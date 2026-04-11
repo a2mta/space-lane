@@ -908,7 +908,7 @@ const ConsultingPage = async () => {
         </PageMarginWithTitle>
         <Image
           className='mt-10'
-          src='/pics/consultation/scenario-graph-1.png'
+          src='/pics/consultation/scenario-graph-1.webp'
           width={480}
           height={234}
           alt=''
@@ -916,7 +916,7 @@ const ConsultingPage = async () => {
         <div className='flex items-center px-14'>
           <Image
             className='mt-16'
-            src='/pics/consultation/scenario-graph-2.png'
+            src='/pics/consultation/scenario-graph-2.webp'
             width={363}
             height={362}
             alt=''
@@ -1065,7 +1065,7 @@ const ConsultingPage = async () => {
           <Grid className='mt-30'>
             <div className='col-span-8'>
               <Image
-                src='/pics/consultation/scenario-graph-1.png'
+                src='/pics/consultation/scenario-graph-1.webp'
                 width={1160}
                 height={569}
                 alt=''
@@ -1073,7 +1073,7 @@ const ConsultingPage = async () => {
             </div>
             <div className='col-span-4'>
               <Image
-                src='/pics/consultation/scenario-graph-2.png'
+                src='/pics/consultation/scenario-graph-2.webp'
                 width={560}
                 height={643}
                 alt=''

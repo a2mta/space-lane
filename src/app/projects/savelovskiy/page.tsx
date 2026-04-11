@@ -217,8 +217,8 @@ const SavelovskiyPage = () => {
       <section>
         <ProjectMainPicWithInfo
           title='Савёловский кластер'
-          coverLink='/pics/projects/savelovskiy/01.png'
-          coverLink2='/pics/projects/savelovskiy/02.png'
+          coverLink='/pics/projects/savelovskiy/01.webp'
+          coverLink2='/pics/projects/savelovskiy/02.webp'
           status='Концепция'
           area='5,2 га'
           location='Москва'
@@ -253,7 +253,7 @@ const SavelovskiyPage = () => {
           <div className='col-span-2 md:col-span-12 mt-4 md:mt-30 mb-10 md:mb-20 order-3'>
             <Image
               objectFit='cover'
-              src='/pics/projects/savelovskiy/03.png'
+              src='/pics/projects/savelovskiy/03.webp'
               alt='карта савеловский'
               width={1780}
               height={640}
@@ -261,11 +261,11 @@ const SavelovskiyPage = () => {
           </div>
           <div className='col-span-2 md:col-span-6 space-y-10 order-5 md:order-4 mt-16 md:mt-0'>
             <ProjectPicWithTitle
-              coverLink='/pics/projects/savelovskiy/04.png'
+              coverLink='/pics/projects/savelovskiy/04.webp'
               title='Хлебозавод'
             />
             <ProjectPicWithTitle
-              coverLink='/pics/projects/savelovskiy/flakon.png'
+              coverLink='/pics/projects/savelovskiy/flakon.webp'
               title='Флакон'
             />
           </div>
@@ -307,13 +307,13 @@ const SavelovskiyPage = () => {
           </div>
           <div className='col-span-2 md:col-span-6 mt-10 order-7'>
             <ProjectPicWithTitle
-              coverLink='/pics/projects/savelovskiy/05.png'
+              coverLink='/pics/projects/savelovskiy/05.webp'
               title='Савёловский вокзал'
             />
           </div>
           <div className='col-span-2 md:col-span-6 mt-10 order-8'>
             <ProjectPicWithTitle
-              coverLink='/pics/projects/savelovskiy/06.png'
+              coverLink='/pics/projects/savelovskiy/06.webp'
               title='Офисный центр «Новодмитровский»'
             />
           </div>
@@ -344,7 +344,7 @@ const SavelovskiyPage = () => {
             <Image
               width={1160}
               height={508}
-              src='/pics/projects/savelovskiy/07.png'
+              src='/pics/projects/savelovskiy/07.webp'
               alt=''
             />
           </div>
@@ -421,7 +421,7 @@ const SavelovskiyPage = () => {
               width={1760}
               height={674}
               extraDescriptionMargin
-              src='/pics/projects/savelovskiy/09.png'
+              src='/pics/projects/savelovskiy/09.webp'
               title='Схема предлагаемых изменений на рассматриваемой территории'
             />
           </div>
@@ -477,7 +477,7 @@ const SavelovskiyPage = () => {
               <div className='md:mt-0 mt-4 col-span-2 md:col-span-12 md:order-1 order-2'>
                 <Image
                   objectFit='cover'
-                  src='/pics/projects/savelovskiy/10.png'
+                  src='/pics/projects/savelovskiy/10.webp'
                   alt=''
                   width={1160}
                   height={798}
@@ -507,7 +507,7 @@ const SavelovskiyPage = () => {
           <div className='col-span-2 md:col-span-8 md:mt-0 mt-4 -mx-5 md:-mx-0'>
             <Image
               objectFit='cover'
-              src='/pics/projects/savelovskiy/11.png'
+              src='/pics/projects/savelovskiy/11.webp'
               alt=''
               width={1160}
               height={352}
@@ -523,14 +523,14 @@ const SavelovskiyPage = () => {
           <div className='col-span-2 md:col-span-6 space-y-10'>
             <Image
               objectFit='cover'
-              src='/pics/projects/savelovskiy/12.png'
+              src='/pics/projects/savelovskiy/12.webp'
               alt=''
               width={860}
               height={508}
             />
             <Image
               objectFit='cover'
-              src='/pics/projects/savelovskiy/13.png'
+              src='/pics/projects/savelovskiy/13.webp'
               alt=''
               width={860}
               height={508}

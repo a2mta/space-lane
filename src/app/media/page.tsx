@@ -6,7 +6,7 @@ import React from 'react';
 import { createTranslation } from '../../../i18n/server';
 import Link from 'next/link';
 
-const picLink = (url: string) => `/pics/media/${url}.png`;
+const picLink = (url: string) => `/pics/media/${url}.webp`;
 
 const data = [
   {

@@ -352,7 +352,7 @@ const NovoseltsevoPage = async () => {
                 width={1160}
                 height={822}
                 alt='moscow map'
-                src='/pics/projects/novoseltsevo/03.png'
+                src='/pics/projects/novoseltsevo/03.webp'
               />
             </div>
           </Grid>
@@ -381,7 +381,7 @@ const NovoseltsevoPage = async () => {
         fullWidth
         width={1160}
         height={768}
-        src='/pics/projects/novoseltsevo/04.png'
+        src='/pics/projects/novoseltsevo/04.webp'
         title={t('zoning_scheme.caption')}
       />
       <PageMarginWithTitle>
@@ -613,17 +613,17 @@ const NovoseltsevoPage = async () => {
         </section>
         <section className='mt-20 space-y-10 hidden md:block'>
           <FragmentCard
-            image='/pics/projects/novoseltsevo/13.png'
+            image='/pics/projects/novoseltsevo/13.webp'
             title={t('fragment.01.title')}
             description={t('fragment.01.description')}
           />
           <FragmentCard
-            image='/pics/projects/novoseltsevo/14.png'
+            image='/pics/projects/novoseltsevo/14.webp'
             title={t('fragment.02.title')}
             description={t('fragment.02.description')}
           />
           <FragmentCard
-            image='/pics/projects/novoseltsevo/15.png'
+            image='/pics/projects/novoseltsevo/15.webp'
             title={t('fragment.03.title')}
             description={t('fragment.03.description')}
           />
