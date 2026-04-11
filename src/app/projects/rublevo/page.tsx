@@ -354,8 +354,8 @@ const RublevoPage = () => {
       </PageMarginWithTitle>
       <Image
         src={picLink('03')}
-        width={480}
-        height={292}
+        width={1162}
+        height={705}
         className='my-6 md:hidden'
         alt=''
       />
@@ -443,8 +443,8 @@ const RublevoPage = () => {
         <ImageWithCaption
           className=''
           fullWidth
-          width={1920}
-          height={1200}
+          width={1923}
+          height={1281}
           src={picLink('41')}
           title='Бульвар. Визуализация проектного предложения.'
         />
