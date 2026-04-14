@@ -10,6 +10,58 @@ const picLink = (url: string) => `/pics/media/${url}.webp`;
 
 const data = [
   {
+    cover: picLink('09'),
+    description: 'media.city.description',
+    title: 'media.city.title',
+    subTitle: 'media.city.subTitle',
+    links: [
+      {
+        title: 'media.vk_video',
+        link: 'https://vkvideo.ru/video-233345862_456239030?list=46792db0be45b1077d',
+      },
+      {
+        title: 'media.youtube',
+        link: 'https://youtu.be/F4GvcbG3X4o?si=QQyASnM3tdC9es0I',
+      },
+    ],
+  },
+  {
+    cover: picLink('10'),
+    description: 'media.architecture.description',
+    title: 'media.architecture.title',
+    subTitle: 'media.architecture.subTitle',
+    links: [
+      {
+        title: 'media.article_link',
+        link: 'https://ahouseproject.com/a-interview-2/',
+      },
+    ],
+  },
+  {
+    cover: picLink('11'),
+    description: 'media.landscape.description',
+    title: 'media.landscape.title',
+    subTitle: 'media.landscape.subTitle',
+    links: [
+      {
+        title: 'media.vk_video',
+        link: 'https://vkvideo.ru/video-229059365_456239041',
+      },
+    ],
+  },
+    {
+    cover: picLink('12'),
+    description: 'media.a_index.description',
+    title: 'media.a_index.title',
+    subTitle: 'media.a_index.subTitle',
+    links: [
+      {
+        title: 'media.article_link',
+        link: 'https://ahouseproject.com/30-istorij-o-pervoj-lyubvik-arhitekture-chast-1-copy-copy/',
+      },
+    ],
+  },
+  {
     cover: picLink('01'),
     description: 'media.sber_design.description',
     title: 'media.sber_design.title',
@@ -118,9 +170,9 @@ const data = [
 const MediaPage = async () => {
   const { t } = await createTranslation('common');
   return (
-    <PageMarginWithTitle withBorder title='Медиа'>
-      <Grid className='md:mb-0 mb-30'>
-        <div className='col-span-12 mt-16 md:mt-30'>
+    <PageMarginWithTitle withBorder title="Медиа">
+      <Grid className="md:mb-0 mb-30">
+        <div className="col-span-12 mt-16 md:mt-30">
           {data.map(({ cover, links, description, subTitle, title }, index) => (
             <CollapseWide
               image={cover}
@@ -129,21 +181,21 @@ const MediaPage = async () => {
               title={t(title)}
               key={title}
             >
-              <Grid className='md:min-h-48 xl:min-h-64 h-full'>
-                <div className='col-span-2 md:col-span-11 text-body-regular-mob md:text-body-regular font-light'>
-                  <span className=''>
-                    {t(description)}
-                  </span>
+              <Grid className="md:min-h-48 xl:min-h-64 h-full">
+                <div className="col-span-2 md:col-span-11 text-body-regular-mob md:text-body-regular font-light">
+                  <span className="whitespace-break-spaces">{t(description)}</span>
                   {links && (
-                    <div className='mb-4 flex space-x-5 md:space-x-10 xl:flex-col xl:space-x-0 mt-6 md:mt-10 xl:space-y-4 text-orange underline'>
+                    <div className="mb-4 flex space-x-5 md:space-x-10 xl:flex-col xl:space-x-0 md:items-start mt-6 md:mt-10 xl:space-y-4 text-orange underline">
                       {links?.map(({ link, title }) => (
                         <Link
                           key={link}
                           href={link}
-                          target='_blank'
-                          rel='noopener noreferrer'
+                          target="_blank"
+                          className='block'
+                          rel="noopener noreferrer"
+                          title={link}
                         >
-                          <span>{t(title)}</span>
+                          {t(title)}
                         </Link>
                       ))}
                     </div>

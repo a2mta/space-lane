@@ -29,7 +29,7 @@ const CollapseWide: FC<
   useEffect(() => {
     if (contentRef.current) {
       setMaxHeight(
-        isCollapsed ? '0px' : `${contentRef.current.scrollHeight + 80}px`
+        isCollapsed ? '0px' : `${contentRef.current.scrollHeight}px`
       );
     }
   }, [isCollapsed]);
@@ -62,11 +62,11 @@ const CollapseWide: FC<
       onClick={() => isCollapsed && toggleCollapse()}
     >
       <Grid className='transition-max-height duration-500'>
-        <div className='hidden md:block col-span-4 row-span-2 relative'>
+        <div className='hidden md:grid col-span-4 row-span-2 relative'>
           <div className='transition-all duration-300 overflow-hidden relative top-0 w-full h-full'>
             <div
               className='absolute w-full h-full'
-              style={{ minHeight: maxHeight }}
+            //   style={{ minHeight: maxHeight }}
             >
               <span
                 className={classNames(
@@ -79,9 +79,10 @@ const CollapseWide: FC<
               <Image
                 src={image}
                 style={{ objectFit: 'cover' }}
-                fill
+                width='560'
+                height='374'
                 alt=''
-                className={classNames('transition-all', {
+                className={classNames('transition-opacity absolute top-0', {
                   'opacity-100': !isCollapsed,
                   'opacity-0': isCollapsed,
                 })}
